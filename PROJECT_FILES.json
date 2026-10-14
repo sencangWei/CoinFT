@@ -1973,8 +1973,8 @@
     {
       "path": "THIRD_PARTY_NOTICES.md",
       "stage": "RELEASE_GUIDE",
-      "bytes": 1595,
-      "sha256": "6218523e837a6a1d9b5ec755cc58adc5a054c792effd03491eca79f5eef63626"
+      "bytes": 3276,
+      "sha256": "05e7698b7057c6d55cefaf72db2a6d170b0bb1ca34bd773aaa677c3dfd73cf9a"
     },
     {
       "path": "baseline_20260907.csv",

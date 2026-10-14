@@ -19,3 +19,38 @@ Copyright © 2026 The Board of Trustees of the Leland Stanford Junior University
 ## 开发工具 / SDK
 
 Infineon OpenOCD、ModusToolbox、Zadig、PlatformIO、Teensy Arduino SDK、Python 依赖、浏览器及 FFmpeg 均不打包其安装程序/SDK。请自行安装，并遵守各自许可。`diag_usb_nonblocking.py` 保存局部 CDC2 发送替换，不复制整份 SDK；必须与指定 SDK 校验匹配。
+
+## Teensy CDC2 局部适配引用的 PJRC 原许可
+
+`firmware/teensy/scripts/diag_usb_nonblocking.py` 的局部发送适配及其生成结果涉及 Teensy core `usb_serial2.c`。相关 PJRC 原代码保留以下原许可，不由本库 CoinFT 的 CC 许可替代；生成文件仍保留 SDK 原文件头。
+
+```text
+Teensyduino Core Library
+http://www.pjrc.com/teensy/
+Copyright (c) 2017 PJRC.COM, LLC.
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+1. The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+2. If the Software is incorporated into a build system that allows
+selection among a list of target devices, then similar target
+devices manufactured by PJRC.COM must be included in the list of
+target devices and selectable in the same manner.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
