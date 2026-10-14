@@ -1,0 +1,1022 @@
+# Review package: original saved snapshots -> recovery implementation
+
+No Git commits. Baseline source hash1B0E273E5F34CC1529482DC7B14E75B370FFFF79AED844211C2486404F340B2D. Snapshot texts normalize LF and may include one extra trailing blank line; that is snapshot-only, not a production edit.
+
+Changed files: coinft_demo.py; tests/test_serial_diagnostics.py; new tests/test_serial_recovery.py.
+
+Full-context backend diff:
+warning: in the working copy of '.\.superpowers\sdd\stream-recovery-before\coinft_demo.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.\coinft_demo.py', LF will be replaced by CRLF the next time Git touches it
+diff --git "a/.\\.superpowers\\sdd\\stream-recovery-before\\coinft_demo.py" "b/.\\coinft_demo.py"
+index 343fc75..ad232cb 100644
+--- "a/.\\.superpowers\\sdd\\stream-recovery-before\\coinft_demo.py"
++++ "b/.\\coinft_demo.py"
+@@ -1,343 +1,427 @@
+ """Local CoinFT presentation dashboard. Six axes are relative trends, not force units.
+ 
+ Examples:
+     python coinft_demo.py --port COM10
+     python coinft_demo.py --replay dynamic_20260907.csv
+ """
+ 
+ from __future__ import annotations
+ 
+ import argparse
+ import csv
+ import json
+ import struct
+ import threading
+ import time
+ import webbrowser
+ from collections import deque
+ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
+ from pathlib import Path
+ from statistics import median
+ 
+ ROOT = Path(__file__).resolve().parent
+ FRAME_SIZE = 26
+ SATURATION = 33782
+ 
+ 
+ class FrameParser:
+     """Parse one-sensor Teensy frames, confirming each with the next header."""
+ 
+     def __init__(self):
+         self.buffer = bytearray()
+         self.resyncs = 0
+ 
+     def feed(self, chunk: bytes):
+         self.buffer.extend(chunk)
+         frames = []
+         while len(self.buffer) >= FRAME_SIZE + 2:
+             if self.buffer[:2] != b"\x00\x00":
+                 next_header = self.buffer.find(b"\x00\x00", 1)
+                 if next_header < 0:
+                     self.resyncs += len(self.buffer) - 1
+                     del self.buffer[:-1]
+                     break
+                 self.resyncs += next_header
+                 del self.buffer[:next_header]
+                 continue
+             if self.buffer[FRAME_SIZE:FRAME_SIZE + 2] != b"\x00\x00":
+                 self.resyncs += 1
+                 del self.buffer[0]
+                 continue
+             frames.append(struct.unpack("<12H", self.buffer[2:FRAME_SIZE]))
+             del self.buffer[:FRAME_SIZE]
+         return frames
+ 
+ 
+ class RelativeProjector:
+     """Apply the project's historical 24x6 matrix to locally tared counts."""
+ 
+     def __init__(self, matrix):
+         if len(matrix) != 24 or any(len(row) != 6 for row in matrix):
+             raise ValueError("Expected a 24x6 historical matrix")
+         self.matrix = matrix
+         self.baseline = None
+ 
+     def tare(self, frames):
+         if not frames:
+             raise ValueError("Cannot tare without frames")
+         self.baseline = [median(frame[i] for frame in frames) for i in range(12)]
+ 
+     def project(self, raw):
+         if self.baseline is None:
+             raise ValueError("Tare first")
+         delta = [float(raw[i]) - self.baseline[i] for i in range(12)]
+         features = delta + [value * value for value in delta]
+         axes = [sum(features[i] * self.matrix[i][j] for i in range(24)) for j in range(6)]
+         return axes, delta
+ 
+ 
+ class DemoSource:
+     """Own the serial port or replay file and publish a small JSON snapshot."""
+ 
+     def __init__(self, port=None, replay=None, replay_speed=1.0):
+         matrix_path = ROOT / "calibration" / "coinft_calib.json"
+         matrix = json.loads(matrix_path.read_text(encoding="utf-8"))["matrix_24x6"]
+         self.projector = RelativeProjector(matrix)
+         self.port = port
+         self.replay = Path(replay).resolve() if replay else None
+         self.replay_speed = replay_speed
+         self.lock = threading.Lock()
+         self.stop_event = threading.Event()
+         self.tare_requested = True
+         self.tare_frames = []
+         self.axis_window = deque([[0.0] * 6 for _ in range(50)], maxlen=50)
+         self.rate_started_at = None
+         self.rate_started_frames = 0
+         self.saturation_times = deque()
+         self.invalid_times = deque()
+         self.parser = FrameParser()
+         self.state = {
+             "mode": "replay" if replay else "live",
+             "status": "connecting",
+             "message": "正在准备数据源",
+             "port": port or "",
+             "axes": [0.0] * 6,
+             "channels": [0.0] * 12,
+             "raw": [0] * 12,
+             "rate": 0.0,
+             "frames": 0,
+             "resyncs": 0,
+             "saturated": 0,
+             "saturated_recent": 0,
+             "invalid_frames": 0,
+             "invalid_recent": 0,
+             "tare_progress": 0,
+             "updated_at": 0,
+             "diagnostics": {
+                 "serial_reads": 0,
+                 "serial_bytes": 0,
+                 "parsed_frames": 0,
+                 "last_byte_at": 0,
+                 "last_parsed_frame_at": 0,
+                 "parser_pending_bytes": 0,
+                 "parser_discarded_bytes": 0,
+             },
++            "recovery": {
++                "attempts": 0,
++                "successes": 0,
++                "last_fault": None,
++            },
+         }
+         self.thread = threading.Thread(target=self._run, daemon=True)
+ 
+     def start(self):
+         self.thread.start()
+ 
+     def stop(self):
+         self.stop_event.set()
+         self.thread.join(timeout=2)
+ 
+     def request_tare(self):
+         with self.lock:
+             self.tare_requested = True
+             self.tare_frames = []
+             self.axis_window = deque([[0.0] * 6 for _ in range(50)], maxlen=50)
+             self.state.update(status="taring", message="保持空载，正在采集基线", tare_progress=0)
+ 
+     def snapshot(self):
+         with self.lock:
+             snapshot = dict(self.state)
+             snapshot["diagnostics"] = dict(self.state["diagnostics"])
++            snapshot["recovery"] = dict(self.state["recovery"])
++            if self.state["recovery"]["last_fault"] is not None:
++                snapshot["recovery"]["last_fault"] = dict(
++                    self.state["recovery"]["last_fault"])
++                snapshot["recovery"]["last_fault"]["diagnostics"] = dict(
++                    self.state["recovery"]["last_fault"]["diagnostics"])
+             return snapshot
+ 
+     def _set_status(self, status, message):
+         with self.lock:
+             self.state.update(status=status, message=message)
+ 
++    def _record_serial_fault(self, reason, status, message):
++        with self.lock:
++            self.state["recovery"]["last_fault"] = {
++                "reason": reason,
++                "observed_at": time.time(),
++                "frames": self.state["frames"],
++                "diagnostics": dict(self.state["diagnostics"]),
++            }
++            self.state.update(status=status, message=message)
++
+     def _consume(self, raw):
+         now = time.monotonic()
+         with self.lock:
+             if self.rate_started_at is None:
+                 self.rate_started_at = now
+                 self.rate_started_frames = self.state["frames"]
+             invalid_now = any(value > SATURATION for value in raw)
+             if invalid_now:
+                 self.invalid_times.append(now)
+             while self.invalid_times and now - self.invalid_times[0] > 2:
+                 self.invalid_times.popleft()
+             saturated_now = sum(value == SATURATION for value in raw)
+             if saturated_now:
+                 self.saturation_times.append((now, saturated_now))
+             while self.saturation_times and now - self.saturation_times[0][0] > 2:
+                 self.saturation_times.popleft()
+             self.state["frames"] += 1
+             self.state["rate"] = round(
+                 (self.state["frames"] - self.rate_started_frames - 1)
+                 / max(now - self.rate_started_at, 0.001), 1
+             )
+             self.state["resyncs"] = self.parser.resyncs
+             self.state["saturated"] += saturated_now
+             self.state["saturated_recent"] = sum(count for _, count in self.saturation_times)
+             self.state["invalid_frames"] += int(invalid_now)
+             self.state["invalid_recent"] = len(self.invalid_times)
+             if invalid_now:
+                 return
+             self.state["raw"] = list(raw)
+             self.state["updated_at"] = time.time()
+             if self.tare_requested:
+                 self.tare_frames.append(raw)
+                 self.state["status"] = "taring"
+                 self.state["message"] = "保持空载，正在采集基线"
+                 self.state["tare_progress"] = min(100, round(len(self.tare_frames) / 400 * 100))
+                 if len(self.tare_frames) >= 400:
+                     self.projector.tare(self.tare_frames)
+                     self.tare_frames = []
+                     self.tare_requested = False
+                     self.state.update(status="live", message="数据流正常", tare_progress=100)
+                 return
+             axes, delta = self.projector.project(raw)
+             self.axis_window.append(axes)
+             self.state["axes"] = [
+                 round(median(frame[i] for frame in self.axis_window), 7)
+                 for i in range(6)
+             ]
+             self.state["channels"] = [round(value, 1) for value in delta]
+             if self.state["status"] == "waiting":
+                 self.state.update(status="live", message="数据流正常")
+ 
+     def _run_replay(self):
+         with self.replay.open(newline="", encoding="utf-8-sig") as file:
+             rows = []
+             for row in csv.reader(file):
+                 if len(row) == 12:
+                     try:
+                         rows.append(tuple(int(float(value)) for value in row))
+                     except ValueError:
+                         continue
+         if len(rows) < 401:
+             raise ValueError("回放文件少于 401 帧，无法建立 2 秒空载基线")
+         self._set_status("taring", "历史回放：建立基线")
+         step = 1 / (200 * self.replay_speed)
+         next_at = time.monotonic()
+         while not self.stop_event.is_set():
+             for row in rows:
+                 if self.stop_event.is_set():
+                     break
+                 self._consume(row)
+                 next_at += step
+                 delay = next_at - time.monotonic()
+                 if delay > 0:
+                     self.stop_event.wait(delay)
+                 elif delay < -0.25:
+                     next_at = time.monotonic()
+ 
+     def _run_serial(self):
+         import serial
+ 
++        automatic = False
++        previous_automatic_start = None
+         while not self.stop_event.is_set():
++            if automatic:
++                if previous_automatic_start is not None:
++                    remaining = 5.0 - (time.monotonic() - previous_automatic_start)
++                    if remaining > 0 and self.stop_event.wait(remaining):
++                        return
++                if self.stop_event.is_set():
++                    return
++                previous_automatic_start = time.monotonic()
++                with self.lock:
++                    self.state["recovery"]["attempts"] += 1
++
++            ser = None
++            primary_fault = False
+             try:
+-                with serial.Serial(self.port, 115200, timeout=0.1) as ser:
+-                    self.parser = FrameParser()
++                if self.stop_event.is_set():
++                    return
++                ser = serial.Serial(self.port, 115200, timeout=0.1)
++                self.parser.buffer.clear()
++                with self.lock:
++                    self.rate_started_at = None
++                    self.state["rate"] = 0.0
++                    self.state["diagnostics"]["parser_pending_bytes"] = 0
++                ser.write(b"i")
++                if self.stop_event.wait(0.2) or self.stop_event.is_set():
++                    return
++                ser.reset_input_buffer()
++                if self.stop_event.is_set():
++                    return
++                ser.write(b"s")
++                last_raw_progress = time.monotonic()
++                last_frame_progress = last_raw_progress
++                pending_success = automatic
++                if automatic:
++                    self._set_status("waiting", "串口已打开，尚未收到有效数据帧")
++                while not self.stop_event.is_set():
++                    chunk = ser.read(4096)
++                    read_at = time.time()
++                    progress_at = time.monotonic()
++                    previous_resyncs = self.parser.resyncs
++                    frames = self.parser.feed(chunk)
+                     with self.lock:
+-                        self.rate_started_at = None
+-                        self.state["rate"] = 0.0
+-                        self.state["diagnostics"]["parser_pending_bytes"] = 0
+-                    ser.write(b"i")
+-                    time.sleep(0.2)
+-                    ser.reset_input_buffer()
+-                    ser.write(b"s")
+-                    self.request_tare()
+-                    last_frame = time.monotonic()
+-                    while not self.stop_event.is_set():
+-                        chunk = ser.read(4096)
+-                        read_at = time.time()
+-                        previous_resyncs = self.parser.resyncs
+-                        frames = self.parser.feed(chunk)
+-                        with self.lock:
+-                            diagnostics = self.state["diagnostics"]
+-                            diagnostics["serial_reads"] += 1
+-                            diagnostics["serial_bytes"] += len(chunk)
+-                            if chunk:
+-                                diagnostics["last_byte_at"] = read_at
+-                            diagnostics["parsed_frames"] += len(frames)
+-                            if frames:
+-                                diagnostics["last_parsed_frame_at"] = read_at
+-                            diagnostics["parser_pending_bytes"] = len(self.parser.buffer)
+-                            diagnostics["parser_discarded_bytes"] += self.parser.resyncs - previous_resyncs
+-                        for frame in frames:
+-                            self._consume(frame)
+-                            last_frame = time.monotonic()
+-                        if time.monotonic() - last_frame > 2:
+-                            self._set_status("waiting", "串口已打开，尚未收到有效数据帧")
+-                    ser.write(b"i")
++                        diagnostics = self.state["diagnostics"]
++                        diagnostics["serial_reads"] += 1
++                        diagnostics["serial_bytes"] += len(chunk)
++                        if chunk:
++                            diagnostics["last_byte_at"] = read_at
++                        diagnostics["parsed_frames"] += len(frames)
++                        if frames:
++                            diagnostics["last_parsed_frame_at"] = read_at
++                        diagnostics["parser_pending_bytes"] = len(self.parser.buffer)
++                        diagnostics["parser_discarded_bytes"] += self.parser.resyncs - previous_resyncs
++                    if chunk:
++                        last_raw_progress = progress_at
++                    if frames:
++                        last_frame_progress = progress_at
++                    for frame in frames:
++                        self._consume(frame)
++                        if pending_success and all(value <= SATURATION for value in frame):
++                            with self.lock:
++                                if self.state["status"] == "live":
++                                    self.state["recovery"]["successes"] += 1
++                                    pending_success = False
++                    progress_at = time.monotonic()
++                    if (progress_at - last_raw_progress >= 2.0 and
++                            progress_at - last_frame_progress >= 2.0):
++                        self._record_serial_fault(
++                            "serial silence: no byte or parsed-frame progress for 2.0s",
++                            "waiting",
++                            "串口已打开，尚未收到有效数据帧",
++                        )
++                        primary_fault = True
++                        automatic = True
++                        break
++                    if progress_at - last_frame_progress >= 2.0:
++                        self._set_status("waiting", "串口已打开，尚未收到有效数据帧")
+             except (OSError, serial.SerialException) as exc:
+-                self._set_status("error", f"无法连接 {self.port}：{exc}")
+-                self.stop_event.wait(3)
++                self._record_serial_fault(
++                    str(exc),
++                    "error",
++                    f"无法连接 {self.port}：{exc}",
++                )
++                primary_fault = True
++                automatic = True
++            finally:
++                if ser is not None:
++                    if not primary_fault:
++                        try:
++                            ser.write(b"i")
++                        except (OSError, serial.SerialException) as exc:
++                            if not self.stop_event.is_set():
++                                self._record_serial_fault(
++                                    str(exc), "error", f"无法连接 {self.port}：{exc}")
++                                automatic = True
++                    try:
++                        ser.close()
++                    except (OSError, serial.SerialException) as exc:
++                        if not primary_fault and not self.stop_event.is_set():
++                            self._record_serial_fault(
++                                str(exc), "error", f"无法连接 {self.port}：{exc}")
++                            automatic = True
+ 
+     def _run(self):
+         try:
+             if self.replay:
+                 self._run_replay()
+             else:
+                 self._run_serial()
+         except Exception as exc:
+             self._set_status("error", str(exc))
+ 
+ 
+ def make_handler(source):
+     class Handler(SimpleHTTPRequestHandler):
+         def __init__(self, *args, **kwargs):
+             super().__init__(*args, directory=str(ROOT / "demo_web"), **kwargs)
+ 
+         def do_GET(self):
+             if self.path == "/api/state":
+                 body = json.dumps(source.snapshot(), ensure_ascii=False).encode("utf-8")
+                 self.send_response(200)
+                 self.send_header("Content-Type", "application/json; charset=utf-8")
+                 self.send_header("Cache-Control", "no-store")
+                 self.send_header("Content-Length", str(len(body)))
+                 self.end_headers()
+                 self.wfile.write(body)
+                 return
+             super().do_GET()
+ 
+         def do_POST(self):
+             if self.path != "/api/tare":
+                 self.send_error(404)
+                 return
+             source.request_tare()
+             self.send_response(204)
+             self.send_header("Content-Length", "0")
+             self.end_headers()
+ 
+         def log_message(self, format, *args):
+             if not self.path.startswith("/api/state"):
+                 super().log_message(format, *args)
+ 
+     return Handler
+ 
+ 
+ def main():
+     parser = argparse.ArgumentParser(description=__doc__)
+     parser.add_argument("--port", default="COM10", help="Teensy USB serial port (default COM10)")
+     parser.add_argument("--replay", help="Replay a 12-column raw CSV instead of opening COM10")
+     parser.add_argument("--host", default="127.0.0.1")
+     parser.add_argument("--http-port", type=int, default=8765)
+     parser.add_argument("--no-browser", action="store_true")
+     args = parser.parse_args()
+     source = DemoSource(port=args.port, replay=args.replay)
+     server = ThreadingHTTPServer((args.host, args.http_port), make_handler(source))
+     source.start()
+     url = f"http://{args.host}:{args.http_port}/"
+     print(f"CoinFT dashboard: {url}")
+     print("Mode: HISTORICAL REPLAY" if args.replay else f"Mode: LIVE {args.port}")
+     if not args.no_browser:
+         webbrowser.open(url)
+     try:
+         server.serve_forever(poll_interval=0.2)
+     except KeyboardInterrupt:
+         pass
+     finally:
+         server.shutdown()
+         server.server_close()
+         source.stop()
+ 
+ 
+ if __name__ == "__main__":
+     main()
+-
+
+
+Full-context existing diagnostics test diff:
+warning: in the working copy of '.\.superpowers\sdd\stream-recovery-before\tests\test_serial_diagnostics.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.\tests\test_serial_diagnostics.py', LF will be replaced by CRLF the next time Git touches it
+diff --git "a/.\\.superpowers\\sdd\\stream-recovery-before\\tests\\test_serial_diagnostics.py" "b/.\\tests\\test_serial_diagnostics.py"
+index 7ceafa3..87571ed 100644
+--- "a/.\\.superpowers\\sdd\\stream-recovery-before\\tests\\test_serial_diagnostics.py"
++++ "b/.\\tests\\test_serial_diagnostics.py"
+@@ -1,145 +1,147 @@
+ """Exercise serial diagnostics through the real parser and consumer, without hardware."""
+ 
+ import struct
+ import sys
+ import types
+ import unittest
+ from pathlib import Path
+ from unittest.mock import patch
+ 
+ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+ from coinft_demo import DemoSource
+ 
+ 
+ ZEROS = dict(serial_reads=0, serial_bytes=0, parsed_frames=0, last_byte_at=0,
+              last_parsed_frame_at=0, parser_pending_bytes=0, parser_discarded_bytes=0)
+ 
+ 
+ def frame(value):
+     return b"\x00\x00" + struct.pack("<12H", *([value] * 12))
+ 
+ 
+ class SerialDiagnosticsTests(unittest.TestCase):
+     def run_sessions(self, sessions):
+         source = DemoSource(port="TEST_ONLY")
+         snapshots, openings, commands = [], [], []
+         clock = [100.0]
+         remaining = iter(sessions)
+ 
+         class FakeSerial:
+             def __init__(self, port, baud, timeout):
+                 self.chunks = iter(next(remaining))
+                 self.commands = []
+                 commands.append(self.commands)
+ 
+             def __enter__(self):
+                 return self
+ 
+             def __exit__(self, *args):
+                 return False
+ 
+             def write(self, command):
+                 self.commands.append(command)
+                 if command == b"i" and len(self.commands) == 1:
+                     openings.append(source.snapshot())
+ 
+             def reset_input_buffer(self):
+                 pass
+ 
++            def close(self):
++                pass
++
+             def read(self, size):
+                 snapshots.append(source.snapshot())
+                 item = next(self.chunks)
+                 if isinstance(item, Exception):
+                     raise item
+                 clock[0] += 1
+                 chunk, final = item
+                 if final:
+                     source.stop_event.set()
+                 return chunk
+ 
+         fake_module = types.SimpleNamespace(Serial=FakeSerial, SerialException=OSError)
+         with patch.dict(sys.modules, serial=fake_module), \
+                 patch("coinft_demo.time.sleep"), \
+                 patch("coinft_demo.time.monotonic", return_value=1.0), \
+                 patch("coinft_demo.time.time", side_effect=lambda: clock[0]) as wall_time, \
+                 patch.object(source.stop_event, "wait", return_value=False):
+             source._run_serial()
+         snapshots.append(source.snapshot())
+         return source, snapshots, openings, commands, wall_time.call_count
+ 
+     def diagnostics(self, snapshot):
+         self.assertIn("diagnostics", snapshot)
+         return snapshot["diagnostics"]
+ 
+     def test_initial_values_and_snapshot_isolation(self):
+         source = DemoSource(port="TEST_ONLY")
+         first, second = source.snapshot(), source.snapshot()
+         self.assertEqual(self.diagnostics(first), ZEROS)
+         first["diagnostics"]["serial_reads"] = 99
+         self.assertEqual(self.diagnostics(second), ZEROS)
+         self.assertEqual(self.diagnostics(source.snapshot()), ZEROS)
+ 
+     def test_empty_and_garbage_reads_count_bytes_and_discard_without_frames(self):
+         _, states, _, commands, calls = self.run_sessions([
+             [(b"", False), (b"x" * 30, False), (b"", True)]])
+         self.assertEqual(self.diagnostics(states[1]), dict(ZEROS, serial_reads=1))
+         expected = dict(ZEROS, serial_reads=2, serial_bytes=30, last_byte_at=102,
+                         parser_pending_bytes=1, parser_discarded_bytes=29)
+         self.assertEqual(self.diagnostics(states[2]), expected)
+         self.assertEqual(self.diagnostics(states[3]), dict(expected, serial_reads=3))
+         self.assertEqual(states[3]["frames"], 0)
+         self.assertEqual(states[3]["resyncs"], 0)
+         self.assertEqual(commands, [[b"i", b"s", b"i"]])
+         self.assertEqual(calls, 3)
+ 
+     def test_split_frame_waits_for_following_header_and_processes_last_read(self):
+         wire = frame(1000)
+         source, states, _, commands, calls = self.run_sessions([
+             [(wire[:10], False), (wire[10:], False), (b"\x00\x00", True)]])
+         for index, pending in ((1, 10), (2, 26)):
+             diag = self.diagnostics(states[index])
+             self.assertEqual(diag["parser_pending_bytes"], pending)
+             self.assertEqual(diag["parsed_frames"], 0)
+         self.assertEqual(self.diagnostics(states[-1]), dict(
+             ZEROS, serial_reads=3, serial_bytes=28, parsed_frames=1,
+             last_byte_at=103, last_parsed_frame_at=103, parser_pending_bytes=2))
+         self.assertEqual(states[-1]["raw"], [1000] * 12)
+         self.assertEqual(states[-1]["updated_at"], 103)
+         self.assertEqual(len(source.tare_frames), 1)
+         self.assertEqual(commands, [[b"i", b"s", b"i"]])
+         self.assertEqual(calls, 4)  # Three reads and the unchanged valid-frame consumer.
+ 
+     def test_rejected_parsed_frame_advances_diagnostics_but_not_valid_update(self):
+         _, states, _, _, calls = self.run_sessions([
+             [(frame(1000) + b"\x00\x00", False),
+              (frame(65535)[2:] + b"\x00\x00", True)]])
+         before, after = states[1], states[2]
+         self.assertEqual(self.diagnostics(after)["parsed_frames"], 2)
+         self.assertEqual(after["diagnostics"]["last_parsed_frame_at"], 102)
+         self.assertEqual(after["frames"], 2)
+         self.assertEqual(after["invalid_frames"], 1)
+         self.assertEqual(after["updated_at"], before["updated_at"])
+         self.assertEqual(after["raw"], before["raw"])
+         self.assertEqual(calls, 3)
+ 
+     def test_reopen_preserves_totals_and_times_and_resets_pending(self):
+         _, states, openings, commands, calls = self.run_sessions([
+             [(b"x" * 30, False), (frame(1000) + b"\x00\x00", False),
+              OSError("test disconnect")],
+             [(b"", False), (b"y" * 30, True)]])
+         before = self.diagnostics(states[2])
+         reopened = self.diagnostics(openings[1])
+         self.assertEqual(reopened, dict(before, parser_pending_bytes=0))
+         self.assertEqual(self.diagnostics(states[4]), dict(reopened, serial_reads=3))
+         final = self.diagnostics(states[-1])
+         self.assertEqual(final, dict(reopened, serial_reads=4, serial_bytes=88,
+                                     last_byte_at=104, parser_pending_bytes=1,
+                                     parser_discarded_bytes=59))
+         self.assertEqual(before["last_parsed_frame_at"], 102)
+         self.assertEqual(commands, [[b"i", b"s"], [b"i", b"s", b"i"]])
+-        self.assertEqual(calls, 5)
++        self.assertEqual(calls, 6)  # Includes the frozen host fault timestamp.
+ 
+ 
+ if __name__ == "__main__":
+     unittest.main()
+-
+
+
+New test file (full):
+"""Deterministic recovery tests for the real serial reader, parser, and consumer."""
+
+import struct
+import sys
+import types
+import unittest
+from dataclasses import dataclass
+from pathlib import Path
+from unittest.mock import patch
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
+from coinft_demo import DemoSource, RelativeProjector, SATURATION
+
+
+def wire(value, count=1):
+    body = b"\x00\x00" + struct.pack("<12H", *([value] * 12))
+    return body * count + b"\x00\x00"
+
+
+@dataclass
+class Read:
+    delay: float
+    data: object
+    stop: bool = False
+
+
+class Clock:
+    def __init__(self):
+        self.now = 100.0
+
+    def advance(self, seconds):
+        self.now += seconds
+
+    def monotonic(self):
+        return self.now
+
+    def wall(self):
+        return 1_800_000_000.0 + self.now
+
+
+class FakeEvent:
+    def __init__(self, clock, cancel_waits=(), cancel_wait_index=None, wait_actions=()):
+        self.clock = clock
+        self.cancel_waits = list(cancel_waits)
+        self.cancel_wait_index = cancel_wait_index
+        self.wait_actions = list(wait_actions)
+        self.waits = []
+        self.set_value = False
+
+    def is_set(self):
+        return self.set_value
+
+    def set(self):
+        self.set_value = True
+
+    def wait(self, timeout=None):
+        self.waits.append((self.clock.now, timeout))
+        self.clock.advance(timeout or 0)
+        if self.wait_actions and abs(timeout - self.wait_actions[0][0]) < 1e-9:
+            _, action = self.wait_actions.pop(0)
+            action()
+        if self.cancel_waits and abs(timeout - self.cancel_waits[0]) < 1e-9:
+            self.cancel_waits.pop(0)
+            self.set()
+        if self.cancel_wait_index == len(self.waits):
+            self.set()
+        return self.is_set()
+
+
+class SerialHarness:
+    def __init__(self, source, sessions, *, cancel_waits=(), cancel_wait_index=None,
+                 wait_actions=(), max_reads=1000):
+        self.source = source
+        self.clock = Clock()
+        self.event = FakeEvent(self.clock, cancel_waits, cancel_wait_index, wait_actions)
+        self.source.stop_event = self.event
+        self.sessions = iter(sessions)
+        self.max_reads = max_reads
+        self.read_count = 0
+        self.opens = []
+        self.commands = []
+        self.resets = []
+        self.closes = []
+        self.read_snapshots = []
+
+        harness = self
+
+        class FakeSerial:
+            def __init__(self, port, baud, timeout):
+                if port != "TEST_ONLY" or baud != 115200 or timeout != 0.1:
+                    raise AssertionError((port, baud, timeout))
+                self.session = next(harness.sessions)
+                harness.opens.append((harness.clock.now, port))
+                if isinstance(self.session, Exception):
+                    raise self.session
+                self.reads = iter(self.session.get("reads", ()))
+                self.write_failures = list(self.session.get("write_failures", ()))
+                self.closed = False
+
+            def write(self, command):
+                harness.commands.append((harness.clock.now, command, id(self)))
+                if self.write_failures and command == self.write_failures[0][0]:
+                    _, error = self.write_failures.pop(0)
+                    raise error
+
+            def reset_input_buffer(self):
+                harness.resets.append((harness.clock.now, id(self)))
+
+            def read(self, size):
+                if size != 4096:
+                    raise AssertionError(size)
+                harness.read_count += 1
+                harness.read_snapshots.append(harness.source.snapshot())
+                if harness.read_count > harness.max_reads:
+                    harness.event.set()
+                    raise AssertionError("serial recovery loop exceeded bounded reads")
+                try:
+                    item = next(self.reads)
+                except StopIteration:
+                    harness.event.set()
+                    return b""
+                harness.clock.advance(item.delay)
+                if item.stop:
+                    harness.event.set()
+                if isinstance(item.data, Exception):
+                    raise item.data
+                return item.data
+
+            def close(self):
+                self.closed = True
+                harness.closes.append((harness.clock.now, id(self)))
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *args):
+                self.close()
+                return False
+
+        self.serial_module = types.SimpleNamespace(Serial=FakeSerial, SerialException=OSError)
+
+    def run(self):
+        with patch.dict(sys.modules, serial=self.serial_module), \
+                patch("coinft_demo.time.monotonic", side_effect=self.clock.monotonic), \
+                patch("coinft_demo.time.time", side_effect=self.clock.wall), \
+                patch("coinft_demo.time.sleep", side_effect=self.clock.advance):
+            self.source._run_serial()
+        return self.source.snapshot()
+
+    def command_bytes(self):
+        return [command for _, command, _ in self.commands]
+
+
+class SerialRecoveryTests(unittest.TestCase):
+    def source(self):
+        return DemoSource(port="TEST_ONLY")
+
+    def live_source(self, baseline=1000):
+        source = self.source()
+        matrix = [[0.0] * 6 for _ in range(24)]
+        matrix[0][0] = 1.0
+        source.projector = RelativeProjector(matrix)
+        source.projector.baseline = [float(baseline)] * 12
+        source.tare_requested = False
+        source.state.update(status="live", raw=[baseline] * 12)
+        return source
+
+    def test_silence_boundary_reopens_only_at_two_seconds_and_same_port(self):
+        source = self.live_source()
+        harness = SerialHarness(source, [
+            {"reads": [Read(1.999, b""), Read(0.001, b"")]},
+            {"reads": [Read(0, wire(1010), stop=True)]},
+        ])
+        state = harness.run()
+
+        self.assertEqual([port for _, port in harness.opens], ["TEST_ONLY", "TEST_ONLY"])
+        first_start = next(at for at, command, _ in harness.commands if command == b"s")
+        self.assertGreaterEqual(harness.opens[1][0] - first_start, 2.0)
+        self.assertEqual(state["recovery"]["attempts"], 1)
+        self.assertEqual(state["recovery"]["successes"], 1)
+        self.assertEqual(harness.command_bytes(), [b"i", b"s", b"i", b"s", b"i"])
+        self.assertEqual(len(harness.resets), 2)
+        self.assertTrue(all(command in (b"i", b"s") for command in harness.command_bytes()))
+
+    def test_progressing_valid_invalid_saturated_and_garbage_streams_do_not_reopen(self):
+        for chunks in (
+                [wire(1000), wire(1000), wire(1000)],
+                [wire(1200, 300), wire(1200, 300), wire(1200, 300)],
+                [wire(SATURATION), wire(SATURATION), wire(SATURATION)],
+                [wire(65535), wire(65535), wire(65535)],
+                [b"garbage" * 20, b"garbage" * 20, b"garbage" * 20]):
+            with self.subTest(first=chunks[0][:8]):
+                source = self.live_source()
+                reads = [Read(1.0, chunk, stop=index == 2)
+                         for index, chunk in enumerate(chunks)]
+                harness = SerialHarness(source, [{"reads": reads}])
+                state = harness.run()
+                self.assertEqual(len(harness.opens), 1)
+                self.assertEqual(state["recovery"]["attempts"], 0)
+                self.assertEqual(harness.command_bytes(), [b"i", b"s", b"i"])
+
+    def test_failed_automatic_opens_are_visible_and_spaced_five_seconds(self):
+        source = self.live_source()
+        harness = SerialHarness(source, [
+            {"reads": [Read(2.0, b"")]},
+            OSError("busy one"),
+            OSError("busy two"),
+            {"reads": [Read(0, wire(1001), stop=True)]},
+        ])
+        state = harness.run()
+        automatic_starts = [opened for opened, _ in harness.opens[1:]]
+        self.assertEqual(state["recovery"]["attempts"], 3)
+        self.assertEqual(state["recovery"]["successes"], 1)
+        self.assertGreaterEqual(automatic_starts[1] - automatic_starts[0], 5.0)
+        self.assertGreaterEqual(automatic_starts[2] - automatic_starts[1], 5.0)
+        self.assertIn("busy two", state["recovery"]["last_fault"]["reason"])
+
+    def test_repeated_silent_attempts_are_spaced_five_seconds(self):
+        source = self.live_source()
+        harness = SerialHarness(source, [
+            {"reads": [Read(2.0, b"")]},
+            {"reads": [Read(2.0, b"")]},
+            {"reads": [Read(0, wire(1001), stop=True)]},
+        ])
+        state = harness.run()
+        automatic_starts = [opened for opened, _ in harness.opens[1:]]
+        self.assertGreaterEqual(automatic_starts[1] - automatic_starts[0], 5.0)
+        self.assertEqual(state["recovery"]["attempts"], 2)
+        self.assertEqual(state["recovery"]["successes"], 1)
+
+    def test_read_error_preserves_pending_fault_diagnostics_before_reopen_clear(self):
+        source = self.live_source()
+        partial = wire(1000)[:10]
+        harness = SerialHarness(source, [
+            {"reads": [Read(0.1, partial), Read(0.1, OSError("read lost"))]},
+            {"reads": [Read(0, b"", stop=True)]},
+        ])
+        state = harness.run()
+        fault = state["recovery"]["last_fault"]
+        self.assertIn("read lost", fault["reason"])
+        self.assertEqual(fault["diagnostics"]["parser_pending_bytes"], 10)
+        self.assertEqual(fault["diagnostics"]["serial_reads"], 1)
+        self.assertEqual(state["diagnostics"]["parser_pending_bytes"], 0)
+        self.assertEqual(state["diagnostics"]["serial_reads"], 2)
+        self.assertEqual(state["frames"], fault["frames"])
+
+    def test_silence_fault_freezes_pending_discard_and_resync_before_clear(self):
+        source = self.live_source()
+        harness = SerialHarness(source, [
+            {"reads": [Read(0.1, b"x" * 30), Read(2.0, b"")]},
+            {"reads": [Read(0, wire(1000), stop=True)]},
+        ])
+        state = harness.run()
+        fault_diagnostics = state["recovery"]["last_fault"]["diagnostics"]
+        self.assertEqual(fault_diagnostics["parser_pending_bytes"], 1)
+        self.assertEqual(fault_diagnostics["parser_discarded_bytes"], 29)
+        self.assertEqual(state["diagnostics"]["parser_pending_bytes"], 2)
+        self.assertEqual(state["diagnostics"]["parser_discarded_bytes"], 29)
+        self.assertEqual(source.parser.resyncs, 29)
+        self.assertEqual(state["resyncs"], 29)
+
+    def test_stop_during_startup_and_cooldown_prevents_later_start_or_open(self):
+        startup_source = self.live_source()
+        startup = SerialHarness(startup_source, [{"reads": []}], cancel_waits=(0.2,))
+        startup.run()
+        self.assertEqual(startup.command_bytes(), [b"i", b"i"])
+        self.assertEqual(len(startup.closes), 1)
+        self.assertEqual(len(startup.resets), 0)
+
+        automatic_startup_source = self.live_source()
+        automatic_startup = SerialHarness(automatic_startup_source, [
+            {"reads": [Read(0, OSError("lost"))]},
+            {"reads": []},
+        ], cancel_wait_index=2)
+        automatic_state = automatic_startup.run()
+        self.assertEqual(len(automatic_startup.opens), 2)
+        self.assertEqual(automatic_startup.command_bytes(), [b"i", b"s", b"i", b"i"])
+        self.assertEqual(len(automatic_startup.resets), 1)
+        self.assertEqual(automatic_state["recovery"]["attempts"], 1)
+
+        cooldown_source = self.live_source()
+        cooldown = SerialHarness(cooldown_source, [
+            OSError("initial open failed"),
+            OSError("automatic open failed"),
+        ], cancel_waits=(5.0,))
+        state = cooldown.run()
+        self.assertEqual(len(cooldown.opens), 2)
+        self.assertEqual(state["recovery"]["attempts"], 1)
+
+    def test_manual_tare_requested_during_cooldown_survives_reopen(self):
+        source = self.live_source(900)
+        harness = SerialHarness(source, [
+            {"reads": [Read(0, OSError("lost"))]},
+            OSError("busy"),
+            {"reads": [Read(0.1, wire(1000, 400), stop=True)]},
+        ], wait_actions=[(5.0, source.request_tare)])
+        state = harness.run()
+        self.assertFalse(source.tare_requested)
+        self.assertEqual(source.projector.baseline, [1000.0] * 12)
+        self.assertEqual(state["recovery"]["successes"], 1)
+
+    def test_recovery_preserves_baseline_frames_counters_and_held_load(self):
+        source = self.live_source(1000)
+        source._consume((1005,) * 12)
+        baseline = list(source.projector.baseline)
+        before = source.snapshot()
+        harness = SerialHarness(source, [
+            {"reads": [Read(2.0, b"")]},
+            {"reads": [Read(0.1, wire(1100, 30), stop=True)]},
+        ])
+        state = harness.run()
+        self.assertEqual(source.projector.baseline, baseline)
+        self.assertFalse(source.tare_requested)
+        self.assertGreater(state["frames"], before["frames"])
+        self.assertGreater(state["diagnostics"]["parsed_frames"], 0)
+        self.assertEqual(state["channels"], [100.0] * 12)
+        self.assertNotEqual(state["axes"][0], 0.0)
+        self.assertGreater(state["diagnostics"]["last_byte_at"], 0)
+        self.assertGreater(state["diagnostics"]["last_parsed_frame_at"], 0)
+
+    def test_initial_tare_acquisition_continues_across_reconnect(self):
+        source = self.source()
+        harness = SerialHarness(source, [
+            {"reads": [Read(0.1, wire(1000, 200)), Read(0.1, OSError("split"))]},
+            {"reads": [Read(0.1, wire(1000, 100)), Read(0.1, OSError("split again"))]},
+            {"reads": [Read(0.1, wire(1000, 100), stop=True)]},
+        ])
+        state = harness.run()
+        self.assertTrue(all(snapshot["recovery"]["successes"] == 0
+                            for snapshot in harness.read_snapshots))
+        self.assertFalse(source.tare_requested)
+        self.assertEqual(source.projector.baseline, [1000.0] * 12)
+        self.assertEqual(state["frames"], 400)
+        self.assertEqual(state["recovery"]["successes"], 1)
+        self.assertEqual(state["status"], "live")
+
+    def test_start_write_error_is_visible_and_retried(self):
+        source = self.live_source()
+        harness = SerialHarness(source, [
+            {"reads": [], "write_failures": [(b"s", OSError("start write failed"))]},
+            {"reads": [Read(0, wire(1000), stop=True)]},
+        ])
+        state = harness.run()
+        self.assertEqual(state["recovery"]["attempts"], 1)
+        self.assertEqual(state["recovery"]["successes"], 1)
+        self.assertIn("start write failed", state["recovery"]["last_fault"]["reason"])
+
+    def test_manual_tare_continues_across_reconnect_and_success_waits_for_live(self):
+        source = self.live_source(900)
+        source.request_tare()
+        harness = SerialHarness(source, [
+            {"reads": [Read(0.1, wire(1000, 399)), Read(0.1, OSError("split"))]},
+            {"reads": [Read(0.1, wire(1000), stop=True)]},
+        ])
+        state = harness.run()
+        self.assertFalse(source.tare_requested)
+        self.assertEqual(source.projector.baseline, [1000.0] * 12)
+        self.assertEqual(state["recovery"]["successes"], 1)
+        self.assertEqual(state["status"], "live")
+
+    def test_invalid_recovered_data_is_not_success_and_snapshot_is_isolated(self):
+        source = self.live_source()
+        harness = SerialHarness(source, [
+            {"reads": [Read(2.0, b"")]},
+            {"reads": [Read(0.1, wire(65535)), Read(0.1, OSError("still bad"))]},
+            {"reads": [Read(0.1, wire(1000), stop=True)]},
+        ])
+        state = harness.run()
+        self.assertEqual(state["recovery"]["attempts"], 2)
+        self.assertEqual(state["recovery"]["successes"], 1)
+        first = source.snapshot()
+        first["recovery"]["attempts"] = 99
+        first["recovery"]["last_fault"]["diagnostics"]["serial_reads"] = 99
+        second = source.snapshot()
+        self.assertEqual(second["recovery"]["attempts"], 2)
+        self.assertNotEqual(second["recovery"]["last_fault"]["diagnostics"]["serial_reads"], 99)
+
+
+if __name__ == "__main__":
+    unittest.main()
+
+

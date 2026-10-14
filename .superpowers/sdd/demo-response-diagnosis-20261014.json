@@ -1,0 +1,153 @@
+{
+  "scope": "read-only snapshot, physical pose not explicitly labeled; not acceptance",
+  "foreground": {
+    "hwnd": 133478,
+    "title": "CoinFT · 六维响应演示 - 用户配置 1 - Microsoft​ Edge"
+  },
+  "profile_sha256": "1df74f4570f5119f180f9e7830120abe555bd6c37cc33ab3dbc33b8dba5a6020",
+  "recording_pages": [
+    {
+      "profile": {
+        "version": 1,
+        "mode": "qualitative",
+        "assemblyId": "coinft-current-20260925",
+        "normal": {
+          "threshold": 100,
+          "span": 600
+        },
+        "shear": {
+          "enabled": true,
+          "weights": [
+            0.31590282776546447,
+            -0.12205855363676356,
+            -0.3341345639198642,
+            0.1321512275490956,
+            -0.6043682958768727,
+            0.29582120955720936,
+            0.6305046426094868,
+            -0.3138184940477558
+          ],
+          "pressLeak": [
+            -0.02643880353355445,
+            -0.03144711796000465,
+            -0.1214381970191369,
+            0.2357389209364859,
+            0.07993594816592298,
+            0.1752984546744665,
+            0.014867875399405917,
+            -0.24604676712122375
+          ],
+          "threshold": 58.330169520837785,
+          "span": 58.330169520837785
+        },
+        "rightLabel": "−X",
+        "leftLabel": "+X",
+        "evidence": [
+          ".superpowers/sdd/center-pull-refit-20261006-report.json"
+        ]
+      },
+      "baseline": [
+        -21,
+        -1.5,
+        -22,
+        -10,
+        -1,
+        15,
+        -5,
+        -9,
+        -12,
+        -7,
+        -13,
+        -2
+      ],
+      "paused": false,
+      "frame": 180540,
+      "channels": [
+        987,
+        1027.5,
+        884,
+        1247,
+        1254,
+        1327,
+        1228,
+        693,
+        941,
+        916,
+        1094,
+        930
+      ],
+      "normal": 1,
+      "shear": 0.9482803380692967,
+      "renderedShear": 0.9282122028756548,
+      "score": 94.66377823751318,
+      "visibility": "visible",
+      "focused": true,
+      "matches_installed": true
+    }
+  ],
+  "state": {
+    "mode": "live",
+    "status": "live",
+    "message": "数据流正常",
+    "port": "COM6",
+    "axes": [
+      0.16663,
+      -0.1867212,
+      -3.0657291,
+      0.0003254,
+      0.002021,
+      0.001817
+    ],
+    "channels": [
+      1271,
+      1387.5,
+      1287,
+      1621,
+      1470,
+      1732,
+      1347,
+      985,
+      1241,
+      1241,
+      1424,
+      1204
+    ],
+    "raw": [
+      29634,
+      29428,
+      27826,
+      29089,
+      28461,
+      28802,
+      29280,
+      27664,
+      29999,
+      29639,
+      30848,
+      29686
+    ],
+    "rate": 200,
+    "frames": 180125,
+    "resyncs": 0,
+    "saturated": 1,
+    "saturated_recent": 0,
+    "invalid_frames": 0,
+    "invalid_recent": 0,
+    "tare_progress": 100,
+    "updated_at": 1791962679.9908035,
+    "diagnostics": {
+      "serial_reads": 8280,
+      "serial_bytes": 4683276,
+      "parsed_frames": 180125,
+      "last_byte_at": 1791962679.9893434,
+      "last_parsed_frame_at": 1791962679.9893434,
+      "parser_pending_bytes": 26,
+      "parser_discarded_bytes": 0
+    },
+    "recovery": {
+      "attempts": 0,
+      "successes": 0,
+      "last_fault": null
+    }
+  }
+}

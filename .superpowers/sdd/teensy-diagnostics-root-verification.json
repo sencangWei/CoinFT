@@ -1,0 +1,32 @@
+{
+  "date": "2026-09-28",
+  "scope": "Frozen diagnostic firmware plus read-only observer; software verification only",
+  "full_suite": {
+    "command": "D:/conda/python.exe -m unittest discover -s tests -q",
+    "tests": 110,
+    "seconds": 68.823,
+    "exit_code": 0,
+    "result": "OK",
+    "noise": "Pre-existing localhost test fixture resource404/request logs and CAPTURE_REPLAY metrics; no failures"
+  },
+  "task2_focused": {
+    "command": "D:/conda/python.exe -m unittest discover -s tests -p test_teensy_diagnostics_capture.py -v",
+    "tests": 7,
+    "seconds": 0.004,
+    "exit_code": 0
+  },
+  "target_build_evidence": "teensy-diagnostics-task-1-root-verification.json",
+  "pre_upload_state": {
+    "usb_serial": "16454680",
+    "vid": "16C0",
+    "pid": "0483",
+    "data_port": "COM10",
+    "service_pid": 44864,
+    "service_command": "D:/conda/python.exe coinft_demo.py --port COM10",
+    "operator_confirmed_model": "Teensy4.0",
+    "upload_performed": false,
+    "empty_state_confirmed_for_upload": false,
+    "service_closed": false
+  },
+  "limits": "Final independent integration gate Approved for software handoff; no Critical/Important. No calibrated force/direction, hardware runtime timing, physical stream delivery or fault root-cause acceptance. Hardware deployment still awaits current empty-state/closed-service checks."
+}

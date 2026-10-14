@@ -1,0 +1,17 @@
+{
+  "release_date": "2026-10-14",
+  "scope": "qualitative center normal indentation and bidirectional X shear demo",
+  "calibrated_force_claim": false,
+  "upstream_archive": "coin-ft-coin-ft-8166d49",
+  "hardware": "Teensy 4.0, one CoinFT CY8C4149AZI-S593, UART level conversion",
+  "direction": {"minus_x": "screen right", "plus_x": "screen left"},
+  "active_tuning_source": "firmware/teensy/teensy_coinft_serial_interface.cpp",
+  "active_tuning": [[12,50,50],[12,30,72],[12,30,81],[12,30,82],[12,30,83],[12,30,85],[12,30,76],[12,30,75],[12,100,17],[12,100,26],[12,80,58],[12,80,42]],
+  "tuning_persistence": "volatile in CoinFT; Teensy sends at startup only; late CoinFT power needs resend",
+  "profile": {"path": "demo_web/shear_demo_profile.json", "sha256": "1df74f4570f5119f180f9e7830120abe555bd6c37cc33ab3dbc33b8dba5a6020", "status": "ACTIVE_VISUAL_20261006"},
+  "psoc_hex": {"path": "firmware/psoc/CoinFT_V2_firmware.hex", "sha256": "615d38614e587bbb03512ab7565b7451839bd992a490ec1541d70e0ba2249725"},
+  "demo": {"path": "demo/CoinFT_demo_20261014_after_2min.mp4", "sha256": "0e1a007613cb0942b7f4b6153fe714dcca5d97f17113c4489ddb479dbca12f2f", "duration_seconds": 95.92},
+  "historical_matrix": {"path": "calibration/coinft_calib.json", "status": "HISTORICAL_CALIB_20260911, not current sensor metrology acceptance"},
+  "known_limitations": ["light center minus-X pull can be unstable", "animation is not actual surface/contact localization", "historical calibration not independently validated for current combined loads"],
+  "operator_decision": "Keep current usable demo and original trends; do not retune or recollect without a new user request"
+}

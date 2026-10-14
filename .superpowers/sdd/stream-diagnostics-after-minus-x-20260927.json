@@ -1,0 +1,96 @@
+{
+  "scope": "post-capture incoming-stream observation",
+  "operator_release_confirmed": false,
+  "pid": 54804,
+  "samples": [
+    {
+      "observed_at": "2026-09-27T01:03:02.1131651+08:00",
+      "host_epoch": 1790442182.116,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3801114,
+      "updated_at": 1790442182.0086646,
+      "rate": 200,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100,
+      "diagnostics": {
+        "serial_reads": 174540,
+        "serial_bytes": 98828990,
+        "parsed_frames": 3801114,
+        "last_byte_at": 1790442182.0076795,
+        "last_parsed_frame_at": 1790442182.0076795,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "observed_at": "2026-09-27T01:03:03.1438621+08:00",
+      "host_epoch": 1790442183.143,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3801332,
+      "updated_at": 1790442183.0964482,
+      "rate": 200,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100,
+      "diagnostics": {
+        "serial_reads": 174550,
+        "serial_bytes": 98834658,
+        "parsed_frames": 3801332,
+        "last_byte_at": 1790442183.0950208,
+        "last_parsed_frame_at": 1790442183.0950208,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "observed_at": "2026-09-27T01:03:04.1494226+08:00",
+      "host_epoch": 1790442184.149,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3801527,
+      "updated_at": 1790442184.0725803,
+      "rate": 200,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100,
+      "diagnostics": {
+        "serial_reads": 174559,
+        "serial_bytes": 98839728,
+        "parsed_frames": 3801527,
+        "last_byte_at": 1790442184.0714269,
+        "last_parsed_frame_at": 1790442184.0714269,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "observed_at": "2026-09-27T01:03:05.1526157+08:00",
+      "host_epoch": 1790442185.152,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3801724,
+      "updated_at": 1790442185.0580666,
+      "rate": 200,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100,
+      "diagnostics": {
+        "serial_reads": 174568,
+        "serial_bytes": 98844850,
+        "parsed_frames": 3801724,
+        "last_byte_at": 1790442185.0570333,
+        "last_parsed_frame_at": 1790442185.0570333,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    }
+  ],
+  "conclusion": "All four snapshots live with new bytes/parsed/valid frames; no invalid/saturation/discard. Do not label physically unloaded without operator confirmation."
+}

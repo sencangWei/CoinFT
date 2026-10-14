@@ -1,0 +1,1815 @@
+{
+  "capture_ok": false,
+  "pose": "press_before",
+  "owner": {
+    "pid": 18408,
+    "created": 1790588863.8064127
+  },
+  "error": "ValueError('byte/frame observation not advancing')",
+  "observations": [
+    {
+      "host": "2026-09-28T20:23:26.389921+08:00",
+      "monotonic": 155687.125471,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "����������",
+        "port": "COM6",
+        "axes": [
+          0.0040301,
+          -0.0213297,
+          -0.0572265,
+          -0.0000044,
+          0.0000618,
+          0.000089
+        ],
+        "channels": [
+          19,
+          66,
+          23,
+          39,
+          42,
+          10,
+          22.5,
+          10,
+          26.5,
+          42.5,
+          29,
+          40
+        ],
+        "raw": [
+          27674,
+          27117,
+          25553,
+          26432,
+          26012,
+          26070,
+          26959,
+          25756,
+          28371,
+          27989,
+          28945,
+          28050
+        ],
+        "rate": 199.6,
+        "frames": 1864865,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 62,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790598206.373604,
+        "diagnostics": {
+          "serial_reads": 85950,
+          "serial_bytes": 48486568,
+          "parsed_frames": 1864865,
+          "last_byte_at": 1790598206.3725922,
+          "last_parsed_frame_at": 1790598206.3725922,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 3,
+          "successes": 2,
+          "last_fault": {
+            "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+            "observed_at": 1790595839.1720595,
+            "frames": 1393256,
+            "diagnostics": {
+              "serial_reads": 64201,
+              "serial_bytes": 36224708,
+              "parsed_frames": 1393256,
+              "last_byte_at": 1790595834.8201804,
+              "last_parsed_frame_at": 1790595834.8201804,
+              "parser_pending_bytes": 0,
+              "parser_discarded_bytes": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "host": "2026-09-28T20:23:26.484505+08:00",
+      "monotonic": 155687.2200148,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "����������",
+        "port": "COM6",
+        "axes": [
+          0.0021157,
+          -0.0205299,
+          -0.0634154,
+          -0.0000137,
+          0.0000551,
+          0.0000704
+        ],
+        "channels": [
+          -49,
+          84,
+          -81,
+          58,
+          43,
+          39,
+          44.5,
+          31,
+          28.5,
+          23.5,
+          30,
+          23
+        ],
+        "raw": [
+          27606,
+          27135,
+          25449,
+          26451,
+          26013,
+          26099,
+          26981,
+          25777,
+          28373,
+          27970,
+          28946,
+          28033
+        ],
+        "rate": 199.6,
+        "frames": 1864887,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 62,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790598206.4836907,
+        "diagnostics": {
+          "serial_reads": 85951,
+          "serial_bytes": 48487140,
+          "parsed_frames": 1864887,
+          "last_byte_at": 1790598206.482684,
+          "last_parsed_frame_at": 1790598206.482684,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 3,
+          "successes": 2,
+          "last_fault": {
+            "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+            "observed_at": 1790595839.1720595,
+            "frames": 1393256,
+            "diagnostics": {
+              "serial_reads": 64201,
+              "serial_bytes": 36224708,
+              "parsed_frames": 1393256,
+              "last_byte_at": 1790595834.8201804,
+              "last_parsed_frame_at": 1790595834.8201804,
+              "parser_pending_bytes": 0,
+              "parser_discarded_bytes": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "host": "2026-09-28T20:23:26.608756+08:00",
+      "monotonic": 155687.3442717,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "����������",
+        "port": "COM6",
+        "axes": [
+          0.0057289,
+          -0.0235321,
+          -0.098773,
+          0.0000014,
+          0.0000587,
+          0.0000712
+        ],
+        "channels": [
+          67,
+          -55,
+          99,
+          -34,
+          127,
+          147,
+          99.5,
+          94,
+          14.5,
+          28.5,
+          36,
+          -2
+        ],
+        "raw": [
+          27722,
+          26996,
+          25629,
+          26359,
+          26097,
+          26207,
+          27036,
+          25840,
+          28359,
+          27975,
+          28952,
+          28008
+        ],
+        "rate": 199.6,
+        "frames": 1864909,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 62,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790598206.593152,
+        "diagnostics": {
+          "serial_reads": 85952,
+          "serial_bytes": 48487712,
+          "parsed_frames": 1864909,
+          "last_byte_at": 1790598206.5920138,
+          "last_parsed_frame_at": 1790598206.5920138,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 3,
+          "successes": 2,
+          "last_fault": {
+            "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+            "observed_at": 1790595839.1720595,
+            "frames": 1393256,
+            "diagnostics": {
+              "serial_reads": 64201,
+              "serial_bytes": 36224708,
+              "parsed_frames": 1393256,
+              "last_byte_at": 1790595834.8201804,
+              "last_parsed_frame_at": 1790595834.8201804,
+              "parser_pending_bytes": 0,
+              "parser_discarded_bytes": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "host": "2026-09-28T20:23:26.732018+08:00",
+      "monotonic": 155687.4675276,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "����������",
+        "port": "COM6",
+        "axes": [
+          0.0082087,
+          -0.0239156,
+          -0.1099417,
+          0.0000054,
+          0.0000703,
+          0.0001014
+        ],
+        "channels": [
+          -64,
+          -24,
+          -95,
+          -9,
+          -48,
+          -84,
+          -59.5,
+          -103,
+          44.5,
+          47.5,
+          68,
+          79
+        ],
+        "raw": [
+          27591,
+          27027,
+          25435,
+          26384,
+          25922,
+          25976,
+          26877,
+          25643,
+          28389,
+          27994,
+          28984,
+          28089
+        ],
+        "rate": 199.6,
+        "frames": 1864931,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 62,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790598206.7015707,
+        "diagnostics": {
+          "serial_reads": 85953,
+          "serial_bytes": 48488284,
+          "parsed_frames": 1864931,
+          "last_byte_at": 1790598206.7005303,
+          "last_parsed_frame_at": 1790598206.7005303,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 3,
+          "successes": 2,
+          "last_fault": {
+            "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+            "observed_at": 1790595839.1720595,
+            "frames": 1393256,
+            "diagnostics": {
+              "serial_reads": 64201,
+              "serial_bytes": 36224708,
+              "parsed_frames": 1393256,
+              "last_byte_at": 1790595834.8201804,
+              "last_parsed_frame_at": 1790595834.8201804,
+              "parser_pending_bytes": 0,
+              "parser_discarded_bytes": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "host": "2026-09-28T20:23:26.842556+08:00",
+      "monotonic": 155687.5780738,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "����������",
+        "port": "COM6",
+        "axes": [
+          0.0140417,
+          -0.0307241,
+          -0.0851193,
+          -0.0000067,
+          0.0000561,
+          0.0001086
+        ],
+        "channels": [
+          12,
+          -83,
+          0,
+          -47,
+          -82,
+          -8,
+          -112.5,
+          -19,
+          56.5,
+          48.5,
+          42,
+          15
+        ],
+        "raw": [
+          27667,
+          26968,
+          25530,
+          26346,
+          25888,
+          26052,
+          26824,
+          25727,
+          28401,
+          27995,
+          28958,
+          28025
+        ],
+        "rate": 199.6,
+        "frames": 1864952,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 62,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790598206.809381,
+        "diagnostics": {
+          "serial_reads": 85954,
+          "serial_bytes": 48488830,
+          "parsed_frames": 1864952,
+          "last_byte_at": 1790598206.8084316,
+          "last_parsed_frame_at": 1790598206.8084316,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 3,
+          "successes": 2,
+          "last_fault": {
+            "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+            "observed_at": 1790595839.1720595,
+            "frames": 1393256,
+            "diagnostics": {
+              "serial_reads": 64201,
+              "serial_bytes": 36224708,
+              "parsed_frames": 1393256,
+              "last_byte_at": 1790595834.8201804,
+              "last_parsed_frame_at": 1790595834.8201804,
+              "parser_pending_bytes": 0,
+              "parser_discarded_bytes": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "host": "2026-09-28T20:23:26.981397+08:00",
+      "monotonic": 155687.7169089,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "����������",
+        "port": "COM6",
+        "axes": [
+          0.0215657,
+          -0.0362075,
+          -0.0757235,
+          -0.0000051,
+          0.0000527,
+          0.0001281
+        ],
+        "channels": [
+          70,
+          -97,
+          90,
+          -65,
+          179,
+          132,
+          152.5,
+          83,
+          13.5,
+          6.5,
+          21,
+          14
+        ],
+        "raw": [
+          27725,
+          26954,
+          25620,
+          26328,
+          26149,
+          26192,
+          27089,
+          25829,
+          28358,
+          27953,
+          28937,
+          28024
+        ],
+        "rate": 199.6,
+        "frames": 1864974,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 62,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790598206.9199967,
+        "diagnostics": {
+          "serial_reads": 85955,
+          "serial_bytes": 48489402,
+          "parsed_frames": 1864974,
+          "last_byte_at": 1790598206.918967,
+          "last_parsed_frame_at": 1790598206.918967,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 3,
+          "successes": 2,
+          "last_fault": {
+            "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+            "observed_at": 1790595839.1720595,
+            "frames": 1393256,
+            "diagnostics": {
+              "serial_reads": 64201,
+              "serial_bytes": 36224708,
+              "parsed_frames": 1393256,
+              "last_byte_at": 1790595834.8201804,
+              "last_parsed_frame_at": 1790595834.8201804,
+              "parser_pending_bytes": 0,
+              "parser_discarded_bytes": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "host": "2026-09-28T20:23:27.094565+08:00",
+      "monotonic": 155687.8300792,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "����������",
+        "port": "COM6",
+        "axes": [
+          0.0189715,
+          -0.0349194,
+          -0.0753899,
+          0.0000106,
+          0.0000882,
+          0.0001373
+        ],
+        "channels": [
+          4,
+          32,
+          8,
+          29,
+          34,
+          -59,
+          11.5,
+          -97,
+          2.5,
+          9.5,
+          40,
+          54
+        ],
+        "raw": [
+          27659,
+          27083,
+          25538,
+          26422,
+          26004,
+          26001,
+          26948,
+          25649,
+          28347,
+          27956,
+          28956,
+          28064
+        ],
+        "rate": 199.6,
+        "frames": 1864996,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 62,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790598207.0282514,
+        "diagnostics": {
+          "serial_reads": 85956,
+          "serial_bytes": 48489974,
+          "parsed_frames": 1864996,
+          "last_byte_at": 1790598207.0272706,
+          "last_parsed_frame_at": 1790598207.0272706,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 3,
+          "successes": 2,
+          "last_fault": {
+            "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+            "observed_at": 1790595839.1720595,
+            "frames": 1393256,
+            "diagnostics": {
+              "serial_reads": 64201,
+              "serial_bytes": 36224708,
+              "parsed_frames": 1393256,
+              "last_byte_at": 1790595834.8201804,
+              "last_parsed_frame_at": 1790595834.8201804,
+              "parser_pending_bytes": 0,
+              "parser_discarded_bytes": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "host": "2026-09-28T20:23:27.219058+08:00",
+      "monotonic": 155687.9545675,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "����������",
+        "port": "COM6",
+        "axes": [
+          0.0151843,
+          -0.0153521,
+          -0.0730186,
+          0.0000111,
+          0.0000873,
+          0.0001194
+        ],
+        "channels": [
+          -25,
+          84,
+          -34,
+          61,
+          96,
+          -32,
+          63.5,
+          -65,
+          29.5,
+          48.5,
+          12,
+          -12
+        ],
+        "raw": [
+          27630,
+          27135,
+          25496,
+          26454,
+          26066,
+          26028,
+          27000,
+          25681,
+          28374,
+          27995,
+          28928,
+          27998
+        ],
+        "rate": 199.6,
+        "frames": 1865018,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 62,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790598207.1376195,
+        "diagnostics": {
+          "serial_reads": 85957,
+          "serial_bytes": 48490546,
+          "parsed_frames": 1865018,
+          "last_byte_at": 1790598207.136619,
+          "last_parsed_frame_at": 1790598207.136619,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 3,
+          "successes": 2,
+          "last_fault": {
+            "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+            "observed_at": 1790595839.1720595,
+            "frames": 1393256,
+            "diagnostics": {
+              "serial_reads": 64201,
+              "serial_bytes": 36224708,
+              "parsed_frames": 1393256,
+              "last_byte_at": 1790595834.8201804,
+              "last_parsed_frame_at": 1790595834.8201804,
+              "parser_pending_bytes": 0,
+              "parser_discarded_bytes": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "host": "2026-09-28T20:23:27.354938+08:00",
+      "monotonic": 155688.0904651,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "����������",
+        "port": "COM6",
+        "axes": [
+          0.0077277,
+          -0.0299159,
+          -0.0721902,
+          -0.0000049,
+          0.0000744,
+          0.0001021
+        ],
+        "channels": [
+          -76,
+          31,
+          -89,
+          53,
+          40,
+          24,
+          29.5,
+          -22,
+          8.5,
+          7.5,
+          11,
+          -35
+        ],
+        "raw": [
+          27579,
+          27082,
+          25441,
+          26446,
+          26010,
+          26084,
+          26966,
+          25724,
+          28353,
+          27954,
+          28927,
+          27975
+        ],
+        "rate": 199.6,
+        "frames": 1865061,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 62,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790598207.354138,
+        "diagnostics": {
+          "serial_reads": 85959,
+          "serial_bytes": 48491664,
+          "parsed_frames": 1865061,
+          "last_byte_at": 1790598207.3531704,
+          "last_parsed_frame_at": 1790598207.3531704,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 3,
+          "successes": 2,
+          "last_fault": {
+            "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+            "observed_at": 1790595839.1720595,
+            "frames": 1393256,
+            "diagnostics": {
+              "serial_reads": 64201,
+              "serial_bytes": 36224708,
+              "parsed_frames": 1393256,
+              "last_byte_at": 1790595834.8201804,
+              "last_parsed_frame_at": 1790595834.8201804,
+              "parser_pending_bytes": 0,
+              "parser_discarded_bytes": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "host": "2026-09-28T20:23:27.492038+08:00",
+      "monotonic": 155688.2275618,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "����������",
+        "port": "COM6",
+        "axes": [
+          0.0124467,
+          -0.021977,
+          -0.0903198,
+          -0.0000075,
+          0.0000744,
+          0.0001118
+        ],
+        "channels": [
+          48,
+          -79,
+          81,
+          -72,
+          49,
+          47,
+          20.5,
+          4,
+          22.5,
+          18.5,
+          35,
+          33
+        ],
+        "raw": [
+          27703,
+          26972,
+          25611,
+          26321,
+          26019,
+          26107,
+          26957,
+          25750,
+          28367,
+          27965,
+          28951,
+          28043
+        ],
+        "rate": 199.6,
+        "frames": 1865083,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 62,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790598207.4619148,
+        "diagnostics": {
+          "serial_reads": 85960,
+          "serial_bytes": 48492236,
+          "parsed_frames": 1865083,
+          "last_byte_at": 1790598207.4608166,
+          "last_parsed_frame_at": 1790598207.4608166,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 3,
+          "successes": 2,
+          "last_fault": {
+            "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+            "observed_at": 1790595839.1720595,
+            "frames": 1393256,
+            "diagnostics": {
+              "serial_reads": 64201,
+              "serial_bytes": 36224708,
+              "parsed_frames": 1393256,
+              "last_byte_at": 1790595834.8201804,
+              "last_parsed_frame_at": 1790595834.8201804,
+              "parser_pending_bytes": 0,
+              "parser_discarded_bytes": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "host": "2026-09-28T20:23:27.594867+08:00",
+      "monotonic": 155688.3303777,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "����������",
+        "port": "COM6",
+        "axes": [
+          0.0138868,
+          -0.033027,
+          -0.0926113,
+          -0.0000177,
+          0.0000611,
+          0.0001079
+        ],
+        "channels": [
+          59,
+          121,
+          94,
+          90,
+          127,
+          117,
+          109.5,
+          85,
+          34.5,
+          24.5,
+          -18,
+          -48
+        ],
+        "raw": [
+          27714,
+          27172,
+          25624,
+          26483,
+          26097,
+          26177,
+          27046,
+          25831,
+          28379,
+          27971,
+          28898,
+          27962
+        ],
+        "rate": 199.6,
+        "frames": 1865104,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 62,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790598207.5704339,
+        "diagnostics": {
+          "serial_reads": 85961,
+          "serial_bytes": 48492782,
+          "parsed_frames": 1865104,
+          "last_byte_at": 1790598207.5693982,
+          "last_parsed_frame_at": 1790598207.5693982,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 3,
+          "successes": 2,
+          "last_fault": {
+            "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+            "observed_at": 1790595839.1720595,
+            "frames": 1393256,
+            "diagnostics": {
+              "serial_reads": 64201,
+              "serial_bytes": 36224708,
+              "parsed_frames": 1393256,
+              "last_byte_at": 1790595834.8201804,
+              "last_parsed_frame_at": 1790595834.8201804,
+              "parser_pending_bytes": 0,
+              "parser_discarded_bytes": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "host": "2026-09-28T20:23:27.739334+08:00",
+      "monotonic": 155688.4748479,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "����������",
+        "port": "COM6",
+        "axes": [
+          0.0075717,
+          -0.0218462,
+          -0.097225,
+          -0.0000059,
+          0.0000713,
+          0.0000686
+        ],
+        "channels": [
+          -36,
+          104,
+          -50,
+          92,
+          -56,
+          -68,
+          -83.5,
+          -122,
+          39.5,
+          37.5,
+          22,
+          1
+        ],
+        "raw": [
+          27619,
+          27155,
+          25480,
+          26485,
+          25914,
+          25992,
+          26853,
+          25624,
+          28384,
+          27984,
+          28938,
+          28011
+        ],
+        "rate": 199.6,
+        "frames": 1865126,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 62,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790598207.677525,
+        "diagnostics": {
+          "serial_reads": 85962,
+          "serial_bytes": 48493354,
+          "parsed_frames": 1865126,
+          "last_byte_at": 1790598207.676534,
+          "last_parsed_frame_at": 1790598207.676534,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 3,
+          "successes": 2,
+          "last_fault": {
+            "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+            "observed_at": 1790595839.1720595,
+            "frames": 1393256,
+            "diagnostics": {
+              "serial_reads": 64201,
+              "serial_bytes": 36224708,
+              "parsed_frames": 1393256,
+              "last_byte_at": 1790595834.8201804,
+              "last_parsed_frame_at": 1790595834.8201804,
+              "parser_pending_bytes": 0,
+              "parser_discarded_bytes": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "host": "2026-09-28T20:23:27.863323+08:00",
+      "monotonic": 155688.598841,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "����������",
+        "port": "COM6",
+        "axes": [
+          0.010026,
+          -0.0352355,
+          -0.087866,
+          -0.0000075,
+          0.0000683,
+          0.0000811
+        ],
+        "channels": [
+          68,
+          88,
+          75,
+          70,
+          -33,
+          -115,
+          -47.5,
+          -148,
+          26.5,
+          34.5,
+          -15,
+          -43
+        ],
+        "raw": [
+          27723,
+          27139,
+          25605,
+          26463,
+          25937,
+          25945,
+          26889,
+          25598,
+          28371,
+          27981,
+          28901,
+          27967
+        ],
+        "rate": 199.6,
+        "frames": 1865148,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 62,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790598207.786173,
+        "diagnostics": {
+          "serial_reads": 85963,
+          "serial_bytes": 48493926,
+          "parsed_frames": 1865148,
+          "last_byte_at": 1790598207.78507,
+          "last_parsed_frame_at": 1790598207.78507,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 3,
+          "successes": 2,
+          "last_fault": {
+            "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+            "observed_at": 1790595839.1720595,
+            "frames": 1393256,
+            "diagnostics": {
+              "serial_reads": 64201,
+              "serial_bytes": 36224708,
+              "parsed_frames": 1393256,
+              "last_byte_at": 1790595834.8201804,
+              "last_parsed_frame_at": 1790595834.8201804,
+              "parser_pending_bytes": 0,
+              "parser_discarded_bytes": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "host": "2026-09-28T20:23:27.971632+08:00",
+      "monotonic": 155688.7071391,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "����������",
+        "port": "COM6",
+        "axes": [
+          0.0085528,
+          -0.0239982,
+          -0.0896631,
+          -0.000003,
+          0.0000683,
+          0.0000811
+        ],
+        "channels": [
+          64,
+          82,
+          77,
+          56,
+          -74,
+          32,
+          -84.5,
+          -10,
+          23.5,
+          28.5,
+          13,
+          7
+        ],
+        "raw": [
+          27719,
+          27133,
+          25607,
+          26449,
+          25896,
+          26092,
+          26852,
+          25736,
+          28368,
+          27975,
+          28929,
+          28017
+        ],
+        "rate": 199.6,
+        "frames": 1865169,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 62,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790598207.8935685,
+        "diagnostics": {
+          "serial_reads": 85964,
+          "serial_bytes": 48494472,
+          "parsed_frames": 1865169,
+          "last_byte_at": 1790598207.8925703,
+          "last_parsed_frame_at": 1790598207.8925703,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 3,
+          "successes": 2,
+          "last_fault": {
+            "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+            "observed_at": 1790595839.1720595,
+            "frames": 1393256,
+            "diagnostics": {
+              "serial_reads": 64201,
+              "serial_bytes": 36224708,
+              "parsed_frames": 1393256,
+              "last_byte_at": 1790595834.8201804,
+              "last_parsed_frame_at": 1790595834.8201804,
+              "parser_pending_bytes": 0,
+              "parser_discarded_bytes": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "host": "2026-09-28T20:23:28.110148+08:00",
+      "monotonic": 155688.8456563,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "����������",
+        "port": "COM6",
+        "axes": [
+          0.0053674,
+          -0.0096027,
+          -0.0540882,
+          -0.0000059,
+          0.0000377,
+          0.0000663
+        ],
+        "channels": [
+          13,
+          66,
+          15,
+          39,
+          100,
+          0,
+          72.5,
+          0,
+          -1.5,
+          15.5,
+          54,
+          15
+        ],
+        "raw": [
+          27668,
+          27117,
+          25545,
+          26432,
+          26070,
+          26060,
+          27009,
+          25746,
+          28343,
+          27962,
+          28970,
+          28025
+        ],
+        "rate": 199.6,
+        "frames": 1865212,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 62,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790598208.1094885,
+        "diagnostics": {
+          "serial_reads": 85966,
+          "serial_bytes": 48495590,
+          "parsed_frames": 1865212,
+          "last_byte_at": 1790598208.1084077,
+          "last_parsed_frame_at": 1790598208.1084077,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 3,
+          "successes": 2,
+          "last_fault": {
+            "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+            "observed_at": 1790595839.1720595,
+            "frames": 1393256,
+            "diagnostics": {
+              "serial_reads": 64201,
+              "serial_bytes": 36224708,
+              "parsed_frames": 1393256,
+              "last_byte_at": 1790595834.8201804,
+              "last_parsed_frame_at": 1790595834.8201804,
+              "parser_pending_bytes": 0,
+              "parser_discarded_bytes": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "host": "2026-09-28T20:23:28.233891+08:00",
+      "monotonic": 155688.9694045,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "����������",
+        "port": "COM6",
+        "axes": [
+          0.0095247,
+          -0.0391644,
+          -0.0726483,
+          -0.0000069,
+          0.0000577,
+          0.0000775
+        ],
+        "channels": [
+          11,
+          -77,
+          -7,
+          -50,
+          116,
+          81,
+          115.5,
+          17,
+          52.5,
+          73.5,
+          -23,
+          -54
+        ],
+        "raw": [
+          27666,
+          26974,
+          25523,
+          26343,
+          26086,
+          26141,
+          27052,
+          25763,
+          28397,
+          28020,
+          28893,
+          27956
+        ],
+        "rate": 199.6,
+        "frames": 1865234,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 62,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790598208.2184858,
+        "diagnostics": {
+          "serial_reads": 85967,
+          "serial_bytes": 48496162,
+          "parsed_frames": 1865234,
+          "last_byte_at": 1790598208.2174706,
+          "last_parsed_frame_at": 1790598208.2174706,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 3,
+          "successes": 2,
+          "last_fault": {
+            "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+            "observed_at": 1790595839.1720595,
+            "frames": 1393256,
+            "diagnostics": {
+              "serial_reads": 64201,
+              "serial_bytes": 36224708,
+              "parsed_frames": 1393256,
+              "last_byte_at": 1790595834.8201804,
+              "last_parsed_frame_at": 1790595834.8201804,
+              "parser_pending_bytes": 0,
+              "parser_discarded_bytes": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "host": "2026-09-28T20:23:28.357292+08:00",
+      "monotonic": 155689.0928015,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "����������",
+        "port": "COM6",
+        "axes": [
+          0.0148043,
+          -0.0265393,
+          -0.0450474,
+          -0.0000057,
+          0.0000795,
+          0.0001148
+        ],
+        "channels": [
+          -17,
+          -80,
+          -28,
+          -53,
+          -18,
+          -44,
+          -26.5,
+          -96,
+          43.5,
+          39.5,
+          21,
+          17
+        ],
+        "raw": [
+          27638,
+          26971,
+          25502,
+          26340,
+          25952,
+          26016,
+          26910,
+          25650,
+          28388,
+          27986,
+          28937,
+          28027
+        ],
+        "rate": 199.6,
+        "frames": 1865256,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 62,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790598208.327318,
+        "diagnostics": {
+          "serial_reads": 85968,
+          "serial_bytes": 48496734,
+          "parsed_frames": 1865256,
+          "last_byte_at": 1790598208.3262992,
+          "last_parsed_frame_at": 1790598208.3262992,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 3,
+          "successes": 2,
+          "last_fault": {
+            "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+            "observed_at": 1790595839.1720595,
+            "frames": 1393256,
+            "diagnostics": {
+              "serial_reads": 64201,
+              "serial_bytes": 36224708,
+              "parsed_frames": 1393256,
+              "last_byte_at": 1790595834.8201804,
+              "last_parsed_frame_at": 1790595834.8201804,
+              "parser_pending_bytes": 0,
+              "parser_discarded_bytes": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "host": "2026-09-28T20:23:28.499388+08:00",
+      "monotonic": 155689.2349032,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "����������",
+        "port": "COM6",
+        "axes": [
+          0.0162366,
+          -0.0185846,
+          -0.0396413,
+          -0.0000129,
+          0.0000771,
+          0.0001027
+        ],
+        "channels": [
+          43,
+          48,
+          87,
+          61,
+          4,
+          20,
+          -14.5,
+          6,
+          5.5,
+          15.5,
+          4,
+          13
+        ],
+        "raw": [
+          27698,
+          27099,
+          25617,
+          26454,
+          25974,
+          26080,
+          26922,
+          25752,
+          28350,
+          27962,
+          28920,
+          28023
+        ],
+        "rate": 199.6,
+        "frames": 1865278,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 62,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790598208.4369814,
+        "diagnostics": {
+          "serial_reads": 85969,
+          "serial_bytes": 48497306,
+          "parsed_frames": 1865278,
+          "last_byte_at": 1790598208.435976,
+          "last_parsed_frame_at": 1790598208.435976,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 3,
+          "successes": 2,
+          "last_fault": {
+            "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+            "observed_at": 1790595839.1720595,
+            "frames": 1393256,
+            "diagnostics": {
+              "serial_reads": 64201,
+              "serial_bytes": 36224708,
+              "parsed_frames": 1393256,
+              "last_byte_at": 1790595834.8201804,
+              "last_parsed_frame_at": 1790595834.8201804,
+              "parser_pending_bytes": 0,
+              "parser_discarded_bytes": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "host": "2026-09-28T20:23:28.622457+08:00",
+      "monotonic": 155689.3579671,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "����������",
+        "port": "COM6",
+        "axes": [
+          0.0139742,
+          -0.022397,
+          -0.0612749,
+          -0.0000176,
+          0.0000465,
+          0.0000904
+        ],
+        "channels": [
+          44,
+          75,
+          52,
+          64,
+          15,
+          -70,
+          -3.5,
+          -87,
+          55.5,
+          53.5,
+          46,
+          9
+        ],
+        "raw": [
+          27699,
+          27126,
+          25582,
+          26457,
+          25985,
+          25990,
+          26933,
+          25659,
+          28400,
+          28000,
+          28962,
+          28019
+        ],
+        "rate": 199.6,
+        "frames": 1865299,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 62,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790598208.5458128,
+        "diagnostics": {
+          "serial_reads": 85970,
+          "serial_bytes": 48497852,
+          "parsed_frames": 1865299,
+          "last_byte_at": 1790598208.5447528,
+          "last_parsed_frame_at": 1790598208.5447528,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 3,
+          "successes": 2,
+          "last_fault": {
+            "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+            "observed_at": 1790595839.1720595,
+            "frames": 1393256,
+            "diagnostics": {
+              "serial_reads": 64201,
+              "serial_bytes": 36224708,
+              "parsed_frames": 1393256,
+              "last_byte_at": 1790595834.8201804,
+              "last_parsed_frame_at": 1790595834.8201804,
+              "parser_pending_bytes": 0,
+              "parser_discarded_bytes": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "host": "2026-09-28T20:23:28.746330+08:00",
+      "monotonic": 155689.4818409,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "����������",
+        "port": "COM6",
+        "axes": [
+          0.0040101,
+          -0.0111577,
+          -0.0637045,
+          -0.0000144,
+          0.0000506,
+          0.0000841
+        ],
+        "channels": [
+          54,
+          -89,
+          67,
+          -44,
+          -24,
+          -56,
+          -43.5,
+          -52,
+          -13.5,
+          13.5,
+          -1,
+          -29
+        ],
+        "raw": [
+          27709,
+          26962,
+          25597,
+          26349,
+          25946,
+          26004,
+          26893,
+          25694,
+          28331,
+          27960,
+          28915,
+          27981
+        ],
+        "rate": 199.6,
+        "frames": 1865321,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 62,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790598208.6534874,
+        "diagnostics": {
+          "serial_reads": 85971,
+          "serial_bytes": 48498424,
+          "parsed_frames": 1865321,
+          "last_byte_at": 1790598208.652499,
+          "last_parsed_frame_at": 1790598208.652499,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 3,
+          "successes": 2,
+          "last_fault": {
+            "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+            "observed_at": 1790595839.1720595,
+            "frames": 1393256,
+            "diagnostics": {
+              "serial_reads": 64201,
+              "serial_bytes": 36224708,
+              "parsed_frames": 1393256,
+              "last_byte_at": 1790595834.8201804,
+              "last_parsed_frame_at": 1790595834.8201804,
+              "parser_pending_bytes": 0,
+              "parser_discarded_bytes": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "host": "2026-09-28T20:23:28.872222+08:00",
+      "monotonic": 155689.607732,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "����������",
+        "port": "COM6",
+        "axes": [
+          -0.0027554,
+          -0.0203079,
+          -0.0837087,
+          -0.0000074,
+          0.0000568,
+          0.0000498
+        ],
+        "channels": [
+          -5,
+          111,
+          -20,
+          97,
+          60,
+          34,
+          39.5,
+          13,
+          2.5,
+          12.5,
+          -7,
+          -32
+        ],
+        "raw": [
+          27650,
+          27162,
+          25510,
+          26490,
+          26030,
+          26094,
+          26976,
+          25759,
+          28347,
+          27959,
+          28909,
+          27978
+        ],
+        "rate": 199.6,
+        "frames": 1865364,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 62,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790598208.8715105,
+        "diagnostics": {
+          "serial_reads": 85973,
+          "serial_bytes": 48499542,
+          "parsed_frames": 1865364,
+          "last_byte_at": 1790598208.8704915,
+          "last_parsed_frame_at": 1790598208.8704915,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 3,
+          "successes": 2,
+          "last_fault": {
+            "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+            "observed_at": 1790595839.1720595,
+            "frames": 1393256,
+            "diagnostics": {
+              "serial_reads": 64201,
+              "serial_bytes": 36224708,
+              "parsed_frames": 1393256,
+              "last_byte_at": 1790595834.8201804,
+              "last_parsed_frame_at": 1790595834.8201804,
+              "parser_pending_bytes": 0,
+              "parser_discarded_bytes": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "host": "2026-09-28T20:23:28.976494+08:00",
+      "monotonic": 155689.7120171,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "����������",
+        "port": "COM6",
+        "axes": [
+          -0.0027554,
+          -0.0203079,
+          -0.0837087,
+          -0.0000074,
+          0.0000568,
+          0.0000498
+        ],
+        "channels": [
+          -5,
+          111,
+          -20,
+          97,
+          60,
+          34,
+          39.5,
+          13,
+          2.5,
+          12.5,
+          -7,
+          -32
+        ],
+        "raw": [
+          27650,
+          27162,
+          25510,
+          26490,
+          26030,
+          26094,
+          26976,
+          25759,
+          28347,
+          27959,
+          28909,
+          27978
+        ],
+        "rate": 199.6,
+        "frames": 1865364,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 62,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790598208.8715105,
+        "diagnostics": {
+          "serial_reads": 85973,
+          "serial_bytes": 48499542,
+          "parsed_frames": 1865364,
+          "last_byte_at": 1790598208.8704915,
+          "last_parsed_frame_at": 1790598208.8704915,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 3,
+          "successes": 2,
+          "last_fault": {
+            "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+            "observed_at": 1790595839.1720595,
+            "frames": 1393256,
+            "diagnostics": {
+              "serial_reads": 64201,
+              "serial_bytes": 36224708,
+              "parsed_frames": 1393256,
+              "last_byte_at": 1790595834.8201804,
+              "last_parsed_frame_at": 1790595834.8201804,
+              "parser_pending_bytes": 0,
+              "parser_discarded_bytes": 0
+            }
+          }
+        }
+      }
+    }
+  ]
+}

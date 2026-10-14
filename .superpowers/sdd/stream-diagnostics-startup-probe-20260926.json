@@ -1,0 +1,116 @@
+{
+  "mode": "bench_no_motion",
+  "operator_confirmation": "已启动; instructed to remain empty",
+  "target": {
+    "port": "COM10",
+    "pid": 54804,
+    "command": "D:\\conda\\python.exe coinft_demo.py --port COM10",
+    "firmware_identity": "not independently confirmed",
+    "source": "coinft_demo.py with seven-field serial diagnostics"
+  },
+  "scope": "diagnostics deployment and incoming-data observation only; not direction/force acceptance",
+  "thresholds": {
+    "diagnostics_present": true,
+    "all_snapshots_live": true,
+    "per_interval_bytes_and_frames_advance": true,
+    "invalid_recent": 0,
+    "min_reported_rate_hz": 180,
+    "max_reported_rate_hz": 220
+  },
+  "skipped": [
+    "acquisition-side timestamps unavailable",
+    "per-frame jitter/drop/latency not measurable from HTTP snapshots",
+    "force/direction acceptance not attempted",
+    "no firmware or UART upstream counters"
+  ],
+  "samples": [
+    {
+      "observed_at": "2026-09-26T19:50:14.5118108+08:00",
+      "host_epoch": 1790423414.515,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 48203,
+      "updated_at": 1790423414.4835086,
+      "rate": 200.1,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100,
+      "diagnostics": {
+        "serial_reads": 2216,
+        "serial_bytes": 1253304,
+        "parsed_frames": 48203,
+        "last_byte_at": 1790423414.4825156,
+        "last_parsed_frame_at": 1790423414.4825156,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "observed_at": "2026-09-26T19:50:15.5321811+08:00",
+      "host_epoch": 1790423415.532,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 48400,
+      "updated_at": 1790423415.4681807,
+      "rate": 200.1,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100,
+      "diagnostics": {
+        "serial_reads": 2225,
+        "serial_bytes": 1258426,
+        "parsed_frames": 48400,
+        "last_byte_at": 1790423415.4669335,
+        "last_parsed_frame_at": 1790423415.4669335,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "observed_at": "2026-09-26T19:50:16.5452984+08:00",
+      "host_epoch": 1790423416.545,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 48596,
+      "updated_at": 1790423416.4501162,
+      "rate": 200,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100,
+      "diagnostics": {
+        "serial_reads": 2234,
+        "serial_bytes": 1263522,
+        "parsed_frames": 48596,
+        "last_byte_at": 1790423416.4490244,
+        "last_parsed_frame_at": 1790423416.4490244,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "observed_at": "2026-09-26T19:50:17.5595785+08:00",
+      "host_epoch": 1790423417.559,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 48815,
+      "updated_at": 1790423417.5430148,
+      "rate": 200,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100,
+      "diagnostics": {
+        "serial_reads": 2244,
+        "serial_bytes": 1269216,
+        "parsed_frames": 48815,
+        "last_byte_at": 1790423417.5419812,
+        "last_parsed_frame_at": 1790423417.5419812,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    }
+  ]
+}

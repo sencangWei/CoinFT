@@ -1,0 +1,2837 @@
+{
+  "purpose": "offline exploratory reuse fit/replay; no deployment or independent physical acceptance",
+  "command": "D:/conda/python.exe coinft/.superpowers/sdd/shear_refit_reuse_alignment_20261005.py",
+  "transform": "For every sample set derived channels[i] = original raw[i] - fixed new unloaded-control raw-minus-channels offset[i]. Raw, host, frame, owner and source files remain unchanged.",
+  "limitations": [
+    "Captured windows span interrupted/recovered serial stream epochs; monotonic frames, timestamps and unchanged backend owner do not prove one uninterrupted sensor stream.",
+    "These captures are fitting inputs and replayed in sample; no independent physical validation was performed."
+  ],
+  "excluded_prior_left_before": "calibration/shear_refit_20260928/fit/left_before.json",
+  "sources": {
+    "press_before": {
+      "path": "calibration/shear_refit_20260928/fit/press_before.json",
+      "sha256": "0a94419602d8928f17db60ed047414db19e65c0921b87aa23a9413c3da8da875",
+      "original_pose": "press_before",
+      "derived_evidence": "aligned_press_before.json",
+      "owner": {
+        "pid": 87952,
+        "created": 1791188496.384482
+      },
+      "sample_count": 40,
+      "first_host": "2026-10-05T16:24:21.534489+08:00",
+      "last_host": "2026-10-05T16:24:26.727708+08:00",
+      "first_frame": 32944,
+      "last_frame": 33990,
+      "original_offset": [
+        28382,
+        28018,
+        26449,
+        27372.5,
+        26879,
+        26967,
+        27936,
+        26680,
+        28730,
+        28326.5,
+        29342,
+        28460
+      ],
+      "recovery_first": {
+        "attempts": 0,
+        "successes": 0,
+        "last_fault": null
+      },
+      "recovery_last": {
+        "attempts": 0,
+        "successes": 0,
+        "last_fault": null
+      },
+      "original_channels_median": [
+        -155.5,
+        -207.0,
+        -134.0,
+        -187.5,
+        -156.0,
+        -146.0,
+        -208.0,
+        -183.5,
+        -44.5,
+        -28.5,
+        -30.5,
+        -68.0
+      ],
+      "raw_median": [
+        28226.5,
+        27811.0,
+        26315.0,
+        27185.0,
+        26723.0,
+        26821.0,
+        27728.0,
+        26496.5,
+        28685.5,
+        28298.0,
+        29311.5,
+        28392.0
+      ],
+      "aligned_channels_median": [
+        38.0,
+        27.0,
+        42.0,
+        45.0,
+        61.0,
+        63.0,
+        52.5,
+        60.5,
+        18.5,
+        17.0,
+        16.5,
+        20.0
+      ],
+      "duration_seconds": 5.193219
+    },
+    "press": {
+      "path": "calibration/shear_refit_20260928/fit/press.json",
+      "sha256": "a38ccfff455a619b80036bf02209471d391b7f4be709fa59d55b12c270ed211d",
+      "original_pose": "press",
+      "derived_evidence": "aligned_press.json",
+      "owner": {
+        "pid": 87952,
+        "created": 1791188496.384482
+      },
+      "sample_count": 40,
+      "first_host": "2026-10-05T16:27:03.835945+08:00",
+      "last_host": "2026-10-05T16:27:08.837801+08:00",
+      "first_frame": 65403,
+      "last_frame": 66405,
+      "original_offset": [
+        28188.5,
+        27784,
+        26273,
+        27140,
+        26662,
+        26758,
+        27675.5,
+        26436,
+        28667,
+        28281,
+        29295,
+        28372
+      ],
+      "recovery_first": {
+        "attempts": 0,
+        "successes": 0,
+        "last_fault": null
+      },
+      "recovery_last": {
+        "attempts": 0,
+        "successes": 0,
+        "last_fault": null
+      },
+      "original_channels_median": [
+        786.0,
+        895.0,
+        732.5,
+        1024.0,
+        980.5,
+        1055.5,
+        865.5,
+        606.5,
+        759.5,
+        752.0,
+        890.5,
+        729.5
+      ],
+      "raw_median": [
+        28974.5,
+        28679.0,
+        27005.5,
+        28164.0,
+        27642.5,
+        27813.5,
+        28541.0,
+        27042.5,
+        29426.5,
+        29033.0,
+        30185.5,
+        29101.5
+      ],
+      "aligned_channels_median": [
+        786.0,
+        895.0,
+        732.5,
+        1024.0,
+        980.5,
+        1055.5,
+        865.5,
+        606.5,
+        759.5,
+        752.0,
+        890.5,
+        729.5
+      ],
+      "duration_seconds": 5.001856
+    },
+    "press_after": {
+      "path": "calibration/shear_refit_20260928/fit/press_after.json",
+      "sha256": "5cfb04c0b7644f0a23904da45cd8a0591092844c6e343311911c0252ed660ee6",
+      "original_pose": "press_after",
+      "derived_evidence": "aligned_press_after.json",
+      "owner": {
+        "pid": 87952,
+        "created": 1791188496.384482
+      },
+      "sample_count": 41,
+      "first_host": "2026-10-05T16:29:43.681612+08:00",
+      "last_host": "2026-10-05T16:29:48.805826+08:00",
+      "first_frame": 97377,
+      "last_frame": 98403,
+      "original_offset": [
+        28188.5,
+        27784,
+        26273,
+        27140,
+        26662,
+        26758,
+        27675.5,
+        26436,
+        28667,
+        28281,
+        29295,
+        28372
+      ],
+      "recovery_first": {
+        "attempts": 0,
+        "successes": 0,
+        "last_fault": null
+      },
+      "recovery_last": {
+        "attempts": 0,
+        "successes": 0,
+        "last_fault": null
+      },
+      "original_channels_median": [
+        59.5,
+        25,
+        44,
+        22,
+        47,
+        23,
+        52.5,
+        4,
+        41,
+        40,
+        45,
+        32
+      ],
+      "raw_median": [
+        28248,
+        27809,
+        26317,
+        27162,
+        26709,
+        26781,
+        27728,
+        26440,
+        28708,
+        28321,
+        29340,
+        28404
+      ],
+      "aligned_channels_median": [
+        59.5,
+        25,
+        44,
+        22,
+        47,
+        23,
+        52.5,
+        4,
+        41,
+        40,
+        45,
+        32
+      ],
+      "duration_seconds": 5.124214
+    },
+    "right_before": {
+      "path": "calibration/shear_refit_20260928/fit/right_before.json",
+      "sha256": "483a0f68d62b6a9a214f1c9dddf47f50ea34452f9ae74c22d8ad91dc5451514d",
+      "original_pose": "right_before",
+      "derived_evidence": "aligned_right_before.json",
+      "owner": {
+        "pid": 87952,
+        "created": 1791188496.384482
+      },
+      "sample_count": 41,
+      "first_host": "2026-10-05T16:30:31.950328+08:00",
+      "last_host": "2026-10-05T16:30:37.069086+08:00",
+      "first_frame": 107030,
+      "last_frame": 108056,
+      "original_offset": [
+        28188.5,
+        27784,
+        26273,
+        27140,
+        26662,
+        26758,
+        27675.5,
+        26436,
+        28667,
+        28281,
+        29295,
+        28372
+      ],
+      "recovery_first": {
+        "attempts": 0,
+        "successes": 0,
+        "last_fault": null
+      },
+      "recovery_last": {
+        "attempts": 0,
+        "successes": 0,
+        "last_fault": null
+      },
+      "original_channels_median": [
+        33.5,
+        16,
+        18,
+        10,
+        29,
+        30,
+        30.5,
+        19,
+        37,
+        35,
+        32,
+        26
+      ],
+      "raw_median": [
+        28222,
+        27800,
+        26291,
+        27150,
+        26691,
+        26788,
+        27706,
+        26455,
+        28704,
+        28316,
+        29327,
+        28398
+      ],
+      "aligned_channels_median": [
+        33.5,
+        16,
+        18,
+        10,
+        29,
+        30,
+        30.5,
+        19,
+        37,
+        35,
+        32,
+        26
+      ],
+      "duration_seconds": 5.118758
+    },
+    "right": {
+      "path": "calibration/shear_refit_20260928/fit/right.json",
+      "sha256": "46333946092507ac711c802006207f27d5de3bbf1623dae69f2a111e6480b5c9",
+      "original_pose": "right",
+      "derived_evidence": "aligned_right.json",
+      "owner": {
+        "pid": 87952,
+        "created": 1791188496.384482
+      },
+      "sample_count": 41,
+      "first_host": "2026-10-05T16:38:56.816813+08:00",
+      "last_host": "2026-10-05T16:39:01.918639+08:00",
+      "first_frame": 208009,
+      "last_frame": 209014,
+      "original_offset": [
+        28188.5,
+        27784,
+        26273,
+        27140,
+        26662,
+        26758,
+        27675.5,
+        26436,
+        28667,
+        28281,
+        29295,
+        28372
+      ],
+      "recovery_first": {
+        "attempts": 0,
+        "successes": 0,
+        "last_fault": null
+      },
+      "recovery_last": {
+        "attempts": 0,
+        "successes": 0,
+        "last_fault": null
+      },
+      "original_channels_median": [
+        1230.5,
+        1272,
+        1101,
+        1549,
+        1474,
+        1619,
+        1306.5,
+        826,
+        1206,
+        1188,
+        1402,
+        1144
+      ],
+      "raw_median": [
+        29419,
+        29056,
+        27374,
+        28689,
+        28136,
+        28377,
+        28982,
+        27262,
+        29873,
+        29469,
+        30697,
+        29516
+      ],
+      "aligned_channels_median": [
+        1230.5,
+        1272,
+        1101,
+        1549,
+        1474,
+        1619,
+        1306.5,
+        826,
+        1206,
+        1188,
+        1402,
+        1144
+      ],
+      "duration_seconds": 5.101826
+    },
+    "right_after": {
+      "path": "calibration/shear_refit_20260928/fit/right_after.json",
+      "sha256": "0b5651079cae27e6dc53afc308956a2ad07e6fd81e13a74eb1e0d8fde082336c",
+      "original_pose": "right_after",
+      "derived_evidence": "aligned_right_after.json",
+      "owner": {
+        "pid": 87952,
+        "created": 1791188496.384482
+      },
+      "sample_count": 40,
+      "first_host": "2026-10-05T16:41:40.590022+08:00",
+      "last_host": "2026-10-05T16:41:45.710844+08:00",
+      "first_frame": 240746,
+      "last_frame": 241771,
+      "original_offset": [
+        28188.5,
+        27784,
+        26273,
+        27140,
+        26662,
+        26758,
+        27675.5,
+        26436,
+        28667,
+        28281,
+        29295,
+        28372
+      ],
+      "recovery_first": {
+        "attempts": 0,
+        "successes": 0,
+        "last_fault": null
+      },
+      "recovery_last": {
+        "attempts": 0,
+        "successes": 0,
+        "last_fault": null
+      },
+      "original_channels_median": [
+        -71.0,
+        -120.5,
+        -94.5,
+        -138.0,
+        -112.5,
+        -111.0,
+        -129.5,
+        -114.0,
+        -28.5,
+        -24.5,
+        -42.0,
+        -45.5
+      ],
+      "raw_median": [
+        28117.5,
+        27663.5,
+        26178.5,
+        27002.0,
+        26549.5,
+        26647.0,
+        27546.0,
+        26322.0,
+        28638.5,
+        28256.5,
+        29253.0,
+        28326.5
+      ],
+      "aligned_channels_median": [
+        -71.0,
+        -120.5,
+        -94.5,
+        -138.0,
+        -112.5,
+        -111.0,
+        -129.5,
+        -114.0,
+        -28.5,
+        -24.5,
+        -42.0,
+        -45.5
+      ],
+      "duration_seconds": 5.120822
+    },
+    "left_before": {
+      "path": "calibration/shear_refit_20261005_after_button/fit/press_before.json",
+      "sha256": "051b8aed7a1f3c0c0d2f2c3f70e37afdcbb9d316559088af5848e44c550e2b8a",
+      "original_pose": "press_before",
+      "derived_evidence": "aligned_left_before.json",
+      "owner": {
+        "pid": 87952,
+        "created": 1791188496.384482
+      },
+      "sample_count": 41,
+      "first_host": "2026-10-05T17:08:20.828356+08:00",
+      "last_host": "2026-10-05T17:08:25.942697+08:00",
+      "first_frame": 532280,
+      "last_frame": 533306,
+      "original_offset": [
+        28188.5,
+        27784,
+        26273,
+        27140,
+        26662,
+        26758,
+        27675.5,
+        26436,
+        28667,
+        28281,
+        29295,
+        28372
+      ],
+      "recovery_first": {
+        "attempts": 30,
+        "successes": 2,
+        "last_fault": {
+          "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+          "observed_at": 1791191196.812484,
+          "frames": 511536,
+          "diagnostics": {
+            "serial_reads": 23443,
+            "serial_bytes": 13299988,
+            "parsed_frames": 511536,
+            "last_byte_at": 1791191194.738695,
+            "last_parsed_frame_at": 1791191194.738695,
+            "parser_pending_bytes": 26,
+            "parser_discarded_bytes": 0
+          }
+        }
+      },
+      "recovery_last": {
+        "attempts": 30,
+        "successes": 2,
+        "last_fault": {
+          "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+          "observed_at": 1791191196.812484,
+          "frames": 511536,
+          "diagnostics": {
+            "serial_reads": 23443,
+            "serial_bytes": 13299988,
+            "parsed_frames": 511536,
+            "last_byte_at": 1791191194.738695,
+            "last_parsed_frame_at": 1791191194.738695,
+            "parser_pending_bytes": 26,
+            "parser_discarded_bytes": 0
+          }
+        }
+      },
+      "original_channels_median": [
+        -125.5,
+        -219,
+        -188,
+        -250,
+        -195,
+        -206,
+        -217.5,
+        -203,
+        -83,
+        -80,
+        -89,
+        -89
+      ],
+      "raw_median": [
+        28063,
+        27565,
+        26085,
+        26890,
+        26467,
+        26552,
+        27458,
+        26233,
+        28584,
+        28201,
+        29206,
+        28283
+      ],
+      "aligned_channels_median": [
+        -125.5,
+        -219,
+        -188,
+        -250,
+        -195,
+        -206,
+        -217.5,
+        -203,
+        -83,
+        -80,
+        -89,
+        -89
+      ],
+      "duration_seconds": 5.114341
+    },
+    "left": {
+      "path": "calibration/shear_refit_20261005_after_button/fit/left.json",
+      "sha256": "3e9fb26cdc1b8dca42164a2be2f84259118e26cd9ce42281436fdf8462879462",
+      "original_pose": "left",
+      "derived_evidence": "aligned_left.json",
+      "owner": {
+        "pid": 87952,
+        "created": 1791188496.384482
+      },
+      "sample_count": 40,
+      "first_host": "2026-10-05T17:14:10.534451+08:00",
+      "last_host": "2026-10-05T17:14:15.641319+08:00",
+      "first_frame": 602225,
+      "last_frame": 603253,
+      "original_offset": [
+        28043,
+        27566,
+        26048,
+        26881.5,
+        26475,
+        26533,
+        27459,
+        26211.5,
+        28586,
+        28196,
+        29195,
+        28269.5
+      ],
+      "recovery_first": {
+        "attempts": 30,
+        "successes": 2,
+        "last_fault": {
+          "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+          "observed_at": 1791191196.812484,
+          "frames": 511536,
+          "diagnostics": {
+            "serial_reads": 23443,
+            "serial_bytes": 13299988,
+            "parsed_frames": 511536,
+            "last_byte_at": 1791191194.738695,
+            "last_parsed_frame_at": 1791191194.738695,
+            "parser_pending_bytes": 26,
+            "parser_discarded_bytes": 0
+          }
+        }
+      },
+      "recovery_last": {
+        "attempts": 30,
+        "successes": 2,
+        "last_fault": {
+          "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+          "observed_at": 1791191196.812484,
+          "frames": 511536,
+          "diagnostics": {
+            "serial_reads": 23443,
+            "serial_bytes": 13299988,
+            "parsed_frames": 511536,
+            "last_byte_at": 1791191194.738695,
+            "last_parsed_frame_at": 1791191194.738695,
+            "parser_pending_bytes": 26,
+            "parser_discarded_bytes": 0
+          }
+        }
+      },
+      "original_channels_median": [
+        1144.0,
+        1430.0,
+        1217.0,
+        1588.5,
+        1501.5,
+        1633.5,
+        1294.5,
+        914.5,
+        1203.5,
+        1198.5,
+        1429.0,
+        1163.5
+      ],
+      "raw_median": [
+        29187.0,
+        28996.0,
+        27265.0,
+        28470.0,
+        27976.5,
+        28166.5,
+        28753.5,
+        27126.0,
+        29789.5,
+        29394.5,
+        30624.0,
+        29433.0
+      ],
+      "aligned_channels_median": [
+        998.5,
+        1212.0,
+        992.0,
+        1330.0,
+        1314.5,
+        1408.5,
+        1078.0,
+        690.0,
+        1122.5,
+        1113.5,
+        1329.0,
+        1061.0
+      ],
+      "duration_seconds": 5.106868
+    }
+  },
+  "status": "replayed",
+  "reference_offset": [
+    28188.5,
+    27784,
+    26273,
+    27140,
+    26662,
+    26758,
+    27675.5,
+    26436,
+    28667,
+    28281,
+    29295,
+    28372
+  ],
+  "reference_source": "calibration/shear_refit_20261005_after_button/fit/press_before.json",
+  "common_replay_baseline": [
+    38.0,
+    27.0,
+    42.0,
+    45.0,
+    61.0,
+    63.0,
+    52.5,
+    60.5,
+    18.5,
+    17.0,
+    16.5,
+    20.0
+  ],
+  "production_profile": {
+    "path": "demo_web/shear_demo_profile.json",
+    "sha256": "fae3ea39d65d105795b6cea8e34b999d939a9ab9afbf0495ab5e15614b728e83"
+  },
+  "candidate": {
+    "version": 1,
+    "mode": "qualitative",
+    "assemblyId": "coinft-current-20260925",
+    "normal": {
+      "threshold": 100.0,
+      "span": 600.0
+    },
+    "shear": {
+      "enabled": true,
+      "weights": [
+        0.5386309307669588,
+        -0.6610453383568695,
+        -0.307318318852073,
+        0.12956133950907064,
+        0.024861944389089004,
+        0.15545825695441318,
+        0.31494915831162074,
+        -0.19413071113302455
+      ],
+      "pressLeak": [
+        -0.11290046256638685,
+        0.058420421449374677,
+        -0.19359259893781053,
+        0.21732054137399348,
+        0.14459482610930272,
+        0.2626349151961624,
+        -0.008651704642795957,
+        -0.3484666780880589
+      ],
+      "threshold": 71.76588701584734,
+      "span": 53.91464471587483
+    },
+    "rightLabel": "−X",
+    "leftLabel": "+X",
+    "evidence": [
+      "aligned_press_before.json",
+      "aligned_press.json",
+      "aligned_press_after.json",
+      "aligned_right_before.json",
+      "aligned_right.json",
+      "aligned_right_after.json",
+      "aligned_left_before.json",
+      "aligned_left.json"
+    ]
+  },
+  "replay": {
+    "normalUnchanged": true,
+    "poses": {
+      "press_before": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "press": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "press_after": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "right_before": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "right": [
+        0.415740088384275,
+        0.707719895451082,
+        0.8401856858664777,
+        0.9208375956543238,
+        0.5355954636809581,
+        0.7665268388371388,
+        0.8913165692790614,
+        0.9422189091944602,
+        0.9033496968381586,
+        0.951845431755744,
+        0.7281350864776229,
+        0.32076480325035206,
+        0.7040091429041545,
+        0.839716322083803,
+        0.9162171304742633,
+        0.9631258081314519,
+        0.863242636201449,
+        0.4671578714560624,
+        0.6992094801631594,
+        0.868306772176892,
+        0.921491170634011,
+        0.9608236908541333,
+        0.9173649066900875,
+        0.9792725963829073,
+        0.988344491589299,
+        0.9941845845581831,
+        0.7558538596522794,
+        0.6951923559153552,
+        0.5836668520303931,
+        0.5837541355220774,
+        0.6531565333285932,
+        0.8276975519926149,
+        0.9072363101863784,
+        0.9536579510267466,
+        0.976853228988374,
+        0.9428780146254431
+      ],
+      "right_after": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "left_before": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "left": [
+        -0.7751488757387616,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -0.7433993271294391,
+        -0.6361234990703185,
+        -0.38243173647528605,
+        -0.40336074192947824,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -0.6495541806781141,
+        -0.8431021428363945,
+        -0.6130769605860824,
+        -0.17558451978254028,
+        0,
+        0,
+        0,
+        0,
+        -0.7319587663259592,
+        -0.4280046094167045,
+        -0.7141349570036548,
+        -0.39302824410654896,
+        -0.6945291118664442,
+        -0.6641786219610263
+      ]
+    },
+    "samples": {
+      "press_before": [
+        {
+          "ms": -0.0,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 150.263,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 275.87600000000003,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 401.165,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 537.1899999999999,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 652.511,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 799.544,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 903.069,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1048.4,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1279.9,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1419.562,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1543.325,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1669.594,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1781.277,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1907.251,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2042.983,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2167.913,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2283.6090000000004,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2432.3830000000003,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2558.63,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2685.265,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2808.3520000000003,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2932.687,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3058.135,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3184.167,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3308.232,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3412.099,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3557.725,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3807.1549999999997,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3931.707,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4057.4519999999998,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4165.4039999999995,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4306.711,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4416.058,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4554.443,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4679.088,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4803.693,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4927.621,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 5053.112999999999,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 5193.219,
+          "normal": 0,
+          "shear": 0
+        }
+      ],
+      "press": [
+        {
+          "ms": -0.0,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 112.541,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 236.847,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 359.113,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 482.56,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 608.227,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 730.8670000000001,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 844.7059999999999,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 978.898,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 1096.4689999999998,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 1219.3449999999998,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 1355.349,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 1473.217,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 1599.37,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 1723.991,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 1869.732,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 1976.526,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 2101.47,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 2245.589,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 2368.552,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 2478.875,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 2605.13,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 2732.033,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 2881.464,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 3007.707,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 3241.603,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 3356.228,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 3484.852,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 3608.277,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 3754.945,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 3858.855,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 4004.339,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 4130.572,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 4233.847,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 4378.696,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 4485.3589999999995,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 4626.204000000001,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 4737.879000000001,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 4862.383000000001,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 5001.856,
+          "normal": 1,
+          "shear": 0
+        }
+      ],
+      "press_after": [
+        {
+          "ms": -0.0,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 101.133,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 213.314,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 350.016,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 464.294,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 600.533,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 715.116,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 863.79,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 965.096,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1111.977,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1237.2669999999998,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1361.41,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1486.9840000000002,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1612.478,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1843.5710000000001,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1987.535,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2112.345,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2219.424,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2361.3430000000003,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2487.346,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2609.2599999999998,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2720.7110000000002,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2858.955,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2971.287,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3111.043,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3236.4790000000003,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3363.761,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3487.419,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3611.548,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3724.396,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3861.821,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3974.561,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4113.249,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4225.629,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4361.536,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4487.339000000001,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4611.889,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4727.111,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4852.5830000000005,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4977.960999999999,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 5124.214,
+          "normal": 0,
+          "shear": 0
+        }
+      ],
+      "right_before": [
+        {
+          "ms": -0.0,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 98.86399999999999,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 213.511,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 350.447,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 463.946,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 589.519,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 738.21,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 862.8,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 966.145,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1112.748,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1237.895,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1363.247,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1467.943,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1613.532,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1736.796,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1862.2559999999999,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1986.795,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2112.395,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2235.997,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2360.188,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2486.194,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2597.509,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2747.576,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2872.312,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2996.204,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3098.6769999999997,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3247.8379999999997,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3371.575,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3475.003,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3600.8849999999998,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3725.745,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3873.25,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3976.904,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4123.318,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4353.1230000000005,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4478.757,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4620.665,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4746.1900000000005,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4870.544,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4996.144,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 5118.758,
+          "normal": 0,
+          "shear": 0
+        }
+      ],
+      "right": [
+        {
+          "ms": -0.0,
+          "normal": 1,
+          "shear": 0.9911034804598242
+        },
+        {
+          "ms": 110.236,
+          "normal": 1,
+          "shear": 0.9951777630634238
+        },
+        {
+          "ms": 235.42,
+          "normal": 1,
+          "shear": 0.9975944676065847
+        },
+        {
+          "ms": 357.971,
+          "normal": 1,
+          "shear": 0.9987823383252344
+        },
+        {
+          "ms": 482.661,
+          "normal": 1,
+          "shear": 0.7584367183588852
+        },
+        {
+          "ms": 606.991,
+          "normal": 1,
+          "shear": 0.415740088384275
+        },
+        {
+          "ms": 731.665,
+          "normal": 1,
+          "shear": 0.707719895451082
+        },
+        {
+          "ms": 840.331,
+          "normal": 1,
+          "shear": 0.8401856858664777
+        },
+        {
+          "ms": 966.7829999999999,
+          "normal": 1,
+          "shear": 0.9208375956543238
+        },
+        {
+          "ms": 1091.964,
+          "normal": 1,
+          "shear": 0.5355954636809581
+        },
+        {
+          "ms": 1215.748,
+          "normal": 1,
+          "shear": 0.7665268388371388
+        },
+        {
+          "ms": 1353.3809999999999,
+          "normal": 1,
+          "shear": 0.8913165692790614
+        },
+        {
+          "ms": 1467.1009999999999,
+          "normal": 1,
+          "shear": 0.9422189091944602
+        },
+        {
+          "ms": 1591.7969999999998,
+          "normal": 1,
+          "shear": 0.9033496968381586
+        },
+        {
+          "ms": 1717.2,
+          "normal": 1,
+          "shear": 0.951845431755744
+        },
+        {
+          "ms": 1842.508,
+          "normal": 1,
+          "shear": 0.7281350864776229
+        },
+        {
+          "ms": 1967.403,
+          "normal": 1,
+          "shear": 0.32076480325035206
+        },
+        {
+          "ms": 2116.918,
+          "normal": 1,
+          "shear": 0.7040091429041545
+        },
+        {
+          "ms": 2227.3269999999998,
+          "normal": 1,
+          "shear": 0.839716322083803
+        },
+        {
+          "ms": 2344.096,
+          "normal": 1,
+          "shear": 0.9162171304742633
+        },
+        {
+          "ms": 2491.825,
+          "normal": 1,
+          "shear": 0.9631258081314519
+        },
+        {
+          "ms": 2615.965,
+          "normal": 1,
+          "shear": 0.863242636201449
+        },
+        {
+          "ms": 2741.569,
+          "normal": 1,
+          "shear": 0.4671578714560624
+        },
+        {
+          "ms": 2844.4950000000003,
+          "normal": 1,
+          "shear": 0.6992094801631594
+        },
+        {
+          "ms": 2993.164,
+          "normal": 1,
+          "shear": 0.868306772176892
+        },
+        {
+          "ms": 3116.977,
+          "normal": 1,
+          "shear": 0.921491170634011
+        },
+        {
+          "ms": 3242.102,
+          "normal": 1,
+          "shear": 0.9608236908541333
+        },
+        {
+          "ms": 3370.1180000000004,
+          "normal": 1,
+          "shear": 0.9173649066900875
+        },
+        {
+          "ms": 3619.054,
+          "normal": 1,
+          "shear": 0.9792725963829073
+        },
+        {
+          "ms": 3722.676,
+          "normal": 1,
+          "shear": 0.988344491589299
+        },
+        {
+          "ms": 3847.824,
+          "normal": 1,
+          "shear": 0.9941845845581831
+        },
+        {
+          "ms": 3993.3869999999997,
+          "normal": 1,
+          "shear": 0.7558538596522794
+        },
+        {
+          "ms": 4098.467000000001,
+          "normal": 1,
+          "shear": 0.6951923559153552
+        },
+        {
+          "ms": 4245.477,
+          "normal": 1,
+          "shear": 0.5836668520303931
+        },
+        {
+          "ms": 4370.763,
+          "normal": 1,
+          "shear": 0.5837541355220774
+        },
+        {
+          "ms": 4474.365,
+          "normal": 1,
+          "shear": 0.6531565333285932
+        },
+        {
+          "ms": 4600.2970000000005,
+          "normal": 1,
+          "shear": 0.8276975519926149
+        },
+        {
+          "ms": 4726.015,
+          "normal": 1,
+          "shear": 0.9072363101863784
+        },
+        {
+          "ms": 4850.936,
+          "normal": 1,
+          "shear": 0.9536579510267466
+        },
+        {
+          "ms": 4975.891,
+          "normal": 1,
+          "shear": 0.976853228988374
+        },
+        {
+          "ms": 5101.826,
+          "normal": 1,
+          "shear": 0.9428780146254431
+        }
+      ],
+      "right_after": [
+        {
+          "ms": -0.0,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 88.74,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 230.829,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 355.74,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 480.918,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 607.294,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 731.274,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 857.93,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 982.499,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1108.905,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1218.968,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1356.241,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1478.41,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1617.829,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1741.305,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1844.088,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1988.203,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2094.914,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2239.248,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2347.45,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2471.428,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2613.107,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2739.952,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2972.871,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3098.16,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3224.605,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3349.3179999999998,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3474.272,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3624.634,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3748.882,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3874.336,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3999.017,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4101.045,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4247.786999999999,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4372.192,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4618.977,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4743.648,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4870.795,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4979.7609999999995,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 5120.822,
+          "normal": 0,
+          "shear": 0
+        }
+      ],
+      "left_before": [
+        {
+          "ms": -0.0,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 71.71,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 218.421,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 344.196,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 448.941,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 593.244,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 700.152,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 825.985,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 964.352,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1089.094,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1202.053,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1327.339,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1462.6840000000002,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1603.1599999999999,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1703.7089999999998,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1829.749,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 1954.715,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2103.761,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2228.0099999999998,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2352.915,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2477.738,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2582.7369999999996,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2729.542,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2833.313,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 2979.998,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3102.0769999999998,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3226.901,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3336.107,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3475.173,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3601.73,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3725.67,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3837.9300000000003,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 3963.304,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4099.663,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4214.389,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4365.086,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4488.323,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4613.689,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4864.159,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 4967.908,
+          "normal": 0,
+          "shear": 0
+        },
+        {
+          "ms": 5114.340999999999,
+          "normal": 0,
+          "shear": 0
+        }
+      ],
+      "left": [
+        {
+          "ms": -0.0,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 71.383,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 218.553,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 343.647,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 589.537,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 716.062,
+          "normal": 1,
+          "shear": -0.7751488757387616
+        },
+        {
+          "ms": 840.4639999999999,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 967.127,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 1075.828,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 1201.343,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 1327.976,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 1469.4769999999999,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 1591.938,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 1718.6580000000001,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 1844.567,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 1970.356,
+          "normal": 1,
+          "shear": -0.7433993271294391
+        },
+        {
+          "ms": 2080.315,
+          "normal": 1,
+          "shear": -0.6361234990703185
+        },
+        {
+          "ms": 2219.902,
+          "normal": 1,
+          "shear": -0.38243173647528605
+        },
+        {
+          "ms": 2344.761,
+          "normal": 1,
+          "shear": -0.40336074192947824
+        },
+        {
+          "ms": 2470.33,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 2594.912,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 2719.14,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 2860.3489999999997,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 3107.6389999999997,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 3211.08,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 3357.999,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 3461.888,
+          "normal": 1,
+          "shear": -0.6495541806781141
+        },
+        {
+          "ms": 3606.538,
+          "normal": 1,
+          "shear": -0.8431021428363945
+        },
+        {
+          "ms": 3730.546,
+          "normal": 1,
+          "shear": -0.6130769605860824
+        },
+        {
+          "ms": 3841.4120000000003,
+          "normal": 1,
+          "shear": -0.17558451978254028
+        },
+        {
+          "ms": 3964.919,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 4107.9400000000005,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 4233.308,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 4358.055,
+          "normal": 1,
+          "shear": 0
+        },
+        {
+          "ms": 4466.913,
+          "normal": 1,
+          "shear": -0.7319587663259592
+        },
+        {
+          "ms": 4608.836,
+          "normal": 1,
+          "shear": -0.4280046094167045
+        },
+        {
+          "ms": 4733.686,
+          "normal": 1,
+          "shear": -0.7141349570036548
+        },
+        {
+          "ms": 4857.595,
+          "normal": 1,
+          "shear": -0.39302824410654896
+        },
+        {
+          "ms": 4981.188,
+          "normal": 1,
+          "shear": -0.6945291118664442
+        },
+        {
+          "ms": 5106.868,
+          "normal": 1,
+          "shear": -0.6641786219610263
+        }
+      ]
+    }
+  },
+  "accepted": false,
+  "gates": {
+    "normal_exactly_unchanged": true,
+    "steady_state_starts_ms": 600,
+    "idle_and_press_abs_max": 0.05,
+    "right_active_threshold": 0.2,
+    "left_active_threshold": -0.2,
+    "active_fraction_min": 0.8,
+    "right_reverse_min": -0.05,
+    "left_reverse_max": 0.05,
+    "by_window": {
+      "press_before": {
+        "count": 35,
+        "min": 0,
+        "max": 0,
+        "median": 0,
+        "outside_idle_count": 0
+      },
+      "press": {
+        "count": 35,
+        "min": 0,
+        "max": 0,
+        "median": 0,
+        "outside_idle_count": 0
+      },
+      "press_after": {
+        "count": 36,
+        "min": 0,
+        "max": 0,
+        "median": 0.0,
+        "outside_idle_count": 0
+      },
+      "right_before": {
+        "count": 35,
+        "min": 0,
+        "max": 0,
+        "median": 0,
+        "outside_idle_count": 0
+      },
+      "right": {
+        "count": 36,
+        "min": 0.32076480325035206,
+        "max": 0.9941845845581831,
+        "median": 0.8657747041891706,
+        "active_count": 36,
+        "active_fraction": 1.0,
+        "reverse_count": 0
+      },
+      "right_after": {
+        "count": 35,
+        "min": 0,
+        "max": 0,
+        "median": 0,
+        "outside_idle_count": 0
+      },
+      "left_before": {
+        "count": 35,
+        "min": 0,
+        "max": 0,
+        "median": 0,
+        "outside_idle_count": 0
+      },
+      "left": {
+        "count": 35,
+        "min": -0.8431021428363945,
+        "max": 0,
+        "median": 0,
+        "active_count": 14,
+        "active_fraction": 0.4,
+        "reverse_count": 0
+      }
+    }
+  },
+  "left_replay_progression": {
+    "early": {
+      "count": 17,
+      "active_count": 5,
+      "median_shear": 0
+    },
+    "late": {
+      "count": 18,
+      "active_count": 9,
+      "median_shear": -0.2843063819445446
+    }
+  },
+  "left_signed_score": {
+    "basis": "aligned channels minus one common press_before median, same input passed to surface.js",
+    "threshold": 71.76588701584734,
+    "count": 35,
+    "min": -136.29209425731702,
+    "median": -68.11731146595532,
+    "max": 3.246425477016364,
+    "count_at_or_below_negative_threshold": 16,
+    "early_median": -67.75159741931269,
+    "late_median": -70.11879017911423
+  }
+}

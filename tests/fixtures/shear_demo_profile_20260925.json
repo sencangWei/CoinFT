@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "mode": "qualitative",
+  "assemblyId": "coinft-current-20260925",
+  "normal": {
+    "threshold": 100.0,
+    "span": 600.0
+  },
+  "shear": {
+    "enabled": true,
+    "weights": [
+      0.5119536167478967,
+      -0.5584936703500715,
+      -0.19694140021121337,
+      0.2151686779046843,
+      -0.03406743093409363,
+      -0.07274013968644583,
+      0.47086415199790316,
+      -0.33576788411117126
+    ],
+    "pressLeak": [
+      -0.1520362353695687,
+      0.06697931697931699,
+      -0.10433702100368768,
+      0.1590909090909091,
+      0.08678050344717012,
+      0.2626663459996793,
+      -0.013427930094596762,
+      -0.302348885682219
+    ],
+    "threshold": 99.11124275398228,
+    "span": 128.5109264230957
+  },
+  "rightLabel": "−X",
+  "leftLabel": "+X",
+  "evidence": [
+    "demo_train_empty_before_press_20260925.json",
+    "demo_train_press_20260925.json",
+    "demo_train_empty_after_press_20260925.json",
+    "demo_train_empty_before_right_20260925.json",
+    "demo_train_right_20260925.json",
+    "demo_train_empty_after_right_20260925.json",
+    "demo_diagnostic_empty_after_second_usb_20260925.json",
+    "demo_diagnostic_left_demo_force_20260925.json"
+  ]
+}

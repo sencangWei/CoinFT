@@ -1,0 +1,63 @@
+{
+  "scope": "current actual-page session verification, not future robustness or 40-frame/5s acceptance",
+  "profile_sha": "af13756949ff0bb047392c183117298ea1b070106e3f2edc0553c075e25be150",
+  "protected_unchanged": {
+    "D:\\semg.claude\\coinft\\demo_web\\app.js": true,
+    "D:\\semg.claude\\coinft\\demo_web\\surface.js": true,
+    "D:\\semg.claude\\coinft\\START_DEMO.bat": true,
+    "D:\\semg.claude\\coinft\\calibration\\coinft_calib.json": true,
+    "D:\\semg.claude\\firmware_imu\\platformio.ini": true,
+    "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\platformio.ini": true,
+    "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\scripts\\diag_usb_build.py": true,
+    "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\.pio\\build\\teensy40\\firmware.hex": true,
+    "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\.pio\\build\\teensy40\\firmware.elf": true,
+    "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\.pio\\build\\teensy40_diag\\firmware.hex": true,
+    "C:\\Users\\winer\\.platformio\\packages\\framework-arduinoteensy\\cores\\teensy4\\usb_serial.c": true,
+    "C:\\Users\\winer\\.platformio\\packages\\framework-arduinoteensy\\cores\\teensy4\\usb_serial2.c": true,
+    "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\teensy_coinft_serial_interface.cpp": true,
+    "coinft_demo.py": true
+  },
+  "final_page": {
+    "frame": 3715568,
+    "baseline": [
+      -45,
+      -30,
+      -27.5,
+      -23.5,
+      19,
+      -37,
+      -9,
+      -60.5,
+      -3,
+      3,
+      8,
+      -9
+    ],
+    "normalTarget": 0,
+    "renderedNormal": 0,
+    "shearTarget": 0,
+    "renderedShear": 0,
+    "paused": false
+  },
+  "source_sha256": {
+    "shear-live-page-empty-20261005.json": "3bc3af9a3ceb83a3e2d0411a5be0f1cab4da3087338bde5539ad3162acfc2384",
+    "shear-live-page-minus-x-20261005.json": "4dab2ed7b7ec70cbdfd330fd06d7296b678d9ba3b29afb62ced7e05bc7277baf",
+    "shear-live-page-release-after-minus-x-20261005.json": "a86ff51c6f2eceabfdf794880cbfc8381094edbfd6210ae35dfb23b0ca320a8d",
+    "shear-live-page-plus-x-20261005.json": "8edca56f306612b1df0149d358c6e33560bb26c0019fded2eb8cc7dffd5d2e07",
+    "shear-live-page-release-after-plus-x-20261005.json": "2175d1d9abd46629bfcfd3bc7bf023422a8c63ece751c08e68d97db2251339d4",
+    "shear-live-page-center-same-baseline-20261005.json": "d219de2e95d3238f9517790ba605144271380524bc0fb67978fa1bd54b2be54c",
+    "shear-live-page-release-after-center-20261005.json": "883c2401dbeb6c30954795c722fac7341cc096ca56be66dfe408c7cfdb875502"
+  },
+  "limitations": [
+    "Prior frozen raw baseline acceptance missed the production channel-zero reference difference.",
+    "Short live-page snapshots support current directions, not continuous fault-free streaming.",
+    "Invalid and recovery counters changed in earlier unobserved intervals; no hardware/restart root cause is established.",
+    "Future baseline/reconnection robustness remains unresolved."
+  ],
+  "operator_feedback": {
+    "right": "已松开、向右正常",
+    "left": "已松开、向左正常",
+    "center_release": "已松开",
+    "center_target_and_no_shear_observed": true
+  }
+}

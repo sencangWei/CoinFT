@@ -1,0 +1,327 @@
+{
+  "date": "2026-09-28",
+  "mode": "bench_read_only",
+  "status": "BLOCKED",
+  "check": "unique_recovery_service_deployment",
+  "operator_confirmation": "已启动",
+  "thresholds": {
+    "expected_python_processes": 1,
+    "required_api_field": "recovery",
+    "source_sha256": "96EF5BBE88CEB9797686D1E6B1B2473B50360B0A9225E5FAC192CA6DDB913828",
+    "planned_healthy_window_seconds": 10,
+    "planned_rate_hz": [
+      150,
+      250
+    ]
+  },
+  "target": {
+    "board": "Teensy 4.0",
+    "usb_serial": "16454680",
+    "pid": "048B",
+    "raw": "COM6 MI00",
+    "diagnostic": "COM8 MI02",
+    "enumeration": "Present and OK in read-only PnP check"
+  },
+  "processes": [
+    {
+      "pid": 36404,
+      "create_time": 1790585834.3283825,
+      "name": "python.exe",
+      "cmdline": [
+        "D:\\conda\\python.exe",
+        "coinft_demo.py",
+        "--port",
+        "COM6"
+      ],
+      "ppid": 46408,
+      "cwd": "D:\\semg.claude\\coinft",
+      "parent_name": "cmd.exe"
+    },
+    {
+      "pid": 47424,
+      "create_time": 1790582081.90098,
+      "name": "python.exe",
+      "cmdline": [
+        "D:\\conda\\python.exe",
+        "coinft_demo.py",
+        "--port",
+        "COM6"
+      ],
+      "ppid": 10352,
+      "cwd": "D:\\semg.claude\\coinft",
+      "parent_name": "cmd.exe"
+    }
+  ],
+  "listeners": [
+    {
+      "pid": 47424,
+      "ip": "127.0.0.1",
+      "port": 8765
+    },
+    {
+      "pid": 36404,
+      "ip": "127.0.0.1",
+      "port": 8765
+    }
+  ],
+  "actual_server_connections": [
+    {
+      "server_connection": [
+        {
+          "pid": 47424,
+          "status": "ESTABLISHED",
+          "server_port": 8765,
+          "client_port": 38022
+        }
+      ],
+      "frames": 794911,
+      "status": "live",
+      "recovery": null,
+      "schema_has_recovery": false
+    },
+    {
+      "server_connection": [
+        {
+          "pid": 47424,
+          "status": "ESTABLISHED",
+          "server_port": 8765,
+          "client_port": 38023
+        }
+      ],
+      "frames": 794911,
+      "status": "live",
+      "recovery": null,
+      "schema_has_recovery": false
+    }
+  ],
+  "api_samples": [
+    {
+      "observed_at": 1790585994.0817325,
+      "url": "http://127.0.0.1:8765/api/state",
+      "headers": {
+        "Server": "SimpleHTTP/0.6 Python/3.13.12",
+        "Date": "Mon, 28 Sep 2026 08:59:54 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Cache-Control": "no-store",
+        "Content-Length": "759"
+      },
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "����������",
+        "port": "COM6",
+        "axes": [
+          0.0910635,
+          -0.0153081,
+          0.2281866,
+          -0.0000681,
+          0.000433,
+          0.0005631
+        ],
+        "channels": [
+          -173.5,
+          -255,
+          -65.5,
+          -60.5,
+          90,
+          3.5,
+          -100,
+          -129,
+          -88,
+          -40,
+          -63,
+          -118
+        ],
+        "raw": [
+          27663,
+          27053,
+          25540,
+          26396,
+          26160,
+          26149,
+          27107,
+          25833,
+          28365,
+          27954,
+          28911,
+          28013
+        ],
+        "rate": 200,
+        "frames": 782189,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 0,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790585994.0292132,
+        "diagnostics": {
+          "serial_reads": 35977,
+          "serial_bytes": 20336940,
+          "parsed_frames": 782189,
+          "last_byte_at": 1790585994.028202,
+          "last_parsed_frame_at": 1790585994.028202,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        }
+      }
+    },
+    {
+      "observed_at": 1790585994.5868962,
+      "url": "http://127.0.0.1:8765/api/state",
+      "headers": {
+        "Server": "SimpleHTTP/0.6 Python/3.13.12",
+        "Date": "Mon, 28 Sep 2026 08:59:54 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Cache-Control": "no-store",
+        "Content-Length": "760"
+      },
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "����������",
+        "port": "COM6",
+        "axes": [
+          0.0950851,
+          -0.0022932,
+          0.257302,
+          -0.0000722,
+          0.0004142,
+          0.0005818
+        ],
+        "channels": [
+          -140.5,
+          -123,
+          -11.5,
+          32.5,
+          27,
+          -63.5,
+          -146,
+          -199,
+          -70,
+          5,
+          -58,
+          -126
+        ],
+        "raw": [
+          27696,
+          27185,
+          25594,
+          26489,
+          26097,
+          26082,
+          27061,
+          25763,
+          28383,
+          27999,
+          28916,
+          28005
+        ],
+        "rate": 200,
+        "frames": 782299,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 0,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790585994.5773408,
+        "diagnostics": {
+          "serial_reads": 35982,
+          "serial_bytes": 20339800,
+          "parsed_frames": 782299,
+          "last_byte_at": 1790585994.5754032,
+          "last_parsed_frame_at": 1790585994.5754032,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        }
+      }
+    },
+    {
+      "observed_at": 1790585995.1081576,
+      "url": "http://127.0.0.1:8765/api/state",
+      "headers": {
+        "Server": "SimpleHTTP/0.6 Python/3.13.12",
+        "Date": "Mon, 28 Sep 2026 08:59:55 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Cache-Control": "no-store",
+        "Content-Length": "759"
+      },
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "����������",
+        "port": "COM6",
+        "axes": [
+          0.0853176,
+          0.0107796,
+          0.2621426,
+          -0.000067,
+          0.0004082,
+          0.0005537
+        ],
+        "channels": [
+          -67.5,
+          -203,
+          97.5,
+          -24.5,
+          -113,
+          -22.5,
+          -274,
+          -150,
+          -85,
+          -23,
+          -80,
+          -145
+        ],
+        "raw": [
+          27769,
+          27105,
+          25703,
+          26432,
+          25957,
+          26123,
+          26933,
+          25812,
+          28368,
+          27971,
+          28894,
+          27986
+        ],
+        "rate": 200,
+        "frames": 782407,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 0,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790585995.119232,
+        "diagnostics": {
+          "serial_reads": 35987,
+          "serial_bytes": 20342608,
+          "parsed_frames": 782407,
+          "last_byte_at": 1790585995.117153,
+          "last_parsed_frame_at": 1790585995.117153,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        }
+      }
+    }
+  ],
+  "failures": [
+    "Two CoinFT acquisition processes remain: old47424 and new36404.",
+    "Two listeners reported on127.0.0.1:8765.",
+    "Direct socket-established server-owner probes both identify oldPID47424; returned API has no recovery field."
+  ],
+  "skipped": [
+    "10s correct-new-service healthy capture",
+    "COM8 heartbeat capture",
+    "actual automatic stall/recovery",
+    "user page render/demo zero state"
+  ],
+  "interpretation": "New program was started, but the served API is still old software. No acceptance of new recovery mechanism. No root-cause/hardware fault claim.",
+  "actions": "Only HTTP GET/socket read, process/connection/PnP/hash inspection. No port writes/COM opens/restarts/kill/upload/tare.",
+  "next": "Operator closes both verified CoinFT acquisition consoles, keeps browser, starts START_DEMO once with sensor empty. Recheck unique process/new API before physical testing.",
+  "note": "API host observation timestamps are request start, not acquisition time or verified latency. Read-only probe process is excluded from authoritative CoinFT census."
+}

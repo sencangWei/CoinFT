@@ -1,0 +1,100 @@
+{
+  "pose": "confirmed_empty",
+  "samples": 41,
+  "observations": 42,
+  "span": 5.121543599998404,
+  "rate": 199.74446766406885,
+  "baseline": [
+    -9.5,
+    -44,
+    -26,
+    -61,
+    28,
+    -20,
+    17.5,
+    -9.5,
+    -0.5,
+    -4,
+    3.5,
+    6.5
+  ],
+  "raw_reference": [
+    28211,
+    27830,
+    26368,
+    27209.5,
+    26761.5,
+    26826,
+    27727,
+    26471,
+    28678,
+    28314,
+    29317,
+    28379
+  ],
+  "score": {
+    "min": -22.592906663584674,
+    "median": 1.7095750052553722,
+    "max": 18.501440812356133
+  },
+  "normal": {
+    "min": 0,
+    "median": 0,
+    "max": 0
+  },
+  "shear": {
+    "min": 0,
+    "median": 0,
+    "max": 0
+  },
+  "rendered_shear": {
+    "min": 0,
+    "median": 0,
+    "max": 0
+  },
+  "false_shear": 0,
+  "first_quality": {
+    "invalid": 1,
+    "saturated": 0,
+    "recovery": {
+      "attempts": 1,
+      "successes": 1,
+      "last_fault": {
+        "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+        "observed_at": 1791966273.6781542,
+        "frames": 204020,
+        "diagnostics": {
+          "serial_reads": 9387,
+          "serial_bytes": 5304546,
+          "parsed_frames": 204020,
+          "last_byte_at": 1791966271.6109743,
+          "last_parsed_frame_at": 1791966271.6109743,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        }
+      }
+    }
+  },
+  "last_quality": {
+    "invalid": 1,
+    "saturated": 0,
+    "recovery": {
+      "attempts": 1,
+      "successes": 1,
+      "last_fault": {
+        "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+        "observed_at": 1791966273.6781542,
+        "frames": 204020,
+        "diagnostics": {
+          "serial_reads": 9387,
+          "serial_bytes": 5304546,
+          "parsed_frames": 204020,
+          "last_byte_at": 1791966271.6109743,
+          "last_parsed_frame_at": 1791966271.6109743,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        }
+      }
+    }
+  }
+}

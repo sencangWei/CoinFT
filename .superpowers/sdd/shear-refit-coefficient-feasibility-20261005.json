@@ -1,0 +1,500 @@
+{
+  "purpose": "offline feasibility of coefficients in existing qualitative formula, not a fitted acceptance result",
+  "command": "D:/conda/python.exe -X utf8 coinft/.superpowers/sdd/shear_refit_coefficient_feasibility_20261005.py",
+  "constraints": {
+    "background_abs_max": 0.55,
+    "right_min": 1.2,
+    "left_max": -1.2,
+    "weight_sum": 0,
+    "objective": "minimize L1 norm of eight weights using eight absolute-value auxiliaries"
+  },
+  "limitations": [
+    "All eight windows are training data for this feasibility check; a passing replay is in sample and may overfit.",
+    "Recovery counters change from 30/2 to 31/3 at right_after; this is not one uninterrupted sensor stream.",
+    "No independent physical acceptance or deployment."
+  ],
+  "sources": {
+    "left_before": {
+      "path": "calibration/shear_refit_20261005_after_button/fit/left_repeat_after.json",
+      "sha256": "6238fa3690ee0c0a3cac6fc7488b9feb0a8bc2f0d89254ce973acd6f28ea904c",
+      "original_pose": "left_repeat_after",
+      "derived_evidence": "feasibility_aligned_left_before.json",
+      "owner": {
+        "pid": 87952,
+        "created": 1791188496.384482
+      },
+      "sample_count": 41,
+      "first_host": "2026-10-05T17:42:41.707391+08:00",
+      "last_host": "2026-10-05T17:42:46.822858+08:00",
+      "first_frame": 944507,
+      "last_frame": 945533,
+      "original_offset": [
+        28043,
+        27566,
+        26048,
+        26881.5,
+        26475,
+        26533,
+        27459,
+        26211.5,
+        28586,
+        28196,
+        29195,
+        28269.5
+      ],
+      "recovery_first": {
+        "attempts": 30,
+        "successes": 2
+      },
+      "recovery_last": {
+        "attempts": 30,
+        "successes": 2
+      },
+      "aligned_channels_median": [
+        -67,
+        -76,
+        -70,
+        -75.5,
+        -54,
+        -60,
+        -99,
+        -116.5,
+        -43,
+        -37,
+        -39,
+        -43.5
+      ]
+    },
+    "left": {
+      "path": "calibration/shear_refit_20261005_after_button/fit/left_confirmed_repeat.json",
+      "sha256": "81a99764b4b54b2f89361d2e12439ae541073e73c5a9bcdf4ab732b4f7151caf",
+      "original_pose": "left_confirmed_repeat",
+      "derived_evidence": "feasibility_aligned_left.json",
+      "owner": {
+        "pid": 87952,
+        "created": 1791188496.384482
+      },
+      "sample_count": 40,
+      "first_host": "2026-10-05T17:46:43.887179+08:00",
+      "last_host": "2026-10-05T17:46:48.985011+08:00",
+      "first_frame": 992934,
+      "last_frame": 993960,
+      "original_offset": [
+        28043,
+        27566,
+        26048,
+        26881.5,
+        26475,
+        26533,
+        27459,
+        26211.5,
+        28586,
+        28196,
+        29195,
+        28269.5
+      ],
+      "recovery_first": {
+        "attempts": 30,
+        "successes": 2
+      },
+      "recovery_last": {
+        "attempts": 30,
+        "successes": 2
+      },
+      "aligned_channels_median": [
+        1140.0,
+        1412.0,
+        1201.0,
+        1564.5,
+        1487.5,
+        1613.0,
+        1277.5,
+        874.5,
+        1224.5,
+        1225.5,
+        1458.0,
+        1194.0
+      ]
+    },
+    "press_before": {
+      "path": "calibration/shear_refit_20261005_after_button/fit/current_controls_empty.json",
+      "sha256": "dd407702652f763893da4b8c9295ef5898e6a273493f7ce01721f5f65b03f26d",
+      "original_pose": "current_controls_empty",
+      "derived_evidence": "feasibility_aligned_press_before.json",
+      "owner": {
+        "pid": 87952,
+        "created": 1791188496.384482
+      },
+      "sample_count": 41,
+      "first_host": "2026-10-05T18:00:30.312808+08:00",
+      "last_host": "2026-10-05T18:00:35.420880+08:00",
+      "first_frame": 1158221,
+      "last_frame": 1159248,
+      "original_offset": [
+        28043,
+        27566,
+        26048,
+        26881.5,
+        26475,
+        26533,
+        27459,
+        26211.5,
+        28586,
+        28196,
+        29195,
+        28269.5
+      ],
+      "recovery_first": {
+        "attempts": 30,
+        "successes": 2
+      },
+      "recovery_last": {
+        "attempts": 30,
+        "successes": 2
+      },
+      "aligned_channels_median": [
+        -118,
+        -158,
+        -150,
+        -188.5,
+        -122,
+        -115,
+        -167,
+        -173.5,
+        -69,
+        -59,
+        -77,
+        -66.5
+      ]
+    },
+    "press": {
+      "path": "calibration/shear_refit_20261005_after_button/fit/current_controls_press.json",
+      "sha256": "030a7a41b7e72498dde6c45ee1683c1926f3489817dc945750d51b1419a21c38",
+      "original_pose": "current_controls_press",
+      "derived_evidence": "feasibility_aligned_press.json",
+      "owner": {
+        "pid": 87952,
+        "created": 1791188496.384482
+      },
+      "sample_count": 42,
+      "first_host": "2026-10-05T18:03:59.744518+08:00",
+      "last_host": "2026-10-05T18:04:04.878373+08:00",
+      "first_frame": 1200121,
+      "last_frame": 1201145,
+      "original_offset": [
+        27937,
+        27424,
+        25900,
+        26714,
+        26364,
+        26428,
+        27306.5,
+        26062,
+        28537,
+        28148,
+        29139.5,
+        28211
+      ],
+      "recovery_first": {
+        "attempts": 30,
+        "successes": 2
+      },
+      "recovery_last": {
+        "attempts": 30,
+        "successes": 2
+      },
+      "aligned_channels_median": [
+        625.5,
+        614.5,
+        510.0,
+        787.0,
+        677.5,
+        798.5,
+        607.0,
+        389.5,
+        670.5,
+        670.0,
+        807.0,
+        631.0
+      ]
+    },
+    "press_after": {
+      "path": "calibration/shear_refit_20261005_after_button/fit/current_controls_press_after.json",
+      "sha256": "391086251f51f29fe15f5c0cb779ebb5a55ca700df4f13c35b0c9abb8b7b1d61",
+      "original_pose": "current_controls_press_after",
+      "derived_evidence": "feasibility_aligned_press_after.json",
+      "owner": {
+        "pid": 87952,
+        "created": 1791188496.384482
+      },
+      "sample_count": 41,
+      "first_host": "2026-10-05T18:05:40.810680+08:00",
+      "last_host": "2026-10-05T18:05:45.893749+08:00",
+      "first_frame": 1220339,
+      "last_frame": 1221343,
+      "original_offset": [
+        27937,
+        27424,
+        25900,
+        26714,
+        26364,
+        26428,
+        27306.5,
+        26062,
+        28537,
+        28148,
+        29139.5,
+        28211
+      ],
+      "recovery_first": {
+        "attempts": 30,
+        "successes": 2
+      },
+      "recovery_last": {
+        "attempts": 30,
+        "successes": 2
+      },
+      "aligned_channels_median": [
+        -138,
+        -143,
+        -150,
+        -161.5,
+        -132,
+        -120,
+        -169,
+        -184.5,
+        -74,
+        -73,
+        -81,
+        -84.5
+      ]
+    },
+    "right_before": {
+      "path": "calibration/shear_refit_20261005_after_button/fit/current_controls_right_before.json",
+      "sha256": "d580be48ce3781048b8829ac94973d9f8e9be647086822c48116ff64c1c2f12a",
+      "original_pose": "current_controls_right_before",
+      "derived_evidence": "feasibility_aligned_right_before.json",
+      "owner": {
+        "pid": 87952,
+        "created": 1791188496.384482
+      },
+      "sample_count": 40,
+      "first_host": "2026-10-05T18:06:37.132812+08:00",
+      "last_host": "2026-10-05T18:06:42.262087+08:00",
+      "first_frame": 1231589,
+      "last_frame": 1232614,
+      "original_offset": [
+        27937,
+        27424,
+        25900,
+        26714,
+        26364,
+        26428,
+        27306.5,
+        26062,
+        28537,
+        28148,
+        29139.5,
+        28211
+      ],
+      "recovery_first": {
+        "attempts": 30,
+        "successes": 2
+      },
+      "recovery_last": {
+        "attempts": 30,
+        "successes": 2
+      },
+      "aligned_channels_median": [
+        -137.0,
+        -160.5,
+        -169.0,
+        -187.5,
+        -103.0,
+        -124.5,
+        -150.0,
+        -170.0,
+        -61.5,
+        -64.5,
+        -80.0,
+        -79.0
+      ]
+    },
+    "right": {
+      "path": "calibration/shear_refit_20261005_after_button/fit/current_controls_right.json",
+      "sha256": "95d531c3dcc96502941f5a919625578b91f6afd98495f86e384a248bd3c13446",
+      "original_pose": "current_controls_right",
+      "derived_evidence": "feasibility_aligned_right.json",
+      "owner": {
+        "pid": 87952,
+        "created": 1791188496.384482
+      },
+      "sample_count": 41,
+      "first_host": "2026-10-05T18:11:41.855675+08:00",
+      "last_host": "2026-10-05T18:11:46.964546+08:00",
+      "first_frame": 1292525,
+      "last_frame": 1293551,
+      "original_offset": [
+        27937,
+        27424,
+        25900,
+        26714,
+        26364,
+        26428,
+        27306.5,
+        26062,
+        28537,
+        28148,
+        29139.5,
+        28211
+      ],
+      "recovery_first": {
+        "attempts": 30,
+        "successes": 2
+      },
+      "recovery_last": {
+        "attempts": 30,
+        "successes": 2
+      },
+      "aligned_channels_median": [
+        913,
+        867,
+        709,
+        1184.5,
+        1038,
+        1201,
+        897,
+        574.5,
+        936,
+        929,
+        1110,
+        889.5
+      ]
+    },
+    "right_after": {
+      "path": "calibration/shear_refit_20261005_after_button/fit/current_controls_right_after.json",
+      "sha256": "274385c8b3f89951350ffd92b0c864956b11c2f5c8a241f3d635cfa206ae2613",
+      "original_pose": "current_controls_right_after",
+      "derived_evidence": "feasibility_aligned_right_after.json",
+      "owner": {
+        "pid": 87952,
+        "created": 1791188496.384482
+      },
+      "sample_count": 40,
+      "first_host": "2026-10-05T18:18:51.500012+08:00",
+      "last_host": "2026-10-05T18:18:56.506785+08:00",
+      "first_frame": 1377998,
+      "last_frame": 1379001,
+      "original_offset": [
+        27937,
+        27424,
+        25900,
+        26714,
+        26364,
+        26428,
+        27306.5,
+        26062,
+        28537,
+        28148,
+        29139.5,
+        28211
+      ],
+      "recovery_first": {
+        "attempts": 31,
+        "successes": 3
+      },
+      "recovery_last": {
+        "attempts": 31,
+        "successes": 3
+      },
+      "aligned_channels_median": [
+        -131.0,
+        -182.0,
+        -164.5,
+        -210.0,
+        -126.0,
+        -123.5,
+        -184.5,
+        -185.0,
+        -70.5,
+        -70.0,
+        -82.0,
+        -78.0
+      ]
+    }
+  },
+  "status": "infeasible",
+  "feature_basis": {
+    "raw_alignment_reference_source": "calibration/shear_refit_20261005_after_button/fit/current_controls_empty.json",
+    "raw_alignment_reference_offset": [
+      28043,
+      27566,
+      26048,
+      26881.5,
+      26475,
+      26533,
+      27459,
+      26211.5,
+      28586,
+      28196,
+      29195,
+      28269.5
+    ],
+    "common_replay_baseline": [
+      -118,
+      -158,
+      -150,
+      -188.5,
+      -122,
+      -115,
+      -167,
+      -173.5,
+      -69,
+      -59,
+      -77,
+      -66.5
+    ],
+    "definition": "residual(aligned sample channels - one common press_before median, fixed pressLeak); residual is 8-channel contrast minus pressLeak * normalScore",
+    "press_leak": [
+      -0.018262174783188794,
+      -0.03460640426951301,
+      -0.13008672448298866,
+      0.2391594396264176,
+      0.06429286190793862,
+      0.18295530353569045,
+      0.031187458305537024,
+      -0.2541694462975317
+    ],
+    "press_normal_denominator": 749.5
+  },
+  "production_profile": {
+    "path": "demo_web/shear_demo_profile.json",
+    "sha256": "fae3ea39d65d105795b6cea8e34b999d939a9ab9afbf0495ab5e15614b728e83",
+    "normal": {
+      "threshold": 100.0,
+      "span": 600.0
+    }
+  },
+  "lp": {
+    "success": false,
+    "status": 2,
+    "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+    "objective": null,
+    "inequality_count": 587,
+    "equality_count": 1,
+    "sample_counts": {
+      "left_before": 41,
+      "left": 40,
+      "press_before": 41,
+      "press": 42,
+      "press_after": 41,
+      "right_before": 40,
+      "right": 41,
+      "right_after": 40
+    }
+  },
+  "candidate": null,
+  "replay": null,
+  "replay_not_run_reason": "No coefficients satisfy the exact LP constraints.",
+  "source_hashes_verified_after_run": true
+}

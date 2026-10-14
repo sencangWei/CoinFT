@@ -1,0 +1,173 @@
+{
+  "purpose": "Read-only follow-up after operator reports clicking page demo-zero",
+  "operator_report": "点了",
+  "first": {
+    "checked_at": "2026-09-28T17:57:50.4497578+08:00",
+    "owners": [
+      {
+        "ProcessId": 18408,
+        "Name": "python.exe",
+        "CommandLine": "\"D:\\conda\\python.exe\" coinft_demo.py --port COM6 --no-browser "
+      }
+    ],
+    "state": {
+      "mode": "live",
+      "status": "live",
+      "message": "数据流正常",
+      "port": "COM6",
+      "axes": [
+        0.0104699,
+        -0.0274492,
+        -0.0322552,
+        0.000002,
+        0.0000089,
+        0.0000334
+      ],
+      "channels": [
+        106,
+        32,
+        149,
+        33,
+        16,
+        67,
+        1.5,
+        64,
+        21.5,
+        22.5,
+        0,
+        -13
+      ],
+      "raw": [
+        27761,
+        27083,
+        25679,
+        26426,
+        25986,
+        26127,
+        26938,
+        25810,
+        28366,
+        27969,
+        28916,
+        27997
+      ],
+      "rate": 200,
+      "frames": 120769,
+      "resyncs": 0,
+      "saturated": 0,
+      "saturated_recent": 0,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "tare_progress": 100,
+      "updated_at": 1790589468.172,
+      "diagnostics": {
+        "serial_reads": 5554,
+        "serial_bytes": 3140020,
+        "parsed_frames": 120769,
+        "last_byte_at": 1790589468.1709492,
+        "last_parsed_frame_at": 1790589468.1709492,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      },
+      "recovery": {
+        "attempts": 0,
+        "successes": 0,
+        "last_fault": null
+      }
+    },
+    "browser_debug": {
+      "available": false,
+      "reason": "The operation has timed out."
+    }
+  },
+  "second": {
+    "checked_at": "2026-09-28T17:58:38.8834897+08:00",
+    "state": {
+      "mode": "live",
+      "status": "live",
+      "message": "数据流正常",
+      "port": "COM6",
+      "axes": [
+        0.0208885,
+        -0.0387618,
+        -0.0341401,
+        0.0000035,
+        0.0000281,
+        0.0000779
+      ],
+      "channels": [
+        -97,
+        46,
+        -123,
+        15,
+        141,
+        28,
+        125.5,
+        2,
+        25.5,
+        14.5,
+        14,
+        -4
+      ],
+      "raw": [
+        27558,
+        27097,
+        25407,
+        26408,
+        26111,
+        26088,
+        27062,
+        25748,
+        28370,
+        27961,
+        28930,
+        28006
+      ],
+      "rate": 200,
+      "frames": 130904,
+      "resyncs": 0,
+      "saturated": 0,
+      "saturated_recent": 0,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "tare_progress": 100,
+      "updated_at": 1790589518.858322,
+      "diagnostics": {
+        "serial_reads": 6021,
+        "serial_bytes": 3403530,
+        "parsed_frames": 130904,
+        "last_byte_at": 1790589518.8572736,
+        "last_parsed_frame_at": 1790589518.8572736,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      },
+      "recovery": {
+        "attempts": 0,
+        "successes": 0,
+        "last_fault": null
+      }
+    }
+  },
+  "checks": {
+    "same_expected_owner": true,
+    "live_at_both_points": true,
+    "frames_increase": true,
+    "serial_bytes_increase": true,
+    "parsed_frames_increase": true,
+    "no_invalid_or_saturation": true,
+    "twelve_raw_channels": true,
+    "new_recovery_schema": true
+  },
+  "page_demo_zero": {
+    "operator_click_reported": true,
+    "baseline_independently_observed": false,
+    "reason": "No browser inspection tools; existing local browser debugger9222 timed out. Browser-only demoBaseline is not included in backend API."
+  },
+  "scope": "HTTP point checks and existing browser debugger availability query only; no process control, COM8 access, sensor commands, tare, demo-zero repeat, firmware or source changes.",
+  "not_accepted": [
+    "Visible page zero completion",
+    "Real stall/recovery event",
+    "Physical press/shear directional response",
+    "Continuous-window timing, latency or drops"
+  ]
+}

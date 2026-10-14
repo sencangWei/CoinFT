@@ -1,0 +1,340 @@
+{
+  "elapsed": 30.3780701,
+  "samples": [
+    {
+      "elapsed": 0.0344397,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 5354,
+      "rate": 200.7,
+      "updated_at": 1790422217.8008502,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100
+    },
+    {
+      "elapsed": 1.0586904,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 5549,
+      "rate": 200.6,
+      "updated_at": 1790422218.7790835,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100
+    },
+    {
+      "elapsed": 2.0688258,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 5745,
+      "rate": 200.6,
+      "updated_at": 1790422219.758555,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100
+    },
+    {
+      "elapsed": 3.080899,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 5963,
+      "rate": 200.6,
+      "updated_at": 1790422220.848946,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100
+    },
+    {
+      "elapsed": 4.0976921,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 6160,
+      "rate": 200.6,
+      "updated_at": 1790422221.8337333,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100
+    },
+    {
+      "elapsed": 5.105245099999999,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 6356,
+      "rate": 200.6,
+      "updated_at": 1790422222.8109186,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100
+    },
+    {
+      "elapsed": 6.1132157,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 6573,
+      "rate": 200.6,
+      "updated_at": 1790422223.896494,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100
+    },
+    {
+      "elapsed": 7.1214341,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 6768,
+      "rate": 200.5,
+      "updated_at": 1790422224.8748612,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100
+    },
+    {
+      "elapsed": 8.1333176,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 6964,
+      "rate": 200.5,
+      "updated_at": 1790422225.854199,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100
+    },
+    {
+      "elapsed": 9.1463409,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 7161,
+      "rate": 200.5,
+      "updated_at": 1790422226.8361785,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100
+    },
+    {
+      "elapsed": 10.170093999999999,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 7379,
+      "rate": 200.5,
+      "updated_at": 1790422227.9265842,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100
+    },
+    {
+      "elapsed": 11.1834676,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 7574,
+      "rate": 200.5,
+      "updated_at": 1790422228.9055698,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100
+    },
+    {
+      "elapsed": 12.2017227,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 7771,
+      "rate": 200.4,
+      "updated_at": 1790422229.8906891,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100
+    },
+    {
+      "elapsed": 13.213075799999999,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 7989,
+      "rate": 200.4,
+      "updated_at": 1790422230.98109,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100
+    },
+    {
+      "elapsed": 14.2291159,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 8186,
+      "rate": 200.4,
+      "updated_at": 1790422231.965487,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100
+    },
+    {
+      "elapsed": 15.2373561,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 8382,
+      "rate": 200.4,
+      "updated_at": 1790422232.9426568,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100
+    },
+    {
+      "elapsed": 16.2468661,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 8599,
+      "rate": 200.4,
+      "updated_at": 1790422234.030286,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100
+    },
+    {
+      "elapsed": 17.2556148,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 8795,
+      "rate": 200.4,
+      "updated_at": 1790422235.007712,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100
+    },
+    {
+      "elapsed": 18.2675163,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 8991,
+      "rate": 200.4,
+      "updated_at": 1790422235.9893668,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100
+    },
+    {
+      "elapsed": 19.2770085,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 9186,
+      "rate": 200.4,
+      "updated_at": 1790422236.9676247,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100
+    },
+    {
+      "elapsed": 20.2867754,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 9404,
+      "rate": 200.4,
+      "updated_at": 1790422238.054966,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100
+    },
+    {
+      "elapsed": 21.2935342,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 9599,
+      "rate": 200.4,
+      "updated_at": 1790422239.0315025,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100
+    },
+    {
+      "elapsed": 22.3055067,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 9795,
+      "rate": 200.4,
+      "updated_at": 1790422240.0111818,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100
+    },
+    {
+      "elapsed": 23.315301599999998,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 10012,
+      "rate": 200.3,
+      "updated_at": 1790422241.098265,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100
+    },
+    {
+      "elapsed": 24.3274093,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 10209,
+      "rate": 200.3,
+      "updated_at": 1790422242.0810485,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100
+    },
+    {
+      "elapsed": 25.3346566,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 10404,
+      "rate": 200.3,
+      "updated_at": 1790422243.0566845,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100
+    },
+    {
+      "elapsed": 26.3430438,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 10599,
+      "rate": 200.3,
+      "updated_at": 1790422244.0336664,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100
+    },
+    {
+      "elapsed": 27.357223899999997,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 10818,
+      "rate": 200.3,
+      "updated_at": 1790422245.124924,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100
+    },
+    {
+      "elapsed": 28.366752899999998,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 11013,
+      "rate": 200.3,
+      "updated_at": 1790422246.1037376,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100
+    },
+    {
+      "elapsed": 29.3722271,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 11208,
+      "rate": 200.3,
+      "updated_at": 1790422247.0778742,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100
+    }
+  ],
+  "pose": "operator-confirmed empty, no interaction after manual acquisition service restart",
+  "limitations": [
+    "30-second observation only; no stress condition and no proof of long-term stability.",
+    "Operator-described empty state; no independent reference measurement."
+  ]
+}

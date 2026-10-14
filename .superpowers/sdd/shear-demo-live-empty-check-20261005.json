@@ -1,0 +1,26 @@
+{
+  "ready": true,
+  "state": {
+    "baseline": [
+      10,
+      -21.5,
+      13,
+      -19,
+      -53.5,
+      -22,
+      -42.5,
+      -28.5,
+      5,
+      10,
+      11,
+      20
+    ],
+    "frames": 3292979,
+    "normal": 0,
+    "shear": 0,
+    "paused": false,
+    "button": "演示归零（仅画面）"
+  },
+  "page_errors": [],
+  "posts": []
+}

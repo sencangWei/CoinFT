@@ -1,0 +1,169 @@
+{
+  "scope": "read-only diagnostic snapshot; physical state not confirmed",
+  "current_state": {
+    "mode": "live",
+    "status": "live",
+    "message": "数据流正常",
+    "port": "COM6",
+    "axes": [
+      -0.0096613,
+      0.0270832,
+      0.0865665,
+      -0.0000162,
+      -0.0000151,
+      -0.000062
+    ],
+    "channels": [
+      -16,
+      -22,
+      -8.5,
+      -30.5,
+      25,
+      -118,
+      21,
+      -83.5,
+      -12,
+      3,
+      -16,
+      -22
+    ],
+    "raw": [
+      27814,
+      27255,
+      25743,
+      26536,
+      26242,
+      26164,
+      27179,
+      25804,
+      28470,
+      28089,
+      29050,
+      28118
+    ],
+    "rate": 200.4,
+    "frames": 3382314,
+    "resyncs": 0,
+    "saturated": 0,
+    "saturated_recent": 0,
+    "invalid_frames": 9,
+    "invalid_recent": 0,
+    "tare_progress": 100,
+    "updated_at": 1791205560.8265367,
+    "diagnostics": {
+      "serial_reads": 154998,
+      "serial_bytes": 87940346,
+      "parsed_frames": 3382314,
+      "last_byte_at": 1791205560.8248239,
+      "last_parsed_frame_at": 1791205560.8248239,
+      "parser_pending_bytes": 26,
+      "parser_discarded_bytes": 0
+    },
+    "recovery": {
+      "attempts": 34,
+      "successes": 6,
+      "last_fault": {
+        "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+        "observed_at": 1791205509.3843443,
+        "frames": 3372071,
+        "diagnostics": {
+          "serial_reads": 154524,
+          "serial_bytes": 87674002,
+          "parsed_frames": 3372071,
+          "last_byte_at": 1791205507.3259728,
+          "last_parsed_frame_at": 1791205507.3259728,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        }
+      }
+    }
+  },
+  "backend_reference_offset": [
+    27830,
+    27277,
+    25751.5,
+    26566.5,
+    26217,
+    26282,
+    27158,
+    25887.5,
+    28482,
+    28086,
+    29066,
+    28140
+  ],
+  "recorded_browser_zero_baseline": [
+    10,
+    -21.5,
+    13,
+    -19,
+    -53.5,
+    -22,
+    -42.5,
+    -28.5,
+    5,
+    10,
+    11,
+    20
+  ],
+  "current_reference_plus_recorded_browser_baseline": [
+    27840,
+    27255.5,
+    25764.5,
+    26547.5,
+    26163.5,
+    26260,
+    27115.5,
+    25859,
+    28487,
+    28096,
+    29077,
+    28160
+  ],
+  "frozen_raw_baseline": [
+    27871.5,
+    27339,
+    25816.5,
+    26606,
+    26265.5,
+    26348,
+    27196,
+    25977.5,
+    28490.5,
+    28102,
+    29079,
+    28153.5
+  ],
+  "effective_minus_frozen": [
+    -31.5,
+    -83.5,
+    -52,
+    -58.5,
+    -102,
+    -88,
+    -80.5,
+    -118.5,
+    -3.5,
+    -6,
+    -2,
+    6.5
+  ],
+  "scores": {
+    "frozen": -0.6117246988421208,
+    "recordedPage": -24.443475071477536,
+    "baselineShiftScore": 23.831750372635415
+  },
+  "verification_recovery": {
+    "owner": {
+      "pid": 87952,
+      "created": 1791188496.384482
+    },
+    "invalid": 4,
+    "saturated": 0,
+    "resyncs": 0,
+    "parser_discarded_bytes": 0,
+    "recovery_attempts": 31,
+    "recovery_successes": 3
+  },
+  "note": "Recorded browser baseline may have changed; this is not a live page inspection."
+}

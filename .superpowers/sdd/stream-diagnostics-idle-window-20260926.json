@@ -1,0 +1,375 @@
+{
+  "mode": "bench_no_motion",
+  "scope": "deployment/incoming-stream checks only",
+  "target": {
+    "pid": 54804,
+    "port": "COM10"
+  },
+  "operator_state": "instructed empty; no force actions requested during capture",
+  "thresholds": {
+    "all_live": true,
+    "all_intervals_frames_and_bytes_advance": true,
+    "invalid_recent": 0,
+    "min_reported_rate_hz": 180,
+    "max_reported_rate_hz": 220
+  },
+  "result": "PASS for bounded diagnostic deployment/idle window only",
+  "metrics": {
+    "sample_count": 20,
+    "first_to_last_seconds": 19.216210800000002,
+    "frame_delta": 3849,
+    "observed_frame_rate_hz": 200.29963451483366,
+    "serial_read_delta": 177,
+    "serial_byte_delta": 100074,
+    "all_intervals_frames_and_bytes_advance": true,
+    "all_status_live": true
+  },
+  "samples": [
+    {
+      "elapsed": 0.038558,
+      "status": "live",
+      "frames": 101708,
+      "reported_rate_hz": 200,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100,
+      "diagnostics": {
+        "serial_reads": 4675,
+        "serial_bytes": 2644434,
+        "parsed_frames": 101708,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 1.0665245,
+      "status": "live",
+      "frames": 101926,
+      "reported_rate_hz": 200,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100,
+      "diagnostics": {
+        "serial_reads": 4685,
+        "serial_bytes": 2650102,
+        "parsed_frames": 101926,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 2.0744728,
+      "status": "live",
+      "frames": 102122,
+      "reported_rate_hz": 200,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100,
+      "diagnostics": {
+        "serial_reads": 4694,
+        "serial_bytes": 2655198,
+        "parsed_frames": 102122,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 3.0812872,
+      "status": "live",
+      "frames": 102317,
+      "reported_rate_hz": 200,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100,
+      "diagnostics": {
+        "serial_reads": 4703,
+        "serial_bytes": 2660268,
+        "parsed_frames": 102317,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 4.0883304,
+      "status": "live",
+      "frames": 102512,
+      "reported_rate_hz": 200,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100,
+      "diagnostics": {
+        "serial_reads": 4712,
+        "serial_bytes": 2665338,
+        "parsed_frames": 102512,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 5.0993409,
+      "status": "live",
+      "frames": 102729,
+      "reported_rate_hz": 200,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100,
+      "diagnostics": {
+        "serial_reads": 4722,
+        "serial_bytes": 2670980,
+        "parsed_frames": 102729,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 6.1085827,
+      "status": "live",
+      "frames": 102925,
+      "reported_rate_hz": 200,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100,
+      "diagnostics": {
+        "serial_reads": 4731,
+        "serial_bytes": 2676076,
+        "parsed_frames": 102925,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 7.1199469,
+      "status": "live",
+      "frames": 103121,
+      "reported_rate_hz": 200,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100,
+      "diagnostics": {
+        "serial_reads": 4740,
+        "serial_bytes": 2681172,
+        "parsed_frames": 103121,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 8.1262507,
+      "status": "live",
+      "frames": 103338,
+      "reported_rate_hz": 200,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100,
+      "diagnostics": {
+        "serial_reads": 4750,
+        "serial_bytes": 2686814,
+        "parsed_frames": 103338,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 9.1482212,
+      "status": "live",
+      "frames": 103534,
+      "reported_rate_hz": 200,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100,
+      "diagnostics": {
+        "serial_reads": 4759,
+        "serial_bytes": 2691910,
+        "parsed_frames": 103534,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 10.1655598,
+      "status": "live",
+      "frames": 103730,
+      "reported_rate_hz": 200,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100,
+      "diagnostics": {
+        "serial_reads": 4768,
+        "serial_bytes": 2697006,
+        "parsed_frames": 103730,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 11.1758218,
+      "status": "live",
+      "frames": 103948,
+      "reported_rate_hz": 200,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100,
+      "diagnostics": {
+        "serial_reads": 4778,
+        "serial_bytes": 2702674,
+        "parsed_frames": 103948,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 12.1833189,
+      "status": "live",
+      "frames": 104143,
+      "reported_rate_hz": 200,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100,
+      "diagnostics": {
+        "serial_reads": 4787,
+        "serial_bytes": 2707744,
+        "parsed_frames": 104143,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 13.1908454,
+      "status": "live",
+      "frames": 104338,
+      "reported_rate_hz": 200,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100,
+      "diagnostics": {
+        "serial_reads": 4796,
+        "serial_bytes": 2712814,
+        "parsed_frames": 104338,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 14.2026139,
+      "status": "live",
+      "frames": 104534,
+      "reported_rate_hz": 200,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100,
+      "diagnostics": {
+        "serial_reads": 4805,
+        "serial_bytes": 2717910,
+        "parsed_frames": 104534,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 15.2132479,
+      "status": "live",
+      "frames": 104752,
+      "reported_rate_hz": 200,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100,
+      "diagnostics": {
+        "serial_reads": 4815,
+        "serial_bytes": 2723578,
+        "parsed_frames": 104752,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 16.2229549,
+      "status": "live",
+      "frames": 104948,
+      "reported_rate_hz": 200,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100,
+      "diagnostics": {
+        "serial_reads": 4824,
+        "serial_bytes": 2728674,
+        "parsed_frames": 104948,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 17.2369461,
+      "status": "live",
+      "frames": 105144,
+      "reported_rate_hz": 200,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100,
+      "diagnostics": {
+        "serial_reads": 4833,
+        "serial_bytes": 2733770,
+        "parsed_frames": 105144,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 18.2437335,
+      "status": "live",
+      "frames": 105361,
+      "reported_rate_hz": 200,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100,
+      "diagnostics": {
+        "serial_reads": 4843,
+        "serial_bytes": 2739412,
+        "parsed_frames": 105361,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 19.2547688,
+      "status": "live",
+      "frames": 105557,
+      "reported_rate_hz": 200,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100,
+      "diagnostics": {
+        "serial_reads": 4852,
+        "serial_bytes": 2744508,
+        "parsed_frames": 105557,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    }
+  ],
+  "provenance": "Selected fields transcribed from completed read-only HTTP command session45788, exit0. Original wall-time fields omitted; elapsed is host monotonic polling clock, not sensor acquisition timing.",
+  "skipped": [
+    "sensor timestamps, individual jitter/drop/latency unavailable",
+    "direction/force acceptance not attempted",
+    "fault did not occur; no root-cause conclusion"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "operator_confirmation": "已松开",
+  "scope": "read-only released-state stream check",
+  "result": "BLOCKED: acquisition HTTP service not running",
+  "observed": {
+    "http_attempts": 4,
+    "http_result": "connection failure each attempt; null objects emitted by fallback script are not sensor samples",
+    "service_process_query": "no matching Python coinft_demo.py process returned",
+    "port8765_listener_count": 0,
+    "com10": [
+      {
+        "name": "USB 串行设备 (COM10)",
+        "status": "OK"
+      }
+    ]
+  },
+  "limitations": [
+    "No valid diagnostic snapshots captured",
+    "USB enumeration does not establish incoming sensor data",
+    "Unknown when/why service stopped; no causal attribution to force action"
+  ],
+  "tool_results": {
+    "initial": {
+      "chunk_id": "2eb828",
+      "wall_time_seconds": 10.0041086,
+      "session_id": 88689,
+      "original_token_count": 236,
+      "output": "Invoke-RestMethod : 无法连接到远程服务器\r\nAt line:4 char:12\r\n+ $diagState=Invoke-RestMethod -Uri 'http://127.0.0.1:8765/api/state' - ...\r\n+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-RestMethod], WebExc \r\n   eption\r\n    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand\r\n \r\nInvoke-RestMethod : 无法连接到远程服务器\r\nAt line:4 char:12\r\n+ $diagState=Invoke-RestMethod -Uri 'http://127.0.0.1:8765/api/state' - ...\r\n+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-RestMethod], WebExc \r\n   eption\r\n    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand\r\n \r\n"
+    },
+    "completed": {
+      "chunk_id": "d6413f",
+      "wall_time_seconds": 0.0000399,
+      "exit_code": 0,
+      "original_token_count": 497,
+      "output": "Invoke-RestMethod : 无法连接到远程服务器\r\nAt line:4 char:12\r\n+ $diagState=Invoke-RestMethod -Uri 'http://127.0.0.1:8765/api/state' - ...\r\n+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-RestMethod], WebExc \r\n   eption\r\n    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand\r\n \r\nInvoke-RestMethod : 无法连接到远程服务器\r\nAt line:4 char:12\r\n+ $diagState=Invoke-RestMethod -Uri 'http://127.0.0.1:8765/api/state' - ...\r\n+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-RestMethod], WebExc \r\n   eption\r\n    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand\r\n \r\n[{\"observed_at\":\"2026-09-28T13:27:22.7075741+08:00\",\"host_epoch\":1790573242.716,\"status\":null,\"message\":null,\"frames\":null,\"updated_at\":null,\"rate\":null,\"invalid_frames\":null,\"invalid_recent\":null,\"saturated_recent\":null,\"tare_progress\":null,\"diagnostics\":null},{\"observed_at\":\"2026-09-28T13:27:25.7908097+08:00\",\"host_epoch\":1790573245.79,\"status\":null,\"message\":null,\"frames\":null,\"updated_at\":null,\"rate\":null,\"invalid_frames\":null,\"invalid_recent\":null,\"saturated_recent\":null,\"tare_progress\":null,\"diagnostics\":null},{\"observed_at\":\"2026-09-28T13:27:28.8580315+08:00\",\"host_epoch\":1790573248.858,\"status\":null,\"message\":null,\"frames\":null,\"updated_at\":null,\"rate\":null,\"invalid_frames\":null,\"invalid_recent\":null,\"saturated_recent\":null,\"tare_progress\":null,\"diagnostics\":null},{\"observed_at\":\"2026-09-28T13:27:31.9172707+08:00\",\"host_epoch\":1790573251.917,\"status\":null,\"message\":null,\"frames\":null,\"updated_at\":null,\"rate\":null,\"invalid_frames\":null,\"invalid_recent\":null,\"saturated_recent\":null,\"tare_progress\":null,\"diagnostics\":null}]\r\n"
+    }
+  },
+  "actions": "No start/stop, tare, zero, USB or firmware actions; plus-X deferred pending operator manual startup"
+}

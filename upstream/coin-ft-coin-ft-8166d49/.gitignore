@@ -1,0 +1,17 @@
+# Ignore large binary data files
+#*.h5
+*.npz
+
+# Keep the example directory clean but allow the specific sample
+# 1. Ignore EVERYTHING inside the data folder by default
+data/*
+
+
+
+
+# Python environment and cache
+__pycache__/
+.venv/
+env/
+.vscode/
+.DS_Store

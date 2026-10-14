@@ -1,0 +1,388 @@
+Surface source no-index diff (full function context)
+warning: in the working copy of '.superpowers\sdd\surface.before-combined-stability.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'demo_web\surface.js', LF will be replaced by CRLF the next time Git touches it
+diff --git "a/.superpowers\\sdd\\surface.before-combined-stability.js" "b/demo_web\\surface.js"
+index 8c47721..de8fd1e 100644
+--- "a/.superpowers\\sdd\\surface.before-combined-stability.js"
++++ "b/demo_web\\surface.js"
+@@ -1,154 +1,202 @@
+ function surfaceLevel(channels) {
+   if (!Array.isArray(channels) || channels.length !== 12 ||
+       channels.some(value => !Number.isFinite(value))) return 0;
+   const values = channels.map(Math.abs).sort((a, b) => a - b);
+   const median = (values[5] + values[6]) / 2;
+   return Math.max(0, Math.min(1, (median - 100) / 600));
+ }
+ 
+ const disabledSurfaceProfile = {
+   version: 1,
+   normal: { threshold: 100, span: 600 },
+   shear: { enabled: false, weights: Array(8).fill(0),
+            pressLeak: Array(8).fill(0), threshold: 1, span: 1 }
+ };
+ 
+ function validSurfaceChannels(channels) {
+   return Array.isArray(channels) && channels.length === 12 &&
+     channels.every(Number.isFinite);
+ }
+ 
+ function normalScore(channels) {
+   const values = channels.slice(8).sort((a, b) => a - b);
+   return Math.max(0, (values[1] + values[2]) / 2);
+ }
+ 
+ function normalLevel(channels, profile = disabledSurfaceProfile) {
+   if (!validSurfaceChannels(channels) || !profile || profile.version !== 1 ||
+       !profile.normal || !Number.isFinite(profile.normal.threshold) ||
+       !Number.isFinite(profile.normal.span) || profile.normal.threshold <= 0 ||
+       profile.normal.span <= 0) return 0;
+   return Math.max(0, Math.min(1,
+     (normalScore(channels) - profile.normal.threshold) / profile.normal.span));
+ }
+ 
+-function shearLevel(channels, profile = disabledSurfaceProfile, active = false) {
++function shearScore(channels, profile) {
+   const shear = profile && profile.shear;
+   if (!validSurfaceChannels(channels) || !profile || profile.version !== 1 ||
+       !shear || shear.enabled !== true ||
+       !Array.isArray(shear.weights) || shear.weights.length !== 8 ||
+       !shear.weights.every(Number.isFinite) ||
+       !Array.isArray(shear.pressLeak) || shear.pressLeak.length !== 8 ||
+       !shear.pressLeak.every(Number.isFinite) ||
+       !Number.isFinite(shear.threshold) || shear.threshold <= 0 ||
+-      !Number.isFinite(shear.span) || shear.span <= 0) return 0;
++      !Number.isFinite(shear.span) || shear.span <= 0) return null;
+   const avg = channels.slice(0, 8).reduce((a, b) => a + b, 0) / 8;
+   const normal = normalScore(channels);
+-  const score = channels.slice(0, 8).reduce((sum, value, i) =>
++  return channels.slice(0, 8).reduce((sum, value, i) =>
+     sum + shear.weights[i] * (value - avg - shear.pressLeak[i] * normal), 0);
++}
++
++function shearLevel(channels, profile = disabledSurfaceProfile, active = false) {
++  const score = shearScore(channels, profile);
++  if (score === null) return 0;
++  const shear = profile.shear;
+   const threshold = shear.threshold * (profile.mode === "qualitative" ? 1 : (active ? 0.7 : 1));
+   return Math.sign(score) * Math.max(0,
+     Math.min(1, (Math.abs(score) - threshold) / shear.span));
+ }
+ 
+ function createSurface(canvas) {
+   const surface = { target: 0, level: 0, shearTarget: 0, shearLevel: 0,
+                     set, clear, resize };
+   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+   let frame = 0;
++  let shearProfile, shearMode, filteredScore = null, lastShearTime = 0, activeSign = 0;
++
++  function resetShear() {
++    filteredScore = null;
++    lastShearTime = 0;
++    activeSign = 0;
++  }
++
++  function qualitativeShear(score, shear) {
++    const displayLimit = Math.max(shear.threshold, 0.6 * shear.threshold + 0.85 * shear.span);
++    score = Math.max(-displayLimit, Math.min(displayLimit, score));
++    const now = performance.now();
++    if (filteredScore === null) filteredScore = score;
++    else filteredScore += (score - filteredScore) *
++      (1 - Math.exp(-Math.max(0, now - lastShearTime) / 180));
++    lastShearTime = now;
++    const sign = Math.sign(filteredScore), magnitude = Math.abs(filteredScore);
++    const continuation = 0.6 * shear.threshold;
++    if (sign !== activeSign || magnitude < continuation) activeSign = 0;
++    if (magnitude >= shear.threshold) activeSign = sign;
++    if (!activeSign) return 0;
++    return activeSign * Math.max(0, Math.min(1,
++      (magnitude - continuation) / (0.85 * shear.span)));
++  }
+ 
+   function resize() {
+     const bounds = canvas.getBoundingClientRect();
+     if (!bounds.width || !bounds.height) return;
+     const ratio = window.devicePixelRatio || 1;
+     canvas.width = Math.round(bounds.width * ratio);
+     canvas.height = Math.round(bounds.height * ratio);
+     draw();
+   }
+ 
+   function draw() {
+     const bounds = canvas.getBoundingClientRect();
+     const w = bounds.width, h = bounds.height;
+     if (!w || !h) return;
+     const ctx = canvas.getContext("2d");
+     ctx.setTransform(canvas.width / w, 0, 0, canvas.height / h, 0, 0);
+     ctx.clearRect(0, 0, w, h);
+     const steps = 18;
+     function point(i, j) {
+       const u = i / steps * 2 - 1;
+       const v = j / steps * 2 - 1;
+       const shift = surface.shearLevel;
+       const envelope = ((1 - u * u) * (1 - v * v)) ** 2;
+       const drag = 0.44 * shift * envelope;
+       const center = 0.19 * shift;
+       const bump = Math.exp(-((u - center) ** 2 + (v + center) ** 2) / 0.18);
+       const ridge = 0.19 * shift * (u - v) * envelope;
+       return [w * (0.5 + (u + drag - v + drag) * 0.23),
+               h * (0.34 + (u + v) * 0.105 + (bump * surface.level + ridge) * 0.17),
+               Math.min(1, bump * surface.level + Math.abs(shift) * envelope * 0.8)];
+     }
+     for (let j = 0; j < steps; j++) {
+       for (let i = 0; i < steps; i++) {
+         const a = point(i, j), b = point(i + 1, j);
+         const c = point(i + 1, j + 1), d = point(i, j + 1);
+         const intensity = (a[2] + b[2] + c[2] + d[2]) / 4;
+         ctx.beginPath();
+         ctx.moveTo(a[0], a[1]);
+         ctx.lineTo(b[0], b[1]);
+         ctx.lineTo(c[0], c[1]);
+         ctx.lineTo(d[0], d[1]);
+         ctx.closePath();
+         ctx.fillStyle = `rgba(57,211,194,${0.04 + intensity * 0.55})`;
+         ctx.fill();
+         ctx.strokeStyle = intensity > 0.08 ? `rgba(99,238,211,${0.45 + intensity * 0.4})` : "#a6c6629c";
+         ctx.lineWidth = 0.8;
+         ctx.stroke();
+       }
+     }
+   }
+ 
+   function animate() {
+     frame = 0;
+     surface.level += (surface.target - surface.level) * 0.2;
+     surface.shearLevel += (surface.shearTarget - surface.shearLevel) * 0.2;
+     if (Math.abs(surface.target - surface.level) < 0.003) surface.level = surface.target;
+     if (Math.abs(surface.shearTarget - surface.shearLevel) < 0.003)
+       surface.shearLevel = surface.shearTarget;
+     draw();
+     if (surface.level !== surface.target || surface.shearLevel !== surface.shearTarget)
+       frame = requestAnimationFrame(animate);
+   }
+ 
+   function set(channels, profile = disabledSurfaceProfile) {
+     surface.target = normalLevel(channels, profile);
+-    surface.shearTarget = shearLevel(channels, profile, Math.abs(surface.shearTarget) > 0);
++    if (profile !== shearProfile || (profile && profile.mode) !== shearMode) {
++      resetShear();
++      surface.shearTarget = 0;
++    }
++    shearProfile = profile;
++    shearMode = profile && profile.mode;
++    if (profile && profile.mode === "qualitative") {
++      const score = shearScore(channels, profile);
++      if (score === null || !Number.isFinite(score) ||
++        !profile.normal || !Number.isFinite(profile.normal.threshold) ||
++        !Number.isFinite(profile.normal.span) || profile.normal.threshold <= 0 ||
++        profile.normal.span <= 0) {
++        resetShear();
++        surface.shearTarget = 0;
++      } else surface.shearTarget = qualitativeShear(score, profile.shear);
++    } else {
++      surface.shearTarget = shearLevel(channels, profile, Math.abs(surface.shearTarget) > 0);
++    }
+     if (reduced.matches) {
+       finish();
+     } else if (!frame) frame = requestAnimationFrame(animate);
+   }
+ 
+   function finish() {
+     cancelAnimationFrame(frame);
+     frame = 0;
+     surface.level = surface.target;
+     surface.shearLevel = surface.shearTarget;
+     draw();
+   }
+ 
+   reduced.addEventListener("change", () => {
+     if (reduced.matches) finish();
+   });
+ 
+   function clear() {
++    resetShear();
+     cancelAnimationFrame(frame);
+     frame = 0;
+     surface.target = 0;
+     surface.level = 0;
+     surface.shearTarget = 0;
+     surface.shearLevel = 0;
+     draw();
+   }
+ 
+   resize();
+   return surface;
+ }
+
+New tests/test_surface_stability.py
+"""Deterministic Chromium checks of qualitative signal lifecycle."""
+import math
+import json
+import unittest
+from pathlib import Path
+from playwright.sync_api import sync_playwright
+
+
+class SurfaceStabilityTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.pw = sync_playwright().start()
+        cls.browser = cls.pw.chromium.launch(headless=True)
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.browser.close()
+        cls.pw.stop()
+
+    def setUp(self):
+        self.page = self.browser.new_page(reduced_motion="reduce")
+        self.page.set_content('<canvas id="c" style="width:600px;height:400px"></canvas>')
+        self.page.add_script_tag(path=str(Path(__file__).resolve().parents[1] / 'demo_web/surface.js'))
+        self.page.evaluate("""() => {
+          window.now = 0; performance.now = () => now;
+          window.profile = {version:1, mode:'qualitative', normal:{threshold:100,span:600},
+            shear:{enabled:true,weights:[.125,.125,.125,.125,-.125,-.125,-.125,-.125],
+              pressLeak:Array(8).fill(0),threshold:100,span:200}};
+          window.view = createSurface(document.getElementById('c'));
+        }""")
+
+    def tearDown(self):
+        self.page.close()
+
+    def update(self, score, dt=100, pressure=0):
+        return self.page.evaluate("""a => {
+          now += a.dt; view.set(Array(4).fill(a.score).concat(Array(4).fill(-a.score),
+            Array(4).fill(a.pressure)),profile);
+          return [view.target,view.shearTarget];
+        }""", dict(score=score, dt=dt, pressure=pressure))
+
+    def test_exact_gain_smoothing_and_same_sign_continuation(self):
+        self.assertEqual(self.update(80, pressure=700), [1, 0])
+        self.page.evaluate('view.clear()')
+        self.assertAlmostEqual(self.update(120)[1], 60/170)
+        filtered = 80 + 40 * math.exp(-100/180)
+        self.assertAlmostEqual(self.update(80)[1], (filtered-60)/170)
+        for _ in range(20):
+            continued = self.update(80)[1]
+        self.assertGreater(continued, 0)
+        for _ in range(20):
+            reversed_below_start = self.update(-80)[1]
+        self.assertEqual(reversed_below_start, 0)
+
+    def test_release_reversal_clipping_and_combined_pressure(self):
+        self.assertEqual(self.update(230, pressure=700), [1, 1])
+        for _ in range(6):
+            released = self.update(0, pressure=700)
+        self.assertEqual(released, [1, 0])
+        self.page.evaluate('view.clear()')
+        self.update(230)
+        targets = [self.update(-230)[1] for _ in range(6)]
+        self.assertLess(targets[-1], 0)
+        self.assertTrue(all(-1 <= x <= 1 for x in targets))
+        self.page.evaluate('view.clear()')
+        self.assertEqual(self.update(-10000)[1], -1)
+
+    def test_threshold_chatter_keeps_same_sign_active(self):
+        self.update(120)
+        self.assertGreater(self.update(80)[1], 0)
+
+    def test_resets_clear_fault_disabled_identity_and_mode(self):
+        resets = ['view.clear()', 'view.set([NaN],profile)',
+                  'profile.shear.enabled=false; view.set(Array(12).fill(0),profile); profile.shear.enabled=true',
+                  'profile={...profile}; view.set(Array(12).fill(0),profile)',
+                  'profile.mode="strict"; view.set(Array(12).fill(0),profile); profile.mode="qualitative"',
+                  'profile.normal.span=0; view.set(Array(12).fill(0),profile); profile.normal.span=600',
+                  'profile.version=2; view.set(Array(12).fill(0),profile); profile.version=1']
+        for reset in resets:
+            self.page.evaluate('view.clear()')
+            self.update(230)
+            self.page.evaluate(reset)
+            self.assertEqual(self.update(80)[1], 0, reset)
+
+    def test_strict_helpers_and_instance_isolation(self):
+        self.page.evaluate('profile.mode="strict"')
+        self.assertAlmostEqual(self.update(120)[1], .1)
+        self.assertAlmostEqual(self.update(80)[1], .05)
+        self.assertAlmostEqual(self.update(-80)[1], -.05)
+        self.assertEqual(self.update(0)[1], 0)
+        self.page.evaluate('profile.mode="qualitative"; view.clear()')
+        self.update(230)
+        other = self.page.evaluate("""() => {const other=createSurface(document.getElementById('c'));
+          other.set(Array(4).fill(80).concat(Array(4).fill(-80),Array(4).fill(0)),profile);
+          return other.shearTarget;}""")
+        self.assertEqual(other, 0)
+
+    def test_synthetic_chatter_variation_and_motion_preference(self):
+        scores = [120, 80]*22 + [120]
+        old = [max(0, (s-100)/200) for s in scores]
+        targets = [self.update(s)[1] for s in scores]
+        variation = lambda values: sum(abs(b-a) for a,b in zip(values, values[1:]))
+        self.assertLess(sum(v == 0 for v in targets), 24)
+        self.assertLess(variation(targets), variation(old))
+        self.page.emulate_media(reduced_motion="no-preference")
+        self.page.evaluate('view.clear()')
+        self.assertAlmostEqual(self.update(120)[1], 60/170)
+        self.page.evaluate('view.clear()')
+        self.assertEqual(self.page.evaluate('[view.target,view.shearTarget,view.level,view.shearLevel]'), [0]*4)
+
+    def test_extreme_display_score_releases_and_reverses_within_600ms(self):
+        root = Path(__file__).resolve().parents[1]
+        real = json.loads((root / 'demo_web/shear_demo_profile.json').read_text())
+        for template in (None, real):
+            if template:
+                self.page.evaluate('p => {profile=p; view.clear();}', template)
+            result = self.page.evaluate("""() => {
+              const channels=score=>{const w=profile.shear.weights;
+                const mean=w.reduce((a,b)=>a+b,0)/8;
+                const norm=w.reduce((sum,v)=>sum+(v-mean)**2,0);
+                return w.map(v=>(v-mean)*score/norm).concat(Array(4).fill(0));};
+              const set=score=>{now+=100; view.set(channels(score),profile); return view.shearTarget;};
+              view.clear(); const held=set(10000);
+              const release=Array.from({length:6},()=>set(0));
+              view.clear(); set(10000);
+              const reverse=Array.from({length:6},()=>set(-10000));
+              return {held,release,reverse};
+            }""")
+            self.assertEqual(result['held'], 1)
+            with self.subTest(template='real' if template else 'synthetic', behavior='release'):
+                self.assertEqual(result['release'][-1], 0)
+            self.assertLess(result['reverse'][-1], 0)
+            self.assertTrue(all(-1 <= x <= 1 for x in result['release']+result['reverse']))
+
+    def test_exact_bounded_score_irregular_and_zero_elapsed_ema(self):
+        self.assertEqual(self.update(10000)[1], 1)
+        self.assertEqual(self.update(-10000, dt=0)[1], 1)
+        expected = 230 * math.exp(-37/180)
+        self.assertAlmostEqual(self.update(0, dt=37)[1], (expected-60)/170)
+        expected += (150-expected)*(1-math.exp(-211/180))
+        self.assertAlmostEqual(self.update(150, dt=211)[1], (expected-60)/170)
+
+    def test_real_capture_replay_reduces_zero_windows_and_variation(self):
+        root = Path(__file__).resolve().parents[1]
+        capture = json.loads((root / '.superpowers/sdd/combined_press_minusx_retry_20260926.json').read_text())
+        profile = json.loads((root / 'demo_web/shear_demo_profile.json').read_text())
+        result = self.page.evaluate("""a => {
+          profile=a.profile; view.clear();
+          const old=[], current=[], normals=[];
+          for (const sample of a.capture.samples) {
+            now=sample.elapsed*1000;
+            const channels=sample.channels.map((v,i)=>v-a.capture.baseline[i]);
+            old.push(shearLevel(channels,profile));
+            view.set(channels,profile); current.push(view.shearTarget); normals.push(view.target);
+          }
+          const stats=values=>({zero:values.filter(v=>v===0).length,
+            variation:values.slice(1).reduce((sum,v,i)=>sum+Math.abs(v-values[i]),0)});
+          return {old:stats(old),current:stats(current),normals};
+        }""", dict(capture=capture, profile=profile))
+        self.assertEqual(result['old']['zero'], 24)
+        self.assertLess(result['current']['zero'], 24)
+        self.assertLess(result['current']['variation'], result['old']['variation'])
+        self.assertEqual(result['normals'], [1]*45)
+        print('CAPTURE_REPLAY', json.dumps(result))
+
+
+if __name__ == '__main__':
+    unittest.main()
+
+
+Existing tests/test_surface_drag.py only change: added dragView.clear(); before resetting drawnCells/drawnColors and setting each independent geometry pose. All assertions unchanged.
+

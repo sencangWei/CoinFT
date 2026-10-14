@@ -1,0 +1,916 @@
+{
+  "mode": "bench_operator_minus_x_hold",
+  "operator_confirmation": "−X 已推住",
+  "scope": "incoming-stream diagnostic observation, not directional animation or physical shear acceptance",
+  "thresholds": {
+    "all_live": true,
+    "all_intervals_bytes_and_frames_advance": true,
+    "recent_invalid": 0,
+    "recent_saturation": 0
+  },
+  "metrics": {
+    "snapshots": 44,
+    "first_to_last_seconds": 4.8124933,
+    "frame_delta": 980,
+    "distinct_frames": 44,
+    "parsed_frame_delta": 980,
+    "serial_byte_delta": 25480,
+    "serial_read_delta": 45,
+    "discarded_byte_delta": 0,
+    "all_live": true,
+    "all_intervals_advancing": true,
+    "invalid_frame_delta": 0,
+    "max_recent_invalid": 0,
+    "max_recent_saturation": 0,
+    "max_host_observed_valid_frame_age_seconds": 0.13709759712219238,
+    "observed_rate_hz": 203.63664714089057
+  },
+  "samples": [
+    {
+      "elapsed": 0.1307688,
+      "host_epoch": 1790442127.713,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3790229,
+      "updated_at": 1790442127.5759025,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174039,
+        "serial_bytes": 98545980,
+        "parsed_frames": 3790229,
+        "last_byte_at": 1790442127.5748706,
+        "last_parsed_frame_at": 1790442127.5748706,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 0.2632854,
+      "host_epoch": 1790442127.842,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3790272,
+      "updated_at": 1790442127.794117,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174041,
+        "serial_bytes": 98547098,
+        "parsed_frames": 3790272,
+        "last_byte_at": 1790442127.7931664,
+        "last_parsed_frame_at": 1790442127.7931664,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 0.3716287,
+      "host_epoch": 1790442127.951,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3790294,
+      "updated_at": 1790442127.9046378,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174042,
+        "serial_bytes": 98547670,
+        "parsed_frames": 3790294,
+        "last_byte_at": 1790442127.9036381,
+        "last_parsed_frame_at": 1790442127.9036381,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 0.49560869999999996,
+      "host_epoch": 1790442128.075,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3790316,
+      "updated_at": 1790442128.0123174,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174043,
+        "serial_bytes": 98548242,
+        "parsed_frames": 3790316,
+        "last_byte_at": 1790442128.0112703,
+        "last_parsed_frame_at": 1790442128.0112703,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 0.6062314999999999,
+      "host_epoch": 1790442128.186,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3790338,
+      "updated_at": 1790442128.1211722,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174044,
+        "serial_bytes": 98548814,
+        "parsed_frames": 3790338,
+        "last_byte_at": 1790442128.1201336,
+        "last_parsed_frame_at": 1790442128.1201336,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 0.7144841,
+      "host_epoch": 1790442128.294,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3790360,
+      "updated_at": 1790442128.2318323,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174045,
+        "serial_bytes": 98549386,
+        "parsed_frames": 3790360,
+        "last_byte_at": 1790442128.2308302,
+        "last_parsed_frame_at": 1790442128.2308302,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 0.8400078,
+      "host_epoch": 1790442128.419,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3790382,
+      "updated_at": 1790442128.3407207,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174046,
+        "serial_bytes": 98549958,
+        "parsed_frames": 3790382,
+        "last_byte_at": 1790442128.3395936,
+        "last_parsed_frame_at": 1790442128.3395936,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 0.9771227,
+      "host_epoch": 1790442128.556,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3790404,
+      "updated_at": 1790442128.4499645,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174047,
+        "serial_bytes": 98550530,
+        "parsed_frames": 3790404,
+        "last_byte_at": 1790442128.4487877,
+        "last_parsed_frame_at": 1790442128.4487877,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 1.0905947999999999,
+      "host_epoch": 1790442128.67,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3790447,
+      "updated_at": 1790442128.6696138,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174049,
+        "serial_bytes": 98551648,
+        "parsed_frames": 3790447,
+        "last_byte_at": 1790442128.6685824,
+        "last_parsed_frame_at": 1790442128.6685824,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 1.2004047,
+      "host_epoch": 1790442128.779,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3790469,
+      "updated_at": 1790442128.7790236,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174050,
+        "serial_bytes": 98552220,
+        "parsed_frames": 3790469,
+        "last_byte_at": 1790442128.777935,
+        "last_parsed_frame_at": 1790442128.777935,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 1.3110433,
+      "host_epoch": 1790442128.89,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3790491,
+      "updated_at": 1790442128.8897433,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174051,
+        "serial_bytes": 98552792,
+        "parsed_frames": 3790491,
+        "last_byte_at": 1790442128.8886127,
+        "last_parsed_frame_at": 1790442128.8886127,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 1.4203944,
+      "host_epoch": 1790442129,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3790513,
+      "updated_at": 1790442128.9990683,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174052,
+        "serial_bytes": 98553364,
+        "parsed_frames": 3790513,
+        "last_byte_at": 1790442128.9980068,
+        "last_parsed_frame_at": 1790442128.9980068,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 1.5294082999999998,
+      "host_epoch": 1790442129.109,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3790535,
+      "updated_at": 1790442129.1083958,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174053,
+        "serial_bytes": 98553936,
+        "parsed_frames": 3790535,
+        "last_byte_at": 1790442129.1072934,
+        "last_parsed_frame_at": 1790442129.1072934,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 1.6389331999999999,
+      "host_epoch": 1790442129.218,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3790557,
+      "updated_at": 1790442129.2178938,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174054,
+        "serial_bytes": 98554508,
+        "parsed_frames": 3790557,
+        "last_byte_at": 1790442129.2165983,
+        "last_parsed_frame_at": 1790442129.2165983,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 1.7479983,
+      "host_epoch": 1790442129.327,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3790579,
+      "updated_at": 1790442129.3268347,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174055,
+        "serial_bytes": 98555080,
+        "parsed_frames": 3790579,
+        "last_byte_at": 1790442129.3257847,
+        "last_parsed_frame_at": 1790442129.3257847,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 1.8566509,
+      "host_epoch": 1790442129.436,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3790601,
+      "updated_at": 1790442129.4355114,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174056,
+        "serial_bytes": 98555652,
+        "parsed_frames": 3790601,
+        "last_byte_at": 1790442129.4344141,
+        "last_parsed_frame_at": 1790442129.4344141,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 1.9653652,
+      "host_epoch": 1790442129.545,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3790622,
+      "updated_at": 1790442129.5442686,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174057,
+        "serial_bytes": 98556198,
+        "parsed_frames": 3790622,
+        "last_byte_at": 1790442129.5432615,
+        "last_parsed_frame_at": 1790442129.5432615,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 2.0745841,
+      "host_epoch": 1790442129.653,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3790644,
+      "updated_at": 1790442129.653271,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174058,
+        "serial_bytes": 98556770,
+        "parsed_frames": 3790644,
+        "last_byte_at": 1790442129.652048,
+        "last_parsed_frame_at": 1790442129.652048,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 2.1833307,
+      "host_epoch": 1790442129.763,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3790666,
+      "updated_at": 1790442129.7624736,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174059,
+        "serial_bytes": 98557342,
+        "parsed_frames": 3790666,
+        "last_byte_at": 1790442129.7614195,
+        "last_parsed_frame_at": 1790442129.7614195,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 2.3065124,
+      "host_epoch": 1790442129.886,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3790688,
+      "updated_at": 1790442129.8702157,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174060,
+        "serial_bytes": 98557914,
+        "parsed_frames": 3790688,
+        "last_byte_at": 1790442129.8690076,
+        "last_parsed_frame_at": 1790442129.8690076,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 2.430186,
+      "host_epoch": 1790442130.01,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3790709,
+      "updated_at": 1790442129.9784448,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174061,
+        "serial_bytes": 98558460,
+        "parsed_frames": 3790709,
+        "last_byte_at": 1790442129.9773588,
+        "last_parsed_frame_at": 1790442129.9773588,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 2.5385038,
+      "host_epoch": 1790442130.118,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3790731,
+      "updated_at": 1790442130.0868993,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174062,
+        "serial_bytes": 98559032,
+        "parsed_frames": 3790731,
+        "last_byte_at": 1790442130.0858483,
+        "last_parsed_frame_at": 1790442130.0858483,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 2.6472246999999998,
+      "host_epoch": 1790442130.226,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3790753,
+      "updated_at": 1790442130.1952617,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174063,
+        "serial_bytes": 98559604,
+        "parsed_frames": 3790753,
+        "last_byte_at": 1790442130.1942372,
+        "last_parsed_frame_at": 1790442130.1942372,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 2.7563613,
+      "host_epoch": 1790442130.335,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3790774,
+      "updated_at": 1790442130.3036072,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174064,
+        "serial_bytes": 98560150,
+        "parsed_frames": 3790774,
+        "last_byte_at": 1790442130.3026392,
+        "last_parsed_frame_at": 1790442130.3026392,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 2.8657972999999997,
+      "host_epoch": 1790442130.445,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3790796,
+      "updated_at": 1790442130.4126377,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174065,
+        "serial_bytes": 98560722,
+        "parsed_frames": 3790796,
+        "last_byte_at": 1790442130.4116292,
+        "last_parsed_frame_at": 1790442130.4116292,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 2.9745727,
+      "host_epoch": 1790442130.554,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3790818,
+      "updated_at": 1790442130.5227559,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174066,
+        "serial_bytes": 98561294,
+        "parsed_frames": 3790818,
+        "last_byte_at": 1790442130.5216777,
+        "last_parsed_frame_at": 1790442130.5216777,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 3.0834935,
+      "host_epoch": 1790442130.663,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3790840,
+      "updated_at": 1790442130.631972,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174067,
+        "serial_bytes": 98561866,
+        "parsed_frames": 3790840,
+        "last_byte_at": 1790442130.6308124,
+        "last_parsed_frame_at": 1790442130.6308124,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 3.1925502999999997,
+      "host_epoch": 1790442130.772,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3790862,
+      "updated_at": 1790442130.7403002,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174068,
+        "serial_bytes": 98562438,
+        "parsed_frames": 3790862,
+        "last_byte_at": 1790442130.7392979,
+        "last_parsed_frame_at": 1790442130.7392979,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 3.3002667,
+      "host_epoch": 1790442130.88,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3790883,
+      "updated_at": 1790442130.8489757,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174069,
+        "serial_bytes": 98562984,
+        "parsed_frames": 3790883,
+        "last_byte_at": 1790442130.8480072,
+        "last_parsed_frame_at": 1790442130.8480072,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 3.4090854999999998,
+      "host_epoch": 1790442130.988,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3790905,
+      "updated_at": 1790442130.95655,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174070,
+        "serial_bytes": 98563556,
+        "parsed_frames": 3790905,
+        "last_byte_at": 1790442130.9555445,
+        "last_parsed_frame_at": 1790442130.9555445,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 3.5182786999999998,
+      "host_epoch": 1790442131.098,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3790927,
+      "updated_at": 1790442131.065315,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174071,
+        "serial_bytes": 98564128,
+        "parsed_frames": 3790927,
+        "last_byte_at": 1790442131.0642955,
+        "last_parsed_frame_at": 1790442131.0642955,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 3.6271301,
+      "host_epoch": 1790442131.207,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3790948,
+      "updated_at": 1790442131.1745915,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174072,
+        "serial_bytes": 98564674,
+        "parsed_frames": 3790948,
+        "last_byte_at": 1790442131.1736002,
+        "last_parsed_frame_at": 1790442131.1736002,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 3.7349919999999996,
+      "host_epoch": 1790442131.315,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3790970,
+      "updated_at": 1790442131.284273,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174073,
+        "serial_bytes": 98565246,
+        "parsed_frames": 3790970,
+        "last_byte_at": 1790442131.2832286,
+        "last_parsed_frame_at": 1790442131.2832286,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 3.8442152999999997,
+      "host_epoch": 1790442131.424,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3790992,
+      "updated_at": 1790442131.3919716,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174074,
+        "serial_bytes": 98565818,
+        "parsed_frames": 3790992,
+        "last_byte_at": 1790442131.39095,
+        "last_parsed_frame_at": 1790442131.39095,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 3.9531525,
+      "host_epoch": 1790442131.532,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3791014,
+      "updated_at": 1790442131.5011368,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174075,
+        "serial_bytes": 98566390,
+        "parsed_frames": 3791014,
+        "last_byte_at": 1790442131.500122,
+        "last_parsed_frame_at": 1790442131.500122,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 4.0616411999999995,
+      "host_epoch": 1790442131.641,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3791035,
+      "updated_at": 1790442131.60965,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174076,
+        "serial_bytes": 98566936,
+        "parsed_frames": 3791035,
+        "last_byte_at": 1790442131.6086946,
+        "last_parsed_frame_at": 1790442131.6086946,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 4.171171999999999,
+      "host_epoch": 1790442131.751,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3791057,
+      "updated_at": 1790442131.7190652,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174077,
+        "serial_bytes": 98567508,
+        "parsed_frames": 3791057,
+        "last_byte_at": 1790442131.7180505,
+        "last_parsed_frame_at": 1790442131.7180505,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 4.2781144,
+      "host_epoch": 1790442131.858,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3791079,
+      "updated_at": 1790442131.8270564,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174078,
+        "serial_bytes": 98568080,
+        "parsed_frames": 3791079,
+        "last_byte_at": 1790442131.8256922,
+        "last_parsed_frame_at": 1790442131.8256922,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 4.3871708,
+      "host_epoch": 1790442131.966,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3791101,
+      "updated_at": 1790442131.936271,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174079,
+        "serial_bytes": 98568652,
+        "parsed_frames": 3791101,
+        "last_byte_at": 1790442131.9351542,
+        "last_parsed_frame_at": 1790442131.9351542,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 4.4956838999999995,
+      "host_epoch": 1790442132.075,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3791122,
+      "updated_at": 1790442132.0443392,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174080,
+        "serial_bytes": 98569198,
+        "parsed_frames": 3791122,
+        "last_byte_at": 1790442132.0433743,
+        "last_parsed_frame_at": 1790442132.0433743,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 4.604947999999999,
+      "host_epoch": 1790442132.184,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3791144,
+      "updated_at": 1790442132.1538649,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174081,
+        "serial_bytes": 98569770,
+        "parsed_frames": 3791144,
+        "last_byte_at": 1790442132.152617,
+        "last_parsed_frame_at": 1790442132.152617,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 4.7258077,
+      "host_epoch": 1790442132.305,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3791165,
+      "updated_at": 1790442132.2606554,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174082,
+        "serial_bytes": 98570316,
+        "parsed_frames": 3791165,
+        "last_byte_at": 1790442132.259602,
+        "last_parsed_frame_at": 1790442132.259602,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 4.8343013,
+      "host_epoch": 1790442132.414,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3791187,
+      "updated_at": 1790442132.3682709,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174083,
+        "serial_bytes": 98570888,
+        "parsed_frames": 3791187,
+        "last_byte_at": 1790442132.367075,
+        "last_parsed_frame_at": 1790442132.367075,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 4.9432621,
+      "host_epoch": 1790442132.523,
+      "status": "live",
+      "message": "数据流正常",
+      "frames": 3791209,
+      "updated_at": 1790442132.4763496,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "diagnostics": {
+        "serial_reads": 174084,
+        "serial_bytes": 98571460,
+        "parsed_frames": 3791209,
+        "last_byte_at": 1790442132.4753537,
+        "last_parsed_frame_at": 1790442132.4753537,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    }
+  ],
+  "limitations": [
+    "No force, relative PCB displacement or direction independently measured.",
+    "Elapsed/host timestamps are HTTP observer times, not sensor acquisition times.",
+    "No per-frame jitter/drop or upstream UART counters.",
+    "No waiting event in this window; cannot identify intermittent fault root cause."
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "status": "DONE_WITH_CONCERNS",
+  "scope": "Offline diagnostic fit and historical replay only; no live access, capture, tare, installation, firmware, UI, or production mutation.",
+  "candidate_path": ".superpowers/sdd/center-pull-refit-20261006-candidate.json",
+  "candidate": {
+    "version": 1,
+    "mode": "qualitative",
+    "assemblyId": "coinft-current-20260925",
+    "normal": {"threshold": 100, "span": 600},
+    "shear": {
+      "enabled": true,
+      "weights": [0.31590282776546447, -0.12205855363676356, -0.3341345639198642, 0.1321512275490956, -0.6043682958768727, 0.29582120955720936, 0.6305046426094868, -0.3138184940477558],
+      "pressLeak": [-0.02643880353355445, -0.03144711796000465, -0.1214381970191369, 0.2357389209364859, 0.07993594816592298, 0.1752984546744665, 0.014867875399405917, -0.24604676712122375],
+      "threshold": 58.330169520837785,
+      "span": 58.330169520837785
+    },
+    "rightLabel": "−X",
+    "leftLabel": "+X",
+    "evidence": [".superpowers/sdd/center-pull-refit-20261006-report.json"]
+  },
+  "hashes": {
+    "installed_profile_before": "af13756949ff0bb047392c183117298ea1b070106e3f2edc0553c075e25be150",
+    "installed_profile_after": "af13756949ff0bb047392c183117298ea1b070106e3f2edc0553c075e25be150",
+    "surface_js": "d7ad21efd772367e0a63a9b1fceac466da481ece2abcc185505e1a63ee1fedbf",
+    "candidate_profile": "1df74f4570f5119f180f9e7830120abe555bd6c37cc33ab3dbc33b8dba5a6020",
+    "fitter_source": "f6d35ec0649b62d5d3b71adec7a1f021f4f9c07cbc3bd8423d03403950215801",
+    "regression_test": "531ce7e5866dd071134f4ed130cde71fd8b8b3826a84c3f796974d5df5786ac9"
+  },
+  "fit": {
+    "feature": "w dot (CH1-8 minus their mean) - c * max(0, median(CH9-12))",
+    "encoding": "w and c optimized jointly at normalized threshold 1; c encoded by the minimum correction along w to installed pressLeak; installed threshold/span retained.",
+    "weight_sum": 1.3877787807814457e-17,
+    "pressure_projection_coefficient": 0.15735072223365268,
+    "attempts": [
+      {
+        "kind": "strict_lp",
+        "time_limit_seconds": 10,
+        "success": false,
+        "status": 2,
+        "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "normalized_threshold": 1,
+        "background_abs_bound": 0.5,
+        "signed_loaded_min": 1.1,
+        "coefficient_bounds": [-0.05, 0.05],
+        "interpretation": "Only this strict fitting surrogate is infeasible; this is not a claim of global mathematical or hardware infeasibility."
+      },
+      {
+        "kind": "soft_loaded_lp",
+        "time_limit_seconds": 10,
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "objective": 156.16570251796517,
+        "normalized_threshold": 1,
+        "background_abs_bound": 0.5,
+        "signed_loaded_min": 1.1,
+        "coefficient_bounds": [-0.05, 0.05],
+        "loaded_slack_sum": 1.5610967781232556,
+        "loaded_slack_by_source": {
+          "shear-live-page-minus-x-20261005.json": {"sum": 0.0, "max": 0.0, "count": 6},
+          "shear-live-page-plus-x-20261005.json": {"sum": 1.3923461470606808, "max": 0.4941066593222603, "count": 6},
+          "shear-live-page-center-pull-minus-x-20261005.json": {"sum": 0.0, "max": 0.0, "count": 6},
+          "shear-live-page-edge-pull-minus-x-20261005.json": {"sum": 0.0, "max": 0.0, "count": 6},
+          "shear-live-page-center-pull-foreground-20261005.json": {"sum": 0.059088332206139516, "max": 0.059088332206139516, "count": 6},
+          "shear-center-pull-full-diagnostic-20261005.json": {"sum": 0.1096622988564353, "max": 0.05500835624309586, "count": 36}
+        }
+      }
+    ]
+  },
+  "actual_page_diagnostic": {
+    "accepted": true,
+    "reference": "Each of nine saved windows keeps its captured page-relative channels and actual per-window page baseline; cold-start surface replay.",
+    "windows": [
+      {"source": "shear-live-page-minus-x-20261005.json", "path": ".superpowers/sdd/shear-live-page-minus-x-20261005.json", "sha256": "4dab2ed7b7ec70cbdfd330fd06d7296b678d9ba3b29afb62ced7e05bc7277baf", "recorded_baseline": [-45, -30, -27.5, -23.5, 19, -37, -9, -60.5, -3, 3, 8, -9], "kind": "minus", "stable": 6, "active": 6, "reverse": 0, "range": [0.7625245760247862, 0.9876394668703541], "normal_identical": true},
+      {"source": "shear-live-page-plus-x-20261005.json", "path": ".superpowers/sdd/shear-live-page-plus-x-20261005.json", "sha256": "8edca56f306612b1df0149d358c6e33560bb26c0019fded2eb8cc7dffd5d2e07", "recorded_baseline": [-45, -30, -27.5, -23.5, 19, -37, -9, -60.5, -3, 3, 8, -9], "kind": "plus", "stable": 6, "active": 5, "reverse": 0, "range": [-0.4646381939609875, -0.052417358308049236], "normal_identical": true},
+      {"source": "shear-live-page-center-same-baseline-20261005.json", "path": ".superpowers/sdd/shear-live-page-center-same-baseline-20261005.json", "sha256": "d219de2e95d3238f9517790ba605144271380524bc0fb67978fa1bd54b2be54c", "recorded_baseline": [-45, -30, -27.5, -23.5, 19, -37, -9, -60.5, -3, 3, 8, -9], "kind": "idle", "stable": 6, "active": 0, "reverse": 0, "range": [0, 0], "normal_identical": true},
+      {"source": "shear-live-page-center-pull-minus-x-20261005.json", "path": ".superpowers/sdd/shear-live-page-center-pull-minus-x-20261005.json", "sha256": "4cb2ad991f53fbb45f093fa39b11bfe4e15779cb3b6451d0f25b4120688f6b85", "recorded_baseline": [-45, -30, -27.5, -23.5, 19, -37, -9, -60.5, -3, 3, 8, -9], "kind": "minus", "stable": 6, "active": 6, "reverse": 0, "range": [0.8772881501457658, 0.9997292430153268], "normal_identical": true},
+      {"source": "shear-live-page-edge-pull-minus-x-20261005.json", "path": ".superpowers/sdd/shear-live-page-edge-pull-minus-x-20261005.json", "sha256": "97cf01e5550145a927b04b41070ed6544e7da9a42ba65c40c68a0a551c2735b0", "recorded_baseline": [-45, -30, -27.5, -23.5, 19, -37, -9, -60.5, -3, 3, 8, -9], "kind": "minus", "stable": 6, "active": 6, "reverse": 0, "range": [1, 1], "normal_identical": true},
+      {"source": "shear-live-page-center-pull-foreground-20261005.json", "path": ".superpowers/sdd/shear-live-page-center-pull-foreground-20261005.json", "sha256": "72da11564a5b5785fd456b737a4d83aa7b1d02526e64675f751bc03c74765dcd", "recorded_baseline": [-45, -30, -27.5, -23.5, 19, -37, -9, -60.5, -3, 3, 8, -9], "kind": "minus", "stable": 6, "active": 6, "reverse": 0, "range": [0.6811309494468725, 0.8785442698524121], "normal_identical": true},
+      {"source": "shear-center-pull-full-diagnostic-20261005.json", "path": ".superpowers/sdd/shear-center-pull-full-diagnostic-20261005.json", "sha256": "53fb95f9f2d89585a6d16db285035ade32d70808a167a0b9cb1523e219d0c7db", "recorded_baseline": [-9, 45, 2.5, 29, 12, 0.5, -1, -2, 1.5, -10, -5, 0], "kind": "minus", "stable": 36, "active": 36, "reverse": 0, "range": [0.6891098157778865, 0.9826263463116236], "normal_identical": true},
+      {"source": "shear-center-pull-controls-empty-20261005.json", "path": ".superpowers/sdd/shear-center-pull-controls-empty-20261005.json", "sha256": "d6114d19eb405f6b5140b615199eddd60fa9ed15921a321f2af44e8e580f1536", "recorded_baseline": [-9, 45, 2.5, 29, 12, 0.5, -1, -2, 1.5, -10, -5, 0], "kind": "idle", "stable": 36, "active": 0, "reverse": 0, "range": [0, 0], "normal_identical": true},
+      {"source": "shear-center-pull-controls-press-20261005.json", "path": ".superpowers/sdd/shear-center-pull-controls-press-20261005.json", "sha256": "273a926634f6ad19b71757358651799712a9e30b4243dd98b2ac52142da3b2fe", "recorded_baseline": [-9, 45, 2.5, 29, 12, 0.5, -1, -2, 1.5, -10, -5, 0], "kind": "press", "stable": 36, "active": 0, "reverse": 0, "range": [0, 0], "normal_identical": true}
+    ]
+  },
+  "historical_fixed_raw_regression": {
+    "accepted": true,
+    "independent_validation": false,
+    "reference": "Eight old long windows replayed against feature_basis.common_raw_baseline from shear-refit-fresh-right-20261005.json; this basis is kept separate from actual-page coordinates.",
+    "fixed_baseline_source": {
+      "path": ".superpowers/sdd/shear-refit-fresh-right-20261005.json",
+      "sha256": "d42066db1bfe1b4305cbb66b93c06a90ed431417fa6342273f2fe20be9f78b41",
+      "json_field": "feature_basis.common_raw_baseline",
+      "common_raw_baseline": [27871.5, 27339, 25816.5, 26606, 26265.5, 26348, 27196, 25977.5, 28490.5, 28102, 29079, 28153.5]
+    },
+    "validation_metadata": {
+      "path": ".superpowers/sdd/shear-frozen-independent-validation-20261005.json",
+      "sha256": "a5329b7be6af4fc73fb4d3c52a2b751d2dc1cec803bf64477870e83c5a835654",
+      "role": "Historical source manifest and old validation metadata only; not independent validation of the 2026-10-06 candidate."
+    },
+    "windows": [
+      {"source": "press_before", "path": "calibration/shear_frozen_validation_20261005/press_before.json", "sha256": "e9d38b9de8c590bc897b27b3551fc026597f728beaac87ab287267838a558151", "common_raw_baseline": [27871.5, 27339, 25816.5, 26606, 26265.5, 26348, 27196, 25977.5, 28490.5, 28102, 29079, 28153.5], "kind": "background", "stable": 36, "active": 0, "reverse": 0, "range": [0, 0], "normal_identical": true},
+      {"source": "press", "path": "calibration/shear_frozen_validation_20261005/press.json", "sha256": "5d225bf6ba053dc8e2a85e00a857508c142b2b0030eeb633b9c7bd2f38f3922d", "common_raw_baseline": [27871.5, 27339, 25816.5, 26606, 26265.5, 26348, 27196, 25977.5, 28490.5, 28102, 29079, 28153.5], "kind": "background", "stable": 37, "active": 0, "reverse": 0, "range": [0, 0], "normal_identical": true},
+      {"source": "press_after", "path": "calibration/shear_frozen_validation_20261005/press_after.json", "sha256": "6899ea9878f3d5ea98dce91a174460a483b53c3daf331e8f63083334adeaa907", "common_raw_baseline": [27871.5, 27339, 25816.5, 26606, 26265.5, 26348, 27196, 25977.5, 28490.5, 28102, 29079, 28153.5], "kind": "background", "stable": 35, "active": 0, "reverse": 0, "range": [0, 0], "normal_identical": true},
+      {"source": "right_before", "path": "calibration/shear_frozen_validation_20261005/right_before.json", "sha256": "e9eb8e1d9a266bc1fdf4a34c96f843f452cfea002a87888dddea1eb67de6988f", "common_raw_baseline": [27871.5, 27339, 25816.5, 26606, 26265.5, 26348, 27196, 25977.5, 28490.5, 28102, 29079, 28153.5], "kind": "background", "stable": 36, "active": 0, "reverse": 0, "range": [0, 0], "normal_identical": true},
+      {"source": "right", "path": "calibration/shear_frozen_validation_20261005/right.json", "sha256": "1200585bf0072ac5547803911fdb9f50a310bb40efb5a1cf9d79005ecc85036e", "common_raw_baseline": [27871.5, 27339, 25816.5, 26606, 26265.5, 26348, 27196, 25977.5, 28490.5, 28102, 29079, 28153.5], "kind": "minus", "stable": 36, "active": 36, "reverse": 0, "range": [0.5447836510837397, 0.9982769504783406], "normal_identical": true},
+      {"source": "right_after", "path": "calibration/shear_frozen_validation_20261005/right_after.json", "sha256": "6dcef045816a86850809c8f53ba6f952b68ae55c9c2fa8853c5c3565d8b2c7ac", "common_raw_baseline": [27871.5, 27339, 25816.5, 26606, 26265.5, 26348, 27196, 25977.5, 28490.5, 28102, 29079, 28153.5], "kind": "background", "stable": 36, "active": 0, "reverse": 0, "range": [0, 0], "normal_identical": true},
+      {"source": "left_before", "path": "calibration/shear_frozen_validation_20261005/left_before.json", "sha256": "21a08c835dbbad7838c3d0c6ccea55d133e63496808db590005d15160b0d5a53", "common_raw_baseline": [27871.5, 27339, 25816.5, 26606, 26265.5, 26348, 27196, 25977.5, 28490.5, 28102, 29079, 28153.5], "kind": "background", "stable": 36, "active": 0, "reverse": 0, "range": [0, 0], "normal_identical": true},
+      {"source": "left", "path": "calibration/shear_frozen_validation_20261005/left.json", "sha256": "c7d2d2f376e983245b2b71f8a12231acf5e476718ec2e229fdebb99b83739981", "common_raw_baseline": [27871.5, 27339, 25816.5, 26606, 26265.5, 26348, 27196, 25977.5, 28490.5, 28102, 29079, 28153.5], "kind": "plus", "stable": 36, "active": 36, "reverse": 0, "range": [-0.9780025174408647, -0.2612790567288912], "normal_identical": true}
+    ]
+  },
+  "tdd": {
+    "red_command": "python .superpowers\\sdd\\test_center_pull_refit_20261006.py -v",
+    "red_result": "FAIL: installed full center −X right-active fraction was 0.0, expected >=0.8 (0/36 stable); behavioral failure, not an import/data error.",
+    "green_command": "python .superpowers\\sdd\\test_center_pull_refit_20261006.py -v",
+    "green_result": "Ran 3 tests in 1.544s; OK"
+  },
+  "provenance_verification": {
+    "source_hashes": "17/17 saved input SHA256 values equal current files; 0 mismatches",
+    "fixed_baseline_exact": true,
+    "fresh_report_hash_match": true,
+    "validation_report_hash_match": true,
+    "all_sample_background_windows": 9,
+    "all_sample_background_max_abs_shear": 0,
+    "background_scope": "Three actual-page idle/press diagnostics plus six historical fixed-raw background/press windows, including samples before 600 ms; diagnostic and historical coordinate bases remain separate.",
+    "candidate_sha256_unchanged": "1df74f4570f5119f180f9e7830120abe555bd6c37cc33ab3dbc33b8dba5a6020",
+    "installed_profile_sha256_unchanged": "af13756949ff0bb047392c183117298ea1b070106e3f2edc0553c075e25be150"
+  },
+  "caveats": [
+    "The short actual-page windows are diagnostic only; the full pull/control windows were captured in a later recovery epoch and use a different actual page baseline.",
+    "All replays cold-start the qualitative filter and do not reproduce uncaptured prehistory.",
+    "The eight fixed-raw windows predate this fit and are historical regression, not independent validation of this candidate.",
+    "Independent post-fit hardware acquisition remains pending; no deployment is authorized by this report."
+  ],
+  "files_created": [
+    ".superpowers/sdd/center-pull-refit-20261006.py",
+    ".superpowers/sdd/test_center_pull_refit_20261006.py",
+    ".superpowers/sdd/center-pull-refit-20261006-candidate.json",
+    ".superpowers/sdd/center-pull-refit-20261006-report.json",
+    ".superpowers/sdd/center-pull-refit-20261006-report.md"
+  ]
+}

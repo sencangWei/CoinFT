@@ -1,0 +1,165 @@
+{
+  "checked_at": "2026-09-28T17:53:40.4624711+08:00",
+  "processes": [
+    {
+      "ProcessId": 18408,
+      "Name": "python.exe",
+      "CommandLine": "\"D:\\conda\\python.exe\" coinft_demo.py --port COM6 --no-browser "
+    }
+  ],
+  "listeners": [
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 8765,
+      "OwningProcess": 18408
+    }
+  ],
+  "state": {
+    "mode": "live",
+    "status": "live",
+    "message": "数据流正常",
+    "port": "COM6",
+    "axes": [
+      0.0181088,
+      -0.0328906,
+      -0.0085145,
+      -9e-7,
+      0.0000343,
+      0.0000806
+    ],
+    "channels": [
+      46,
+      37,
+      50,
+      35,
+      33,
+      15,
+      38.5,
+      4,
+      1.5,
+      4.5,
+      9,
+      7
+    ],
+    "raw": [
+      27701,
+      27088,
+      25580,
+      26428,
+      26003,
+      26075,
+      26975,
+      25750,
+      28346,
+      27951,
+      28925,
+      28017
+    ],
+    "rate": 200,
+    "frames": 71214,
+    "resyncs": 0,
+    "saturated": 0,
+    "saturated_recent": 0,
+    "invalid_frames": 0,
+    "invalid_recent": 0,
+    "tare_progress": 100,
+    "updated_at": 1790589220.3293397,
+    "diagnostics": {
+      "serial_reads": 3275,
+      "serial_bytes": 1851590,
+      "parsed_frames": 71214,
+      "last_byte_at": 1790589220.3282733,
+      "last_parsed_frame_at": 1790589220.3282733,
+      "parser_pending_bytes": 26,
+      "parser_discarded_bytes": 0
+    },
+    "recovery": {
+      "attempts": 0,
+      "successes": 0,
+      "last_fault": null
+    }
+  },
+  "backend_sha256": "96EF5BBE88CEB9797686D1E6B1B2473B50360B0A9225E5FAC192CA6DDB913828",
+  "deployment": {
+    "old_processes_closed_by": "operator",
+    "old_pids": [
+      47424,
+      36404,
+      37960
+    ],
+    "prelaunch_processes": 0,
+    "prelaunch_listeners": 0,
+    "start_method": "Normal Start-Process, authorized by operator; no bypass",
+    "pid": 18408,
+    "port": "COM6",
+    "no_browser": true,
+    "stdout_log": ".superpowers/sdd/service-20260928-174743-stdout.log",
+    "stderr_log": ".superpowers/sdd/service-20260928-174743-stderr.log"
+  },
+  "prior_observed_points": [
+    {
+      "updated_at": 1790589007.4226332,
+      "frames": 28643,
+      "status": "live",
+      "rate": 200.1,
+      "serial_bytes": 744744,
+      "parsed_frames": 28643,
+      "recovery": {
+        "attempts": 0,
+        "successes": 0,
+        "last_fault": null
+      },
+      "invalid_frames": 0,
+      "saturated": 0,
+      "resyncs": 0
+    },
+    {
+      "updated_at": 1790589162.2810524,
+      "frames": 59607,
+      "status": "live",
+      "rate": 200,
+      "serial_bytes": 1549808,
+      "parsed_frames": 59607,
+      "recovery": {
+        "attempts": 0,
+        "successes": 0,
+        "last_fault": null
+      },
+      "invalid_frames": 0,
+      "saturated": 0,
+      "resyncs": 0
+    }
+  ],
+  "page_http_check": {
+    "status_code": 200,
+    "content_bytes": 4777,
+    "visible_browser_not_inspected": true
+  },
+  "verification": {
+    "single_expected_process": true,
+    "single_expected_listener": true,
+    "new_recovery_schema": true,
+    "live": true,
+    "initial_pc_baseline_ready": true,
+    "twelve_fresh_raw_channels": true,
+    "backend_matches_final_review": true
+  },
+  "verdict": "DEPLOYMENT_POINT_CHECK_PASS",
+  "bounded_capture": {
+    "requested_seconds": 10,
+    "attempted": true,
+    "command_rejected_before_execution": true,
+    "error": "CreateProcess rejected: blocked by policy",
+    "captured_api_window": false,
+    "captured_com8": false,
+    "verdict": "SKIPPED",
+    "note": "No retry through an alternate mechanism. Separate ordinary HTTP/process point checks succeeded; no continuous 10-second or COM8 heartbeat PASS is claimed."
+  },
+  "scope": "User closed old processes; assistant started one normal hidden service. No process kill, firmware flash, hardware reset, unplug, explicit tare, browser demo-zero, forced stall, or COM8 observation. Normal acquisition startup performs i/s and initial PC baseline.",
+  "limitations": [
+    "Point snapshots with increasing frames establish live data at observed times, not continuous monitoring between observations.",
+    "Real same-process automatic stall/recovery not observed; recovery remains attempts=0/successes=0.",
+    "Visible animation, manual demo-zero, calibrated force and directional response not verified.",
+    "Frame-level jitter, link latency, drop rate and acquisition timestamps not measured."
+  ]
+}

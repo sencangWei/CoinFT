@@ -1,0 +1,32 @@
+CoinFT runtime tuning accepted on 2026-09-01
+
+Format: {Resolution, Ref, Compensation}
+
+const uint8 Params_All[12][3] = {
+	{12,50,127},
+	{12,30,126},
+	{12,30,127},
+	{12,30,127},
+	{12,30,127},
+	{12,30,127},
+	{12,30,121},
+	{12,30,121},
+	{12,100,104},
+	{12,100,116},
+	{12,80,121},
+	{12,80,105},
+};
+
+Acceptance evidence (COM9, 1,000,000 baud):
+- Daily multi-position squeeze: 1000 frames / 5 s (200 Hz), 0 malformed frames.
+- All 12 channels responded clearly.
+- All 12 channels: 0 samples at the observed 33782 plateau.
+- Final strongest normal press + twist after CH1 retuning: 999 valid frames
+  / 5 s (199.8 Hz); all CH1-CH12 had 0 plateau samples.
+- CH1 maximum was 24670, leaving 9112 counts below the observed 33782
+  plateau. CH1 response span was 7571 counts.
+- The capture ended with 1 partial frame at the bounded-window cutoff.
+
+Important: these values were written to volatile runtime tuning through UART.
+Reapply them after a CoinFT power cycle unless they are incorporated into and
+persisted by the firmware.

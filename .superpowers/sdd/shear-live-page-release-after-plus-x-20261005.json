@@ -1,0 +1,2191 @@
+{
+  "pose": "release_after_plus_x",
+  "samples": [
+    {
+      "host": 1791206723486,
+      "before": {
+        "frame": 3614344,
+        "baseline": [
+          -45,
+          -30,
+          -27.5,
+          -23.5,
+          19,
+          -37,
+          -9,
+          -60.5,
+          -3,
+          3,
+          8,
+          -9
+        ],
+        "channels": [
+          20,
+          -22,
+          34.5,
+          5.5,
+          5,
+          -115,
+          -32,
+          -80.5,
+          25,
+          16,
+          -37,
+          -50
+        ],
+        "paused": false,
+        "normal": 0,
+        "shear": 0,
+        "renderedShear": 0,
+        "zeroFrame": -1,
+        "profile": {
+          "version": 1,
+          "mode": "qualitative",
+          "assemblyId": "coinft-current-20260925",
+          "normal": {
+            "threshold": 100,
+            "span": 600
+          },
+          "shear": {
+            "enabled": true,
+            "weights": [
+              0.018620295108163612,
+              -0.6612813415534511,
+              -0.017683367757615198,
+              0.7092235968547906,
+              -0.0887673330605397,
+              0.17873647277899962,
+              -0.0002010954492274968,
+              -0.13864722692112055
+            ],
+            "pressLeak": [
+              -0.018262174783188794,
+              -0.03460640426951301,
+              -0.13008672448298866,
+              0.2391594396264176,
+              0.06429286190793862,
+              0.18295530353569045,
+              0.031187458305537024,
+              -0.2541694462975317
+            ],
+            "threshold": 58.330169520837785,
+            "span": 58.330169520837785
+          },
+          "rightLabel": "−X",
+          "leftLabel": "+X",
+          "evidence": [
+            ".superpowers/sdd/shear-refit-coefficient-softmargin-20261005.json",
+            ".superpowers/sdd/shear-refit-fresh-right-20261005.json",
+            ".superpowers/sdd/shear-frozen-independent-validation-20261005.json"
+          ]
+        }
+      },
+      "backend": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          -0.007055,
+          -0.008733,
+          0.0856402,
+          -0.0000289,
+          -0.0000137,
+          -0.0000343
+        ],
+        "channels": [
+          20,
+          -22,
+          34.5,
+          5.5,
+          5,
+          -115,
+          -32,
+          -80.5,
+          25,
+          16,
+          -37,
+          -50
+        ],
+        "raw": [
+          27850,
+          27255,
+          25786,
+          26572,
+          26222,
+          26167,
+          27126,
+          25807,
+          28507,
+          28102,
+          29029,
+          28090
+        ],
+        "rate": 200,
+        "frames": 3614344,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 12,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1791206723.398281,
+        "diagnostics": {
+          "serial_reads": 165690,
+          "serial_bytes": 93973152,
+          "parsed_frames": 3614344,
+          "last_byte_at": 1791206723.3972137,
+          "last_parsed_frame_at": 1791206723.3972137,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 35,
+          "successes": 7,
+          "last_fault": {
+            "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+            "observed_at": 1791206172.5569298,
+            "frames": 3504222,
+            "diagnostics": {
+              "serial_reads": 160644,
+              "serial_bytes": 91109954,
+              "parsed_frames": 3504222,
+              "last_byte_at": 1791206170.4871159,
+              "last_parsed_frame_at": 1791206170.4871159,
+              "parser_pending_bytes": 26,
+              "parser_discarded_bytes": 0
+            }
+          }
+        }
+      },
+      "after": {
+        "frame": 3614344,
+        "baseline": [
+          -45,
+          -30,
+          -27.5,
+          -23.5,
+          19,
+          -37,
+          -9,
+          -60.5,
+          -3,
+          3,
+          8,
+          -9
+        ],
+        "paused": false,
+        "normal": 0,
+        "shear": 0
+      },
+      "pageScore": 5.470051477260041,
+      "backendScore": 5.470051477260041,
+      "status": "数据正常",
+      "profile_matches_installed": true
+    },
+    {
+      "host": 1791206723597,
+      "before": {
+        "frame": 3614366,
+        "baseline": [
+          -45,
+          -30,
+          -27.5,
+          -23.5,
+          19,
+          -37,
+          -9,
+          -60.5,
+          -3,
+          3,
+          8,
+          -9
+        ],
+        "channels": [
+          21,
+          -62,
+          70.5,
+          -64.5,
+          17,
+          -37,
+          -3,
+          -12.5,
+          -1,
+          -8,
+          -30,
+          -10
+        ],
+        "paused": false,
+        "normal": 0,
+        "shear": 0,
+        "renderedShear": 0,
+        "zeroFrame": -1,
+        "profile": {
+          "version": 1,
+          "mode": "qualitative",
+          "assemblyId": "coinft-current-20260925",
+          "normal": {
+            "threshold": 100,
+            "span": 600
+          },
+          "shear": {
+            "enabled": true,
+            "weights": [
+              0.018620295108163612,
+              -0.6612813415534511,
+              -0.017683367757615198,
+              0.7092235968547906,
+              -0.0887673330605397,
+              0.17873647277899962,
+              -0.0002010954492274968,
+              -0.13864722692112055
+            ],
+            "pressLeak": [
+              -0.018262174783188794,
+              -0.03460640426951301,
+              -0.13008672448298866,
+              0.2391594396264176,
+              0.06429286190793862,
+              0.18295530353569045,
+              0.031187458305537024,
+              -0.2541694462975317
+            ],
+            "threshold": 58.330169520837785,
+            "span": 58.330169520837785
+          },
+          "rightLabel": "−X",
+          "leftLabel": "+X",
+          "evidence": [
+            ".superpowers/sdd/shear-refit-coefficient-softmargin-20261005.json",
+            ".superpowers/sdd/shear-refit-fresh-right-20261005.json",
+            ".superpowers/sdd/shear-frozen-independent-validation-20261005.json"
+          ]
+        }
+      },
+      "backend": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          -0.0056335,
+          -0.0096521,
+          0.0909953,
+          -0.0000367,
+          -0.0000132,
+          -0.0000409
+        ],
+        "channels": [
+          21,
+          -62,
+          70.5,
+          -64.5,
+          17,
+          -37,
+          -3,
+          -12.5,
+          -1,
+          -8,
+          -30,
+          -10
+        ],
+        "raw": [
+          27851,
+          27215,
+          25822,
+          26502,
+          26234,
+          26245,
+          27155,
+          25875,
+          28481,
+          28078,
+          29036,
+          28130
+        ],
+        "rate": 200,
+        "frames": 3614366,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 12,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1791206723.508679,
+        "diagnostics": {
+          "serial_reads": 165691,
+          "serial_bytes": 93973724,
+          "parsed_frames": 3614366,
+          "last_byte_at": 1791206723.5076375,
+          "last_parsed_frame_at": 1791206723.5076375,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 35,
+          "successes": 7,
+          "last_fault": {
+            "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+            "observed_at": 1791206172.5569298,
+            "frames": 3504222,
+            "diagnostics": {
+              "serial_reads": 160644,
+              "serial_bytes": 91109954,
+              "parsed_frames": 3504222,
+              "last_byte_at": 1791206170.4871159,
+              "last_parsed_frame_at": 1791206170.4871159,
+              "parser_pending_bytes": 26,
+              "parser_discarded_bytes": 0
+            }
+          }
+        }
+      },
+      "after": {
+        "frame": 3614366,
+        "baseline": [
+          -45,
+          -30,
+          -27.5,
+          -23.5,
+          19,
+          -37,
+          -9,
+          -60.5,
+          -3,
+          3,
+          8,
+          -9
+        ],
+        "paused": false,
+        "normal": 0,
+        "shear": 0
+      },
+      "pageScore": -14.899933903231542,
+      "backendScore": -14.899933903231542,
+      "status": "数据正常",
+      "profile_matches_installed": true
+    },
+    {
+      "host": 1791206723706,
+      "before": {
+        "frame": 3614388,
+        "baseline": [
+          -45,
+          -30,
+          -27.5,
+          -23.5,
+          19,
+          -37,
+          -9,
+          -60.5,
+          -3,
+          3,
+          8,
+          -9
+        ],
+        "channels": [
+          -16,
+          -72,
+          -6.5,
+          -49.5,
+          22,
+          -11,
+          24,
+          18.5,
+          -7,
+          -3,
+          -33,
+          -49
+        ],
+        "paused": false,
+        "normal": 0,
+        "shear": 0,
+        "renderedShear": 0,
+        "zeroFrame": -1,
+        "profile": {
+          "version": 1,
+          "mode": "qualitative",
+          "assemblyId": "coinft-current-20260925",
+          "normal": {
+            "threshold": 100,
+            "span": 600
+          },
+          "shear": {
+            "enabled": true,
+            "weights": [
+              0.018620295108163612,
+              -0.6612813415534511,
+              -0.017683367757615198,
+              0.7092235968547906,
+              -0.0887673330605397,
+              0.17873647277899962,
+              -0.0002010954492274968,
+              -0.13864722692112055
+            ],
+            "pressLeak": [
+              -0.018262174783188794,
+              -0.03460640426951301,
+              -0.13008672448298866,
+              0.2391594396264176,
+              0.06429286190793862,
+              0.18295530353569045,
+              0.031187458305537024,
+              -0.2541694462975317
+            ],
+            "threshold": 58.330169520837785,
+            "span": 58.330169520837785
+          },
+          "rightLabel": "−X",
+          "leftLabel": "+X",
+          "evidence": [
+            ".superpowers/sdd/shear-refit-coefficient-softmargin-20261005.json",
+            ".superpowers/sdd/shear-refit-fresh-right-20261005.json",
+            ".superpowers/sdd/shear-frozen-independent-validation-20261005.json"
+          ]
+        }
+      },
+      "backend": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          -0.0023948,
+          -0.0042339,
+          0.0796506,
+          -0.0000395,
+          -0.0000078,
+          -0.0000242
+        ],
+        "channels": [
+          -16,
+          -72,
+          -6.5,
+          -49.5,
+          22,
+          -11,
+          24,
+          18.5,
+          -7,
+          -3,
+          -33,
+          -49
+        ],
+        "raw": [
+          27814,
+          27205,
+          25745,
+          26517,
+          26239,
+          26271,
+          27182,
+          25906,
+          28475,
+          28083,
+          29033,
+          28091
+        ],
+        "rate": 200,
+        "frames": 3614388,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 12,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1791206723.6178505,
+        "diagnostics": {
+          "serial_reads": 165692,
+          "serial_bytes": 93974296,
+          "parsed_frames": 3614388,
+          "last_byte_at": 1791206723.616841,
+          "last_parsed_frame_at": 1791206723.616841,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 35,
+          "successes": 7,
+          "last_fault": {
+            "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+            "observed_at": 1791206172.5569298,
+            "frames": 3504222,
+            "diagnostics": {
+              "serial_reads": 160644,
+              "serial_bytes": 91109954,
+              "parsed_frames": 3504222,
+              "last_byte_at": 1791206170.4871159,
+              "last_parsed_frame_at": 1791206170.4871159,
+              "parser_pending_bytes": 26,
+              "parser_discarded_bytes": 0
+            }
+          }
+        }
+      },
+      "after": {
+        "frame": 3614388,
+        "baseline": [
+          -45,
+          -30,
+          -27.5,
+          -23.5,
+          19,
+          -37,
+          -9,
+          -60.5,
+          -3,
+          3,
+          8,
+          -9
+        ],
+        "paused": false,
+        "normal": 0,
+        "shear": 0
+      },
+      "pageScore": 2.923719878726553,
+      "backendScore": 2.923719878726553,
+      "status": "数据正常",
+      "profile_matches_installed": true
+    },
+    {
+      "host": 1791206723823,
+      "before": {
+        "frame": 3614410,
+        "baseline": [
+          -45,
+          -30,
+          -27.5,
+          -23.5,
+          19,
+          -37,
+          -9,
+          -60.5,
+          -3,
+          3,
+          8,
+          -9
+        ],
+        "channels": [
+          7,
+          -67,
+          30.5,
+          -54.5,
+          -3,
+          -111,
+          -28,
+          -81.5,
+          -25,
+          -20,
+          -6,
+          20
+        ],
+        "paused": false,
+        "normal": 0,
+        "shear": 0,
+        "renderedShear": 0,
+        "zeroFrame": -1,
+        "profile": {
+          "version": 1,
+          "mode": "qualitative",
+          "assemblyId": "coinft-current-20260925",
+          "normal": {
+            "threshold": 100,
+            "span": 600
+          },
+          "shear": {
+            "enabled": true,
+            "weights": [
+              0.018620295108163612,
+              -0.6612813415534511,
+              -0.017683367757615198,
+              0.7092235968547906,
+              -0.0887673330605397,
+              0.17873647277899962,
+              -0.0002010954492274968,
+              -0.13864722692112055
+            ],
+            "pressLeak": [
+              -0.018262174783188794,
+              -0.03460640426951301,
+              -0.13008672448298866,
+              0.2391594396264176,
+              0.06429286190793862,
+              0.18295530353569045,
+              0.031187458305537024,
+              -0.2541694462975317
+            ],
+            "threshold": 58.330169520837785,
+            "span": 58.330169520837785
+          },
+          "rightLabel": "−X",
+          "leftLabel": "+X",
+          "evidence": [
+            ".superpowers/sdd/shear-refit-coefficient-softmargin-20261005.json",
+            ".superpowers/sdd/shear-refit-fresh-right-20261005.json",
+            ".superpowers/sdd/shear-frozen-independent-validation-20261005.json"
+          ]
+        }
+      },
+      "backend": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          0.0000504,
+          -0.0010998,
+          0.0804278,
+          -0.0000341,
+          -0.0000014,
+          -0.0000366
+        ],
+        "channels": [
+          7,
+          -67,
+          30.5,
+          -54.5,
+          -3,
+          -111,
+          -28,
+          -81.5,
+          -25,
+          -20,
+          -6,
+          20
+        ],
+        "raw": [
+          27837,
+          27210,
+          25782,
+          26512,
+          26214,
+          26171,
+          27130,
+          25806,
+          28457,
+          28066,
+          29060,
+          28160
+        ],
+        "rate": 200,
+        "frames": 3614410,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 12,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1791206723.7275968,
+        "diagnostics": {
+          "serial_reads": 165693,
+          "serial_bytes": 93974868,
+          "parsed_frames": 3614410,
+          "last_byte_at": 1791206723.7264795,
+          "last_parsed_frame_at": 1791206723.7264795,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 35,
+          "successes": 7,
+          "last_fault": {
+            "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+            "observed_at": 1791206172.5569298,
+            "frames": 3504222,
+            "diagnostics": {
+              "serial_reads": 160644,
+              "serial_bytes": 91109954,
+              "parsed_frames": 3504222,
+              "last_byte_at": 1791206170.4871159,
+              "last_parsed_frame_at": 1791206170.4871159,
+              "parser_pending_bytes": 26,
+              "parser_discarded_bytes": 0
+            }
+          }
+        }
+      },
+      "after": {
+        "frame": 3614410,
+        "baseline": [
+          -45,
+          -30,
+          -27.5,
+          -23.5,
+          19,
+          -37,
+          -9,
+          -60.5,
+          -3,
+          3,
+          8,
+          -9
+        ],
+        "paused": false,
+        "normal": 0,
+        "shear": 0
+      },
+      "pageScore": -5.934106928773241,
+      "backendScore": -5.934106928773241,
+      "status": "数据正常",
+      "profile_matches_installed": true
+    },
+    {
+      "host": 1791206723933,
+      "before": {
+        "frame": 3614432,
+        "baseline": [
+          -45,
+          -30,
+          -27.5,
+          -23.5,
+          19,
+          -37,
+          -9,
+          -60.5,
+          -3,
+          3,
+          8,
+          -9
+        ],
+        "channels": [
+          -68,
+          -3,
+          -99.5,
+          11.5,
+          -97,
+          22,
+          -102,
+          -19.5,
+          -35,
+          -38,
+          22,
+          29
+        ],
+        "paused": false,
+        "normal": 0,
+        "shear": 0,
+        "renderedShear": 0,
+        "zeroFrame": -1,
+        "profile": {
+          "version": 1,
+          "mode": "qualitative",
+          "assemblyId": "coinft-current-20260925",
+          "normal": {
+            "threshold": 100,
+            "span": 600
+          },
+          "shear": {
+            "enabled": true,
+            "weights": [
+              0.018620295108163612,
+              -0.6612813415534511,
+              -0.017683367757615198,
+              0.7092235968547906,
+              -0.0887673330605397,
+              0.17873647277899962,
+              -0.0002010954492274968,
+              -0.13864722692112055
+            ],
+            "pressLeak": [
+              -0.018262174783188794,
+              -0.03460640426951301,
+              -0.13008672448298866,
+              0.2391594396264176,
+              0.06429286190793862,
+              0.18295530353569045,
+              0.031187458305537024,
+              -0.2541694462975317
+            ],
+            "threshold": 58.330169520837785,
+            "span": 58.330169520837785
+          },
+          "rightLabel": "−X",
+          "leftLabel": "+X",
+          "evidence": [
+            ".superpowers/sdd/shear-refit-coefficient-softmargin-20261005.json",
+            ".superpowers/sdd/shear-refit-fresh-right-20261005.json",
+            ".superpowers/sdd/shear-frozen-independent-validation-20261005.json"
+          ]
+        }
+      },
+      "backend": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          -0.0037349,
+          0.0314231,
+          0.0845241,
+          -0.0000169,
+          0.0000122,
+          -0.0000291
+        ],
+        "channels": [
+          -68,
+          -3,
+          -99.5,
+          11.5,
+          -97,
+          22,
+          -102,
+          -19.5,
+          -35,
+          -38,
+          22,
+          29
+        ],
+        "raw": [
+          27762,
+          27274,
+          25652,
+          26578,
+          26120,
+          26304,
+          27056,
+          25868,
+          28447,
+          28048,
+          29088,
+          28169
+        ],
+        "rate": 200,
+        "frames": 3614432,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 12,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1791206723.8359501,
+        "diagnostics": {
+          "serial_reads": 165694,
+          "serial_bytes": 93975440,
+          "parsed_frames": 3614432,
+          "last_byte_at": 1791206723.8349302,
+          "last_parsed_frame_at": 1791206723.8349302,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 35,
+          "successes": 7,
+          "last_fault": {
+            "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+            "observed_at": 1791206172.5569298,
+            "frames": 3504222,
+            "diagnostics": {
+              "serial_reads": 160644,
+              "serial_bytes": 91109954,
+              "parsed_frames": 3504222,
+              "last_byte_at": 1791206170.4871159,
+              "last_parsed_frame_at": 1791206170.4871159,
+              "parser_pending_bytes": 26,
+              "parser_discarded_bytes": 0
+            }
+          }
+        }
+      },
+      "after": {
+        "frame": 3614432,
+        "baseline": [
+          -45,
+          -30,
+          -27.5,
+          -23.5,
+          19,
+          -37,
+          -9,
+          -60.5,
+          -3,
+          3,
+          8,
+          -9
+        ],
+        "paused": false,
+        "normal": 0,
+        "shear": 0
+      },
+      "pageScore": 22.98979346103082,
+      "backendScore": 22.98979346103082,
+      "status": "数据正常",
+      "profile_matches_installed": true
+    },
+    {
+      "host": 1791206724049,
+      "before": {
+        "frame": 3614454,
+        "baseline": [
+          -45,
+          -30,
+          -27.5,
+          -23.5,
+          19,
+          -37,
+          -9,
+          -60.5,
+          -3,
+          3,
+          8,
+          -9
+        ],
+        "channels": [
+          -58,
+          -60,
+          -38.5,
+          -22.5,
+          -110,
+          15,
+          -124,
+          42.5,
+          -55,
+          -53,
+          5,
+          -18
+        ],
+        "paused": false,
+        "normal": 0,
+        "shear": 0,
+        "renderedShear": 0,
+        "zeroFrame": -1,
+        "profile": {
+          "version": 1,
+          "mode": "qualitative",
+          "assemblyId": "coinft-current-20260925",
+          "normal": {
+            "threshold": 100,
+            "span": 600
+          },
+          "shear": {
+            "enabled": true,
+            "weights": [
+              0.018620295108163612,
+              -0.6612813415534511,
+              -0.017683367757615198,
+              0.7092235968547906,
+              -0.0887673330605397,
+              0.17873647277899962,
+              -0.0002010954492274968,
+              -0.13864722692112055
+            ],
+            "pressLeak": [
+              -0.018262174783188794,
+              -0.03460640426951301,
+              -0.13008672448298866,
+              0.2391594396264176,
+              0.06429286190793862,
+              0.18295530353569045,
+              0.031187458305537024,
+              -0.2541694462975317
+            ],
+            "threshold": 58.330169520837785,
+            "span": 58.330169520837785
+          },
+          "rightLabel": "−X",
+          "leftLabel": "+X",
+          "evidence": [
+            ".superpowers/sdd/shear-refit-coefficient-softmargin-20261005.json",
+            ".superpowers/sdd/shear-refit-fresh-right-20261005.json",
+            ".superpowers/sdd/shear-frozen-independent-validation-20261005.json"
+          ]
+        }
+      },
+      "backend": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          -0.0048423,
+          0.0220617,
+          0.0868495,
+          -0.0000163,
+          -0.0000058,
+          -0.0000322
+        ],
+        "channels": [
+          -58,
+          -60,
+          -38.5,
+          -22.5,
+          -110,
+          15,
+          -124,
+          42.5,
+          -55,
+          -53,
+          5,
+          -18
+        ],
+        "raw": [
+          27772,
+          27217,
+          25713,
+          26544,
+          26107,
+          26297,
+          27034,
+          25930,
+          28427,
+          28033,
+          29071,
+          28122
+        ],
+        "rate": 200,
+        "frames": 3614454,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 12,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1791206723.946252,
+        "diagnostics": {
+          "serial_reads": 165695,
+          "serial_bytes": 93976012,
+          "parsed_frames": 3614454,
+          "last_byte_at": 1791206723.9452143,
+          "last_parsed_frame_at": 1791206723.9452143,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 35,
+          "successes": 7,
+          "last_fault": {
+            "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+            "observed_at": 1791206172.5569298,
+            "frames": 3504222,
+            "diagnostics": {
+              "serial_reads": 160644,
+              "serial_bytes": 91109954,
+              "parsed_frames": 3504222,
+              "last_byte_at": 1791206170.4871159,
+              "last_parsed_frame_at": 1791206170.4871159,
+              "parser_pending_bytes": 26,
+              "parser_discarded_bytes": 0
+            }
+          }
+        }
+      },
+      "after": {
+        "frame": 3614454,
+        "baseline": [
+          -45,
+          -30,
+          -27.5,
+          -23.5,
+          19,
+          -37,
+          -9,
+          -60.5,
+          -3,
+          3,
+          8,
+          -9
+        ],
+        "paused": false,
+        "normal": 0,
+        "shear": 0
+      },
+      "pageScore": 26.987861205489317,
+      "backendScore": 26.987861205489317,
+      "status": "数据正常",
+      "profile_matches_installed": true
+    },
+    {
+      "host": 1791206724157,
+      "before": {
+        "frame": 3614475,
+        "baseline": [
+          -45,
+          -30,
+          -27.5,
+          -23.5,
+          19,
+          -37,
+          -9,
+          -60.5,
+          -3,
+          3,
+          8,
+          -9
+        ],
+        "channels": [
+          -87,
+          -10,
+          -93.5,
+          -0.5,
+          10,
+          -138,
+          5,
+          -128.5,
+          -30,
+          -10,
+          -2,
+          -34
+        ],
+        "paused": false,
+        "normal": 0,
+        "shear": 0,
+        "renderedShear": 0,
+        "zeroFrame": -1,
+        "profile": {
+          "version": 1,
+          "mode": "qualitative",
+          "assemblyId": "coinft-current-20260925",
+          "normal": {
+            "threshold": 100,
+            "span": 600
+          },
+          "shear": {
+            "enabled": true,
+            "weights": [
+              0.018620295108163612,
+              -0.6612813415534511,
+              -0.017683367757615198,
+              0.7092235968547906,
+              -0.0887673330605397,
+              0.17873647277899962,
+              -0.0002010954492274968,
+              -0.13864722692112055
+            ],
+            "pressLeak": [
+              -0.018262174783188794,
+              -0.03460640426951301,
+              -0.13008672448298866,
+              0.2391594396264176,
+              0.06429286190793862,
+              0.18295530353569045,
+              0.031187458305537024,
+              -0.2541694462975317
+            ],
+            "threshold": 58.330169520837785,
+            "span": 58.330169520837785
+          },
+          "rightLabel": "−X",
+          "leftLabel": "+X",
+          "evidence": [
+            ".superpowers/sdd/shear-refit-coefficient-softmargin-20261005.json",
+            ".superpowers/sdd/shear-refit-fresh-right-20261005.json",
+            ".superpowers/sdd/shear-frozen-independent-validation-20261005.json"
+          ]
+        }
+      },
+      "backend": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          -0.0089335,
+          -0.0073736,
+          0.074064,
+          -0.0000243,
+          -0.0000065,
+          -0.0000425
+        ],
+        "channels": [
+          -87,
+          -10,
+          -93.5,
+          -0.5,
+          10,
+          -138,
+          5,
+          -128.5,
+          -30,
+          -10,
+          -2,
+          -34
+        ],
+        "raw": [
+          27743,
+          27267,
+          25658,
+          26566,
+          26227,
+          26144,
+          27163,
+          25759,
+          28452,
+          28076,
+          29064,
+          28106
+        ],
+        "rate": 200,
+        "frames": 3614475,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 12,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1791206724.0536768,
+        "diagnostics": {
+          "serial_reads": 165696,
+          "serial_bytes": 93976558,
+          "parsed_frames": 3614475,
+          "last_byte_at": 1791206724.0526853,
+          "last_parsed_frame_at": 1791206724.0526853,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 35,
+          "successes": 7,
+          "last_fault": {
+            "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+            "observed_at": 1791206172.5569298,
+            "frames": 3504222,
+            "diagnostics": {
+              "serial_reads": 160644,
+              "serial_bytes": 91109954,
+              "parsed_frames": 3504222,
+              "last_byte_at": 1791206170.4871159,
+              "last_parsed_frame_at": 1791206170.4871159,
+              "parser_pending_bytes": 26,
+              "parser_discarded_bytes": 0
+            }
+          }
+        }
+      },
+      "after": {
+        "frame": 3614475,
+        "baseline": [
+          -45,
+          -30,
+          -27.5,
+          -23.5,
+          19,
+          -37,
+          -9,
+          -60.5,
+          -3,
+          3,
+          8,
+          -9
+        ],
+        "paused": false,
+        "normal": 0,
+        "shear": 0
+      },
+      "pageScore": -4.356715884736205,
+      "backendScore": -4.356715884736205,
+      "status": "数据正常",
+      "profile_matches_installed": true
+    },
+    {
+      "host": 1791206724263,
+      "before": {
+        "frame": 3614497,
+        "baseline": [
+          -45,
+          -30,
+          -27.5,
+          -23.5,
+          19,
+          -37,
+          -9,
+          -60.5,
+          -3,
+          3,
+          8,
+          -9
+        ],
+        "channels": [
+          -83,
+          -25,
+          -110.5,
+          -11.5,
+          -34,
+          -99,
+          -38,
+          -105.5,
+          20,
+          18,
+          -10,
+          13
+        ],
+        "paused": false,
+        "normal": 0,
+        "shear": 0,
+        "renderedShear": 0,
+        "zeroFrame": -1,
+        "profile": {
+          "version": 1,
+          "mode": "qualitative",
+          "assemblyId": "coinft-current-20260925",
+          "normal": {
+            "threshold": 100,
+            "span": 600
+          },
+          "shear": {
+            "enabled": true,
+            "weights": [
+              0.018620295108163612,
+              -0.6612813415534511,
+              -0.017683367757615198,
+              0.7092235968547906,
+              -0.0887673330605397,
+              0.17873647277899962,
+              -0.0002010954492274968,
+              -0.13864722692112055
+            ],
+            "pressLeak": [
+              -0.018262174783188794,
+              -0.03460640426951301,
+              -0.13008672448298866,
+              0.2391594396264176,
+              0.06429286190793862,
+              0.18295530353569045,
+              0.031187458305537024,
+              -0.2541694462975317
+            ],
+            "threshold": 58.330169520837785,
+            "span": 58.330169520837785
+          },
+          "rightLabel": "−X",
+          "leftLabel": "+X",
+          "evidence": [
+            ".superpowers/sdd/shear-refit-coefficient-softmargin-20261005.json",
+            ".superpowers/sdd/shear-refit-fresh-right-20261005.json",
+            ".superpowers/sdd/shear-frozen-independent-validation-20261005.json"
+          ]
+        }
+      },
+      "backend": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          -0.0094261,
+          0.0155527,
+          0.0713562,
+          -0.00001,
+          -3e-7,
+          -0.0000348
+        ],
+        "channels": [
+          -83,
+          -25,
+          -110.5,
+          -11.5,
+          -34,
+          -99,
+          -38,
+          -105.5,
+          20,
+          18,
+          -10,
+          13
+        ],
+        "raw": [
+          27747,
+          27252,
+          25641,
+          26555,
+          26183,
+          26183,
+          27120,
+          25782,
+          28502,
+          28104,
+          29056,
+          28153
+        ],
+        "rate": 200,
+        "frames": 3614497,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 12,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1791206724.1635997,
+        "diagnostics": {
+          "serial_reads": 165697,
+          "serial_bytes": 93977130,
+          "parsed_frames": 3614497,
+          "last_byte_at": 1791206724.1625724,
+          "last_parsed_frame_at": 1791206724.1625724,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 35,
+          "successes": 7,
+          "last_fault": {
+            "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+            "observed_at": 1791206172.5569298,
+            "frames": 3504222,
+            "diagnostics": {
+              "serial_reads": 160644,
+              "serial_bytes": 91109954,
+              "parsed_frames": 3504222,
+              "last_byte_at": 1791206170.4871159,
+              "last_parsed_frame_at": 1791206170.4871159,
+              "parser_pending_bytes": 26,
+              "parser_discarded_bytes": 0
+            }
+          }
+        }
+      },
+      "after": {
+        "frame": 3614497,
+        "baseline": [
+          -45,
+          -30,
+          -27.5,
+          -23.5,
+          19,
+          -37,
+          -9,
+          -60.5,
+          -3,
+          3,
+          8,
+          -9
+        ],
+        "paused": false,
+        "normal": 0,
+        "shear": 0
+      },
+      "pageScore": 1.0836294722193553,
+      "backendScore": 1.0836294722193553,
+      "status": "数据正常",
+      "profile_matches_installed": true
+    },
+    {
+      "host": 1791206724374,
+      "before": {
+        "frame": 3614519,
+        "baseline": [
+          -45,
+          -30,
+          -27.5,
+          -23.5,
+          19,
+          -37,
+          -9,
+          -60.5,
+          -3,
+          3,
+          8,
+          -9
+        ],
+        "channels": [
+          -33,
+          -86,
+          -50.5,
+          -71.5,
+          -85,
+          8,
+          -70,
+          -24.5,
+          -21,
+          -13,
+          15,
+          -2
+        ],
+        "paused": false,
+        "normal": 0,
+        "shear": 0,
+        "renderedShear": 0,
+        "zeroFrame": -1,
+        "profile": {
+          "version": 1,
+          "mode": "qualitative",
+          "assemblyId": "coinft-current-20260925",
+          "normal": {
+            "threshold": 100,
+            "span": 600
+          },
+          "shear": {
+            "enabled": true,
+            "weights": [
+              0.018620295108163612,
+              -0.6612813415534511,
+              -0.017683367757615198,
+              0.7092235968547906,
+              -0.0887673330605397,
+              0.17873647277899962,
+              -0.0002010954492274968,
+              -0.13864722692112055
+            ],
+            "pressLeak": [
+              -0.018262174783188794,
+              -0.03460640426951301,
+              -0.13008672448298866,
+              0.2391594396264176,
+              0.06429286190793862,
+              0.18295530353569045,
+              0.031187458305537024,
+              -0.2541694462975317
+            ],
+            "threshold": 58.330169520837785,
+            "span": 58.330169520837785
+          },
+          "rightLabel": "−X",
+          "leftLabel": "+X",
+          "evidence": [
+            ".superpowers/sdd/shear-refit-coefficient-softmargin-20261005.json",
+            ".superpowers/sdd/shear-refit-fresh-right-20261005.json",
+            ".superpowers/sdd/shear-frozen-independent-validation-20261005.json"
+          ]
+        }
+      },
+      "backend": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          -0.003938,
+          0.0392526,
+          0.075801,
+          -0.0000051,
+          0.0000166,
+          -0.0000239
+        ],
+        "channels": [
+          -33,
+          -86,
+          -50.5,
+          -71.5,
+          -85,
+          8,
+          -70,
+          -24.5,
+          -21,
+          -13,
+          15,
+          -2
+        ],
+        "raw": [
+          27797,
+          27191,
+          25701,
+          26495,
+          26132,
+          26290,
+          27088,
+          25863,
+          28461,
+          28073,
+          29081,
+          28138
+        ],
+        "rate": 200,
+        "frames": 3614519,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 12,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1791206724.2724955,
+        "diagnostics": {
+          "serial_reads": 165698,
+          "serial_bytes": 93977702,
+          "parsed_frames": 3614519,
+          "last_byte_at": 1791206724.2714288,
+          "last_parsed_frame_at": 1791206724.2714288,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 35,
+          "successes": 7,
+          "last_fault": {
+            "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+            "observed_at": 1791206172.5569298,
+            "frames": 3504222,
+            "diagnostics": {
+              "serial_reads": 160644,
+              "serial_bytes": 91109954,
+              "parsed_frames": 3504222,
+              "last_byte_at": 1791206170.4871159,
+              "last_parsed_frame_at": 1791206170.4871159,
+              "parser_pending_bytes": 26,
+              "parser_discarded_bytes": 0
+            }
+          }
+        }
+      },
+      "after": {
+        "frame": 3614519,
+        "baseline": [
+          -45,
+          -30,
+          -27.5,
+          -23.5,
+          19,
+          -37,
+          -9,
+          -60.5,
+          -3,
+          3,
+          8,
+          -9
+        ],
+        "paused": false,
+        "normal": 0,
+        "shear": 0
+      },
+      "pageScore": 15.91509404428007,
+      "backendScore": 15.91509404428007,
+      "status": "数据正常",
+      "profile_matches_installed": true
+    },
+    {
+      "host": 1791206724484,
+      "before": {
+        "frame": 3614541,
+        "baseline": [
+          -45,
+          -30,
+          -27.5,
+          -23.5,
+          19,
+          -37,
+          -9,
+          -60.5,
+          -3,
+          3,
+          8,
+          -9
+        ],
+        "channels": [
+          -29,
+          -84,
+          -25.5,
+          -73.5,
+          -121,
+          53,
+          -124,
+          13.5,
+          -4,
+          17,
+          -3,
+          2
+        ],
+        "paused": false,
+        "normal": 0,
+        "shear": 0,
+        "renderedShear": 0,
+        "zeroFrame": -1,
+        "profile": {
+          "version": 1,
+          "mode": "qualitative",
+          "assemblyId": "coinft-current-20260925",
+          "normal": {
+            "threshold": 100,
+            "span": 600
+          },
+          "shear": {
+            "enabled": true,
+            "weights": [
+              0.018620295108163612,
+              -0.6612813415534511,
+              -0.017683367757615198,
+              0.7092235968547906,
+              -0.0887673330605397,
+              0.17873647277899962,
+              -0.0002010954492274968,
+              -0.13864722692112055
+            ],
+            "pressLeak": [
+              -0.018262174783188794,
+              -0.03460640426951301,
+              -0.13008672448298866,
+              0.2391594396264176,
+              0.06429286190793862,
+              0.18295530353569045,
+              0.031187458305537024,
+              -0.2541694462975317
+            ],
+            "threshold": 58.330169520837785,
+            "span": 58.330169520837785
+          },
+          "rightLabel": "−X",
+          "leftLabel": "+X",
+          "evidence": [
+            ".superpowers/sdd/shear-refit-coefficient-softmargin-20261005.json",
+            ".superpowers/sdd/shear-refit-fresh-right-20261005.json",
+            ".superpowers/sdd/shear-frozen-independent-validation-20261005.json"
+          ]
+        }
+      },
+      "backend": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          -0.0028336,
+          0.0198719,
+          0.0855037,
+          -0.0000144,
+          1e-7,
+          -0.0000191
+        ],
+        "channels": [
+          -29,
+          -84,
+          -25.5,
+          -73.5,
+          -121,
+          53,
+          -124,
+          13.5,
+          -4,
+          17,
+          -3,
+          2
+        ],
+        "raw": [
+          27801,
+          27193,
+          25726,
+          26493,
+          26096,
+          26335,
+          27034,
+          25901,
+          28478,
+          28103,
+          29063,
+          28142
+        ],
+        "rate": 200,
+        "frames": 3614541,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 12,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1791206724.3808184,
+        "diagnostics": {
+          "serial_reads": 165699,
+          "serial_bytes": 93978274,
+          "parsed_frames": 3614541,
+          "last_byte_at": 1791206724.379793,
+          "last_parsed_frame_at": 1791206724.379793,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 35,
+          "successes": 7,
+          "last_fault": {
+            "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+            "observed_at": 1791206172.5569298,
+            "frames": 3504222,
+            "diagnostics": {
+              "serial_reads": 160644,
+              "serial_bytes": 91109954,
+              "parsed_frames": 3504222,
+              "last_byte_at": 1791206170.4871159,
+              "last_parsed_frame_at": 1791206170.4871159,
+              "parser_pending_bytes": 26,
+              "parser_discarded_bytes": 0
+            }
+          }
+        }
+      },
+      "after": {
+        "frame": 3614541,
+        "baseline": [
+          -45,
+          -30,
+          -27.5,
+          -23.5,
+          19,
+          -37,
+          -9,
+          -60.5,
+          -3,
+          3,
+          8,
+          -9
+        ],
+        "paused": false,
+        "normal": 0,
+        "shear": 0
+      },
+      "pageScore": 17.504062406815876,
+      "backendScore": 17.504062406815876,
+      "status": "数据正常",
+      "profile_matches_installed": true
+    },
+    {
+      "host": 1791206724596,
+      "before": {
+        "frame": 3614562,
+        "baseline": [
+          -45,
+          -30,
+          -27.5,
+          -23.5,
+          19,
+          -37,
+          -9,
+          -60.5,
+          -3,
+          3,
+          8,
+          -9
+        ],
+        "channels": [
+          -23,
+          -106,
+          -16.5,
+          -86.5,
+          25,
+          -59,
+          8,
+          -77.5,
+          -26,
+          -32,
+          -27,
+          -30
+        ],
+        "paused": false,
+        "normal": 0,
+        "shear": 0,
+        "renderedShear": 0,
+        "zeroFrame": -1,
+        "profile": {
+          "version": 1,
+          "mode": "qualitative",
+          "assemblyId": "coinft-current-20260925",
+          "normal": {
+            "threshold": 100,
+            "span": 600
+          },
+          "shear": {
+            "enabled": true,
+            "weights": [
+              0.018620295108163612,
+              -0.6612813415534511,
+              -0.017683367757615198,
+              0.7092235968547906,
+              -0.0887673330605397,
+              0.17873647277899962,
+              -0.0002010954492274968,
+              -0.13864722692112055
+            ],
+            "pressLeak": [
+              -0.018262174783188794,
+              -0.03460640426951301,
+              -0.13008672448298866,
+              0.2391594396264176,
+              0.06429286190793862,
+              0.18295530353569045,
+              0.031187458305537024,
+              -0.2541694462975317
+            ],
+            "threshold": 58.330169520837785,
+            "span": 58.330169520837785
+          },
+          "rightLabel": "−X",
+          "leftLabel": "+X",
+          "evidence": [
+            ".superpowers/sdd/shear-refit-coefficient-softmargin-20261005.json",
+            ".superpowers/sdd/shear-refit-fresh-right-20261005.json",
+            ".superpowers/sdd/shear-frozen-independent-validation-20261005.json"
+          ]
+        }
+      },
+      "backend": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          -0.004231,
+          0.0199385,
+          0.0770698,
+          -0.0000171,
+          -0.0000045,
+          -0.0000343
+        ],
+        "channels": [
+          -23,
+          -106,
+          -16.5,
+          -86.5,
+          25,
+          -59,
+          8,
+          -77.5,
+          -26,
+          -32,
+          -27,
+          -30
+        ],
+        "raw": [
+          27807,
+          27171,
+          25735,
+          26480,
+          26242,
+          26223,
+          27166,
+          25810,
+          28456,
+          28054,
+          29039,
+          28110
+        ],
+        "rate": 200,
+        "frames": 3614562,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 12,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1791206724.489346,
+        "diagnostics": {
+          "serial_reads": 165700,
+          "serial_bytes": 93978820,
+          "parsed_frames": 3614562,
+          "last_byte_at": 1791206724.4883432,
+          "last_parsed_frame_at": 1791206724.4883432,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 35,
+          "successes": 7,
+          "last_fault": {
+            "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+            "observed_at": 1791206172.5569298,
+            "frames": 3504222,
+            "diagnostics": {
+              "serial_reads": 160644,
+              "serial_bytes": 91109954,
+              "parsed_frames": 3504222,
+              "last_byte_at": 1791206170.4871159,
+              "last_parsed_frame_at": 1791206170.4871159,
+              "parser_pending_bytes": 26,
+              "parser_discarded_bytes": 0
+            }
+          }
+        }
+      },
+      "after": {
+        "frame": 3614562,
+        "baseline": [
+          -45,
+          -30,
+          -27.5,
+          -23.5,
+          19,
+          -37,
+          -9,
+          -60.5,
+          -3,
+          3,
+          8,
+          -9
+        ],
+        "paused": false,
+        "normal": 0,
+        "shear": 0
+      },
+      "pageScore": 3.6802026387772577,
+      "backendScore": 3.6802026387772577,
+      "status": "数据正常",
+      "profile_matches_installed": true
+    },
+    {
+      "host": 1791206724702,
+      "before": {
+        "frame": 3614585,
+        "baseline": [
+          -45,
+          -30,
+          -27.5,
+          -23.5,
+          19,
+          -37,
+          -9,
+          -60.5,
+          -3,
+          3,
+          8,
+          -9
+        ],
+        "channels": [
+          25,
+          19,
+          54.5,
+          23.5,
+          37,
+          -27,
+          26,
+          -36.5,
+          -50,
+          -38,
+          -43,
+          -45
+        ],
+        "paused": false,
+        "normal": 0,
+        "shear": 0,
+        "renderedShear": 0,
+        "zeroFrame": -1,
+        "profile": {
+          "version": 1,
+          "mode": "qualitative",
+          "assemblyId": "coinft-current-20260925",
+          "normal": {
+            "threshold": 100,
+            "span": 600
+          },
+          "shear": {
+            "enabled": true,
+            "weights": [
+              0.018620295108163612,
+              -0.6612813415534511,
+              -0.017683367757615198,
+              0.7092235968547906,
+              -0.0887673330605397,
+              0.17873647277899962,
+              -0.0002010954492274968,
+              -0.13864722692112055
+            ],
+            "pressLeak": [
+              -0.018262174783188794,
+              -0.03460640426951301,
+              -0.13008672448298866,
+              0.2391594396264176,
+              0.06429286190793862,
+              0.18295530353569045,
+              0.031187458305537024,
+              -0.2541694462975317
+            ],
+            "threshold": 58.330169520837785,
+            "span": 58.330169520837785
+          },
+          "rightLabel": "−X",
+          "leftLabel": "+X",
+          "evidence": [
+            ".superpowers/sdd/shear-refit-coefficient-softmargin-20261005.json",
+            ".superpowers/sdd/shear-refit-fresh-right-20261005.json",
+            ".superpowers/sdd/shear-frozen-independent-validation-20261005.json"
+          ]
+        }
+      },
+      "backend": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          -0.003974,
+          0.0128966,
+          0.0562033,
+          -0.0000093,
+          -0.0000028,
+          -0.0000388
+        ],
+        "channels": [
+          25,
+          19,
+          54.5,
+          23.5,
+          37,
+          -27,
+          26,
+          -36.5,
+          -50,
+          -38,
+          -43,
+          -45
+        ],
+        "raw": [
+          27855,
+          27296,
+          25806,
+          26590,
+          26254,
+          26255,
+          27184,
+          25851,
+          28432,
+          28048,
+          29023,
+          28095
+        ],
+        "rate": 200,
+        "frames": 3614585,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 12,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1791206724.59969,
+        "diagnostics": {
+          "serial_reads": 165701,
+          "serial_bytes": 93979418,
+          "parsed_frames": 3614585,
+          "last_byte_at": 1791206724.5986164,
+          "last_parsed_frame_at": 1791206724.5986164,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 35,
+          "successes": 7,
+          "last_fault": {
+            "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+            "observed_at": 1791206172.5569298,
+            "frames": 3504222,
+            "diagnostics": {
+              "serial_reads": 160644,
+              "serial_bytes": 91109954,
+              "parsed_frames": 3504222,
+              "last_byte_at": 1791206170.4871159,
+              "last_parsed_frame_at": 1791206170.4871159,
+              "parser_pending_bytes": 26,
+              "parser_discarded_bytes": 0
+            }
+          }
+        }
+      },
+      "after": {
+        "frame": 3614585,
+        "baseline": [
+          -45,
+          -30,
+          -27.5,
+          -23.5,
+          19,
+          -37,
+          -9,
+          -60.5,
+          -3,
+          3,
+          8,
+          -9
+        ],
+        "paused": false,
+        "normal": 0,
+        "shear": 0
+      },
+      "pageScore": -2.3609112366265035,
+      "backendScore": -2.3609112366265035,
+      "status": "数据正常",
+      "profile_matches_installed": true
+    }
+  ],
+  "errors": [],
+  "scope": "diagnosis only, not a fitting or acceptance capture"
+}

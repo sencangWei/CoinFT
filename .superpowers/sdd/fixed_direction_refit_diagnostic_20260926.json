@@ -1,0 +1,62 @@
+{
+  "method": "Exploratory fit current fixed minus/plus mean contrast and earlier pure press, all relative fixed-empty median. Earlier press predates fixation; no holdout or release bracket, not deployable.",
+  "threshold": 71.76593765928979,
+  "weights": [
+    0.5458729622159132,
+    -0.5417339903660868,
+    -0.3122257524009762,
+    0.3133852893149256,
+    -0.13153928169961304,
+    -0.005562438223194694,
+    0.3710127302383542,
+    -0.24055719368655454
+  ],
+  "pressLeak": [
+    -0.0812958435207824,
+    0.041739434159972055,
+    -0.2122773314704855,
+    0.22293049249039468,
+    0.08487600419140762,
+    0.2729654208871813,
+    -0.001309814879497031,
+    -0.30370241005937826
+  ],
+  "stats": [
+    {
+      "pose": "operator-confirmed pure center press",
+      "min": -76.16792946439625,
+      "median": -4.662751373608492,
+      "max": 80.89655003509134,
+      "positive": 1,
+      "negative": 2,
+      "n": 44
+    },
+    {
+      "pose": "operator-confirmed plus-X relative upper-PCB push with lower PCB fixed",
+      "min": -186.57029813731174,
+      "median": -104.38704979722803,
+      "max": -35.316521183282816,
+      "positive": 0,
+      "negative": 40,
+      "n": 45
+    },
+    {
+      "pose": "operator-confirmed minus-X relative upper-PCB push with lower PCB fixed",
+      "min": -44.87612173239788,
+      "median": 34.03619203318757,
+      "max": 94.82876223498742,
+      "positive": 3,
+      "negative": 0,
+      "n": 44
+    },
+    {
+      "pose": "operator-confirmed unloaded with lower PCB fixed",
+      "min": -65.72839641220831,
+      "median": -12.87278748205165,
+      "max": 45.46935788402037,
+      "positive": 0,
+      "negative": 0,
+      "n": 44
+    }
+  ]
+}

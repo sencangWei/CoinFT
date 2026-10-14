@@ -1,0 +1,389 @@
+﻿diff --git a/.superpowers/sdd/auto-recovery-before-test_demo_ui.py b/tests/test_demo_ui.py
+index 06e68cd..d16ea45 100644
+--- a/.superpowers/sdd/auto-recovery-before-test_demo_ui.py
++++ b/tests/test_demo_ui.py
+@@ -73,43 +73,50 @@ class DashboardWarningTests(unittest.TestCase):
+                 self.assertEqual(page.evaluate("demoZeroSamples.length"), 1)
+                 first_sample_at, fresh_at = page.evaluate("[demoZeroStartedAt, lastSurfaceFrameAt]")
+                 page.wait_for_timeout(50)
+                 page.evaluate("poll()")
+                 self.assertEqual(page.evaluate("[demoBaseline, demoZeroSamples.length, demoZeroFrame]"),
+                                  [None, 1, source.frames])
+                 self.assertEqual(page.evaluate("[demoZeroStartedAt, lastSurfaceFrameAt]"),
+                                  [first_sample_at, fresh_at])
+                 for _ in range(14):
+                     page.wait_for_timeout(50)
+                     source.frames += 1
+                     page.evaluate("poll()")
+                     page.wait_for_timeout(50)
+                     page.evaluate("poll()")
+                 self.assertEqual(page.evaluate("demoBaseline"), [700] * 12)
++                page.evaluate("window.retainedBaseline = demoBaseline")
+                 source.channels = [1400] * 12
+                 source.frames += 1
+                 page.evaluate("poll()")
+                 self.assertEqual(page.evaluate("surfaceView.target"), 1)
+                 fresh_at = page.evaluate("lastSurfaceFrameAt")
+                 page.wait_for_timeout(50)
+                 page.evaluate("poll()")
+                 self.assertEqual(page.evaluate("demoBaseline"), [700] * 12)
+                 self.assertEqual(page.evaluate("surfaceView.target"), 1)
+                 self.assertEqual(page.evaluate("lastSurfaceFrameAt"), fresh_at)
+-                page.wait_for_function("demoBaseline === null", timeout=1000)
+-                self.assertIsNone(page.evaluate("demoBaseline"))
++                page.wait_for_function("surfaceView.target === 0", timeout=1000)
++                self.assertEqual(page.evaluate("demoBaseline"), [700] * 12)
+                 self.assertEqual(page.evaluate("[surfaceView.target, surfaceView.shearTarget]"), [0, 0])
++                page.evaluate("poll()")
++                self.assertEqual(page.evaluate("surfaceView.target"), 0)
++                source.frames += 1
++                page.evaluate("poll()")
++                self.assertEqual(page.evaluate("surfaceView.target"), 1)
++                self.assertTrue(page.evaluate("demoBaseline === retainedBaseline"))
+ 
+                 source.automatic = True
+                 source.channels = [700] * 12
+                 page.evaluate("poll()")
+                 page.locator("#demo-zero").click()
+                 page.evaluate("poll()")
+                 self.assertEqual(page.evaluate("demoZeroSamples.length"), 1)
+                 source.channels = [None] + [700] * 11
+                 page.evaluate("poll()")
+                 self.assertEqual(page.evaluate("[demoBaseline, demoZeroSamples.length, demoZeroFrame]"),
+                                  [None, 0, -1])
+                 source.channels = [700] * 12
+                 for _ in range(24):
+                     page.wait_for_timeout(55)
+                     page.evaluate("poll()")
+@@ -169,43 +176,53 @@ class DashboardWarningTests(unittest.TestCase):
+                 page.route("**/shear_profile.json", lambda route: route.fulfill(status=404))
+                 page.route("**/shear_demo_profile.json", lambda route: route.fulfill(
+                     status=200, content_type="application/json", body=json.dumps(profile)))
+                 page.goto(f"http://127.0.0.1:{server.server_port}/")
+                 page.wait_for_function("shearProfile.mode === 'qualitative'")
+                 page.evaluate("clearInterval(testPollTimer)")
+                 page.evaluate("demoBaseline = Array(12).fill(0)")
+                 source.frames += 1
+                 page.evaluate("poll()")
+                 self.assertEqual(page.evaluate("surfaceView.target"), 1)
+                 page.wait_for_timeout(50)
+                 page.evaluate("poll()")
+                 self.assertEqual(page.evaluate("demoBaseline"), [0] * 12)
+                 self.assertEqual(page.evaluate("surfaceView.target"), 1)
+                 page.evaluate("""() => {
++                    window.realFetch = window.fetch;
+                     window.fetch = () => new Promise(() => {});
+                     void poll();
+                 }""")
+-                page.wait_for_function("fetching && demoBaseline === null && surfaceView.target === 0",
++                page.wait_for_function("fetching && surfaceView.target === 0",
+                                        timeout=800)
++                self.assertEqual(page.evaluate("demoBaseline"), [0] * 12)
+                 self.assertEqual(page.evaluate("demoZeroSamples.length"), 0)
+                 self.assertTrue(page.locator("#demo-zero").is_disabled())
++                page.wait_for_function("!fetching", timeout=2000)
++                page.evaluate("window.fetch = window.realFetch")
++                page.evaluate("poll()")
++                self.assertEqual(page.evaluate("surfaceView.target"), 0)
++                source.frames += 1
++                page.evaluate("poll()")
++                self.assertEqual(page.evaluate("surfaceView.target"), 1)
++                self.assertEqual(page.evaluate("demoBaseline"), [0] * 12)
+                 browser.close()
+         finally:
+             server.shutdown()
+             server.server_close()
+ 
+-    def test_qualitative_malformed_channels_cancel_ready_baseline(self):
++    def test_qualitative_malformed_channels_pause_ready_baseline(self):
+         class Source(FakeSource):
+             frames = 200
+             channels = [700] * 12
+ 
+             def snapshot(self):
+                 state = super().snapshot()
+                 state.update(frames=self.frames, channels=self.channels, invalid_recent=0)
+                 return state
+ 
+         profile = {
+             "version": 1, "mode": "qualitative", "assemblyId": "synthetic",
+             "normal": {"threshold": 100, "span": 600},
+             "shear": {"enabled": True, "weights": [0.125] * 4 + [-0.125] * 4,
+                       "pressLeak": [0] * 8, "threshold": 20, "span": 80},
+             "rightLabel": "−X", "leftLabel": "+X", "evidence": ["synthetic.json"],
+@@ -220,33 +237,38 @@ class DashboardWarningTests(unittest.TestCase):
+                 page.route("**/shear_profile.json", lambda route: route.fulfill(status=404))
+                 page.route("**/shear_demo_profile.json", lambda route: route.fulfill(
+                     status=200, content_type="application/json", body=json.dumps(profile)))
+                 page.goto(f"http://127.0.0.1:{server.server_port}/")
+                 page.wait_for_function("shearProfile.mode === 'qualitative'")
+                 for malformed in ([700] * 11, [None] + [700] * 11, None):
+                     source.channels = [700] * 12
+                     source.frames += 1
+                     page.wait_for_function(f"latestFrame === {source.frames}")
+                     page.evaluate("demoBaseline = Array(12).fill(0)")
+                     source.frames += 1
+                     page.wait_for_function("surfaceView.target === 1")
+                     source.channels = malformed
+                     page.wait_for_function("!fetching")
+                     page.evaluate("poll()")
+-                    self.assertIsNone(page.evaluate("demoBaseline"))
++                    self.assertEqual(page.evaluate("demoBaseline"), [0] * 12)
+                     self.assertEqual(page.evaluate("surfaceView.target"), 0)
+-                    self.assertIn("未归零", page.locator(".surface-label").inner_text())
++                    self.assertIn("自动恢复", page.locator(".surface-label").inner_text())
++                    source.channels = [700] * 12
++                    page.evaluate("poll()")
++                    self.assertEqual(page.evaluate("surfaceView.target"), 0)
++                    source.frames += 1
++                    page.wait_for_function("surfaceView.target === 1")
+                 browser.close()
+         finally:
+             server.shutdown()
+             server.server_close()
+ 
+     def test_qualitative_zero_needs_ten_frames_spanning_one_second(self):
+         class Source(FakeSource):
+             frames = 200
+ 
+             def snapshot(self):
+                 state = super().snapshot()
+                 state.update(frames=self.frames, channels=[250] * 12, invalid_recent=0)
+                 return state
+ 
+         profile = {
+@@ -367,31 +389,32 @@ class DashboardWarningTests(unittest.TestCase):
+                 page.screenshot(path=str(evidence / "task-2-desktop-left.png"), full_page=True)
+                 self.assertLessEqual(page.evaluate("document.documentElement.scrollWidth"), 1440)
+                 source.channels = [350] * 4 + [150] * 4 + [250] * 4
+                 source.frames += 1
+                 page.wait_for_function("surfaceView.shearTarget > 0")
+                 page.screenshot(path=str(evidence / "task-2-desktop-right.png"), full_page=True)
+                 source.channels = [250] * 8 + [950] * 4
+                 source.frames += 1
+                 page.wait_for_function("surfaceView.target > 0 && surfaceView.shearTarget === 0")
+                 page.screenshot(path=str(evidence / "task-2-desktop-press.png"), full_page=True)
+                 source.channels = [250] * 12
+                 source.frames += 1
+                 page.wait_for_function("surfaceView.target === 0 && surfaceView.shearTarget === 0")
+                 page.screenshot(path=str(evidence / "task-2-desktop-empty.png"), full_page=True)
+                 source.status = "waiting"
+-                page.wait_for_function("demoBaseline === null && surfaceView.shearTarget === 0")
++                page.wait_for_function("surfaceView.target === 0 && surfaceView.shearTarget === 0")
++                self.assertEqual(page.evaluate("demoBaseline"), [250] * 12)
+                 source.status = "live"
+                 source.frames += 1
+                 page.wait_for_function("document.getElementById('status-label').textContent === '数据正常'")
+                 self.assertEqual(page.evaluate("[surfaceView.target, surfaceView.shearTarget]"), [0, 0])
+                 page.set_viewport_size({"width": 390, "height": 844})
+                 self.assertLessEqual(page.evaluate("document.documentElement.scrollWidth"), 390)
+                 browser.close()
+         finally:
+             server.shutdown()
+             server.server_close()
+ 
+     def test_strict_disabled_profile_prevents_qualitative_fallback(self):
+         strict = {
+             "version": 1, "assemblyId": "strict", "normal": {"threshold": 100, "span": 600},
+             "shear": {"enabled": False, "weights": [0] * 8, "pressLeak": [0] * 8,
+@@ -405,31 +428,31 @@ class DashboardWarningTests(unittest.TestCase):
+                 browser = playwright.chromium.launch(headless=True)
+                 page = browser.new_page()
+                 calls = []
+                 page.route("**/shear_profile.json", lambda route: route.fulfill(
+                     status=200, content_type="application/json", body=json.dumps(strict)))
+                 page.route("**/shear_demo_profile.json", lambda route: calls.append(1) or route.abort())
+                 page.goto(f"http://127.0.0.1:{server.server_port}/")
+                 page.wait_for_function("shearProfile.assemblyId === 'strict'")
+                 self.assertEqual(calls, [])
+                 self.assertTrue(page.locator("#demo-zero").is_disabled())
+                 browser.close()
+         finally:
+             server.shutdown()
+             server.server_close()
+ 
+-    def test_qualitative_baseline_invalidates_on_stream_faults_and_tare(self):
++    def test_qualitative_baseline_recovers_on_transient_faults_and_invalidates_on_tare(self):
+         class Source(FakeSource):
+             frames = 200
+             status = "live"
+             invalid_recent = 0
+             saturated_recent = 0
+ 
+             def snapshot(self):
+                 state = super().snapshot()
+                 state.update(frames=self.frames, status=self.status,
+                              channels=[700] * 12, invalid_recent=self.invalid_recent,
+                              saturated_recent=self.saturated_recent)
+                 return state
+ 
+         profile = {
+             "version": 1, "mode": "qualitative", "assemblyId": "synthetic",
+@@ -439,105 +462,160 @@ class DashboardWarningTests(unittest.TestCase):
+             "rightLabel": "−X", "leftLabel": "+X", "evidence": ["synthetic.json"],
+         }
+         source = Source()
+         server = ThreadingHTTPServer(("127.0.0.1", 0), make_handler(source))
+         threading.Thread(target=server.serve_forever, daemon=True).start()
+         try:
+             with sync_playwright() as playwright:
+                 browser = playwright.chromium.launch(headless=True)
+                 page = browser.new_page(reduced_motion="reduce")
+                 page.route("**/shear_profile.json", lambda route: route.fulfill(status=404))
+                 page.route("**/shear_demo_profile.json", lambda route: route.fulfill(
+                     status=200, content_type="application/json", body=json.dumps(profile)))
+                 page.goto(f"http://127.0.0.1:{server.server_port}/")
+                 page.wait_for_function("shearProfile.mode === 'qualitative' && latestFrame === 200")
+ 
++                tare_requests = []
++                page.on("request", lambda request: tare_requests.append(request.url)
++                        if request.url.endswith("/api/tare") else None)
++
+                 def seed_grid():
+                     source.status = "live"
+                     source.invalid_recent = source.saturated_recent = 0
+                     source.frames += 1
+                     page.wait_for_function(f"latestFrame === {source.frames}")
+-                    page.evaluate("demoBaseline = Array(12).fill(0)")
++                    page.evaluate("demoBaseline = Array(12).fill(250)")
+                     source.frames += 1
+-                    page.wait_for_function("surfaceView.target === 1")
++                    page.wait_for_function(f"latestFrame === {source.frames} && surfaceView.target > 0")
++
++                def assert_paused_and_recover():
++                    page.wait_for_function("surfaceView.target === 0")
++                    self.assertEqual(page.evaluate("demoBaseline"), [250] * 12)
++                    self.assertIn("自动恢复", page.locator(".surface-label").inner_text())
++                    source.status = "live"
++                    source.invalid_recent = source.saturated_recent = 0
++                    page.evaluate("poll()")
++                    self.assertEqual(page.evaluate("surfaceView.target"), 0)
++                    source.frames += 1
++                    page.wait_for_function("surfaceView.target > 0")
++                    self.assertEqual(page.evaluate("demoBaseline"), [250] * 12)
+ 
+                 def assert_invalidated():
+                     page.wait_for_function("demoBaseline === null && surfaceView.target === 0")
+                     self.assertEqual(page.evaluate("[surfaceView.level, surfaceView.shearTarget]"), [0, 0])
+                     self.assertIn("未归零", page.locator(".surface-label").inner_text())
+ 
+                 seed_grid()
+                 source.status = "waiting"
+-                assert_invalidated()
++                assert_paused_and_recover()
+                 seed_grid()
+                 source.invalid_recent = 1
+                 source.frames += 1
+-                assert_invalidated()
++                assert_paused_and_recover()
+                 seed_grid()
+                 source.saturated_recent = 1
+                 source.frames += 1
++                assert_paused_and_recover()
++                seed_grid()
++                source.status = "error"
++                assert_paused_and_recover()
++                seed_grid()
++                source.status = "taring"
+                 assert_invalidated()
+                 seed_grid()
+                 source.frames -= 1
+                 assert_invalidated()
+                 source.frames += 2
+                 seed_grid()
+                 page.route("**/api/state", lambda route: route.fulfill(status=503))
+-                assert_invalidated()
++                page.wait_for_function("surfaceView.target === 0")
++                self.assertEqual(page.evaluate("demoBaseline"), [250] * 12)
++                page.unroute("**/api/state")
++                assert_paused_and_recover()
++                page.route("**/api/state", lambda route: route.fulfill(status=503))
++                page.wait_for_function("surfaceView.target === 0")
+                 page.unroute("**/api/state")
++                source.frames -= 1
++                assert_invalidated()
++                self.assertEqual(tare_requests, [])
++                source.frames = 1
++                page.wait_for_function("latestFrame === 1 && demoBaseline === null")
++                source.frames += 1
++                page.wait_for_function("latestFrame === 2")
++                self.assertEqual(page.evaluate("surfaceView.target"), 0)
++                page.locator("#demo-zero").click()
++                for _ in range(12):
++                    source.frames += 1
++                    page.wait_for_function(f"latestFrame === {source.frames}")
++                    page.wait_for_timeout(100)
++                self.assertEqual(page.evaluate("demoBaseline"), [700] * 12)
++                source.frames += 2
+                 seed_grid()
+                 page.route("**/api/tare", lambda route: route.fulfill(status=503))
+                 page.locator("#tare").click()
+                 assert_invalidated()
+                 source.frames += 1
+                 seed_grid()
+-                page.wait_for_function("demoBaseline === null && surfaceView.target === 0", timeout=2000)
++                page.wait_for_function("surfaceView.target === 0", timeout=2000)
++                self.assertEqual(page.evaluate("demoBaseline"), [250] * 12)
+                 self.assertTrue(page.locator("#demo-zero").is_disabled())
+                 browser.close()
+         finally:
+             server.shutdown()
+             server.server_close()
+ 
+     def test_older_frame_cannot_lower_surface_high_water(self):
+         class ChangingSource(FakeSource):
+             frames = 200
+             channels = [700.0] * 12
++            status = "live"
+ 
+             def snapshot(self):
+                 state = super().snapshot()
+                 state.update(frames=self.frames, channels=self.channels,
+-                             invalid_recent=0)
++                             status=self.status, invalid_recent=0)
+                 return state
+ 
+         source = ChangingSource()
+         server = ThreadingHTTPServer(("127.0.0.1", 0), make_handler(source))
+         threading.Thread(target=server.serve_forever, daemon=True).start()
+         try:
+             with sync_playwright() as playwright:
+                 browser = playwright.chromium.launch(headless=True)
+                 page = browser.new_page(reduced_motion="reduce")
+                 page.route("**/shear_demo_profile.json", lambda route: route.fulfill(status=404))
+                 page.goto(f"http://127.0.0.1:{server.server_port}/")
+                 page.wait_for_function("surfaceView.target === 1 && latestFrame === 200")
+                 source.frames = 199
+                 page.wait_for_function("surfaceView.target === 0")
+                 self.assertEqual(page.evaluate("latestFrame"), 200)
+                 source.frames = 200
+                 page.wait_for_timeout(150)
+                 self.assertEqual(page.evaluate("surfaceView.target"), 0)
+                 source.frames = 201
+                 page.wait_for_function("surfaceView.target === 1 && latestFrame === 201")
++                page.route("**/api/state", lambda route: route.fulfill(status=503))
++                page.wait_for_function("displayCleared && surfaceView.target === 0")
++                source.frames = 1
++                page.unroute("**/api/state")
++                page.wait_for_timeout(200)
++                self.assertEqual(page.evaluate("[surfaceView.target, latestFrame]"), [1, 1])
++                source.status = "waiting"
++                page.wait_for_function("displayCleared && latestFrame === -1")
++                source.frames = 0
++                source.status = "live"
++                page.wait_for_function("surfaceView.target === 1 && latestFrame === 0")
+                 browser.close()
+         finally:
+             server.shutdown()
+             server.server_close()
+ 
+     def test_failed_tare_post_releases_gate_and_button(self):
+         class ChangingSource(FakeSource):
+             frames = 200
+ 
+             def snapshot(self):
+                 state = super().snapshot()
+                 state.update(frames=self.frames, channels=[700.0] * 12,
+                              invalid_recent=0)
+                 return state
+ 

@@ -1,0 +1,1191 @@
+# Task1 re-review snapshot package v2 after I1 repair
+# Base: verified before-diagnostics snapshots, absent new files.
+# Head: frozen instrumentation + approved CDC2 adaptation + I1 expiry repair.
+
+# C:/Users/winer/Desktop/CoinFT_Teensy_Interface/teensy_coinft_serial_interface.cpp
+diff --git a/D:/semg.claude/coinft/.superpowers/sdd/teensy-before-diagnostics-20260928/teensy_coinft_serial_interface.cpp b/C:/Users/winer/Desktop/CoinFT_Teensy_Interface/teensy_coinft_serial_interface.cpp
+index ec61276..a0e0a73 100644
+--- a/D:/semg.claude/coinft/.superpowers/sdd/teensy-before-diagnostics-20260928/teensy_coinft_serial_interface.cpp
++++ b/C:/Users/winer/Desktop/CoinFT_Teensy_Interface/teensy_coinft_serial_interface.cpp
+@@ -1,165 +1,254 @@
+ #include <Arduino.h>
+ 
++#ifdef USB_DUAL_SERIAL
++#include <stdio.h>
++static uint32_t diagLoopCount, diagUartBytes, diagDataReads, diagPayloadBytes;
++static uint32_t diagEndMarkers, diagEndTimeouts, diagStarts, diagStops;
++static volatile uint32_t diagTimerTicks, diagUsbAttempts, diagUsbAccepted;
++static uint32_t diagLastReport, diagSequence;
++
++static int diagReadUart() {
++  int value = Serial2.read();
++  if (value >= 0) ++diagUartBytes;
++  return value;
++}
++
++static void diagCountAccepted(size_t actual, size_t requested) {
++  if (actual <= requested) diagUsbAccepted += actual;
++}
++
++static void diagHeartbeat() {
++  const uint32_t now = millis();
++  if (uint32_t(now - diagLastReport) < 500) return;
++  diagLastReport = now;
++  ++diagSequence;
++  if (!SerialUSB1) return;
++  uint32_t mask;
++#ifdef __arm__
++  __asm__ volatile("mrs %0, primask" : "=r" (mask) :: "memory");
++#else
++  mask = __get_PRIMASK();
++#endif
++  __disable_irq();
++  const uint32_t ticks = diagTimerTicks;
++  const uint32_t attempts = diagUsbAttempts;
++  const uint32_t accepted = diagUsbAccepted;
++#ifdef __arm__
++  __asm__ volatile("msr primask, %0" :: "r" (mask) : "memory");
++#else
++  __set_PRIMASK(mask);
++#endif
++  char line[192];
++  const int length = snprintf(line, sizeof(line),
++      "CFD1,%lu,%lu,%lu,%lu,%lu,%lu,%lu,%lu,%lu,%lu,%lu,%lu,%lu\n",
++      (unsigned long)diagSequence, (unsigned long)now, (unsigned long)diagLoopCount,
++      (unsigned long)diagUartBytes, (unsigned long)diagDataReads,
++      (unsigned long)diagPayloadBytes, (unsigned long)diagEndMarkers,
++      (unsigned long)diagEndTimeouts, (unsigned long)ticks, (unsigned long)attempts,
++      (unsigned long)accepted, (unsigned long)diagStarts, (unsigned long)diagStops);
++  if (length <= 0 || size_t(length) >= sizeof(line)) return;
++  if (SerialUSB1.availableForWrite() < length) return;
++  SerialUSB1.write(reinterpret_cast<const uint8_t *>(line), size_t(length));
++}
++#endif
++
+ // ==========================================
+ // USER CONFIGURATION
+ // ==========================================
+ #define NUM_COINFTS  1   // Currently supports 1 or 2. You can easily extend to more CoinFTs by modifying the code.
+ 
+ // Current CoinFT final tuning table {Resolution, Ref, Compensation}, accepted 2026-09-07.
+ // CoinFT tuning lives in volatile runtime memory, so resend on every power-up.
+ // Any additional CoinFT needs its own table (per-sensor capacitance baseline differs).
+ const uint8_t TUNING[12][3] = {
+   {12, 50, 50}, {12, 30, 72}, {12, 30, 81}, {12, 30, 82},
+   {12, 30, 83}, {12, 30, 85}, {12, 30, 76}, {12, 30, 75},
+   {12, 100, 17}, {12, 100, 26}, {12, 80, 58}, {12, 80, 42},
+ };
+ // ==========================================
+ 
+ // Use built-in IntervalTimer for Teensy 4.0
+ IntervalTimer myTimer;
+ 
+ // Hardware Serial Definitions
+ #define CFT1  Serial2
+ #if NUM_COINFTS == 2
+   #define CFT2  Serial3
+ #endif
+ 
+ // Variables
+ byte data1[24] = { 0 };
+ volatile bool newData1 = false;
+ 
+ #if NUM_COINFTS == 2
+   byte data2[24] = { 0 };
+   volatile bool newData2 = false;
+ #endif
+ 
+ // Function Prototypes
+ void transmitData(void);
+ 
+ void setup() {
+   CFT1.begin(1000000);
+   #if NUM_COINFTS == 2
+     CFT2.begin(1000000);
+   #endif
+ 
+   Serial.begin(115200);
+ 
+   // Wait for hardware serials to be ready
+   while (!CFT1 && millis() < 2000);
+   #if NUM_COINFTS == 2
+     while (!CFT2 && millis() < 2000);
+   #endif
+ 
+   // Let the CoinFT finish booting, then push the tuning table (volatile on
+   // the sensor side, so it must be resent after every power cycle).
+   delay(500);
+   CFT1.write('i');
+   #if NUM_COINFTS == 2
+     CFT2.write('i');
+   #endif
+   delay(50);
+   for (uint8_t ch = 0; ch < 12; ch++) {
+     uint8_t cmd[5] = { 't', ch, TUNING[ch][0], TUNING[ch][1], TUNING[ch][2] };
+     CFT1.write(cmd, 5);
+     #if NUM_COINFTS == 2
+       CFT2.write(cmd, 5);
+     #endif
+     delay(50);
+   }
+ }
+ 
+ void loop() {
++#ifdef USB_DUAL_SERIAL
++  ++diagLoopCount;
++#endif
+   // 1. Listen for PC Commands
+   if (Serial.available()) {
+     char readChar = Serial.read();
+ 
+     if (readChar == 'i') {
++#ifdef USB_DUAL_SERIAL
++      ++diagStops;
++#endif
+       // Idle Command
+       CFT1.write('i');
+       #if NUM_COINFTS == 2
+         CFT2.write('i');
+       #endif
+       myTimer.end(); // Stop the checker
+       
+       // Reset flags
+       newData1 = false;
+       #if NUM_COINFTS == 2
+         newData2 = false;
+       #endif
+     }
+     else if (readChar == 's') {
++#ifdef USB_DUAL_SERIAL
++      ++diagStarts;
++#endif
+       // Start Command
+       CFT1.write('s');
+       #if NUM_COINFTS == 2
+         CFT2.write('s');
+       #endif
+       
+       // Check for data every 1ms (1000 Hz)
+       myTimer.begin(transmitData, 1000); 
+     }
+     else if (readChar == 't') {
+       // Tuning Command: 't' + channel + resolution + ref + compensation
+       uint8_t tuningCommand[5] = { 't', 0, 0, 0, 0 };
+       if (Serial.readBytes(reinterpret_cast<char *>(tuningCommand + 1), 4) == 4) {
+         CFT1.write(tuningCommand, 5);
+         #if NUM_COINFTS == 2
+           CFT2.write(tuningCommand, 5);
+         #endif
+       }
+     }
+   }
+ 
+   // 2. Listen for Sensor 1 Data
+   if (CFT1.available() > 25) {
++#ifdef USB_DUAL_SERIAL
++    if (diagReadUart() == 0x02) { // Start Byte
++      ++diagDataReads;
++      const size_t payloadBytes = CFT1.readBytes(data1, 24);
++      diagPayloadBytes += payloadBytes;
++      diagUartBytes += payloadBytes;
++#else
+     if (CFT1.read() == 0x02) { // Start Byte
+       CFT1.readBytes(data1, 24);
++#endif
+       newData1 = true;
+       
+       // Flush until End Byte
+       unsigned long startWait = micros();
++#ifdef USB_DUAL_SERIAL
++      int endByte;
++      while ((endByte = diagReadUart()) != 0x03 && (micros() - startWait < 1000));
++      if (endByte == 0x03) ++diagEndMarkers;
++      else ++diagEndTimeouts;
++#else
+       while (CFT1.read() != 0x03 && (micros() - startWait < 1000)); 
++#endif
+     }
+   }
+ 
+   // 3. Listen for Sensor 2 Data (Only if enabled)
+   #if NUM_COINFTS == 2
+     if (CFT2.available() > 25) {
+        if (CFT2.read() == 0x02) { // Start Byte
+          CFT2.readBytes(data2, 24);
+          newData2 = true;
+          
+          // Flush until End Byte
+          unsigned long startWait = micros();
+          while (CFT2.read() != 0x03 && (micros() - startWait < 1000));
+        }
+     }
+   #endif
++#ifdef USB_DUAL_SERIAL
++  diagHeartbeat();
++#endif
+ }
+ 
+ // Interrupt Service Routine (Runs every 1ms)
+ void transmitData(void) {
++#ifdef USB_DUAL_SERIAL
++  ++diagTimerTicks;
++#endif
+   
+   #if NUM_COINFTS == 1
+     // --- SINGLE SENSOR MODE ---
+     if (newData1) {
++#ifdef USB_DUAL_SERIAL
++      ++diagUsbAttempts;
++      diagCountAccepted(Serial.write(0x00), 1); // Header
++      diagCountAccepted(Serial.write(0x00), 1);
++      diagCountAccepted(Serial.write(data1, 24), 24);
++#else
+       Serial.write(0x00); // Header
+       Serial.write(0x00);
+       Serial.write(data1, 24);
++#endif
+       
+       newData1 = false;
+     }
+ 
+   #elif NUM_COINFTS == 2
+     // --- DUAL SENSOR MODE (Synchronized) ---
+     // Only send if BOTH sensors have reported in
+     if (newData1 && newData2) {
+       Serial.write(0x00); // Header
+       Serial.write(0x00);
+       Serial.write(data1, 24);
+       Serial.write(data2, 24);
+ 
+       newData1 = false;
+       newData2 = false;
+     }
+   #endif
+ }
+
+
+# C:/Users/winer/Desktop/CoinFT_Teensy_Interface/platformio.ini
+diff --git a/D:/semg.claude/coinft/.superpowers/sdd/teensy-before-diagnostics-20260928/platformio.ini b/C:/Users/winer/Desktop/CoinFT_Teensy_Interface/platformio.ini
+index 1ba8499..41d8c00 100644
+--- a/D:/semg.claude/coinft/.superpowers/sdd/teensy-before-diagnostics-20260928/platformio.ini
++++ b/C:/Users/winer/Desktop/CoinFT_Teensy_Interface/platformio.ini
+@@ -1,8 +1,13 @@
+ [platformio]
+ src_dir = .
+ 
+ [env:teensy40]
+ platform = teensy
+ board = teensy40
+ framework = arduino
+ upload_protocol = teensy-cli   ; <--- ADD THIS LINE
++
++[env:teensy40_diag]
++extends = env:teensy40
++build_flags = -DUSB_DUAL_SERIAL
++extra_scripts = pre:scripts/diag_usb_build.py
+
+
+# C:/Users/winer/Desktop/CoinFT_Teensy_Interface/scripts/diag_usb_nonblocking.py
+diff --git a/C:/Users/winer/Desktop/CoinFT_Teensy_Interface/scripts/diag_usb_nonblocking.py b/C:/Users/winer/Desktop/CoinFT_Teensy_Interface/scripts/diag_usb_nonblocking.py
+new file mode 100644
+index 0000000..7b715b6
+--- /dev/null
++++ b/C:/Users/winer/Desktop/CoinFT_Teensy_Interface/scripts/diag_usb_nonblocking.py
+@@ -0,0 +1,79 @@
++"""Exact Teensy 1.62 CDC2-only non-waiting transmit substitution."""
++import hashlib
++
++UPSTREAM_SHA256 = '575F5852165647E39F059548AE244A4B426A8BE31BFEF57CC4A9044FA8A37A3B'
++WRITE_ANCHOR = b'int usb_serial2_write(const void *buffer, uint32_t size)\n'
++FREE_ANCHOR = b'int usb_serial2_write_buffer_free(void)\n'
++END_ANCHOR = b'void usb_serial2_flush_output(void)\n'
++
++WRITE = b'''int usb_serial2_write(const void *buffer, uint32_t size)
++{
++    (void)transmit_previous_timeout; /* Retained upstream latch; no diagnostic wait. */
++    if (!usb_configuration || size == 0) return 0;
++    const uint8_t previous = tx_noautoflush;
++    tx_noautoflush = 1;
++    __asm__ volatile("" ::: "memory");
++    transfer_t *xfer = tx_transfer + tx_head;
++    uint32_t available = tx_available;
++    if (!available) {
++        const uint32_t status = usb_transfer_status(xfer);
++        if (!(status & 0xE8)) available = TX_SIZE;
++    }
++    if (size > available) {
++        __asm__ volatile("" ::: "memory");
++        tx_noautoflush = previous;
++        __asm__ volatile("" ::: "memory");
++        if (tx_available && tx_available < TX_SIZE) timer_start_oneshot();
++        return 0;
++    }
++    uint8_t *txbuf = txbuffer + (tx_head * TX_SIZE);
++    memcpy(txbuf + (TX_SIZE - available), buffer, size);
++    tx_available = available - size;
++    if (tx_available == 0) {
++        usb_prepare_transfer(xfer, txbuf, TX_SIZE, 0);
++        arm_dcache_flush_delete(txbuf, TX_SIZE);
++        usb_transmit(CDC2_TX_ENDPOINT, xfer);
++        if (++tx_head >= TX_NUM) tx_head = 0;
++        timer_stop();
++    }
++    __asm__ volatile("" ::: "memory");
++    tx_noautoflush = previous;
++    __asm__ volatile("" ::: "memory");
++    /* Retry any expiry consumed while the unchanged callback was suppressed. */
++    if (tx_available && tx_available < TX_SIZE) timer_start_oneshot();
++    return size;
++}
++
++'''
++
++FREE = b'''int usb_serial2_write_buffer_free(void)
++{
++    if (!usb_configuration) return 0;
++    const uint8_t previous = tx_noautoflush;
++    tx_noautoflush = 1;
++    __asm__ volatile("" ::: "memory");
++    uint32_t available = tx_available;
++    if (!available) {
++        const uint32_t status = usb_transfer_status(tx_transfer + tx_head);
++        if (!(status & 0xE8)) available = TX_SIZE;
++    }
++    __asm__ volatile("" ::: "memory");
++    tx_noautoflush = previous;
++    __asm__ volatile("" ::: "memory");
++    if (tx_available && tx_available < TX_SIZE) timer_start_oneshot();
++    return available;
++}
++
++'''
++
++def transform(source):
++    for anchor in (WRITE_ANCHOR, FREE_ANCHOR, END_ANCHOR):
++        if source.count(anchor) != 1:
++            raise ValueError('Missing or ambiguous CDC2 function anchor')
++    if hashlib.sha256(source).hexdigest().upper() != UPSTREAM_SHA256:
++        raise ValueError('Unsupported CDC2 SDK SHA256; refusing substitution')
++    start, middle, end = (source.index(anchor) for anchor in
++                          (WRITE_ANCHOR, FREE_ANCHOR, END_ANCHOR))
++    if not start < middle < end:
++        raise ValueError('Unexpected CDC2 function order')
++    return source[:start] + WRITE + FREE + source[end:]
+
+
+# C:/Users/winer/Desktop/CoinFT_Teensy_Interface/scripts/diag_usb_build.py
+diff --git a/C:/Users/winer/Desktop/CoinFT_Teensy_Interface/scripts/diag_usb_build.py b/C:/Users/winer/Desktop/CoinFT_Teensy_Interface/scripts/diag_usb_build.py
+new file mode 100644
+index 0000000..073bfdc
+--- /dev/null
++++ b/C:/Users/winer/Desktop/CoinFT_Teensy_Interface/scripts/diag_usb_build.py
+@@ -0,0 +1,36 @@
++"""Project-local middleware; installed Teensy SDK remains untouched."""
++from pathlib import Path
++import importlib.util
++
++Import('env')
++
++if env['PIOENV'] != 'teensy40_diag':
++    raise RuntimeError('CDC2 adaptation is restricted to teensy40_diag')
++
++scripts = Path(env.subst('$PROJECT_DIR')) / 'scripts'
++adapter_path = scripts / 'diag_usb_nonblocking.py'
++spec = importlib.util.spec_from_file_location('diag_usb_nonblocking', adapter_path)
++adapter = importlib.util.module_from_spec(spec)
++spec.loader.exec_module(adapter)
++core = Path(env.PioPlatform().get_package_dir('framework-arduinoteensy')) / 'cores' / 'teensy4'
++upstream = core / 'usb_serial2.c'
++# Validate even when SCons would otherwise consider a generated target current.
++adapter.transform(upstream.read_bytes())
++env.Append(CPPPATH=[str(core)])
++
++def generate(target, source, env):
++    destination = Path(target[0].get_abspath())
++    destination.parent.mkdir(parents=True, exist_ok=True)
++    destination.write_bytes(adapter.transform(Path(source[0].get_abspath()).read_bytes()))
++
++def substitute(build_env, node):
++    if Path(node.srcnode().get_abspath()).resolve() != upstream.resolve():
++        return node
++    generated = build_env.Command(
++        str(Path(build_env.subst('$BUILD_DIR')) / 'diag_sdk' / 'usb_serial2.c'),
++        str(upstream), generate)[0]
++    build_env.Depends(generated, str(adapter_path))
++    print('Diagnostic CDC2 source substitute: ' + generated.get_abspath())
++    return generated
++
++env.AddBuildMiddleware(substitute)
+
+
+# D:/semg.claude/coinft/tests/teensy_diag_fixture/Arduino.h
+diff --git a/D:/semg.claude/coinft/tests/teensy_diag_fixture/Arduino.h b/D:/semg.claude/coinft/tests/teensy_diag_fixture/Arduino.h
+new file mode 100644
+index 0000000..c515658
+--- /dev/null
++++ b/D:/semg.claude/coinft/tests/teensy_diag_fixture/Arduino.h
+@@ -0,0 +1,33 @@
++#pragma once
++#include <cstdint>
++#include <cstddef>
++#include <cstdio>
++#include <deque>
++#include <vector>
++#include <algorithm>
++using byte = uint8_t;
++inline uint32_t now_ms=0, now_us=0, irq_mask=0;
++inline std::vector<unsigned> delays;
++inline uint32_t millis(){return now_ms;}
++inline uint32_t micros(){return now_us+=250;}
++inline void delay(unsigned n){delays.push_back(n);now_ms+=n;}
++inline uint32_t __get_PRIMASK(){return irq_mask;}
++inline void __disable_irq(){irq_mask=1;}
++inline void __set_PRIMASK(uint32_t n){irq_mask=n;}
++struct Port {
++ bool open=true, fail_write=false; int capacity=1024; unsigned baud=0;
++ size_t read_limit=1024, write_limit=1024;
++ std::deque<uint8_t> input; std::vector<uint8_t> output;
++ void begin(unsigned n){baud=n;}
++ explicit operator bool()const{return open;}
++ int available(){return static_cast<int>(input.size());}
++ int availableForWrite(){return capacity;}
++ int read(){if(input.empty())return -1;int n=input.front();input.pop_front();return n;}
++ size_t readBytes(uint8_t* p,size_t n){n=std::min({n,input.size(),read_limit});for(size_t i=0;i<n;i++)p[i]=static_cast<uint8_t>(read());return n;}
++ size_t readBytes(char* p,size_t n){return readBytes(reinterpret_cast<uint8_t*>(p),n);}
++ size_t write(uint8_t n){return write(&n,1);}
++ size_t write(const uint8_t* p,size_t n){if(fail_write)return size_t(-1);n=std::min(n,write_limit);output.insert(output.end(),p,p+n);return n;}
++ size_t write(const char* p,size_t n){return write(reinterpret_cast<const uint8_t*>(p),n);}
++};
++inline Port Serial, Serial2, Serial3, SerialUSB1;
++struct IntervalTimer {void(*callback)()=nullptr; unsigned interval=0,ends=0; bool begin(void(*f)(),unsigned n){callback=f;interval=n;return true;}void end(){callback=nullptr;++ends;}};
+
+
+# D:/semg.claude/coinft/tests/teensy_diag_fixture/test_firmware.cpp
+diff --git a/D:/semg.claude/coinft/tests/teensy_diag_fixture/test_firmware.cpp b/D:/semg.claude/coinft/tests/teensy_diag_fixture/test_firmware.cpp
+new file mode 100644
+index 0000000..1a02197
+--- /dev/null
++++ b/D:/semg.claude/coinft/tests/teensy_diag_fixture/test_firmware.cpp
+@@ -0,0 +1,46 @@
++#include "Arduino.h"
++#include <string>
++#include <sstream>
++#include <iostream>
++#include <stdexcept>
++#include "C:/Users/winer/Desktop/CoinFT_Teensy_Interface/teensy_coinft_serial_interface.cpp"
++void check(bool v,const char* msg){if(!v)throw std::runtime_error(msg);}
++std::vector<uint32_t> report(){std::string s(SerialUSB1.output.begin(),SerialUSB1.output.end());check(s.rfind("CFD1,",0)==0,"expected CFD1 heartbeat on diagnostic port");check(s.back()=='\n',"newline missing");std::stringstream stream(s.substr(5));std::string word;std::vector<uint32_t> values;while(std::getline(stream,word,','))values.push_back(static_cast<uint32_t>(std::stoull(word)));check(values.size()==13,"CSV field count");return values;}
++void packet(){Serial2.input.push_back(2);for(int n=0;n<24;n++)Serial2.input.push_back(n+10);Serial2.input.push_back(3);}
++int main(int argc,char** argv){try{
++ std::string mode=argc>1?argv[1]:"heartbeat";
++ if(mode=="legacy"||mode=="protocol"){
++ setup();check(Serial2.baud==1000000&&Serial.baud==115200,"baud changed");
++ const uint8_t expected[12][3]={{12,50,50},{12,30,72},{12,30,81},{12,30,82},{12,30,83},{12,30,85},{12,30,76},{12,30,75},{12,100,17},{12,100,26},{12,80,58},{12,80,42}};
++ std::vector<uint8_t> bytes={'i'};for(int n=0;n<12;n++){bytes.push_back('t');bytes.push_back(n);bytes.insert(bytes.end(),expected[n],expected[n]+3);}check(Serial2.output==bytes,"setup tuning changed");check(delays.size()==14&&delays[0]==500&&std::all_of(delays.begin()+1,delays.end(),[](unsigned n){return n==50;}),"setup delays changed");
++ Serial2.output.clear();Serial.input={'s'};loop();check(myTimer.interval==1000&&myTimer.callback==transmitData,"start timer");packet();loop();transmitData();std::vector<uint8_t> raw={0,0};for(int n=0;n<24;n++)raw.push_back(n+10);check(Serial.output==raw,"26-byte raw packet changed");check(Serial2.input.empty(),"UART packet not consumed");
++ Serial.input={'t',4,12,30,81};loop();Serial.input={'i'};loop();check(Serial2.output==std::vector<uint8_t>({'s','t',4,12,30,81,'i'}),"command forwarding changed");check(myTimer.ends==1&&!newData1,"stop flags/timer");
++#ifndef USB_DUAL_SERIAL
++ check(SerialUSB1.output.empty(),"legacy diagnostic output");
++#else
++ SerialUSB1.output.clear();now_ms+=500;loop();auto v=report();check(v[3]==26&&v[4]==1&&v[5]==24&&v[6]==1&&v[7]==0&&v[8]==1&&v[9]==1&&v[10]==26&&v[11]==1&&v[12]==1,"packet/command counters");
++#endif
++ }else if(mode=="heartbeat"){
++ now_ms=499;loop();check(SerialUSB1.output.empty(),"early heartbeat");now_ms=500;loop();auto v=report();check(v[0]==1&&v[1]==500&&v[2]==2,"initial heartbeat fields");check(Serial.output.empty(),"diagnostics leaked to raw");SerialUSB1.output.clear();now_ms=999;loop();check(SerialUSB1.output.empty(),"periodic early heartbeat");now_ms=1000;loop();check(report()[0]==2,"periodic heartbeat");
++ }else if(mode=="skip"){
++ SerialUSB1.open=false;now_ms=500;loop();check(SerialUSB1.output.empty(),"closed port output");SerialUSB1.open=true;SerialUSB1.capacity=1;now_ms=1000;loop();check(SerialUSB1.output.empty(),"full port output");SerialUSB1.capacity=1024;now_ms=1500;loop();check(report()[0]==3,"skipped sequence gaps");
++ }else if(mode=="short"){
++ packet();Serial2.read_limit=23;loop();Serial.write_limit=2;transmitData();now_ms=500;loop();auto v=report();check(v[3]==26&&v[4]==1&&v[5]==23&&v[6]==1&&v[10]==4,"actual return accounting");
++ }else if(mode=="failure"){
++ packet();loop();Serial.fail_write=true;transmitData();now_ms=500;loop();check(report()[10]==0,"failed SIZE_MAX USB writes counted as accepted bytes");
++ }else if(mode=="timeout"){
++ Serial2.input.assign(26,99);Serial2.input.front()=2;loop();now_ms=500;loop();auto v=report();check(v[3]==26&&v[5]==24&&v[6]==0&&v[7]==1,"timeout accounting");SerialUSB1.output.clear();Serial2.input.assign(26,55);loop();now_ms=1000;loop();check(report()[3]==27,"garbage header accounting");
++ }else if(mode=="irq_wrap"){
++  irq_mask=1;now_ms=0xffffff00U;loop();check(irq_mask==1,"masked interrupt state lost");auto v=report();check(v[1]==0xffffff00U,"absolute uptime wrap representation");SerialUSB1.output.clear();now_ms=244;loop();check(report()[0]==2&&irq_mask==1,"elapsed rollover or IRQ restore");
++ }else if(mode=="counter_wrap"){
++#ifdef USB_DUAL_SERIAL
++ diagLoopCount=diagUartBytes=diagDataReads=diagPayloadBytes=diagEndMarkers=diagEndTimeouts=diagStarts=diagStops=UINT32_MAX;
++ diagTimerTicks=diagUsbAttempts=diagUsbAccepted=UINT32_MAX;
++ diagSequence=UINT32_MAX-1;diagLastReport=UINT32_MAX-500;now_ms=UINT32_MAX;
++ // Make loop_count wrap to max during the real loop rather than wrap to zero.
++ diagLoopCount=UINT32_MAX-1;loop();auto v=report();check(std::all_of(v.begin(),v.end(),[](uint32_t n){return n==UINT32_MAX;}),"maximum absolute counter CSV");check(SerialUSB1.output.size()==148,"maximum CSV bound");check(irq_mask==0,"unmasked interrupt state lost");
++ SerialUSB1.output.clear();now_ms=499;loop();v=report();check(v[0]==0&&v[2]==0,"counter wrap representation");
++#endif
++ }else throw std::runtime_error("unknown scenario");
++ std::cout<<"PASS "<<mode<<'\n';return 0;
++ }catch(const std::exception& e){std::cerr<<"ASSERTION: "<<e.what()<<'\n';return 1;}}
+
+
+# D:/semg.claude/coinft/tests/teensy_diag_fixture/test_usb_adapter.cpp
+diff --git a/D:/semg.claude/coinft/tests/teensy_diag_fixture/test_usb_adapter.cpp b/D:/semg.claude/coinft/tests/teensy_diag_fixture/test_usb_adapter.cpp
+new file mode 100644
+index 0000000..5aab042
+--- /dev/null
++++ b/D:/semg.claude/coinft/tests/teensy_diag_fixture/test_usb_adapter.cpp
+@@ -0,0 +1,74 @@
++#include <cstdint>
++#include <cstring>
++#include <iostream>
++#include <stdexcept>
++#include <string>
++#include <vector>
++#define TX_NUM 4
++#define TX_SIZE 2048
++#define TX_TIMEOUT_MSEC 120
++#define CDC2_TX_ENDPOINT 5
++struct transfer_t {uint32_t status=0;};
++transfer_t tx_transfer[TX_NUM];
++uint8_t txbuffer[TX_NUM*TX_SIZE],tx_head=0,tx_noautoflush=0,usb_configuration=1,transmit_previous_timeout=0;
++static void usb_serial2_flush_callback(void);
++bool timer_armed=false,inject_read_expiry=false,inject_start_expiry=false,in_callback=false;
++unsigned expiries=0;
++void expire_timer(){if(!timer_armed)return;timer_armed=false;++expiries;in_callback=true;usb_serial2_flush_callback();in_callback=false;}
++struct Available {
++ uint16_t value=0;
++ operator uint16_t()const{if(inject_read_expiry&&tx_noautoflush&&!in_callback){inject_read_expiry=false;expire_timer();}return value;}
++ Available& operator=(uint16_t n){value=n;return *this;}
++} tx_available;
++uint32_t systick_millis_count=0;
++unsigned yields=0,prints=0,status_reads=0,starts=0,stops=0,submissions=0,prepares=0,caches=0;
++bool protected_access=true;
++void* prepared_buffer=nullptr;uint32_t prepared_size=0;std::vector<uint8_t> submitted_bytes;
++uint32_t usb_transfer_status(transfer_t* p){++status_reads;return p->status;}
++void yield(){++yields;++systick_millis_count;}
++int fake_printf(const char*,...){++prints;return 0;}
++void timer_start_oneshot(){++starts;timer_armed=true;if(inject_start_expiry){inject_start_expiry=false;expire_timer();}}
++void timer_stop(){++stops;timer_armed=false;protected_access&=tx_noautoflush==1;}
++void usb_prepare_transfer(transfer_t*,void* buffer,uint32_t size,uint32_t){++prepares;prepared_buffer=buffer;prepared_size=size;protected_access&=in_callback||tx_noautoflush==1;}
++void arm_dcache_flush_delete(void*,uint32_t){++caches;protected_access&=in_callback||tx_noautoflush==1;}
++void usb_transmit(int,transfer_t* p){++submissions;p->status=0x80;auto* bytes=static_cast<uint8_t*>(prepared_buffer);submitted_bytes.assign(bytes,bytes+prepared_size);protected_access&=in_callback||tx_noautoflush==1;}
++#define printf fake_printf
++#include "usb_functions.inc"
++#undef printf
++void check(bool condition,const char* message){if(!condition)throw std::runtime_error(message);}
++int main(int argc,char** argv){try{
++ const std::string mode=argc>1?argv[1]:"busy";
++ uint8_t data[148];for(unsigned n=0;n<sizeof(data);++n)data[n]=n;
++ if(mode=="busy"){
++ tx_transfer[0].status=0x80;
++ int result=usb_serial2_write(data,sizeof(data));
++ std::cerr<<"busy result="<<result<<" yields="<<yields<<" fake_elapsed_ms="<<systick_millis_count<<'\n';
++ check(yields==0,"busy-head diagnostic write must not yield");check(result==0,"busy head must skip");check(usb_serial2_write_buffer_free()==0,"other free buffers must not count");check(tx_available==0&&tx_head==0,"busy skip changed state");
++ tx_transfer[0].status=0;check(usb_serial2_write_buffer_free()==TX_SIZE,"ready capacity");check(usb_serial2_write(data,sizeof(data))==148,"busy-to-ready recovery");check(!std::memcmp(data,txbuffer,148),"recovery exact bytes");
++ }else if(mode=="reject"){
++ for(uint8_t prior=0;prior<2;++prior){
++ tx_noautoflush=prior;usb_configuration=0;check(usb_serial2_write(data,148)==0&&usb_serial2_write_buffer_free()==0,"unconfigured skip");check(tx_noautoflush==prior,"unconfigured flag restore");usb_configuration=1;
++ for(uint32_t status:{0x08U,0x20U,0x40U,0x80U}){tx_transfer[0].status=status;check(usb_serial2_write(data,148)==0&&usb_serial2_write_buffer_free()==0,"error/busy status skip");check(tx_available==0&&tx_noautoflush==prior,"error flag/state restore");}
++ tx_transfer[0].status=0;tx_available=100;std::memset(txbuffer,0xa5,sizeof(txbuffer));check(usb_serial2_write(data,148)==0,"insufficient contiguous capacity must reject whole line");check(tx_available==100&&txbuffer[TX_SIZE-100]==0xa5&&tx_noautoflush==prior,"partial prefix or flag mutation");
++ check(usb_serial2_write(nullptr,0)==0&&tx_available==100&&tx_noautoflush==prior,"empty write changed state");tx_available=0;}
++ }else if(mode=="ready"){
++ for(uint8_t prior=0;prior<2;++prior){tx_noautoflush=prior;check(usb_serial2_write(data,148)==148,"ready accepts exact size");check(tx_noautoflush==prior,"success flag restore");check(!std::memcmp(data,txbuffer+prior*148,148),"ready byte equality");}
++ check(tx_available==TX_SIZE-296&&starts==2&&submissions==0,"partial timer semantics");check(usb_serial2_write_buffer_free()==TX_SIZE-296,"current contiguous free capacity");check(tx_noautoflush==1,"capacity prior flag restore");
++ }else if(mode=="full"){
++ tx_head=TX_NUM-1;tx_available=148;tx_noautoflush=1;check(usb_serial2_write(data,148)==148,"exact-full acceptance");check(tx_head==0&&tx_available==0,"full head wrap");check(submissions==1&&prepares==1&&caches==1&&stops==1&&starts==0,"full DMA/cache/timer semantics");check(!std::memcmp(data,txbuffer+sizeof(txbuffer)-148,148),"full exact bytes");check(tx_noautoflush==1,"full flag restore");
++ }else if(mode=="expiry_success"||mode=="expiry_capacity"||mode=="expiry_reject"){
++ if(mode=="expiry_success"){
++ inject_start_expiry=true;check(usb_serial2_write(data,148)==148,"expiry successful write return");
++ }else{
++ tx_available=100;std::memset(txbuffer,0xa5,sizeof(txbuffer));timer_armed=true;inject_read_expiry=true;
++ if(mode=="expiry_capacity")check(usb_serial2_write_buffer_free()==100,"expiry capacity return");
++ else check(usb_serial2_write(data,148)==0,"expiry rejection return");
++ }
++ check(expiries==1,"one-shot expiry injection not executed");check(tx_noautoflush==0,"expiry protection not released");
++ if(submissions==0){check(timer_armed,"suppressed expiry stranded partial buffer without timer retry");expire_timer();}
++ check(submissions==1&&tx_available==0&&tx_head==1,"partial buffer did not submit without another append");
++ if(mode=="expiry_success")check(submitted_bytes==std::vector<uint8_t>(data,data+148),"successful expiry submitted wrong bytes");
++ else check(submitted_bytes==std::vector<uint8_t>(TX_SIZE-100,0xa5),"pending partial expiry submitted wrong bytes");
++ }else throw std::runtime_error("unknown mode");
++ check(yields==0&&prints==0,"adapted function waited/logged");check(protected_access,"buffer/timer operation without autoflush protection");std::cout<<"PASS "<<mode<<'\n';return 0;
++ }catch(const std::exception& e){std::cerr<<"ASSERTION: "<<e.what()<<'\n';return 1;}}
+
+
+# D:/semg.claude/coinft/tests/test_teensy_diagnostic_firmware.py
+diff --git a/D:/semg.claude/coinft/tests/test_teensy_diagnostic_firmware.py b/D:/semg.claude/coinft/tests/test_teensy_diagnostic_firmware.py
+new file mode 100644
+index 0000000..8f6c191
+--- /dev/null
++++ b/D:/semg.claude/coinft/tests/test_teensy_diagnostic_firmware.py
+@@ -0,0 +1,38 @@
++import pathlib
++import subprocess
++import tempfile
++import unittest
++
++FIXTURE = pathlib.Path(__file__).parent / 'teensy_diag_fixture'
++
++class FirmwareTests(unittest.TestCase):
++    @classmethod
++    def setUpClass(cls):
++        cls.temp = tempfile.TemporaryDirectory()
++        cls.binaries = {}
++        for mode, flags in [('legacy', []), ('diag', ['-DUSB_DUAL_SERIAL'])]:
++            binary = pathlib.Path(cls.temp.name) / (mode + '.exe')
++            command = ['g++', '-std=c++17', '-Wall', '-Wextra', '-Werror', *flags,
++                       '-I', str(FIXTURE), str(FIXTURE / 'test_firmware.cpp'), '-o', str(binary)]
++            result = subprocess.run(command, capture_output=True, text=True)
++            if result.returncode:
++                raise RuntimeError(result.stdout + result.stderr)
++            cls.binaries[mode] = binary
++
++    @classmethod
++    def tearDownClass(cls):
++        cls.temp.cleanup()
++
++    def run_scenario(self, scenario, mode='diag'):
++        result = subprocess.run([str(self.binaries[mode]), scenario], capture_output=True, text=True, timeout=10)
++        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
++
++    def test_legacy_protocol(self): self.run_scenario('legacy', 'legacy')
++    def test_diagnostic_protocol(self): self.run_scenario('protocol')
++    def test_heartbeat(self): self.run_scenario('heartbeat')
++    def test_closed_full_port(self): self.run_scenario('skip')
++    def test_actual_short_returns(self): self.run_scenario('short')
++    def test_failed_usb_returns(self): self.run_scenario('failure')
++    def test_timeout_garbage(self): self.run_scenario('timeout')
++    def test_interrupt_and_timestamp_rollover(self): self.run_scenario('irq_wrap')
++    def test_counter_wrap_and_max_csv(self): self.run_scenario('counter_wrap')
+
+
+# D:/semg.claude/coinft/tests/test_teensy_diagnostic_usb_adapter.py
+diff --git a/D:/semg.claude/coinft/tests/test_teensy_diagnostic_usb_adapter.py b/D:/semg.claude/coinft/tests/test_teensy_diagnostic_usb_adapter.py
+new file mode 100644
+index 0000000..20763f2
+--- /dev/null
++++ b/D:/semg.claude/coinft/tests/test_teensy_diagnostic_usb_adapter.py
+@@ -0,0 +1,56 @@
++import pathlib
++import subprocess
++import tempfile
++import unittest
++import importlib.util
++import hashlib
++
++SDK = pathlib.Path('C:/Users/winer/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_serial2.c')
++FIXTURE = pathlib.Path(__file__).parent / 'teensy_diag_fixture'
++ADAPTER = pathlib.Path('C:/Users/winer/Desktop/CoinFT_Teensy_Interface/scripts/diag_usb_nonblocking.py')
++
++def load_adapter():
++    spec = importlib.util.spec_from_file_location('adapter', ADAPTER)
++    module = importlib.util.module_from_spec(spec)
++    spec.loader.exec_module(module)
++    return module
++
++def functions(source):
++    start = source.index(b'int usb_serial2_write(const void *buffer, uint32_t size)\n')
++    end = source.index(b'void usb_serial2_flush_output(void)\n', start)
++    callback_start = source.index(b'static void usb_serial2_flush_callback(void)\n{', end)
++    callback_end = source.index(b'\n#endif', callback_start)
++    return source[start:end] + source[callback_start:callback_end]
++
++class UsbAdapterTests(unittest.TestCase):
++    def run_scenario(self, scenario):
++        with tempfile.TemporaryDirectory() as directory:
++            work = pathlib.Path(directory)
++            (work / 'usb_functions.inc').write_bytes(functions(load_adapter().transform(SDK.read_bytes())))
++            binary = work / 'adapter.exe'
++            result = subprocess.run(['g++', '-std=c++17', '-Wall', '-Wextra', '-I', str(work),
++                                     str(FIXTURE / 'test_usb_adapter.cpp'), '-o', str(binary)], capture_output=True, text=True)
++            self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
++            result = subprocess.run([str(binary), scenario], capture_output=True, text=True, timeout=5)
++            self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
++
++    def test_busy_head_never_yields(self): self.run_scenario('busy')
++    def test_rejects_without_prefix_or_flag_changes(self): self.run_scenario('reject')
++    def test_ready_exact_bytes_timer_and_flag(self): self.run_scenario('ready')
++    def test_exact_full_wrap_dma_timer(self): self.run_scenario('full')
++    def test_expiry_during_success_is_rearmed(self): self.run_scenario('expiry_success')
++    def test_expiry_during_capacity_is_rearmed(self): self.run_scenario('expiry_capacity')
++    def test_expiry_during_rejection_is_rearmed(self): self.run_scenario('expiry_reject')
++
++    def test_guard_and_untouched_regions(self):
++        adapter = load_adapter()
++        source = SDK.read_bytes()
++        self.assertEqual(hashlib.sha256(source).hexdigest().upper(), adapter.UPSTREAM_SHA256)
++        output = adapter.transform(source)
++        start = source.index(adapter.WRITE_ANCHOR)
++        end = source.index(adapter.END_ANCHOR)
++        self.assertEqual(output[:start], source[:start])
++        self.assertEqual(output[output.index(adapter.END_ANCHOR):], source[end:])
++        for invalid in (source + b' ', source.replace(adapter.WRITE_ANCHOR, b''), source + adapter.FREE_ANCHOR):
++            with self.assertRaises(ValueError): adapter.transform(invalid)
++        self.assertEqual(SDK.read_bytes(), source)
+
+
+# C:/Users/winer/Desktop/CoinFT_Teensy_Interface/.pio/build/teensy40_diag/diag_sdk/usb_serial2.c
+diff --git a/C:/Users/winer/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_serial2.c b/C:/Users/winer/Desktop/CoinFT_Teensy_Interface/.pio/build/teensy40_diag/diag_sdk/usb_serial2.c
+index 84d17da..5d97595 100644
+--- a/C:/Users/winer/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_serial2.c
++++ b/C:/Users/winer/Desktop/CoinFT_Teensy_Interface/.pio/build/teensy40_diag/diag_sdk/usb_serial2.c
+@@ -1,424 +1,399 @@
+ /* Teensyduino Core Library
+  * http://www.pjrc.com/teensy/
+  * Copyright (c) 2017 PJRC.COM, LLC.
+  *
+  * Permission is hereby granted, free of charge, to any person obtaining
+  * a copy of this software and associated documentation files (the
+  * "Software"), to deal in the Software without restriction, including
+  * without limitation the rights to use, copy, modify, merge, publish,
+  * distribute, sublicense, and/or sell copies of the Software, and to
+  * permit persons to whom the Software is furnished to do so, subject to
+  * the following conditions:
+  *
+  * 1. The above copyright notice and this permission notice shall be
+  * included in all copies or substantial portions of the Software.
+  *
+  * 2. If the Software is incorporated into a build system that allows
+  * selection among a list of target devices, then similar target
+  * devices manufactured by PJRC.COM must be included in the list of
+  * target devices and selectable in the same manner.
+  *
+  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+  * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  * SOFTWARE.
+  */
+ 
+ #include "usb_dev.h"
+ #include "usb_serial.h"
+ #include "core_pins.h"// for delay()
+ //#include "HardwareSerial.h"
+ #include <string.h> // for memcpy()
+ #include "avr/pgmspace.h" // for PROGMEM, DMAMEM, FASTRUN
+ 
+ #include "debug/printf.h"
+ #include "core_pins.h"
+ 
+ // defined by usb_dev.h -> usb_desc.h
+ #if defined(CDC2_STATUS_INTERFACE) && defined(CDC2_DATA_INTERFACE)
+ 
+ uint32_t usb_cdc2_line_coding[2];
+ volatile uint32_t usb_cdc2_line_rtsdtr_millis;
+ volatile uint8_t usb_cdc2_line_rtsdtr=0;
+ volatile uint8_t usb_cdc2_transmit_flush_timer=0;
+ 
+ static volatile uint8_t tx_noautoflush=0;
+ extern volatile uint8_t usb_high_speed;
+ 
+ // TODO: should be 2 different timeouts, high speed (480) vs full speed (12)
+ #define TRANSMIT_FLUSH_TIMEOUT	75   /* in microseconds */
+ 
+ static void timer_config(void (*callback)(void), uint32_t microseconds);
+ static void timer_start_oneshot();
+ static void timer_stop();
+ static void usb_serial2_flush_callback(void);
+ 
+ #define TX_NUM   4
+ #define TX_SIZE  2048 /* should be a multiple of CDC_TX_SIZE */
+ static transfer_t tx_transfer[TX_NUM] __attribute__ ((used, aligned(32)));
+ DMAMEM static uint8_t txbuffer[TX_SIZE * TX_NUM] __attribute__ ((aligned(32)));
+ static uint8_t tx_head=0;
+ static uint16_t tx_available=0;
+ static uint16_t tx_packet_size=0;
+ 
+ #define RX_NUM  8
+ static transfer_t rx_transfer[RX_NUM] __attribute__ ((used, aligned(32)));
+ DMAMEM static uint8_t rx_buffer[RX_NUM * CDC_RX_SIZE_480] __attribute__ ((aligned(32)));
+ static uint16_t rx_count[RX_NUM];
+ static uint16_t rx_index[RX_NUM];
+ static uint16_t rx_packet_size=0;
+ static volatile uint8_t rx_head;
+ static volatile uint8_t rx_tail;
+ static uint8_t rx_list[RX_NUM + 1];
+ static volatile uint32_t rx_available;
+ static void rx_queue_transfer(int i);
+ static void rx_event(transfer_t *t);
+ 
+ 
+ void usb_serial2_configure(void)
+ {
+ 	int i;
+ 
+ 	printf("usb_serial2_configure\n");
+ 	if (usb_high_speed) {
+ 		tx_packet_size = CDC_TX_SIZE_480;
+ 		rx_packet_size = CDC_RX_SIZE_480;
+ 	} else {
+ 		tx_packet_size = CDC_TX_SIZE_12;
+ 		rx_packet_size = CDC_RX_SIZE_12;
+ 	}
+ 	memset(tx_transfer, 0, sizeof(tx_transfer));
+ 	tx_head = 0;
+ 	tx_available = 0;
+ 	memset(rx_transfer, 0, sizeof(rx_transfer));
+ 	memset(rx_count, 0, sizeof(rx_count));
+ 	memset(rx_index, 0, sizeof(rx_index));
+ 	rx_head = 0;
+ 	rx_tail = 0;
+ 	rx_available = 0;
+ 	usb_config_tx(CDC2_ACM_ENDPOINT, CDC_ACM_SIZE, 0, NULL); // size same 12 & 480
+ 	usb_config_rx(CDC2_RX_ENDPOINT, rx_packet_size, 0, rx_event);
+ 	usb_config_tx(CDC2_TX_ENDPOINT, tx_packet_size, 1, NULL);
+ 	for (i=0; i < RX_NUM; i++) rx_queue_transfer(i);
+ 	timer_config(usb_serial2_flush_callback, TRANSMIT_FLUSH_TIMEOUT);
+ 	// weak serialEventUSB1 will be NULL unless user's program defines serialEventUSB1()
+ 	if (serialEventUSB1) yield_active_check_flags |= YIELD_CHECK_USB_SERIALUSB1;
+ }
+ 
+ 
+ /*************************************************************************/
+ /**                               Receive                               **/
+ /*************************************************************************/
+ 
+ static void rx_queue_transfer(int i)
+ {
+ 	NVIC_DISABLE_IRQ(IRQ_USB1);
+ 	printf("rx queue i=%d\n", i);
+ 	void *buffer = rx_buffer + i * CDC_RX_SIZE_480;
+ 	usb_prepare_transfer(rx_transfer + i, buffer, rx_packet_size, i);
+ 	arm_dcache_delete(buffer, rx_packet_size);
+ 	usb_receive(CDC2_RX_ENDPOINT, rx_transfer + i);
+ 	NVIC_ENABLE_IRQ(IRQ_USB1);
+ }
+ 
+ // called by USB interrupt when any packet is received
+ static void rx_event(transfer_t *t)
+ {
+ 	int len = rx_packet_size - ((t->status >> 16) & 0x7FFF);
+ 	int i = t->callback_param;
+ 	printf("rx event, len=%d, i=%d\n", len, i);
+ 	if (len > 0) {
+ 		// received a packet with data
+ 		uint32_t head = rx_head;
+ 		if (head != rx_tail) {
+ 			// a previous packet is still buffered
+ 			uint32_t ii = rx_list[head];
+ 			uint32_t count = rx_count[ii];
+ 			if (len <= CDC_RX_SIZE_480 - count) {
+ 				// previous buffer has enough free space for this packet's data
+ 				memcpy(rx_buffer + ii * CDC_RX_SIZE_480 + count,
+ 					rx_buffer + i * CDC_RX_SIZE_480, len);
+ 				rx_count[ii] = count + len;
+ 				rx_available += len;
+ 				rx_queue_transfer(i);
+ 				// TODO: trigger serialEvent
+ 				return;
+ 			}
+ 		}
+ 		// add this packet to rx_list
+ 		rx_count[i] = len;
+ 		rx_index[i] = 0;
+ 		if (++head > RX_NUM) head = 0;
+ 		rx_list[head] = i;
+ 		rx_head = head;
+ 		rx_available += len;
+ 		// TODO: trigger serialEvent
+ 	} else {
+ 		// received a zero length packet
+ 		rx_queue_transfer(i);
+ 	}
+ }
+ 
+ //static int maxtimes=0;
+ 
+ // read a block of bytes to a buffer
+ int usb_serial2_read(void *buffer, uint32_t size)
+ {
+ 	uint8_t *p = (uint8_t *)buffer;
+ 	uint32_t count=0;
+ 
+ 	NVIC_DISABLE_IRQ(IRQ_USB1);
+ 	//if (++maxtimes > 15) while (1) ;
+ 	uint32_t tail = rx_tail;
+ 	//printf("usb_serial2_read, size=%d, tail=%d, head=%d\n", size, tail, rx_head);
+ 	while (count < size && tail != rx_head) {
+ 		if (++tail > RX_NUM) tail = 0;
+ 		uint32_t i = rx_list[tail];
+ 		uint32_t len = size - count;
+ 		uint32_t avail = rx_count[i] - rx_index[i];
+ 		 //printf("usb_serial2_read, count=%d, size=%d, i=%d, index=%d, len=%d, avail=%d, c=%c\n",
+ 		  //count, size, i, rx_index[i], len, avail, rx_buffer[i * CDC_RX_SIZE_480]);
+ 		if (avail > len) {
+ 			// partially consume this packet
+ 			memcpy(p, rx_buffer + i * CDC_RX_SIZE_480 + rx_index[i], len);
+ 			rx_available -= len;
+ 			rx_index[i] += len;
+ 			count += len;
+ 		} else {
+ 			// fully consume this packet
+ 			memcpy(p, rx_buffer + i * CDC_RX_SIZE_480 + rx_index[i], avail);
+ 			p += avail;
+ 			rx_available -= avail;
+ 			count += avail;
+ 			rx_tail = tail;
+ 			rx_queue_transfer(i);
+ 		}
+ 	}
+ 	NVIC_ENABLE_IRQ(IRQ_USB1);
+ 	return count;
+ }
+ 
+ // peek at the next character, or -1 if nothing received
+ int usb_serial2_peekchar(void)
+ {
+ 	uint32_t tail = rx_tail;
+ 	if (tail == rx_head) return -1;
+ 	if (++tail > RX_NUM) tail = 0;
+ 	uint32_t i = rx_list[tail];
+ 	return rx_buffer[i * CDC_RX_SIZE_480 + rx_index[i]];
+ }
+ 
+ // number of bytes available in the receive buffer
+ int usb_serial2_available(void)
+ {
+ 	uint32_t n = rx_available;
+ 	if (n == 0) yield();
+ 	return n;
+ }
+ 
+ // discard any buffered input
+ void usb_serial2_flush_input(void)
+ {
+ 	uint32_t tail = rx_tail;
+ 	while (tail != rx_head) {
+ 		if (++tail > RX_NUM) tail = 0;
+ 		uint32_t i = rx_list[tail];
+ 		rx_available -= rx_count[i] - rx_index[i];
+ 		rx_queue_transfer(i);
+ 		rx_tail = tail;
+ 	}
+ }
+ 
+ 
+ // get the next character, or -1 if nothing received
+ int usb_serial2_getchar(void)
+ {
+ 	uint8_t c;
+ 	if (usb_serial2_read(&c, 1)) return c;
+ 	return -1;
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ /*************************************************************************/
+ /**                               Transmit                              **/
+ /*************************************************************************/
+ 
+ 
+ // When the PC isn't listening, how long do we wait before discarding data?  If this is
+ // too short, we risk losing data during the stalls that are common with ordinary desktop
+ // software.  If it's too long, we stall the user's program when no software is running.
+ #define TX_TIMEOUT_MSEC 120
+ 
+ 
+ // When we've suffered the transmit timeout, don't wait again until the computer
+ // begins accepting data.  If no software is running to receive, we'll just discard
+ // data as rapidly as Serial.print() can generate it, until there's something to
+ // actually receive it.
+ static uint8_t transmit_previous_timeout=0;
+ 
+ 
+ // transmit a character.  0 returned on success, -1 on error
+ int usb_serial2_putchar(uint8_t c)
+ {
+ 	return usb_serial2_write(&c, 1);
+ }
+ 
+ extern volatile uint32_t systick_millis_count;
+ 
+ static void timer_config(void (*callback)(void), uint32_t microseconds);
+ static void timer_start_oneshot();
+ static void timer_stop();
+ 
+ static void timer_config(void (*callback)(void), uint32_t microseconds)
+ {
+ 	// TODO: need a better way to allocate which USB interfaces use which timers
+ 	usb_timer1_callback = callback;
+ 	USB1_GPTIMER1CTRL = 0;
+ 	USB1_GPTIMER1LD = microseconds - 1;
+ 	USB1_USBINTR |= USB_USBINTR_TIE1;
+ }
+ 
+ static void timer_start_oneshot(void)
+ {
+ 	// restarts timer if already running (retriggerable one-shot)
+ 	USB1_GPTIMER1CTRL = USB_GPTIMERCTRL_GPTRUN | USB_GPTIMERCTRL_GPTRST;
+ }
+ 
+ static void timer_stop(void)
+ {
+ 	USB1_GPTIMER1CTRL = 0;
+ }
+ 
+ 
+ int usb_serial2_write(const void *buffer, uint32_t size)
+ {
+-	uint32_t sent=0;
+-	const uint8_t *data = (const uint8_t *)buffer;
+-
+-	if (!usb_configuration) return 0;
+-	while (size > 0) {
+-		transfer_t *xfer = tx_transfer + tx_head;
+-		int waiting=0;
+-		uint32_t wait_begin_at=0;
+-		while (!tx_available) {
+-			//digitalWriteFast(3, HIGH);
+-			uint32_t status = usb_transfer_status(xfer);
+-			if (!(status & 0x80)) {
+-				if (status & 0x68) {
+-					// TODO: what if status has errors???
+-					printf("ERROR status = %x, i=%d, ms=%u\n",
+-						status, tx_head, systick_millis_count);
+-				}
+-				tx_available = TX_SIZE;
+-				transmit_previous_timeout = 0;
+-				break;
+-			}
+-			if (!waiting) {
+-				wait_begin_at = systick_millis_count;
+-				waiting = 1;
+-			}
+-			if (transmit_previous_timeout) return sent;
+-			if (systick_millis_count - wait_begin_at > TX_TIMEOUT_MSEC) {
+-				// waited too long, assume the USB host isn't listening
+-				transmit_previous_timeout = 1;
+-				return sent;
+-				//printf("\nstop, waited too long\n");
+-				//printf("status = %x\n", status);
+-				//printf("tx head=%d\n", tx_head);
+-				//printf("TXFILLTUNING=%08lX\n", USB1_TXFILLTUNING);
+-				//usb_print_transfer_log();
+-				//while (1) ;
+-			}
+-			if (!usb_configuration) return sent;
+-			yield();
+-		}
+-		//digitalWriteFast(3, LOW);
+-		uint8_t *txdata = txbuffer + (tx_head * TX_SIZE) + (TX_SIZE - tx_available);
+-		if (size >= tx_available) {
+-			memcpy(txdata, data, tx_available);
+-			//*(txbuffer + (tx_head * TX_SIZE)) = 'A' + tx_head; // to see which buffer
+-			//*(txbuffer + (tx_head * TX_SIZE) + 1) = ' '; // really see it
+-			uint8_t *txbuf = txbuffer + (tx_head * TX_SIZE);
+-			usb_prepare_transfer(xfer, txbuf, TX_SIZE, 0);
+-			arm_dcache_flush_delete(txbuf, TX_SIZE);
+-			usb_transmit(CDC2_TX_ENDPOINT, xfer);
+-			if (++tx_head >= TX_NUM) tx_head = 0;
+-			size -= tx_available;
+-			sent += tx_available;
+-			data += tx_available;
+-			tx_available = 0;
+-			timer_stop();
+-		} else {
+-			memcpy(txdata, data, size);
+-			tx_available -= size;
+-			sent += size;
+-			size = 0;
+-			timer_start_oneshot();
+-		}
+-	}
+-	return sent;
++    (void)transmit_previous_timeout; /* Retained upstream latch; no diagnostic wait. */
++    if (!usb_configuration || size == 0) return 0;
++    const uint8_t previous = tx_noautoflush;
++    tx_noautoflush = 1;
++    __asm__ volatile("" ::: "memory");
++    transfer_t *xfer = tx_transfer + tx_head;
++    uint32_t available = tx_available;
++    if (!available) {
++        const uint32_t status = usb_transfer_status(xfer);
++        if (!(status & 0xE8)) available = TX_SIZE;
++    }
++    if (size > available) {
++        __asm__ volatile("" ::: "memory");
++        tx_noautoflush = previous;
++        __asm__ volatile("" ::: "memory");
++        if (tx_available && tx_available < TX_SIZE) timer_start_oneshot();
++        return 0;
++    }
++    uint8_t *txbuf = txbuffer + (tx_head * TX_SIZE);
++    memcpy(txbuf + (TX_SIZE - available), buffer, size);
++    tx_available = available - size;
++    if (tx_available == 0) {
++        usb_prepare_transfer(xfer, txbuf, TX_SIZE, 0);
++        arm_dcache_flush_delete(txbuf, TX_SIZE);
++        usb_transmit(CDC2_TX_ENDPOINT, xfer);
++        if (++tx_head >= TX_NUM) tx_head = 0;
++        timer_stop();
++    }
++    __asm__ volatile("" ::: "memory");
++    tx_noautoflush = previous;
++    __asm__ volatile("" ::: "memory");
++    /* Retry any expiry consumed while the unchanged callback was suppressed. */
++    if (tx_available && tx_available < TX_SIZE) timer_start_oneshot();
++    return size;
+ }
+ 
+ int usb_serial2_write_buffer_free(void)
+ {
+-	uint32_t sum = 0;
+-	tx_noautoflush = 1;
+-	for (uint32_t i=0; i < TX_NUM; i++) {
+-		if (i == tx_head) continue;
+-		if (!(usb_transfer_status(tx_transfer + i) & 0x80)) sum += TX_SIZE;
+-	}
+-	tx_noautoflush = 0;
+-	return sum;
++    if (!usb_configuration) return 0;
++    const uint8_t previous = tx_noautoflush;
++    tx_noautoflush = 1;
++    __asm__ volatile("" ::: "memory");
++    uint32_t available = tx_available;
++    if (!available) {
++        const uint32_t status = usb_transfer_status(tx_transfer + tx_head);
++        if (!(status & 0xE8)) available = TX_SIZE;
++    }
++    __asm__ volatile("" ::: "memory");
++    tx_noautoflush = previous;
++    __asm__ volatile("" ::: "memory");
++    if (tx_available && tx_available < TX_SIZE) timer_start_oneshot();
++    return available;
+ }
+ 
+ void usb_serial2_flush_output(void)
+ {
+ 
+ 	if (!usb_configuration) return;
+ 	if (tx_available == 0) return;
+ 	tx_noautoflush = 1;
+ 	transfer_t *xfer = tx_transfer + tx_head;
+ 	uint8_t *txbuf = txbuffer + (tx_head * TX_SIZE);
+ 	uint32_t txnum = TX_SIZE - tx_available;
+ 	usb_prepare_transfer(xfer, txbuf, txnum, 0);
+ 	arm_dcache_flush_delete(txbuf, txnum);
+ 	usb_transmit(CDC2_TX_ENDPOINT, xfer);
+ 	if (++tx_head >= TX_NUM) tx_head = 0;
+ 	tx_available = 0;
+ 	tx_noautoflush = 0;
+ }
+ 
+ static void usb_serial2_flush_callback(void)
+ {
+ 	if (tx_noautoflush) return;
+ 	if (!usb_configuration) return;
+ 	if (tx_available == 0) return;
+ 	//printf("flush callback, %d bytes\n", TX_SIZE - tx_available);
+ 	transfer_t *xfer = tx_transfer + tx_head;
+ 	uint8_t *txbuf = txbuffer + (tx_head * TX_SIZE);
+ 	uint32_t txnum = TX_SIZE - tx_available;
+ 	usb_prepare_transfer(xfer, txbuf, txnum, 0);
+ 	arm_dcache_flush_delete(txbuf, txnum);
+ 	usb_transmit(CDC2_TX_ENDPOINT, xfer);
+ 	if (++tx_head >= TX_NUM) tx_head = 0;
+ 	tx_available = 0;
+ }
+ 
+ 
+ 
+ #endif // CDC2_STATUS_INTERFACE && CDC2_DATA_INTERFACE
+

@@ -1,0 +1,122 @@
+{
+  "scope": "same-process serial waiting-event diagnostics",
+  "operator_confirmation": "已启动; instructed empty, whether actually remained empty is not yet confirmed",
+  "target": {
+    "pid": 44864,
+    "command": "D:\\conda\\python.exe coinft_demo.py --port COM10",
+    "creation_epoch": 1790573389.964
+  },
+  "result": "FAIL incoming-stream continuity; diagnostic event captured",
+  "metrics": {
+    "first_to_last_seconds": 3.0518234,
+    "serial_read_delta": 28,
+    "serial_byte_delta": 0,
+    "parsed_frame_delta": 0,
+    "valid_frame_delta": 0,
+    "discarded_byte_delta": 0,
+    "last_byte_age_at_final_sample_seconds": 45.08093285560608,
+    "last_valid_frame_age_at_final_sample_seconds": 45.08063340187073,
+    "all_waiting": true,
+    "invalid_frame_delta": 0
+  },
+  "samples": [
+    {
+      "elapsed": 0.0659331,
+      "observed_at": "2026-09-28T13:30:49.1375652+08:00",
+      "host_epoch": 1790573449.141,
+      "status": "waiting",
+      "message": "串口已打开，尚未收到有效数据帧",
+      "frames": 3339,
+      "updated_at": 1790573407.1083665,
+      "rate": 200,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100,
+      "diagnostics": {
+        "serial_reads": 541,
+        "serial_bytes": 86840,
+        "parsed_frames": 3339,
+        "last_byte_at": 1790573407.108067,
+        "last_parsed_frame_at": 1790573407.108067,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 1.0966894999999999,
+      "observed_at": "2026-09-28T13:30:50.1683709+08:00",
+      "host_epoch": 1790573450.168,
+      "status": "waiting",
+      "message": "串口已打开，尚未收到有效数据帧",
+      "frames": 3339,
+      "updated_at": 1790573407.1083665,
+      "rate": 200,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100,
+      "diagnostics": {
+        "serial_reads": 551,
+        "serial_bytes": 86840,
+        "parsed_frames": 3339,
+        "last_byte_at": 1790573407.108067,
+        "last_parsed_frame_at": 1790573407.108067,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 2.1071358,
+      "observed_at": "2026-09-28T13:30:51.1785213+08:00",
+      "host_epoch": 1790573451.178,
+      "status": "waiting",
+      "message": "串口已打开，尚未收到有效数据帧",
+      "frames": 3339,
+      "updated_at": 1790573407.1083665,
+      "rate": 200,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100,
+      "diagnostics": {
+        "serial_reads": 560,
+        "serial_bytes": 86840,
+        "parsed_frames": 3339,
+        "last_byte_at": 1790573407.108067,
+        "last_parsed_frame_at": 1790573407.108067,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    },
+    {
+      "elapsed": 3.1177565,
+      "observed_at": "2026-09-28T13:30:52.1891598+08:00",
+      "host_epoch": 1790573452.189,
+      "status": "waiting",
+      "message": "串口已打开，尚未收到有效数据帧",
+      "frames": 3339,
+      "updated_at": 1790573407.1083665,
+      "rate": 200,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "saturated_recent": 0,
+      "tare_progress": 100,
+      "diagnostics": {
+        "serial_reads": 569,
+        "serial_bytes": 86840,
+        "parsed_frames": 3339,
+        "last_byte_at": 1790573407.108067,
+        "last_parsed_frame_at": 1790573407.108067,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      }
+    }
+  ],
+  "conclusion": "Completed serial reads increase but no bytes arrive at the Python reader. Not parser failure or range-rejected new frames in this interval. Existing rate200.0 is cached/history, not current throughput.",
+  "limitations": [
+    "PC-side observations cannot distinguish CoinFT UART cessation, Teensy forwarding failure, USB transport or other upstream cause.",
+    "Current flashed firmware identity not independently established.",
+    "No attribution to applied force: action history since startup not confirmed."
+  ]
+}

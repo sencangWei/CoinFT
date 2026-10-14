@@ -1,0 +1,1 @@
+{"source":"left_repeat.json","original_requested_pose":"left_repeat","operator_confirmed_actual_state":"unloaded","reason":"Operator corrected the preceding '+X 已推住' message: intended '已松开'.","exclude_from_loaded_left_fit":true,"exclude_from_independent_left_acceptance":true,"preserve_original_capture":true,"confirmed_date":"2026-10-05"}

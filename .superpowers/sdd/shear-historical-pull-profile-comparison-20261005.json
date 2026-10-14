@@ -1,0 +1,530 @@
+{
+  "scope": "Read-only historical-profile comparison on identical captured page-coordinate inputs, unchanged current surface.js, cold start; no fitting/deployment/new hardware capture",
+  "profile_sha256": "af13756949ff0bb047392c183117298ea1b070106e3f2edc0553c075e25be150",
+  "pressure_projection_coefficient": {
+    "old": 0.012670173619825774,
+    "current": 0.2566897087260196
+  },
+  "results": [
+    {
+      "source": "shear-live-page-minus-x-20261005.json",
+      "sha256": "4dab2ed7b7ec70cbdfd330fd06d7296b678d9ba3b29afb62ced7e05bc7277baf",
+      "actual_rendered_range": [
+        0.6345606000825192,
+        0.967559535424311
+      ],
+      "baseline": [
+        -45,
+        -30,
+        -27.5,
+        -23.5,
+        19,
+        -37,
+        -9,
+        -60.5,
+        -3,
+        3,
+        8,
+        -9
+      ],
+      "replay": {
+        "old": {
+          "stable_samples": 6,
+          "right_active": 6,
+          "left_active": 0,
+          "nonzero": 6,
+          "score": {
+            "min": 191.64464988456706,
+            "median": 216.4671117022626,
+            "max": 260.8144392508228
+          },
+          "shear": {
+            "min": 0.9326396010879143,
+            "median": 0.9840499739435127,
+            "max": 0.9964939090182827
+          }
+        },
+        "current": {
+          "stable_samples": 6,
+          "right_active": 6,
+          "left_active": 0,
+          "nonzero": 6,
+          "score": {
+            "min": 53.29452452538279,
+            "median": 83.63967038383991,
+            "max": 94.78438568024333
+          },
+          "shear": {
+            "min": 0.6342776869504428,
+            "median": 0.8840951866068594,
+            "max": 0.9751844708530555
+          }
+        }
+      },
+      "normal_identical": true
+    },
+    {
+      "source": "shear-live-page-plus-x-20261005.json",
+      "sha256": "8edca56f306612b1df0149d358c6e33560bb26c0019fded2eb8cc7dffd5d2e07",
+      "actual_rendered_range": [
+        -0.9999730534173958,
+        -0.98379134028692
+      ],
+      "baseline": [
+        -45,
+        -30,
+        -27.5,
+        -23.5,
+        19,
+        -37,
+        -9,
+        -60.5,
+        -3,
+        3,
+        8,
+        -9
+      ],
+      "replay": {
+        "old": {
+          "stable_samples": 6,
+          "right_active": 0,
+          "left_active": 0,
+          "nonzero": 0,
+          "score": {
+            "min": -48.206161975353126,
+            "median": 51.42135821213,
+            "max": 98.27882048488264
+          },
+          "shear": {
+            "min": 0,
+            "median": 0,
+            "max": 0
+          }
+        },
+        "current": {
+          "stable_samples": 6,
+          "right_active": 0,
+          "left_active": 6,
+          "nonzero": 6,
+          "score": {
+            "min": -116.56920908393924,
+            "median": -104.90838664177664,
+            "max": -98.56990535314202
+          },
+          "shear": {
+            "min": -1,
+            "median": -1,
+            "max": -1
+          }
+        }
+      },
+      "normal_identical": true
+    },
+    {
+      "source": "shear-live-page-center-same-baseline-20261005.json",
+      "sha256": "d219de2e95d3238f9517790ba605144271380524bc0fb67978fa1bd54b2be54c",
+      "actual_rendered_range": [
+        0,
+        0
+      ],
+      "baseline": [
+        -45,
+        -30,
+        -27.5,
+        -23.5,
+        19,
+        -37,
+        -9,
+        -60.5,
+        -3,
+        3,
+        8,
+        -9
+      ],
+      "replay": {
+        "old": {
+          "stable_samples": 6,
+          "right_active": 0,
+          "left_active": 0,
+          "nonzero": 0,
+          "score": {
+            "min": 57.60173454201232,
+            "median": 89.74516443720863,
+            "max": 113.09067699340429
+          },
+          "shear": {
+            "min": 0,
+            "median": 0,
+            "max": 0
+          }
+        },
+        "current": {
+          "stable_samples": 6,
+          "right_active": 0,
+          "left_active": 0,
+          "nonzero": 0,
+          "score": {
+            "min": -13.938665096457907,
+            "median": -3.058448024114255,
+            "max": 39.046374012814496
+          },
+          "shear": {
+            "min": 0,
+            "median": 0,
+            "max": 0
+          }
+        }
+      },
+      "normal_identical": true
+    },
+    {
+      "source": "shear-live-page-center-pull-minus-x-20261005.json",
+      "sha256": "4cb2ad991f53fbb45f093fa39b11bfe4e15779cb3b6451d0f25b4120688f6b85",
+      "actual_rendered_range": [
+        0.37643874533055655,
+        0.7583286045846875
+      ],
+      "baseline": [
+        -45,
+        -30,
+        -27.5,
+        -23.5,
+        19,
+        -37,
+        -9,
+        -60.5,
+        -3,
+        3,
+        8,
+        -9
+      ],
+      "replay": {
+        "old": {
+          "stable_samples": 6,
+          "right_active": 6,
+          "left_active": 0,
+          "nonzero": 6,
+          "score": {
+            "min": 164.36181490263215,
+            "median": 210.33888419364968,
+            "max": 292.970231983779
+          },
+          "shear": {
+            "min": 0.982443406846105,
+            "median": 1,
+            "max": 1
+          }
+        },
+        "current": {
+          "stable_samples": 6,
+          "right_active": 6,
+          "left_active": 0,
+          "nonzero": 6,
+          "score": {
+            "min": 41.830174307933376,
+            "median": 61.492735200726415,
+            "max": 66.11263242208196
+          },
+          "shear": {
+            "min": 0.38173776586104535,
+            "median": 0.4683981772974274,
+            "max": 0.577374485821862
+          }
+        }
+      },
+      "normal_identical": true
+    },
+    {
+      "source": "shear-live-page-edge-pull-minus-x-20261005.json",
+      "sha256": "97cf01e5550145a927b04b41070ed6544e7da9a42ba65c40c68a0a551c2735b0",
+      "actual_rendered_range": [
+        0.7485533627600505,
+        0.9415260130106271
+      ],
+      "baseline": [
+        -45,
+        -30,
+        -27.5,
+        -23.5,
+        19,
+        -37,
+        -9,
+        -60.5,
+        -3,
+        3,
+        8,
+        -9
+      ],
+      "replay": {
+        "old": {
+          "stable_samples": 6,
+          "right_active": 6,
+          "left_active": 0,
+          "nonzero": 6,
+          "score": {
+            "min": 267.3437536219816,
+            "median": 299.8155729813752,
+            "max": 352.473394229314
+          },
+          "shear": {
+            "min": 1,
+            "median": 1,
+            "max": 1
+          }
+        },
+        "current": {
+          "stable_samples": 6,
+          "right_active": 6,
+          "left_active": 0,
+          "nonzero": 6,
+          "score": {
+            "min": 71.66674248407341,
+            "median": 87.8228649992269,
+            "max": 99.7119490376512
+          },
+          "shear": {
+            "min": 0.853966059610901,
+            "median": 0.9251867291478622,
+            "max": 0.9445634139275677
+          }
+        }
+      },
+      "normal_identical": true
+    },
+    {
+      "source": "shear-live-page-center-pull-foreground-20261005.json",
+      "sha256": "72da11564a5b5785fd456b737a4d83aa7b1d02526e64675f751bc03c74765dcd",
+      "actual_rendered_range": [
+        0,
+        0.5069824020084245
+      ],
+      "baseline": [
+        -45,
+        -30,
+        -27.5,
+        -23.5,
+        19,
+        -37,
+        -9,
+        -60.5,
+        -3,
+        3,
+        8,
+        -9
+      ],
+      "replay": {
+        "old": {
+          "stable_samples": 6,
+          "right_active": 6,
+          "left_active": 0,
+          "nonzero": 6,
+          "score": {
+            "min": 119.30262222782062,
+            "median": 193.0383781027258,
+            "max": 240.56591028428153
+          },
+          "shear": {
+            "min": 0.6782964972364393,
+            "median": 0.9655247016872714,
+            "max": 0.9956137090773975
+          }
+        },
+        "current": {
+          "stable_samples": 6,
+          "right_active": 4,
+          "left_active": 0,
+          "nonzero": 4,
+          "score": {
+            "min": 25.039701608661304,
+            "median": 63.38609255496835,
+            "max": 79.45409286668504
+          },
+          "shear": {
+            "min": 0,
+            "median": 0.36219220054198453,
+            "max": 0.6773384828864673
+          }
+        }
+      },
+      "normal_identical": true
+    },
+    {
+      "source": "shear-center-pull-full-diagnostic-20261005.json",
+      "sha256": "53fb95f9f2d89585a6d16db285035ade32d70808a167a0b9cb1523e219d0c7db",
+      "actual_rendered_range": [
+        0,
+        0
+      ],
+      "baseline": [
+        -9,
+        45,
+        2.5,
+        29,
+        12,
+        0.5,
+        -1,
+        -2,
+        1.5,
+        -10,
+        -5,
+        0
+      ],
+      "replay": {
+        "old": {
+          "stable_samples": 36,
+          "right_active": 36,
+          "left_active": 0,
+          "nonzero": 36,
+          "score": {
+            "min": 179.28342212679016,
+            "median": 265.634389504532,
+            "max": 350.1353464374574
+          },
+          "shear": {
+            "min": 0.9985387726985667,
+            "median": 0.999999992527141,
+            "max": 0.9999999999999667
+          }
+        },
+        "current": {
+          "stable_samples": 36,
+          "right_active": 0,
+          "left_active": 0,
+          "nonzero": 0,
+          "score": {
+            "min": 16.158136870760767,
+            "median": 36.20973451972779,
+            "max": 65.63829190713814
+          },
+          "shear": {
+            "min": 0,
+            "median": 0,
+            "max": 0
+          }
+        }
+      },
+      "normal_identical": true
+    },
+    {
+      "source": "shear-center-pull-controls-empty-20261005.json",
+      "sha256": "d6114d19eb405f6b5140b615199eddd60fa9ed15921a321f2af44e8e580f1536",
+      "actual_rendered_range": [
+        0,
+        0
+      ],
+      "baseline": [
+        -9,
+        45,
+        2.5,
+        29,
+        12,
+        0.5,
+        -1,
+        -2,
+        1.5,
+        -10,
+        -5,
+        0
+      ],
+      "replay": {
+        "old": {
+          "stable_samples": 36,
+          "right_active": 0,
+          "left_active": 0,
+          "nonzero": 0,
+          "score": {
+            "min": -48.97319840635592,
+            "median": 16.74522320686843,
+            "max": 116.06561882376495
+          },
+          "shear": {
+            "min": 0,
+            "median": 0,
+            "max": 0
+          }
+        },
+        "current": {
+          "stable_samples": 36,
+          "right_active": 0,
+          "left_active": 0,
+          "nonzero": 0,
+          "score": {
+            "min": -29.174225594220463,
+            "median": 9.519686189929399,
+            "max": 46.855969184217315
+          },
+          "shear": {
+            "min": 0,
+            "median": 0,
+            "max": 0
+          }
+        }
+      },
+      "normal_identical": true
+    },
+    {
+      "source": "shear-center-pull-controls-press-20261005.json",
+      "sha256": "273a926634f6ad19b71757358651799712a9e30b4243dd98b2ac52142da3b2fe",
+      "actual_rendered_range": [
+        0,
+        0
+      ],
+      "baseline": [
+        -9,
+        45,
+        2.5,
+        29,
+        12,
+        0.5,
+        -1,
+        -2,
+        1.5,
+        -10,
+        -5,
+        0
+      ],
+      "replay": {
+        "old": {
+          "stable_samples": 36,
+          "right_active": 22,
+          "left_active": 0,
+          "nonzero": 27,
+          "score": {
+            "min": 5.641339403102791,
+            "median": 101.10839360725205,
+            "max": 185.6418671508785
+          },
+          "shear": {
+            "min": 0,
+            "median": 0.3695010240223472,
+            "max": 0.7197786233701019
+          }
+        },
+        "current": {
+          "stable_samples": 36,
+          "right_active": 0,
+          "left_active": 0,
+          "nonzero": 0,
+          "score": {
+            "min": -64.45765151372237,
+            "median": -34.96310292501964,
+            "max": 3.0004163901288052
+          },
+          "shear": {
+            "min": 0,
+            "median": 0,
+            "max": 0
+          }
+        }
+      },
+      "normal_identical": true
+    }
+  ],
+  "limitations": [
+    "Historical operator observations are distinct from offline numerical replay.",
+    "Earlier short pull record has numerical shear but operator reported no visible deformation.",
+    "Separate windows retain their actual distinct baselines; not merged for fitting.",
+    "No archived pre-refit center-pull labeled capture identified; user historical observation preserved.",
+    "Replay has no captured filter prehistory and cannot prove live causation."
+  ]
+}

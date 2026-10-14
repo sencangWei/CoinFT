@@ -1,0 +1,34 @@
+{
+  "capture_started": false,
+  "exit": 1,
+  "output": "Traceback (most recent call last):\r\n  File \"<string>\", line 26, in <module>\r\n    assert before['baseline']==proposal['baseline'] and not before['paused']\r\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nAssertionError\r\n",
+  "old_reference": [
+    -45,
+    -30,
+    -27.5,
+    -23.5,
+    19,
+    -37,
+    -9,
+    -60.5,
+    -3,
+    3,
+    8,
+    -9
+  ],
+  "current_reference": [
+    -9,
+    45,
+    2.5,
+    29,
+    12,
+    0.5,
+    -1,
+    -2,
+    1.5,
+    -10,
+    -5,
+    0
+  ],
+  "reason": "Actual page reference changed before collection; frozen coefficients remain unchanged, use a separate explicitly recorded current validation basis, not old-data merging."
+}

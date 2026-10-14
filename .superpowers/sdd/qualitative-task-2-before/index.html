@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07131f">
+  <title>CoinFT · 六维响应演示</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span><strong>CoinFT</strong><small>六维响应演示系统</small></span></div>
+      <div class="top-actions">
+        <span class="status-pill" id="status-pill"><span class="status-light"></span><span id="status-label">连接中</span></span>
+        <button class="ghost-button" id="fullscreen" type="button" title="全屏展示">⛶ <span>全屏</span></button>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro">
+        <div>
+          <p class="eyebrow">SIX-AXIS RESPONSE / LIVE SIGNAL</p>
+          <h1>让每一次触碰，<em>看得见。</em></h1>
+          <p class="subtitle">实时呈现六维方向趋势与十二路电容原始响应</p>
+        </div>
+        <div class="readout">
+          <span class="readout-label">当前数据源</span>
+          <strong id="source-label">等待连接</strong>
+          <span class="readout-meta" id="rate-label">— Hz <b>·</b> — 帧</span>
+        </div>
+      </section>
+
+      <section class="notice" aria-label="数据说明"><span class="notice-icon">i</span><span><strong id="mode-label">实时采集</strong> · 左侧为旧矩阵的未标定趋势，不能判断实际受力方向；右侧 G1–G6 是通道响应强度，不是六轴力值。</span></section>
+
+      <div class="dashboard">
+        <section class="panel overview">
+          <div class="panel-head"><div><span class="section-index">01 / VECTOR FIELD</span><h2>六维动态响应</h2></div><span class="live-tag"><i></i><span id="stream-tag">等待数据</span></span></div>
+          <div class="overview-body">
+            <div class="orb-wrap">
+              <canvas id="surface-canvas" aria-label="正压／剪切响应示意（相对响应，非标定力值）">正压／剪切响应示意（相对响应，非标定力值）</canvas>
+              <div class="orb-caption"><span class="surface-label">正压／剪切响应示意（相对响应，非标定力值） · 剪切方向未验证</span><strong id="activity-value">0<span>%</span></strong><small>画面活动指数 · 非实际力值</small></div>
+            </div>
+            <div class="trend-stack">
+              <div class="trend-block"><div class="trend-title"><span class="trend-dot force-dot"></span><strong>力方向趋势</strong><span>Fx · Fy · Fz</span></div><canvas id="force-chart" aria-label="三轴力方向趋势曲线"></canvas><div class="trend-key"><span><i class="key-x"></i>Fx</span><span><i class="key-y"></i>Fy</span><span><i class="key-z"></i>Fz</span></div></div>
+              <div class="trend-block"><div class="trend-title"><span class="trend-dot torque-dot"></span><strong>力矩方向趋势</strong><span>Mx · My · Mz</span></div><canvas id="torque-chart" aria-label="三轴力矩方向趋势曲线"></canvas><div class="trend-key"><span><i class="key-x"></i>Mx</span><span><i class="key-y"></i>My</span><span><i class="key-z"></i>Mz</span></div></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel axis-panel">
+          <div class="panel-head"><div><span class="section-index">02 / GROUP RESPONSE</span><h2>六组通道响应</h2></div><span class="axis-unit">counts</span></div>
+          <div class="axis-list" id="axis-list"></div>
+          <div class="controls">
+            <label for="gain"><span>趋势显示灵敏度</span><strong id="gain-value">2.0×</strong></label>
+            <input id="gain" type="range" min="0.5" max="5" step="0.1" value="2" aria-label="显示灵敏度">
+            <button id="tare" type="button" disabled>空载归零 <span>↺</span></button>
+          </div>
+        </section>
+      </div>
+
+      <section class="panel channel-panel">
+        <div class="panel-head"><div><span class="section-index">03 / RAW CHANNELS</span><h2>十二路原始响应</h2></div><span class="axis-unit">相对空载基线 · counts</span></div>
+        <div class="channel-grid" id="channel-grid"></div>
+      </section>
+    </main>
+
+    <footer><span>CoinFT · 本地演示界面</span><span id="foot-status" role="status" aria-live="polite">等待串口数据</span><span>ESC 退出全屏 · F 进入全屏</span></footer>
+  </div>
+  <script src="/surface.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

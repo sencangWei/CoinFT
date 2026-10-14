@@ -1,0 +1,236 @@
+{
+  "date": "2026-09-28",
+  "operator_confirmation": "已重新启动",
+  "mode": "bench_read_only",
+  "status": "BLOCKED",
+  "required": {
+    "unique_acquisition_process": 1,
+    "api_recovery_field": true
+  },
+  "actual": {
+    "processes": [
+      {
+        "cmdline": [
+          "D:\\conda\\python.exe",
+          "coinft_demo.py",
+          "--port",
+          "COM6"
+        ],
+        "pid": 36404,
+        "create_time": 1790585834.3283825,
+        "name": "python.exe",
+        "ppid": 46408,
+        "cwd": "D:\\semg.claude\\coinft"
+      },
+      {
+        "cmdline": [
+          "D:\\conda\\python.exe",
+          "coinft_demo.py",
+          "--port",
+          "COM6"
+        ],
+        "pid": 37960,
+        "create_time": 1790588177.8483937,
+        "name": "python.exe",
+        "ppid": 34204,
+        "cwd": "D:\\semg.claude\\coinft"
+      },
+      {
+        "cmdline": [
+          "D:\\conda\\python.exe",
+          "coinft_demo.py",
+          "--port",
+          "COM6"
+        ],
+        "pid": 47424,
+        "create_time": 1790582081.90098,
+        "name": "python.exe",
+        "ppid": 10352,
+        "cwd": "D:\\semg.claude\\coinft"
+      }
+    ],
+    "listeners": [
+      {
+        "pid": 36404,
+        "ip": "127.0.0.1",
+        "port": 8765
+      },
+      {
+        "pid": 37960,
+        "ip": "127.0.0.1",
+        "port": 8765
+      },
+      {
+        "pid": 47424,
+        "ip": "127.0.0.1",
+        "port": 8765
+      }
+    ],
+    "direct_connections": [
+      {
+        "observed_at": 1790588312.832272,
+        "server_connection": [
+          {
+            "pid": 47424,
+            "status": "ESTABLISHED",
+            "server_port": 8765,
+            "client_port": 16192
+          }
+        ],
+        "state": {
+          "mode": "live",
+          "status": "live",
+          "message": "数据流正常",
+          "port": "COM6",
+          "axes": [
+            0.0641052,
+            0.0295284,
+            0.3782619,
+            -0.0001175,
+            0.0003415,
+            0.0004018
+          ],
+          "channels": [
+            -205.5,
+            -330,
+            -124.5,
+            -108.5,
+            -104,
+            -99.5,
+            -261,
+            -195,
+            -86,
+            -22,
+            -44,
+            -74
+          ],
+          "raw": [
+            27631,
+            26978,
+            25481,
+            26348,
+            25966,
+            26046,
+            26946,
+            25767,
+            28367,
+            27972,
+            28930,
+            28057
+          ],
+          "rate": 200,
+          "frames": 1245821,
+          "resyncs": 0,
+          "saturated": 0,
+          "saturated_recent": 0,
+          "invalid_frames": 0,
+          "invalid_recent": 0,
+          "tare_progress": 100,
+          "updated_at": 1790588312.8019466,
+          "diagnostics": {
+            "serial_reads": 57269,
+            "serial_bytes": 32391372,
+            "parsed_frames": 1245821,
+            "last_byte_at": 1790588312.8002105,
+            "last_parsed_frame_at": 1790588312.8002105,
+            "parser_pending_bytes": 26,
+            "parser_discarded_bytes": 0
+          }
+        },
+        "schema_has_recovery": false
+      },
+      {
+        "observed_at": 1790588312.850204,
+        "server_connection": [
+          {
+            "pid": 47424,
+            "status": "ESTABLISHED",
+            "server_port": 8765,
+            "client_port": 16193
+          }
+        ],
+        "state": {
+          "mode": "live",
+          "status": "live",
+          "message": "数据流正常",
+          "port": "COM6",
+          "axes": [
+            0.0641052,
+            0.0295284,
+            0.3782619,
+            -0.0001175,
+            0.0003415,
+            0.0004018
+          ],
+          "channels": [
+            -205.5,
+            -330,
+            -124.5,
+            -108.5,
+            -104,
+            -99.5,
+            -261,
+            -195,
+            -86,
+            -22,
+            -44,
+            -74
+          ],
+          "raw": [
+            27631,
+            26978,
+            25481,
+            26348,
+            25966,
+            26046,
+            26946,
+            25767,
+            28367,
+            27972,
+            28930,
+            28057
+          ],
+          "rate": 200,
+          "frames": 1245821,
+          "resyncs": 0,
+          "saturated": 0,
+          "saturated_recent": 0,
+          "invalid_frames": 0,
+          "invalid_recent": 0,
+          "tare_progress": 100,
+          "updated_at": 1790588312.8019466,
+          "diagnostics": {
+            "serial_reads": 57269,
+            "serial_bytes": 32391372,
+            "parsed_frames": 1245821,
+            "last_byte_at": 1790588312.8002105,
+            "last_parsed_frame_at": 1790588312.8002105,
+            "parser_pending_bytes": 26,
+            "parser_discarded_bytes": 0
+          }
+        },
+        "schema_has_recovery": false
+      }
+    ]
+  },
+  "target": {
+    "usb_serial": "16454680",
+    "pid": "048B",
+    "COM6": "raw MI00",
+    "COM8": "diagnostic MI02",
+    "enumeration": "Present OK"
+  },
+  "source_sha256": "96EF5BBE88CEB9797686D1E6B1B2473B50360B0A9225E5FAC192CA6DDB913828",
+  "failures": [
+    "Three verified CoinFT processes/listeners exist, not one.",
+    "OldPID47424 owns both direct HTTP sockets and returns old schema withoutrecovery."
+  ],
+  "skipped": [
+    "10s correct-service sample",
+    "COM8 read",
+    "visual/demo baseline verification",
+    "physical stall/recovery"
+  ],
+  "actions": "Read-only process/PnP/HTTP/socket/hash checks. No process termination/start, COM open/write, reflash, tare or force request.",
+  "next": "Operator ends only verified CoinFT PIDs47424/36404/37960, reports closed; controller confirms no remaining source/listeners BEFORE asking for one restart. Do not repeat startup while old processes remain."
+}

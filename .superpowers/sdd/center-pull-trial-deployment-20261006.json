@@ -1,0 +1,150 @@
+{
+  "scope": "user-authorized trial deployment, not independently accepted physical fix",
+  "backup_sha256": "af13756949ff0bb047392c183117298ea1b070106e3f2edc0553c075e25be150",
+  "installed_sha256": "1df74f4570f5119f180f9e7830120abe555bd6c37cc33ab3dbc33b8dba5a6020",
+  "candidate_sha256": "1df74f4570f5119f180f9e7830120abe555bd6c37cc33ab3dbc33b8dba5a6020",
+  "protected": [
+    {
+      "path": "D:\\semg.claude\\coinft\\demo_web\\app.js",
+      "unchanged": true
+    },
+    {
+      "path": "D:\\semg.claude\\coinft\\demo_web\\surface.js",
+      "unchanged": true
+    },
+    {
+      "path": "D:\\semg.claude\\coinft\\START_DEMO.bat",
+      "unchanged": true
+    },
+    {
+      "path": "D:\\semg.claude\\coinft\\calibration\\coinft_calib.json",
+      "unchanged": true
+    },
+    {
+      "path": "D:\\semg.claude\\firmware_imu\\platformio.ini",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\platformio.ini",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\scripts\\diag_usb_build.py",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\.pio\\build\\teensy40\\firmware.hex",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\.pio\\build\\teensy40\\firmware.elf",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\.pio\\build\\teensy40_diag\\firmware.hex",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\winer\\.platformio\\packages\\framework-arduinoteensy\\cores\\teensy4\\usb_serial.c",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\winer\\.platformio\\packages\\framework-arduinoteensy\\cores\\teensy4\\usb_serial2.c",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\teensy_coinft_serial_interface.cpp",
+      "unchanged": true
+    },
+    {
+      "path": "coinft_demo.py",
+      "unchanged": true
+    }
+  ],
+  "before": {
+    "baseline": [
+      3,
+      -35,
+      1.5,
+      -31.5,
+      -29.5,
+      23,
+      -36,
+      16,
+      -5,
+      -5.5,
+      -6,
+      -3
+    ],
+    "paused": false,
+    "frame": 13320959
+  },
+  "after": {
+    "baseline": [
+      3,
+      -35,
+      1.5,
+      -31.5,
+      -29.5,
+      23,
+      -36,
+      16,
+      -5,
+      -5.5,
+      -6,
+      -3
+    ],
+    "profile": {
+      "version": 1,
+      "mode": "qualitative",
+      "assemblyId": "coinft-current-20260925",
+      "normal": {
+        "threshold": 100,
+        "span": 600
+      },
+      "shear": {
+        "enabled": true,
+        "weights": [
+          0.31590282776546447,
+          -0.12205855363676356,
+          -0.3341345639198642,
+          0.1321512275490956,
+          -0.6043682958768727,
+          0.29582120955720936,
+          0.6305046426094868,
+          -0.3138184940477558
+        ],
+        "pressLeak": [
+          -0.02643880353355445,
+          -0.03144711796000465,
+          -0.1214381970191369,
+          0.2357389209364859,
+          0.07993594816592298,
+          0.1752984546744665,
+          0.014867875399405917,
+          -0.24604676712122375
+        ],
+        "threshold": 58.330169520837785,
+        "span": 58.330169520837785
+      },
+      "rightLabel": "−X",
+      "leftLabel": "+X",
+      "evidence": [
+        ".superpowers/sdd/center-pull-refit-20261006-report.json"
+      ]
+    },
+    "paused": false,
+    "frame": 13321003,
+    "normal": 0,
+    "shear": 0
+  },
+  "stream": {
+    "mode": "live",
+    "status": "live",
+    "port": "COM6",
+    "rate": 200,
+    "frames": 13321177,
+    "invalid_recent": 0
+  },
+  "screenshot": ".superpowers\\sdd\\center-pull-trial-deployed-20261006.png"
+}

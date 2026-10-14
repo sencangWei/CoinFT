@@ -1,0 +1,1419 @@
+{
+  "purpose": "Offline exploratory fit of corrected current control and confirmed +X windows; no independent physical validation or deployment.",
+  "command": "D:/conda/python.exe -X utf8 coinft/.superpowers/sdd/shear_refit_current_controls_20261005.py",
+  "transform": "All derived channels are original raw minus one fixed current_controls_empty raw-channel offset; timestamps, frames, raw data, owner and source files are untouched.",
+  "limitations": [
+    "Captured windows span interrupted/recovered serial stream epochs; monotonic frames, timestamps and unchanged backend owner do not prove one uninterrupted sensor stream.",
+    "These captures are fitting inputs and replayed in sample; no independent physical validation was performed."
+  ],
+  "excluded_prior_left_before": "calibration/shear_refit_20260928/fit/left_before.json",
+  "sources": {
+    "left_before": {
+      "path": "calibration/shear_refit_20261005_after_button/fit/left_repeat_after.json",
+      "sha256": "6238fa3690ee0c0a3cac6fc7488b9feb0a8bc2f0d89254ce973acd6f28ea904c",
+      "original_pose": "left_repeat_after",
+      "derived_evidence": "aligned_left_before.json",
+      "owner": {
+        "pid": 87952,
+        "created": 1791188496.384482
+      },
+      "sample_count": 41,
+      "first_host": "2026-10-05T17:42:41.707391+08:00",
+      "last_host": "2026-10-05T17:42:46.822858+08:00",
+      "first_frame": 944507,
+      "last_frame": 945533,
+      "original_offset": [
+        28043,
+        27566,
+        26048,
+        26881.5,
+        26475,
+        26533,
+        27459,
+        26211.5,
+        28586,
+        28196,
+        29195,
+        28269.5
+      ],
+      "recovery_first": {
+        "attempts": 30,
+        "successes": 2,
+        "last_fault": {
+          "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+          "observed_at": 1791191196.812484,
+          "frames": 511536,
+          "diagnostics": {
+            "serial_reads": 23443,
+            "serial_bytes": 13299988,
+            "parsed_frames": 511536,
+            "last_byte_at": 1791191194.738695,
+            "last_parsed_frame_at": 1791191194.738695,
+            "parser_pending_bytes": 26,
+            "parser_discarded_bytes": 0
+          }
+        }
+      },
+      "recovery_last": {
+        "attempts": 30,
+        "successes": 2,
+        "last_fault": {
+          "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+          "observed_at": 1791191196.812484,
+          "frames": 511536,
+          "diagnostics": {
+            "serial_reads": 23443,
+            "serial_bytes": 13299988,
+            "parsed_frames": 511536,
+            "last_byte_at": 1791191194.738695,
+            "last_parsed_frame_at": 1791191194.738695,
+            "parser_pending_bytes": 26,
+            "parser_discarded_bytes": 0
+          }
+        }
+      },
+      "original_channels_median": [
+        -67,
+        -76,
+        -70,
+        -75.5,
+        -54,
+        -60,
+        -99,
+        -116.5,
+        -43,
+        -37,
+        -39,
+        -43.5
+      ],
+      "raw_median": [
+        27976,
+        27490,
+        25978,
+        26806,
+        26421,
+        26473,
+        27360,
+        26095,
+        28543,
+        28159,
+        29156,
+        28226
+      ],
+      "aligned_channels_median": [
+        -67,
+        -76,
+        -70,
+        -75.5,
+        -54,
+        -60,
+        -99,
+        -116.5,
+        -43,
+        -37,
+        -39,
+        -43.5
+      ],
+      "duration_seconds": 5.115467
+    },
+    "left": {
+      "path": "calibration/shear_refit_20261005_after_button/fit/left_confirmed_repeat.json",
+      "sha256": "81a99764b4b54b2f89361d2e12439ae541073e73c5a9bcdf4ab732b4f7151caf",
+      "original_pose": "left_confirmed_repeat",
+      "derived_evidence": "aligned_left.json",
+      "owner": {
+        "pid": 87952,
+        "created": 1791188496.384482
+      },
+      "sample_count": 40,
+      "first_host": "2026-10-05T17:46:43.887179+08:00",
+      "last_host": "2026-10-05T17:46:48.985011+08:00",
+      "first_frame": 992934,
+      "last_frame": 993960,
+      "original_offset": [
+        28043,
+        27566,
+        26048,
+        26881.5,
+        26475,
+        26533,
+        27459,
+        26211.5,
+        28586,
+        28196,
+        29195,
+        28269.5
+      ],
+      "recovery_first": {
+        "attempts": 30,
+        "successes": 2,
+        "last_fault": {
+          "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+          "observed_at": 1791191196.812484,
+          "frames": 511536,
+          "diagnostics": {
+            "serial_reads": 23443,
+            "serial_bytes": 13299988,
+            "parsed_frames": 511536,
+            "last_byte_at": 1791191194.738695,
+            "last_parsed_frame_at": 1791191194.738695,
+            "parser_pending_bytes": 26,
+            "parser_discarded_bytes": 0
+          }
+        }
+      },
+      "recovery_last": {
+        "attempts": 30,
+        "successes": 2,
+        "last_fault": {
+          "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+          "observed_at": 1791191196.812484,
+          "frames": 511536,
+          "diagnostics": {
+            "serial_reads": 23443,
+            "serial_bytes": 13299988,
+            "parsed_frames": 511536,
+            "last_byte_at": 1791191194.738695,
+            "last_parsed_frame_at": 1791191194.738695,
+            "parser_pending_bytes": 26,
+            "parser_discarded_bytes": 0
+          }
+        }
+      },
+      "original_channels_median": [
+        1140.0,
+        1412.0,
+        1201.0,
+        1564.5,
+        1487.5,
+        1613.0,
+        1277.5,
+        874.5,
+        1224.5,
+        1225.5,
+        1458.0,
+        1194.0
+      ],
+      "raw_median": [
+        29183.0,
+        28978.0,
+        27249.0,
+        28446.0,
+        27962.5,
+        28146.0,
+        28736.5,
+        27086.0,
+        29810.5,
+        29421.5,
+        30653.0,
+        29463.5
+      ],
+      "aligned_channels_median": [
+        1140.0,
+        1412.0,
+        1201.0,
+        1564.5,
+        1487.5,
+        1613.0,
+        1277.5,
+        874.5,
+        1224.5,
+        1225.5,
+        1458.0,
+        1194.0
+      ],
+      "duration_seconds": 5.097832
+    },
+    "press_before": {
+      "path": "calibration/shear_refit_20261005_after_button/fit/current_controls_empty.json",
+      "sha256": "dd407702652f763893da4b8c9295ef5898e6a273493f7ce01721f5f65b03f26d",
+      "original_pose": "current_controls_empty",
+      "derived_evidence": "aligned_press_before.json",
+      "owner": {
+        "pid": 87952,
+        "created": 1791188496.384482
+      },
+      "sample_count": 41,
+      "first_host": "2026-10-05T18:00:30.312808+08:00",
+      "last_host": "2026-10-05T18:00:35.420880+08:00",
+      "first_frame": 1158221,
+      "last_frame": 1159248,
+      "original_offset": [
+        28043,
+        27566,
+        26048,
+        26881.5,
+        26475,
+        26533,
+        27459,
+        26211.5,
+        28586,
+        28196,
+        29195,
+        28269.5
+      ],
+      "recovery_first": {
+        "attempts": 30,
+        "successes": 2,
+        "last_fault": {
+          "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+          "observed_at": 1791191196.812484,
+          "frames": 511536,
+          "diagnostics": {
+            "serial_reads": 23443,
+            "serial_bytes": 13299988,
+            "parsed_frames": 511536,
+            "last_byte_at": 1791191194.738695,
+            "last_parsed_frame_at": 1791191194.738695,
+            "parser_pending_bytes": 26,
+            "parser_discarded_bytes": 0
+          }
+        }
+      },
+      "recovery_last": {
+        "attempts": 30,
+        "successes": 2,
+        "last_fault": {
+          "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+          "observed_at": 1791191196.812484,
+          "frames": 511536,
+          "diagnostics": {
+            "serial_reads": 23443,
+            "serial_bytes": 13299988,
+            "parsed_frames": 511536,
+            "last_byte_at": 1791191194.738695,
+            "last_parsed_frame_at": 1791191194.738695,
+            "parser_pending_bytes": 26,
+            "parser_discarded_bytes": 0
+          }
+        }
+      },
+      "original_channels_median": [
+        -118,
+        -158,
+        -150,
+        -188.5,
+        -122,
+        -115,
+        -167,
+        -173.5,
+        -69,
+        -59,
+        -77,
+        -66.5
+      ],
+      "raw_median": [
+        27925,
+        27408,
+        25898,
+        26693,
+        26353,
+        26418,
+        27292,
+        26038,
+        28517,
+        28137,
+        29118,
+        28203
+      ],
+      "aligned_channels_median": [
+        -118,
+        -158,
+        -150,
+        -188.5,
+        -122,
+        -115,
+        -167,
+        -173.5,
+        -69,
+        -59,
+        -77,
+        -66.5
+      ],
+      "duration_seconds": 5.108072
+    },
+    "press": {
+      "path": "calibration/shear_refit_20261005_after_button/fit/current_controls_press.json",
+      "sha256": "030a7a41b7e72498dde6c45ee1683c1926f3489817dc945750d51b1419a21c38",
+      "original_pose": "current_controls_press",
+      "derived_evidence": "aligned_press.json",
+      "owner": {
+        "pid": 87952,
+        "created": 1791188496.384482
+      },
+      "sample_count": 42,
+      "first_host": "2026-10-05T18:03:59.744518+08:00",
+      "last_host": "2026-10-05T18:04:04.878373+08:00",
+      "first_frame": 1200121,
+      "last_frame": 1201145,
+      "original_offset": [
+        27937,
+        27424,
+        25900,
+        26714,
+        26364,
+        26428,
+        27306.5,
+        26062,
+        28537,
+        28148,
+        29139.5,
+        28211
+      ],
+      "recovery_first": {
+        "attempts": 30,
+        "successes": 2,
+        "last_fault": {
+          "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+          "observed_at": 1791191196.812484,
+          "frames": 511536,
+          "diagnostics": {
+            "serial_reads": 23443,
+            "serial_bytes": 13299988,
+            "parsed_frames": 511536,
+            "last_byte_at": 1791191194.738695,
+            "last_parsed_frame_at": 1791191194.738695,
+            "parser_pending_bytes": 26,
+            "parser_discarded_bytes": 0
+          }
+        }
+      },
+      "recovery_last": {
+        "attempts": 30,
+        "successes": 2,
+        "last_fault": {
+          "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+          "observed_at": 1791191196.812484,
+          "frames": 511536,
+          "diagnostics": {
+            "serial_reads": 23443,
+            "serial_bytes": 13299988,
+            "parsed_frames": 511536,
+            "last_byte_at": 1791191194.738695,
+            "last_parsed_frame_at": 1791191194.738695,
+            "parser_pending_bytes": 26,
+            "parser_discarded_bytes": 0
+          }
+        }
+      },
+      "original_channels_median": [
+        731.5,
+        756.5,
+        658.0,
+        954.5,
+        788.5,
+        903.5,
+        759.5,
+        539.0,
+        719.5,
+        718.0,
+        862.5,
+        689.5
+      ],
+      "raw_median": [
+        28668.5,
+        28180.5,
+        26558.0,
+        27668.5,
+        27152.5,
+        27331.5,
+        28066.0,
+        26601.0,
+        29256.5,
+        28866.0,
+        30002.0,
+        28900.5
+      ],
+      "aligned_channels_median": [
+        625.5,
+        614.5,
+        510.0,
+        787.0,
+        677.5,
+        798.5,
+        607.0,
+        389.5,
+        670.5,
+        670.0,
+        807.0,
+        631.0
+      ],
+      "duration_seconds": 5.133855
+    },
+    "press_after": {
+      "path": "calibration/shear_refit_20261005_after_button/fit/current_controls_press_after.json",
+      "sha256": "391086251f51f29fe15f5c0cb779ebb5a55ca700df4f13c35b0c9abb8b7b1d61",
+      "original_pose": "current_controls_press_after",
+      "derived_evidence": "aligned_press_after.json",
+      "owner": {
+        "pid": 87952,
+        "created": 1791188496.384482
+      },
+      "sample_count": 41,
+      "first_host": "2026-10-05T18:05:40.810680+08:00",
+      "last_host": "2026-10-05T18:05:45.893749+08:00",
+      "first_frame": 1220339,
+      "last_frame": 1221343,
+      "original_offset": [
+        27937,
+        27424,
+        25900,
+        26714,
+        26364,
+        26428,
+        27306.5,
+        26062,
+        28537,
+        28148,
+        29139.5,
+        28211
+      ],
+      "recovery_first": {
+        "attempts": 30,
+        "successes": 2,
+        "last_fault": {
+          "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+          "observed_at": 1791191196.812484,
+          "frames": 511536,
+          "diagnostics": {
+            "serial_reads": 23443,
+            "serial_bytes": 13299988,
+            "parsed_frames": 511536,
+            "last_byte_at": 1791191194.738695,
+            "last_parsed_frame_at": 1791191194.738695,
+            "parser_pending_bytes": 26,
+            "parser_discarded_bytes": 0
+          }
+        }
+      },
+      "recovery_last": {
+        "attempts": 30,
+        "successes": 2,
+        "last_fault": {
+          "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+          "observed_at": 1791191196.812484,
+          "frames": 511536,
+          "diagnostics": {
+            "serial_reads": 23443,
+            "serial_bytes": 13299988,
+            "parsed_frames": 511536,
+            "last_byte_at": 1791191194.738695,
+            "last_parsed_frame_at": 1791191194.738695,
+            "parser_pending_bytes": 26,
+            "parser_discarded_bytes": 0
+          }
+        }
+      },
+      "original_channels_median": [
+        -32,
+        -1,
+        -2,
+        6,
+        -21,
+        -15,
+        -16.5,
+        -35,
+        -25,
+        -25,
+        -25.5,
+        -26
+      ],
+      "raw_median": [
+        27905,
+        27423,
+        25898,
+        26720,
+        26343,
+        26413,
+        27290,
+        26027,
+        28512,
+        28123,
+        29114,
+        28185
+      ],
+      "aligned_channels_median": [
+        -138,
+        -143,
+        -150,
+        -161.5,
+        -132,
+        -120,
+        -169,
+        -184.5,
+        -74,
+        -73,
+        -81,
+        -84.5
+      ],
+      "duration_seconds": 5.083069
+    },
+    "right_before": {
+      "path": "calibration/shear_refit_20261005_after_button/fit/current_controls_right_before.json",
+      "sha256": "d580be48ce3781048b8829ac94973d9f8e9be647086822c48116ff64c1c2f12a",
+      "original_pose": "current_controls_right_before",
+      "derived_evidence": "aligned_right_before.json",
+      "owner": {
+        "pid": 87952,
+        "created": 1791188496.384482
+      },
+      "sample_count": 40,
+      "first_host": "2026-10-05T18:06:37.132812+08:00",
+      "last_host": "2026-10-05T18:06:42.262087+08:00",
+      "first_frame": 1231589,
+      "last_frame": 1232614,
+      "original_offset": [
+        27937,
+        27424,
+        25900,
+        26714,
+        26364,
+        26428,
+        27306.5,
+        26062,
+        28537,
+        28148,
+        29139.5,
+        28211
+      ],
+      "recovery_first": {
+        "attempts": 30,
+        "successes": 2,
+        "last_fault": {
+          "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+          "observed_at": 1791191196.812484,
+          "frames": 511536,
+          "diagnostics": {
+            "serial_reads": 23443,
+            "serial_bytes": 13299988,
+            "parsed_frames": 511536,
+            "last_byte_at": 1791191194.738695,
+            "last_parsed_frame_at": 1791191194.738695,
+            "parser_pending_bytes": 26,
+            "parser_discarded_bytes": 0
+          }
+        }
+      },
+      "recovery_last": {
+        "attempts": 30,
+        "successes": 2,
+        "last_fault": {
+          "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+          "observed_at": 1791191196.812484,
+          "frames": 511536,
+          "diagnostics": {
+            "serial_reads": 23443,
+            "serial_bytes": 13299988,
+            "parsed_frames": 511536,
+            "last_byte_at": 1791191194.738695,
+            "last_parsed_frame_at": 1791191194.738695,
+            "parser_pending_bytes": 26,
+            "parser_discarded_bytes": 0
+          }
+        }
+      },
+      "original_channels_median": [
+        -31.0,
+        -18.5,
+        -21.0,
+        -20.0,
+        8.0,
+        -19.5,
+        2.5,
+        -20.5,
+        -12.5,
+        -16.5,
+        -24.5,
+        -20.5
+      ],
+      "raw_median": [
+        27906.0,
+        27405.5,
+        25879.0,
+        26694.0,
+        26372.0,
+        26408.5,
+        27309.0,
+        26041.5,
+        28524.5,
+        28131.5,
+        29115.0,
+        28190.5
+      ],
+      "aligned_channels_median": [
+        -137.0,
+        -160.5,
+        -169.0,
+        -187.5,
+        -103.0,
+        -124.5,
+        -150.0,
+        -170.0,
+        -61.5,
+        -64.5,
+        -80.0,
+        -79.0
+      ],
+      "duration_seconds": 5.129275
+    },
+    "right": {
+      "path": "calibration/shear_refit_20261005_after_button/fit/current_controls_right.json",
+      "sha256": "95d531c3dcc96502941f5a919625578b91f6afd98495f86e384a248bd3c13446",
+      "original_pose": "current_controls_right",
+      "derived_evidence": "aligned_right.json",
+      "owner": {
+        "pid": 87952,
+        "created": 1791188496.384482
+      },
+      "sample_count": 41,
+      "first_host": "2026-10-05T18:11:41.855675+08:00",
+      "last_host": "2026-10-05T18:11:46.964546+08:00",
+      "first_frame": 1292525,
+      "last_frame": 1293551,
+      "original_offset": [
+        27937,
+        27424,
+        25900,
+        26714,
+        26364,
+        26428,
+        27306.5,
+        26062,
+        28537,
+        28148,
+        29139.5,
+        28211
+      ],
+      "recovery_first": {
+        "attempts": 30,
+        "successes": 2,
+        "last_fault": {
+          "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+          "observed_at": 1791191196.812484,
+          "frames": 511536,
+          "diagnostics": {
+            "serial_reads": 23443,
+            "serial_bytes": 13299988,
+            "parsed_frames": 511536,
+            "last_byte_at": 1791191194.738695,
+            "last_parsed_frame_at": 1791191194.738695,
+            "parser_pending_bytes": 26,
+            "parser_discarded_bytes": 0
+          }
+        }
+      },
+      "recovery_last": {
+        "attempts": 30,
+        "successes": 2,
+        "last_fault": {
+          "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+          "observed_at": 1791191196.812484,
+          "frames": 511536,
+          "diagnostics": {
+            "serial_reads": 23443,
+            "serial_bytes": 13299988,
+            "parsed_frames": 511536,
+            "last_byte_at": 1791191194.738695,
+            "last_parsed_frame_at": 1791191194.738695,
+            "parser_pending_bytes": 26,
+            "parser_discarded_bytes": 0
+          }
+        }
+      },
+      "original_channels_median": [
+        1019,
+        1009,
+        857,
+        1352,
+        1149,
+        1306,
+        1049.5,
+        724,
+        985,
+        977,
+        1165.5,
+        948
+      ],
+      "raw_median": [
+        28956,
+        28433,
+        26757,
+        28066,
+        27513,
+        27734,
+        28356,
+        26786,
+        29522,
+        29125,
+        30305,
+        29159
+      ],
+      "aligned_channels_median": [
+        913,
+        867,
+        709,
+        1184.5,
+        1038,
+        1201,
+        897,
+        574.5,
+        936,
+        929,
+        1110,
+        889.5
+      ],
+      "duration_seconds": 5.108871
+    },
+    "right_after": {
+      "path": "calibration/shear_refit_20261005_after_button/fit/current_controls_right_after.json",
+      "sha256": "274385c8b3f89951350ffd92b0c864956b11c2f5c8a241f3d635cfa206ae2613",
+      "original_pose": "current_controls_right_after",
+      "derived_evidence": "aligned_right_after.json",
+      "owner": {
+        "pid": 87952,
+        "created": 1791188496.384482
+      },
+      "sample_count": 40,
+      "first_host": "2026-10-05T18:18:51.500012+08:00",
+      "last_host": "2026-10-05T18:18:56.506785+08:00",
+      "first_frame": 1377998,
+      "last_frame": 1379001,
+      "original_offset": [
+        27937,
+        27424,
+        25900,
+        26714,
+        26364,
+        26428,
+        27306.5,
+        26062,
+        28537,
+        28148,
+        29139.5,
+        28211
+      ],
+      "recovery_first": {
+        "attempts": 31,
+        "successes": 3,
+        "last_fault": {
+          "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+          "observed_at": 1791195121.7326481,
+          "frames": 1296085,
+          "diagnostics": {
+            "serial_reads": 59382,
+            "serial_bytes": 33698288,
+            "parsed_frames": 1296085,
+            "last_byte_at": 1791195119.664947,
+            "last_parsed_frame_at": 1791195119.664947,
+            "parser_pending_bytes": 26,
+            "parser_discarded_bytes": 0
+          }
+        }
+      },
+      "recovery_last": {
+        "attempts": 31,
+        "successes": 3,
+        "last_fault": {
+          "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+          "observed_at": 1791195121.7326481,
+          "frames": 1296085,
+          "diagnostics": {
+            "serial_reads": 59382,
+            "serial_bytes": 33698288,
+            "parsed_frames": 1296085,
+            "last_byte_at": 1791195119.664947,
+            "last_parsed_frame_at": 1791195119.664947,
+            "parser_pending_bytes": 26,
+            "parser_discarded_bytes": 0
+          }
+        }
+      },
+      "original_channels_median": [
+        -25.0,
+        -40.0,
+        -16.5,
+        -42.5,
+        -15.0,
+        -18.5,
+        -32.0,
+        -35.5,
+        -21.5,
+        -22.0,
+        -26.5,
+        -19.5
+      ],
+      "raw_median": [
+        27912.0,
+        27384.0,
+        25883.5,
+        26671.5,
+        26349.0,
+        26409.5,
+        27274.5,
+        26026.5,
+        28515.5,
+        28126.0,
+        29113.0,
+        28191.5
+      ],
+      "aligned_channels_median": [
+        -131.0,
+        -182.0,
+        -164.5,
+        -210.0,
+        -126.0,
+        -123.5,
+        -184.5,
+        -185.0,
+        -70.5,
+        -70.0,
+        -82.0,
+        -78.0
+      ],
+      "duration_seconds": 5.006773
+    }
+  },
+  "status": "error",
+  "reference_offset": [
+    28043,
+    27566,
+    26048,
+    26881.5,
+    26475,
+    26533,
+    27459,
+    26211.5,
+    28586,
+    28196,
+    29195,
+    28269.5
+  ],
+  "reference_source": "calibration/shear_refit_20261005_after_button/fit/current_controls_empty.json",
+  "common_replay_baseline": [
+    -118,
+    -158,
+    -150,
+    -188.5,
+    -122,
+    -115,
+    -167,
+    -173.5,
+    -69,
+    -59,
+    -77,
+    -66.5
+  ],
+  "production_profile": {
+    "path": "demo_web/shear_demo_profile.json",
+    "sha256": "fae3ea39d65d105795b6cea8e34b999d939a9ab9afbf0495ab5e15614b728e83"
+  },
+  "error": {
+    "type": "ValueError",
+    "message": "qualitative directions do not separate from background"
+  },
+  "reference_equivalence": "Fit subtracts a local unloaded median per action; replay subtracts the same common press_before median. Changing the fixed raw-alignment reference adds one constant vector to all channels and to the replay baseline, so candidate and per-sample replay are identical. Reported aligned medians and baseline use current_controls_empty as reference.",
+  "recovery_counters": {
+    "left_before": {
+      "first": {
+        "attempts": 30,
+        "successes": 2
+      },
+      "last": {
+        "attempts": 30,
+        "successes": 2
+      }
+    },
+    "left": {
+      "first": {
+        "attempts": 30,
+        "successes": 2
+      },
+      "last": {
+        "attempts": 30,
+        "successes": 2
+      }
+    },
+    "press_before": {
+      "first": {
+        "attempts": 30,
+        "successes": 2
+      },
+      "last": {
+        "attempts": 30,
+        "successes": 2
+      }
+    },
+    "press": {
+      "first": {
+        "attempts": 30,
+        "successes": 2
+      },
+      "last": {
+        "attempts": 30,
+        "successes": 2
+      }
+    },
+    "press_after": {
+      "first": {
+        "attempts": 30,
+        "successes": 2
+      },
+      "last": {
+        "attempts": 30,
+        "successes": 2
+      }
+    },
+    "right_before": {
+      "first": {
+        "attempts": 30,
+        "successes": 2
+      },
+      "last": {
+        "attempts": 30,
+        "successes": 2
+      }
+    },
+    "right": {
+      "first": {
+        "attempts": 30,
+        "successes": 2
+      },
+      "last": {
+        "attempts": 30,
+        "successes": 2
+      }
+    },
+    "right_after": {
+      "first": {
+        "attempts": 31,
+        "successes": 3
+      },
+      "last": {
+        "attempts": 31,
+        "successes": 3
+      }
+    }
+  },
+  "stable_recovery_within_windows": true,
+  "homogeneous_recovery_across_windows": false,
+  "same_stream_provenance_gate": false,
+  "fit_replay_gate": null,
+  "fit_failure_diagnostics": {
+    "rule": "right median must exceed +threshold and left median must be below -threshold",
+    "threshold": 36.784893780759646,
+    "background_abs_p95_before_multiplier": 35.03323217215204,
+    "direction_magnitude": 265.79017451956815,
+    "scores": {
+      "press": {
+        "count": 42,
+        "min": -44.71677673495857,
+        "median": -4.4176796485671534,
+        "max": 49.33468998707561,
+        "fraction_past_signed_threshold": null
+      },
+      "right": {
+        "count": 41,
+        "min": -44.33630375853065,
+        "median": 27.966604917385453,
+        "max": 104.11211003556598,
+        "fraction_past_signed_threshold": 0.4146341463414634
+      },
+      "left": {
+        "count": 40,
+        "min": -271.0401507263306,
+        "median": -238.35333515457455,
+        "max": -208.53769643576734,
+        "fraction_past_signed_threshold": 1.0
+      }
+    },
+    "all_sample_scores": {
+      "left_before": [
+        -7.309069702157403,
+        -29.448293530530908,
+        25.011701847605497,
+        1.4285002408310832,
+        -25.7001156560024,
+        19.156098767359374,
+        4.771666153925853,
+        7.462375030857448,
+        -8.50331246716649,
+        -25.901451181111735,
+        13.334263286223898,
+        -8.967803277944295,
+        31.52671727346428,
+        4.958833853938724,
+        22.88779678377829,
+        -13.082620610051245,
+        12.52623457393172,
+        -21.262942485215504,
+        -3.081925065629471,
+        -9.199126257244204,
+        2.5899879720183034,
+        -12.429206044401791,
+        -5.749891611309227,
+        -18.9951641269978,
+        4.18586931142797,
+        -6.07401212143338,
+        -12.693284372592426,
+        18.16018949531645,
+        8.899518353174901,
+        26.72652474737576,
+        -4.2588285394603265,
+        16.06445047627427,
+        1.8640708568958602,
+        16.887869833778026,
+        4.973991882990316,
+        7.906909702027114,
+        -5.940418984023085,
+        10.049617959485065,
+        -9.044074750563217,
+        -9.272289525205762,
+        4.831813313181873
+      ],
+      "left": [
+        -233.4278434367263,
+        -224.5156375719241,
+        -232.66202267276947,
+        -250.28461641243422,
+        -215.42166982154572,
+        -208.53769643576734,
+        -239.10932593669764,
+        -240.93340396961852,
+        -233.79902748008325,
+        -222.09832781465707,
+        -237.36922358162053,
+        -257.77098533301915,
+        -247.51664419468824,
+        -242.47847170205893,
+        -231.47812539489613,
+        -247.7573142988804,
+        -241.0201583238137,
+        -256.3867899314806,
+        -250.94205554066465,
+        -237.59734437245146,
+        -244.60325434736464,
+        -251.14088369061895,
+        -243.34158870486354,
+        -229.88232030297283,
+        -237.34179762968893,
+        -236.472233671046,
+        -229.92841939466066,
+        -244.3388788700367,
+        -256.1205155629227,
+        -244.6391154761091,
+        -233.22696624338988,
+        -271.0401507263306,
+        -211.28057486166853,
+        -222.50348290147608,
+        -256.2819941669529,
+        -229.36867223176571,
+        -218.8143898906651,
+        -246.9216128793844,
+        -247.44862411507995,
+        -227.0606533181016
+      ],
+      "press_before": [
+        29.947002134623236,
+        -22.78572693151462,
+        0.5462006149610613,
+        10.150505576980024,
+        3.8965289616760757,
+        13.3106380445886,
+        -14.049127720239893,
+        -8.045320506555989,
+        0.7761657473205382,
+        6.203815095154593,
+        4.684425958740701,
+        -29.597815204071644,
+        25.3615674061566,
+        27.034737870948366,
+        25.293117100257966,
+        -15.421644154803209,
+        15.552980278551189,
+        1.357647761689587,
+        25.653595296255094,
+        -5.958135211383074,
+        2.3111293008069054,
+        18.215544299195464,
+        -3.85363612213924,
+        -1.8005828578087253,
+        26.112309208071213,
+        -18.977071430175876,
+        -22.491554500960163,
+        1.6017578371448526,
+        -9.891355409534102,
+        2.234464530503332,
+        33.32404657563994,
+        -31.536555979773997,
+        -26.519027190561268,
+        6.659026413666629,
+        -4.367907615309712,
+        -9.864201420406943,
+        19.124248585813305,
+        20.715133968192088,
+        31.839359641763902,
+        -5.077665263722204,
+        9.607403460979242
+      ],
+      "press": [
+        -1.2984138684783524,
+        -16.682419130648256,
+        -6.085015056277737,
+        30.916759930106195,
+        21.48027930192305,
+        3.979852981887365,
+        -18.210878462324494,
+        25.317535063327533,
+        49.33468998707561,
+        -2.883299823016829,
+        -35.17368842623635,
+        -23.55248273520919,
+        7.6539543022856655,
+        18.10570650708851,
+        -25.402202626644616,
+        18.039277538254343,
+        20.20662750259431,
+        22.361268347757758,
+        -15.38600535723908,
+        -37.79943614649825,
+        -22.453447441001313,
+        -37.37012554514409,
+        -31.39595798992626,
+        24.132180932552707,
+        -37.512970326735115,
+        13.190467693846877,
+        -44.71677673495857,
+        10.606524453790996,
+        31.556173974750678,
+        37.34114090189567,
+        17.704215816568368,
+        -16.93336552016524,
+        -16.780207637673634,
+        -34.47140715581477,
+        -30.897735600177867,
+        -24.50721376277446,
+        -41.538572429332696,
+        14.596495899910357,
+        -5.952059474117478,
+        -11.88219351675641,
+        14.770565680669428,
+        27.56238323096747
+      ],
+      "press_after": [
+        13.511302259059626,
+        24.815054461180033,
+        39.648199728612234,
+        3.5318821563311733,
+        18.95708833086391,
+        11.326428985247816,
+        0.7564971818657918,
+        -26.61485305976438,
+        23.42339621458818,
+        -7.410609605542231,
+        14.933401196461457,
+        16.05581827731759,
+        -2.3804983960481607,
+        -4.250869109519314,
+        -2.744349292912044,
+        28.049948783638296,
+        -12.316246616624033,
+        5.555034752990037,
+        -7.862957736292245,
+        24.335175702471016,
+        -9.916330518177764,
+        13.794030692956493,
+        -32.611430850302845,
+        8.701991047792557,
+        12.116957465630989,
+        -18.847931303085403,
+        57.7457855894032,
+        20.36976869461448,
+        29.074978434852614,
+        -1.0258702502536072,
+        -35.52656327243647,
+        11.187968691669727,
+        4.3228391094136,
+        14.862492333625195,
+        -3.1593274327478533,
+        -1.8368108995601835,
+        -18.751460996730664,
+        -5.501734230793101,
+        -13.855032211554184,
+        -1.765923145661674,
+        16.475905387363632
+      ],
+      "right_before": [
+        14.192566916349515,
+        3.51910034022155,
+        17.492716161405674,
+        -13.56577204063502,
+        14.1500951764741,
+        -21.365149246507308,
+        12.859676192421462,
+        -10.490397933908103,
+        17.153951357762242,
+        -7.641135987418092,
+        13.319997651867281,
+        -24.05713160202254,
+        -5.417018510410789,
+        -4.268531523361628,
+        -4.509888510701501,
+        -12.186470946829655,
+        23.990803704251626,
+        27.480582367312692,
+        13.266838469661913,
+        -21.678237214727073,
+        6.5742392722943785,
+        16.07610938963772,
+        -8.585347122925619,
+        -5.912383689151221,
+        3.4580287556366995,
+        -2.7068344094558916,
+        -28.268868582674397,
+        6.293937506155689,
+        25.78600216622809,
+        27.793991056777458,
+        31.758798971946895,
+        5.079067877196554,
+        -8.70736661165052,
+        5.2536477279130525,
+        0.5922714033729848,
+        -1.4275914295520733,
+        -1.8745362512107935,
+        18.729497307719708,
+        27.50615250289212,
+        -1.414734630852018
+      ],
+      "right": [
+        -20.38576147103642,
+        -8.580035640996535,
+        -11.03002950864614,
+        -40.798600834674765,
+        -41.878609342854716,
+        -13.863148694725147,
+        -44.33630375853065,
+        32.23659768421225,
+        14.857860520112323,
+        23.685586619696192,
+        8.32820614904113,
+        13.112488311659048,
+        73.45349700301004,
+        52.756389608483516,
+        60.648257795784254,
+        50.888701721169255,
+        75.3396169886563,
+        42.68240434574655,
+        56.503132157456605,
+        104.11211003556598,
+        57.2775508550006,
+        78.78081969712575,
+        68.51520999502728,
+        37.74181810471415,
+        56.6979088407408,
+        64.24134798253054,
+        29.265956020115667,
+        25.676003712868567,
+        54.281779325119814,
+        26.64978467296588,
+        49.889734331968086,
+        2.451941323091418,
+        27.966604917385453,
+        36.429442902102934,
+        52.52780617511421,
+        -3.251154052091409,
+        24.562319535575433,
+        -2.8192088371711406,
+        1.9836768875756676,
+        -3.5475209906883918,
+        13.158590672924108
+      ],
+      "right_after": [
+        -18.985386666555282,
+        19.661440416254948,
+        -13.721222994302538,
+        8.674918418082749,
+        0.11452489837326929,
+        8.965551234915797,
+        -5.490878460089735,
+        13.100839790214625,
+        20.981439902485782,
+        25.16725406011829,
+        -8.589196256493848,
+        13.825956689998536,
+        -18.72655875986992,
+        22.611602829684326,
+        24.218064775669983,
+        8.103096997954626,
+        39.68910960086596,
+        15.52621056049102,
+        22.542705115517126,
+        -12.95690666343438,
+        5.017644722910894,
+        -18.835557277052445,
+        9.583792814423965,
+        26.95936300315402,
+        -17.956926986778257,
+        21.49187782432806,
+        35.68803399865965,
+        -5.582743226295777,
+        22.871717378050825,
+        0.17782930511979994,
+        -0.9604597355053861,
+        -16.43507413962875,
+        1.466188577222036,
+        15.441032692348909,
+        -17.241841577840642,
+        22.637101946236378,
+        5.0350318964599055,
+        -5.475101268581535,
+        9.808318987378918,
+        -7.021060960385414
+      ]
+    },
+    "press_leak": [
+      -0.018262174783188794,
+      -0.03460640426951301,
+      -0.13008672448298866,
+      0.2391594396264176,
+      0.06429286190793862,
+      0.18295530353569045,
+      0.031187458305537024,
+      -0.2541694462975317
+    ],
+    "weights": [
+      0.6151586444838852,
+      -0.4863111673683181,
+      -0.2451739882596483,
+      0.43741841792280134,
+      -0.3090139211571663,
+      -0.09819719269858655,
+      0.1659345612480169,
+      0.031137806811033633
+    ]
+  },
+  "logical_label_order": [
+    "press_before",
+    "press",
+    "press_after",
+    "right_before",
+    "right",
+    "right_after",
+    "left_before",
+    "left"
+  ],
+  "actual_acquisition_order": [
+    "left_before",
+    "left",
+    "press_before",
+    "press",
+    "press_after",
+    "right_before",
+    "right",
+    "right_after"
+  ],
+  "strict_host_frame_order_validated": true,
+  "ordering_note": "The user acquired confirmed left and its empty control before the current press/right controls. Validation uses strict actual host/frame order; stored values were not changed.",
+  "excluded_operator_typo": "calibration/shear_refit_20261005_after_button/fit/left_repeat.json (operator confirmed actually empty)",
+  "production_file_changes": false,
+  "source_hashes_verified_after_run": true
+}

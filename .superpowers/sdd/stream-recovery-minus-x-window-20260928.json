@@ -1,0 +1,1706 @@
+{
+  "errors": [],
+  "operator_state": "upper PCB relative to fixed lower PCB lightly held in -X, screen right, explicitly confirmed",
+  "owners": [
+    {
+      "ProcessId": 18408,
+      "Name": "python.exe",
+      "CommandLine": "\"D:\\conda\\python.exe\" coinft_demo.py --port COM6 --no-browser "
+    }
+  ],
+  "capture_elapsed_seconds": 5.0135825999999994,
+  "thresholds": {
+    "invalid_delta_max": 0,
+    "expected_port": "COM6",
+    "rate_max_hz": 250,
+    "resync_delta_max": 0,
+    "duration_seconds": 5,
+    "minimum_samples": 15,
+    "saturated_delta_max": 0,
+    "expected_pid": 18408,
+    "rate_min_hz": 150
+  },
+  "checked_at": "2026-09-28T18:14:29.8839483+08:00",
+  "samples": [
+    {
+      "elapsed_seconds": 0.037611399999999996,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          0.0735961,
+          -0.1623154,
+          -3.0446805,
+          0.0003561,
+          0.001853,
+          0.0015039
+        ],
+        "channels": [
+          1251,
+          1225,
+          1124,
+          1464,
+          1297,
+          1493,
+          1239.5,
+          877,
+          1150.5,
+          1125.5,
+          1357,
+          1083
+        ],
+        "raw": [
+          28906,
+          28276,
+          26654,
+          27857,
+          27267,
+          27553,
+          28176,
+          26623,
+          29495,
+          29072,
+          30273,
+          29093
+        ],
+        "rate": 199.9,
+        "frames": 320025,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 5,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790590464.8861995,
+        "diagnostics": {
+          "serial_reads": 14732,
+          "serial_bytes": 8320676,
+          "parsed_frames": 320025,
+          "last_byte_at": 1790590464.884965,
+          "last_parsed_frame_at": 1790590464.884965,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 0,
+          "successes": 0,
+          "last_fault": null
+        }
+      }
+    },
+    {
+      "elapsed_seconds": 0.2531352,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          0.075625,
+          -0.1458851,
+          -3.0401945,
+          0.0003663,
+          0.0018381,
+          0.0015289
+        ],
+        "channels": [
+          1250,
+          1286,
+          1115,
+          1512,
+          1412,
+          1501,
+          1347.5,
+          887,
+          1173.5,
+          1147.5,
+          1370,
+          1103
+        ],
+        "raw": [
+          28905,
+          28337,
+          26645,
+          27905,
+          27382,
+          27561,
+          28284,
+          26633,
+          29518,
+          29094,
+          30286,
+          29113
+        ],
+        "rate": 199.9,
+        "frames": 320069,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 5,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790590465.107113,
+        "diagnostics": {
+          "serial_reads": 14734,
+          "serial_bytes": 8321820,
+          "parsed_frames": 320069,
+          "last_byte_at": 1790590465.1059787,
+          "last_parsed_frame_at": 1790590465.1059787,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 0,
+          "successes": 0,
+          "last_fault": null
+        }
+      }
+    },
+    {
+      "elapsed_seconds": 0.4547419,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          0.075417,
+          -0.1616234,
+          -3.0413823,
+          0.0003566,
+          0.0018382,
+          0.0015214
+        ],
+        "channels": [
+          1263,
+          1225,
+          1107,
+          1450,
+          1289,
+          1458,
+          1198.5,
+          806,
+          1194.5,
+          1154.5,
+          1357,
+          1113
+        ],
+        "raw": [
+          28918,
+          28276,
+          26637,
+          27843,
+          27259,
+          27518,
+          28135,
+          26552,
+          29539,
+          29101,
+          30273,
+          29123
+        ],
+        "rate": 199.9,
+        "frames": 320113,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 5,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790590465.324047,
+        "diagnostics": {
+          "serial_reads": 14736,
+          "serial_bytes": 8322964,
+          "parsed_frames": 320113,
+          "last_byte_at": 1790590465.3229978,
+          "last_parsed_frame_at": 1790590465.3229978,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 0,
+          "successes": 0,
+          "last_fault": null
+        }
+      }
+    },
+    {
+      "elapsed_seconds": 0.6574977,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          0.0717926,
+          -0.1549561,
+          -3.0447537,
+          0.0003626,
+          0.0018298,
+          0.001514
+        ],
+        "channels": [
+          1210,
+          1261,
+          1051,
+          1489,
+          1250,
+          1423,
+          1178.5,
+          781,
+          1152.5,
+          1138.5,
+          1377,
+          1170
+        ],
+        "raw": [
+          28865,
+          28312,
+          26581,
+          27882,
+          27220,
+          27483,
+          28115,
+          26527,
+          29497,
+          29085,
+          30293,
+          29180
+        ],
+        "rate": 199.9,
+        "frames": 320134,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 5,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790590465.4326546,
+        "diagnostics": {
+          "serial_reads": 14737,
+          "serial_bytes": 8323510,
+          "parsed_frames": 320134,
+          "last_byte_at": 1790590465.431652,
+          "last_parsed_frame_at": 1790590465.431652,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 0,
+          "successes": 0,
+          "last_fault": null
+        }
+      }
+    },
+    {
+      "elapsed_seconds": 0.8599688,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          0.0709345,
+          -0.1492991,
+          -3.0467255,
+          0.0003642,
+          0.0018304,
+          0.0015058
+        ],
+        "channels": [
+          1172,
+          1233,
+          1020,
+          1439,
+          1410,
+          1509,
+          1333.5,
+          945,
+          1182.5,
+          1141.5,
+          1356,
+          1135
+        ],
+        "raw": [
+          28827,
+          28284,
+          26550,
+          27832,
+          27380,
+          27569,
+          28270,
+          26691,
+          29527,
+          29088,
+          30272,
+          29145
+        ],
+        "rate": 199.9,
+        "frames": 320178,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 5,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790590465.6514008,
+        "diagnostics": {
+          "serial_reads": 14739,
+          "serial_bytes": 8324654,
+          "parsed_frames": 320178,
+          "last_byte_at": 1790590465.6503744,
+          "last_parsed_frame_at": 1790590465.6503744,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 0,
+          "successes": 0,
+          "last_fault": null
+        }
+      }
+    },
+    {
+      "elapsed_seconds": 1.0779933,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          0.0776689,
+          -0.1530232,
+          -3.0453351,
+          0.0003621,
+          0.0018348,
+          0.001517
+        ],
+        "channels": [
+          1257,
+          1271,
+          1106,
+          1530,
+          1336,
+          1561,
+          1265.5,
+          977,
+          1189.5,
+          1162.5,
+          1412,
+          1151
+        ],
+        "raw": [
+          28912,
+          28322,
+          26636,
+          27923,
+          27306,
+          27621,
+          28202,
+          26723,
+          29534,
+          29109,
+          30328,
+          29161
+        ],
+        "rate": 199.9,
+        "frames": 320222,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 5,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790590465.8690674,
+        "diagnostics": {
+          "serial_reads": 14741,
+          "serial_bytes": 8325798,
+          "parsed_frames": 320222,
+          "last_byte_at": 1790590465.868046,
+          "last_parsed_frame_at": 1790590465.868046,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 0,
+          "successes": 0,
+          "last_fault": null
+        }
+      }
+    },
+    {
+      "elapsed_seconds": 1.2949711,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          0.0800341,
+          -0.1474211,
+          -3.0461973,
+          0.0003615,
+          0.0018078,
+          0.0015236
+        ],
+        "channels": [
+          1257,
+          1204,
+          1142,
+          1434,
+          1385,
+          1382,
+          1317.5,
+          803,
+          1202.5,
+          1176.5,
+          1330,
+          1108
+        ],
+        "raw": [
+          28912,
+          28255,
+          26672,
+          27827,
+          27355,
+          27442,
+          28254,
+          26549,
+          29547,
+          29123,
+          30246,
+          29118
+        ],
+        "rate": 199.9,
+        "frames": 320265,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 5,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790590466.0858426,
+        "diagnostics": {
+          "serial_reads": 14743,
+          "serial_bytes": 8326916,
+          "parsed_frames": 320265,
+          "last_byte_at": 1790590466.0848856,
+          "last_parsed_frame_at": 1790590466.0848856,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 0,
+          "successes": 0,
+          "last_fault": null
+        }
+      }
+    },
+    {
+      "elapsed_seconds": 1.4975873,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          0.07913,
+          -0.1680743,
+          -3.0447113,
+          0.0003567,
+          0.0018189,
+          0.0015211
+        ],
+        "channels": [
+          1249,
+          1322,
+          1108,
+          1545,
+          1360,
+          1441,
+          1311.5,
+          805,
+          1219.5,
+          1178.5,
+          1374,
+          1160
+        ],
+        "raw": [
+          28904,
+          28373,
+          26638,
+          27938,
+          27330,
+          27501,
+          28248,
+          26551,
+          29564,
+          29125,
+          30290,
+          29170
+        ],
+        "rate": 199.9,
+        "frames": 320309,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 5,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790590466.3058527,
+        "diagnostics": {
+          "serial_reads": 14745,
+          "serial_bytes": 8328060,
+          "parsed_frames": 320309,
+          "last_byte_at": 1790590466.3048024,
+          "last_parsed_frame_at": 1790590466.3048024,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 0,
+          "successes": 0,
+          "last_fault": null
+        }
+      }
+    },
+    {
+      "elapsed_seconds": 1.700321,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          0.078829,
+          -0.157079,
+          -3.0441458,
+          0.0003582,
+          0.0018009,
+          0.0015273
+        ],
+        "channels": [
+          1228,
+          1260,
+          1095,
+          1504,
+          1366,
+          1458,
+          1317.5,
+          829,
+          1165.5,
+          1138.5,
+          1342,
+          1091
+        ],
+        "raw": [
+          28883,
+          28311,
+          26625,
+          27897,
+          27336,
+          27518,
+          28254,
+          26575,
+          29510,
+          29085,
+          30258,
+          29101
+        ],
+        "rate": 199.9,
+        "frames": 320353,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 5,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790590466.5231342,
+        "diagnostics": {
+          "serial_reads": 14747,
+          "serial_bytes": 8329204,
+          "parsed_frames": 320353,
+          "last_byte_at": 1790590466.5221136,
+          "last_parsed_frame_at": 1790590466.5221136,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 0,
+          "successes": 0,
+          "last_fault": null
+        }
+      }
+    },
+    {
+      "elapsed_seconds": 1.9030467,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          0.0774142,
+          -0.152645,
+          -3.0406074,
+          0.000374,
+          0.0018115,
+          0.0015153
+        ],
+        "channels": [
+          1239,
+          1256,
+          1111,
+          1490,
+          1329,
+          1460,
+          1235.5,
+          861,
+          1215.5,
+          1176.5,
+          1414,
+          1186
+        ],
+        "raw": [
+          28894,
+          28307,
+          26641,
+          27883,
+          27299,
+          27520,
+          28172,
+          26607,
+          29560,
+          29123,
+          30330,
+          29196
+        ],
+        "rate": 199.9,
+        "frames": 320396,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 5,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790590466.7408721,
+        "diagnostics": {
+          "serial_reads": 14749,
+          "serial_bytes": 8330322,
+          "parsed_frames": 320396,
+          "last_byte_at": 1790590466.7398481,
+          "last_parsed_frame_at": 1790590466.7398481,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 0,
+          "successes": 0,
+          "last_fault": null
+        }
+      }
+    },
+    {
+      "elapsed_seconds": 2.1063283999999998,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          0.0772517,
+          -0.1517328,
+          -3.0391712,
+          0.0003657,
+          0.0018053,
+          0.0015235
+        ],
+        "channels": [
+          1233,
+          1215,
+          1078,
+          1438,
+          1402,
+          1357,
+          1317.5,
+          790,
+          1155.5,
+          1141.5,
+          1378,
+          1117
+        ],
+        "raw": [
+          28888,
+          28266,
+          26608,
+          27831,
+          27372,
+          27417,
+          28254,
+          26536,
+          29500,
+          29088,
+          30294,
+          29127
+        ],
+        "rate": 199.9,
+        "frames": 320440,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 5,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790590466.9597101,
+        "diagnostics": {
+          "serial_reads": 14751,
+          "serial_bytes": 8331466,
+          "parsed_frames": 320440,
+          "last_byte_at": 1790590466.9586134,
+          "last_parsed_frame_at": 1790590466.9586134,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 0,
+          "successes": 0,
+          "last_fault": null
+        }
+      }
+    },
+    {
+      "elapsed_seconds": 2.323492,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          0.0768251,
+          -0.1682128,
+          -3.0464581,
+          0.0003527,
+          0.0018399,
+          0.0015166
+        ],
+        "channels": [
+          1173,
+          1194,
+          1020,
+          1421,
+          1388,
+          1535,
+          1333.5,
+          899,
+          1198.5,
+          1182.5,
+          1350,
+          1134
+        ],
+        "raw": [
+          28828,
+          28245,
+          26550,
+          27814,
+          27358,
+          27595,
+          28270,
+          26645,
+          29543,
+          29129,
+          30266,
+          29144
+        ],
+        "rate": 199.9,
+        "frames": 320483,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 5,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790590467.1772716,
+        "diagnostics": {
+          "serial_reads": 14753,
+          "serial_bytes": 8332584,
+          "parsed_frames": 320483,
+          "last_byte_at": 1790590467.17606,
+          "last_parsed_frame_at": 1790590467.17606,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 0,
+          "successes": 0,
+          "last_fault": null
+        }
+      }
+    },
+    {
+      "elapsed_seconds": 2.5275863,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          0.0807196,
+          -0.160625,
+          -3.0407023,
+          0.0003609,
+          0.0018195,
+          0.0015156
+        ],
+        "channels": [
+          1177,
+          1361,
+          1011,
+          1546,
+          1283,
+          1407,
+          1221.5,
+          834,
+          1168.5,
+          1143.5,
+          1365,
+          1114
+        ],
+        "raw": [
+          28832,
+          28412,
+          26541,
+          27939,
+          27253,
+          27467,
+          28158,
+          26580,
+          29513,
+          29090,
+          30281,
+          29124
+        ],
+        "rate": 199.9,
+        "frames": 320527,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 5,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790590467.3969212,
+        "diagnostics": {
+          "serial_reads": 14755,
+          "serial_bytes": 8333728,
+          "parsed_frames": 320527,
+          "last_byte_at": 1790590467.3958833,
+          "last_parsed_frame_at": 1790590467.3958833,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 0,
+          "successes": 0,
+          "last_fault": null
+        }
+      }
+    },
+    {
+      "elapsed_seconds": 2.7422648,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          0.0803741,
+          -0.1566199,
+          -3.0424815,
+          0.0003625,
+          0.0018321,
+          0.0015103
+        ],
+        "channels": [
+          1219,
+          1284,
+          1080,
+          1487,
+          1336,
+          1497,
+          1253.5,
+          870,
+          1146.5,
+          1106.5,
+          1372,
+          1126
+        ],
+        "raw": [
+          28874,
+          28335,
+          26610,
+          27880,
+          27306,
+          27557,
+          28190,
+          26616,
+          29491,
+          29053,
+          30288,
+          29136
+        ],
+        "rate": 199.9,
+        "frames": 320570,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 5,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790590467.6116502,
+        "diagnostics": {
+          "serial_reads": 14757,
+          "serial_bytes": 8334846,
+          "parsed_frames": 320570,
+          "last_byte_at": 1790590467.61067,
+          "last_parsed_frame_at": 1790590467.61067,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 0,
+          "successes": 0,
+          "last_fault": null
+        }
+      }
+    },
+    {
+      "elapsed_seconds": 2.9581291999999997,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          0.0755322,
+          -0.1494583,
+          -3.0495952,
+          0.0003649,
+          0.0018125,
+          0.001525
+        ],
+        "channels": [
+          1195,
+          1225,
+          1029,
+          1418,
+          1274,
+          1490,
+          1205.5,
+          905,
+          1168.5,
+          1132.5,
+          1370,
+          1089
+        ],
+        "raw": [
+          28850,
+          28276,
+          26559,
+          27811,
+          27244,
+          27550,
+          28142,
+          26651,
+          29513,
+          29079,
+          30286,
+          29099
+        ],
+        "rate": 199.9,
+        "frames": 320613,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 5,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790590467.8275387,
+        "diagnostics": {
+          "serial_reads": 14759,
+          "serial_bytes": 8335964,
+          "parsed_frames": 320613,
+          "last_byte_at": 1790590467.8265395,
+          "last_parsed_frame_at": 1790590467.8265395,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 0,
+          "successes": 0,
+          "last_fault": null
+        }
+      }
+    },
+    {
+      "elapsed_seconds": 3.1623816,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          0.0795761,
+          -0.1489376,
+          -3.0468266,
+          0.0003667,
+          0.0018226,
+          0.0015203
+        ],
+        "channels": [
+          1200,
+          1179,
+          1064,
+          1411,
+          1250,
+          1440,
+          1171.5,
+          826,
+          1206.5,
+          1178.5,
+          1378,
+          1134
+        ],
+        "raw": [
+          28855,
+          28230,
+          26594,
+          27804,
+          27220,
+          27500,
+          28108,
+          26572,
+          29551,
+          29125,
+          30294,
+          29144
+        ],
+        "rate": 199.9,
+        "frames": 320635,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 5,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790590467.9365609,
+        "diagnostics": {
+          "serial_reads": 14760,
+          "serial_bytes": 8336536,
+          "parsed_frames": 320635,
+          "last_byte_at": 1790590467.9355445,
+          "last_parsed_frame_at": 1790590467.9355445,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 0,
+          "successes": 0,
+          "last_fault": null
+        }
+      }
+    },
+    {
+      "elapsed_seconds": 3.3795997,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          0.0790576,
+          -0.1556944,
+          -3.0432933,
+          0.0003544,
+          0.0018294,
+          0.0015143
+        ],
+        "channels": [
+          1276,
+          1257,
+          1134,
+          1481,
+          1287,
+          1499,
+          1221.5,
+          891,
+          1178.5,
+          1155.5,
+          1363,
+          1098
+        ],
+        "raw": [
+          28931,
+          28308,
+          26664,
+          27874,
+          27257,
+          27559,
+          28158,
+          26637,
+          29523,
+          29102,
+          30279,
+          29108
+        ],
+        "rate": 199.9,
+        "frames": 320679,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 5,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790590468.156122,
+        "diagnostics": {
+          "serial_reads": 14762,
+          "serial_bytes": 8337680,
+          "parsed_frames": 320679,
+          "last_byte_at": 1790590468.155113,
+          "last_parsed_frame_at": 1790590468.155113,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 0,
+          "successes": 0,
+          "last_fault": null
+        }
+      }
+    },
+    {
+      "elapsed_seconds": 3.5818857,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          0.0743154,
+          -0.1509762,
+          -3.0452003,
+          0.0003818,
+          0.0018207,
+          0.0015289
+        ],
+        "channels": [
+          1195,
+          1146,
+          1054,
+          1401,
+          1280,
+          1400,
+          1206.5,
+          761,
+          1170.5,
+          1146.5,
+          1344,
+          1092
+        ],
+        "raw": [
+          28850,
+          28197,
+          26584,
+          27794,
+          27250,
+          27460,
+          28143,
+          26507,
+          29515,
+          29093,
+          30260,
+          29102
+        ],
+        "rate": 199.9,
+        "frames": 320722,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 5,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790590468.37313,
+        "diagnostics": {
+          "serial_reads": 14764,
+          "serial_bytes": 8338798,
+          "parsed_frames": 320722,
+          "last_byte_at": 1790590468.3720279,
+          "last_parsed_frame_at": 1790590468.3720279,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 0,
+          "successes": 0,
+          "last_fault": null
+        }
+      }
+    },
+    {
+      "elapsed_seconds": 3.7985911999999997,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          0.0785527,
+          -0.1514272,
+          -3.0373045,
+          0.0003558,
+          0.0018155,
+          0.0015296
+        ],
+        "channels": [
+          1241,
+          1156,
+          1090,
+          1393,
+          1316,
+          1505,
+          1233.5,
+          926,
+          1154.5,
+          1127.5,
+          1400,
+          1140
+        ],
+        "raw": [
+          28896,
+          28207,
+          26620,
+          27786,
+          27286,
+          27565,
+          28170,
+          26672,
+          29499,
+          29074,
+          30316,
+          29150
+        ],
+        "rate": 199.9,
+        "frames": 320766,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 5,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790590468.5907235,
+        "diagnostics": {
+          "serial_reads": 14766,
+          "serial_bytes": 8339942,
+          "parsed_frames": 320766,
+          "last_byte_at": 1790590468.5896704,
+          "last_parsed_frame_at": 1790590468.5896704,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 0,
+          "successes": 0,
+          "last_fault": null
+        }
+      }
+    },
+    {
+      "elapsed_seconds": 4.0009063,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          0.0774242,
+          -0.1501445,
+          -3.0425403,
+          0.0003671,
+          0.0018326,
+          0.0015183
+        ],
+        "channels": [
+          1193,
+          1254,
+          1021,
+          1451,
+          1314,
+          1535,
+          1256.5,
+          899,
+          1158.5,
+          1143.5,
+          1377,
+          1131
+        ],
+        "raw": [
+          28848,
+          28305,
+          26551,
+          27844,
+          27284,
+          27595,
+          28193,
+          26645,
+          29503,
+          29090,
+          30293,
+          29141
+        ],
+        "rate": 199.9,
+        "frames": 320809,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 5,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790590468.8078227,
+        "diagnostics": {
+          "serial_reads": 14768,
+          "serial_bytes": 8341060,
+          "parsed_frames": 320809,
+          "last_byte_at": 1790590468.806876,
+          "last_parsed_frame_at": 1790590468.806876,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 0,
+          "successes": 0,
+          "last_fault": null
+        }
+      }
+    },
+    {
+      "elapsed_seconds": 4.2172176,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          0.078314,
+          -0.1601984,
+          -3.0403948,
+          0.0003541,
+          0.0018132,
+          0.0015089
+        ],
+        "channels": [
+          1169,
+          1198,
+          994,
+          1420,
+          1336,
+          1479,
+          1266.5,
+          910,
+          1163.5,
+          1142.5,
+          1325,
+          1070
+        ],
+        "raw": [
+          28824,
+          28249,
+          26524,
+          27813,
+          27306,
+          27539,
+          28203,
+          26656,
+          29508,
+          29089,
+          30241,
+          29080
+        ],
+        "rate": 199.9,
+        "frames": 320853,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 5,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790590469.02535,
+        "diagnostics": {
+          "serial_reads": 14770,
+          "serial_bytes": 8342204,
+          "parsed_frames": 320853,
+          "last_byte_at": 1790590469.0237718,
+          "last_parsed_frame_at": 1790590469.0237718,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 0,
+          "successes": 0,
+          "last_fault": null
+        }
+      }
+    },
+    {
+      "elapsed_seconds": 4.4200162999999995,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          0.0697055,
+          -0.167349,
+          -3.0412329,
+          0.0003584,
+          0.0017973,
+          0.0015045
+        ],
+        "channels": [
+          1286,
+          1305,
+          1145,
+          1526,
+          1334,
+          1403,
+          1293.5,
+          777,
+          1173.5,
+          1158.5,
+          1359,
+          1145
+        ],
+        "raw": [
+          28941,
+          28356,
+          26675,
+          27919,
+          27304,
+          27463,
+          28230,
+          26523,
+          29518,
+          29105,
+          30275,
+          29155
+        ],
+        "rate": 199.9,
+        "frames": 320896,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 5,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790590469.2433767,
+        "diagnostics": {
+          "serial_reads": 14772,
+          "serial_bytes": 8343322,
+          "parsed_frames": 320896,
+          "last_byte_at": 1790590469.242279,
+          "last_parsed_frame_at": 1790590469.242279,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 0,
+          "successes": 0,
+          "last_fault": null
+        }
+      }
+    },
+    {
+      "elapsed_seconds": 4.626475699999999,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          0.0734967,
+          -0.1559752,
+          -3.0407236,
+          0.000372,
+          0.00181,
+          0.0015082
+        ],
+        "channels": [
+          1129,
+          1339,
+          970,
+          1549,
+          1359,
+          1456,
+          1288.5,
+          872,
+          1127.5,
+          1098.5,
+          1371,
+          1159
+        ],
+        "raw": [
+          28784,
+          28390,
+          26500,
+          27942,
+          27329,
+          27516,
+          28225,
+          26618,
+          29472,
+          29045,
+          30287,
+          29169
+        ],
+        "rate": 199.9,
+        "frames": 320941,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 5,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790590469.4641511,
+        "diagnostics": {
+          "serial_reads": 14774,
+          "serial_bytes": 8344492,
+          "parsed_frames": 320941,
+          "last_byte_at": 1790590469.4631212,
+          "last_parsed_frame_at": 1790590469.4631212,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 0,
+          "successes": 0,
+          "last_fault": null
+        }
+      }
+    },
+    {
+      "elapsed_seconds": 4.8432636,
+      "state": {
+        "mode": "live",
+        "status": "live",
+        "message": "数据流正常",
+        "port": "COM6",
+        "axes": [
+          0.0764316,
+          -0.1559494,
+          -3.0403391,
+          0.00037,
+          0.0018115,
+          0.0015109
+        ],
+        "channels": [
+          1177,
+          1196,
+          1006,
+          1450,
+          1377,
+          1490,
+          1286.5,
+          846,
+          1155.5,
+          1117.5,
+          1380,
+          1150
+        ],
+        "raw": [
+          28832,
+          28247,
+          26536,
+          27843,
+          27347,
+          27550,
+          28223,
+          26592,
+          29500,
+          29064,
+          30296,
+          29160
+        ],
+        "rate": 199.9,
+        "frames": 320984,
+        "resyncs": 0,
+        "saturated": 0,
+        "saturated_recent": 0,
+        "invalid_frames": 5,
+        "invalid_recent": 0,
+        "tare_progress": 100,
+        "updated_at": 1790590469.6813104,
+        "diagnostics": {
+          "serial_reads": 14776,
+          "serial_bytes": 8345610,
+          "parsed_frames": 320984,
+          "last_byte_at": 1790590469.680316,
+          "last_parsed_frame_at": 1790590469.680316,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        },
+        "recovery": {
+          "attempts": 0,
+          "successes": 0,
+          "last_fault": null
+        }
+      }
+    }
+  ],
+  "metrics": {
+    "sample_count": 24,
+    "observed_span_seconds": 4.8056522,
+    "frame_first": 320025,
+    "frame_last": 320984,
+    "frames_delta": 959,
+    "observed_counter_rate_hz": 199.55668036068028,
+    "invalid_first": 5,
+    "invalid_last": 5,
+    "invalid_delta": 0,
+    "saturated_delta": 0,
+    "resync_delta": 0,
+    "serial_bytes_delta": 24934,
+    "parsed_frames_delta": 959,
+    "parser_discarded_bytes_delta": 0,
+    "recovery_first": {
+      "attempts": 0,
+      "successes": 0,
+      "last_fault": null
+    },
+    "recovery_last": {
+      "attempts": 0,
+      "successes": 0,
+      "last_fault": null
+    },
+    "statuses": [
+      "live"
+    ]
+  },
+  "checks": {
+    "one_expected_owner": true,
+    "minimum_samples": true,
+    "no_http_errors": true,
+    "all_live": true,
+    "frames_bytes_parsed_progress_every_interval": true,
+    "rate_in_frozen_range": true,
+    "no_new_invalid_saturated_resync_or_discarded": true,
+    "no_recent_invalid_saturation": true,
+    "twelve_finite_raw_channels": true
+  },
+  "verdict": "BOUNDED_MINUS_X_STREAM_PASS",
+  "scope": "Read-only five-second HTTP window. No device commands, COM8, second raw-port owner, tare, restart, flash or source modification. Release notification sent before parsing.",
+  "limitations": [
+    "HTTP aggregate counts, not acquisition timestamps, individual jitter, latency or drop rate.",
+    "Browser baseline and actual visible shear animation not independently observed.",
+    "No true force or physical direction calibration acceptance inferred from the raw channels.",
+    "Observed auto-recovery counters do not by themselves prove baseline preservation or original fault cause."
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "summary": [
+    {
+      "source": ".superpowers\\sdd\\center-pull-validation-press_before-20261006.json",
+      "kind": "background",
+      "baseline": [
+        3,
+        -35,
+        1.5,
+        -31.5,
+        -29.5,
+        23,
+        -36,
+        16,
+        -5,
+        -5.5,
+        -6,
+        -3
+      ],
+      "sha256": "3f120f91699082c20595cc97cc88fb14ce79e9605d9445b4808b8bd262a6a7c8",
+      "reference": "independent current actual-page captured coordinates",
+      "replay": {
+        "installed": {
+          "stable_samples": 37,
+          "minus_active": 0,
+          "plus_active": 0,
+          "reverse": 0,
+          "shear_min": 0,
+          "shear_median": 0,
+          "shear_max": 0
+        },
+        "candidate": {
+          "stable_samples": 37,
+          "minus_active": 0,
+          "plus_active": 0,
+          "reverse": 0,
+          "shear_min": 0,
+          "shear_median": 0,
+          "shear_max": 0
+        }
+      },
+      "normal_identical": true
+    }
+  ],
+  "failures": [],
+  "candidate_all_samples_max_abs_shear": 0
+}

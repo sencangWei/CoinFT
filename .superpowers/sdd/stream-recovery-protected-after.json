@@ -1,0 +1,89 @@
+{
+  "checked_at": "2026-09-28",
+  "files": [
+    {
+      "path": "D:\\semg.claude\\coinft\\demo_web\\app.js",
+      "before": "E83A20CFCF844EF8733927BDD6E0774C93BF2F64B1AA68A075C89E3D416E2D66",
+      "after": "E83A20CFCF844EF8733927BDD6E0774C93BF2F64B1AA68A075C89E3D416E2D66",
+      "unchanged": true
+    },
+    {
+      "path": "D:\\semg.claude\\coinft\\demo_web\\surface.js",
+      "before": "D7AD21EFD772367E0A63A9B1FCEAC466DA481ECE2ABCC185505E1A63EE1FEDBF",
+      "after": "D7AD21EFD772367E0A63A9B1FCEAC466DA481ECE2ABCC185505E1A63EE1FEDBF",
+      "unchanged": true
+    },
+    {
+      "path": "D:\\semg.claude\\coinft\\demo_web\\shear_demo_profile.json",
+      "before": "FAE3EA39D65D105795B6CEA8E34B999D939A9AB9AFBF0495AB5E15614B728E83",
+      "after": "FAE3EA39D65D105795B6CEA8E34B999D939A9AB9AFBF0495AB5E15614B728E83",
+      "unchanged": true
+    },
+    {
+      "path": "D:\\semg.claude\\coinft\\START_DEMO.bat",
+      "before": "641016731466A38A1C2E0ACEFEA1BA15FF2361727D6D4F73E1E4AE2BC4C007E8",
+      "after": "641016731466A38A1C2E0ACEFEA1BA15FF2361727D6D4F73E1E4AE2BC4C007E8",
+      "unchanged": true
+    },
+    {
+      "path": "D:\\semg.claude\\coinft\\calibration\\coinft_calib.json",
+      "before": "C5847D9A03A16CF3A9FD6A951EC8C1DC7E58516CC071826169E90A8CD496BEB2",
+      "after": "C5847D9A03A16CF3A9FD6A951EC8C1DC7E58516CC071826169E90A8CD496BEB2",
+      "unchanged": true
+    },
+    {
+      "path": "D:\\semg.claude\\firmware_imu\\platformio.ini",
+      "before": "40565C2292CCE7FFD4933D13D0E048F4BCB14DD5ED81520C7BBD5CF20D40F214",
+      "after": "40565C2292CCE7FFD4933D13D0E048F4BCB14DD5ED81520C7BBD5CF20D40F214",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\platformio.ini",
+      "before": "5EEC927B6834F8FF812C15CB138E99E09D828BA40E836E57619F7C9401704F60",
+      "after": "5EEC927B6834F8FF812C15CB138E99E09D828BA40E836E57619F7C9401704F60",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\scripts\\diag_usb_build.py",
+      "before": "2C9F4A1FC448DF3211EE781CDAF16CE17479AD172EC97A5A6C55549D231BBB76",
+      "after": "2C9F4A1FC448DF3211EE781CDAF16CE17479AD172EC97A5A6C55549D231BBB76",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\.pio\\build\\teensy40\\firmware.hex",
+      "before": "FD53CE8129EEF078C1FB5B9068B41CD7D2F8F54D7964E3E084EBDC3F519B7788",
+      "after": "FD53CE8129EEF078C1FB5B9068B41CD7D2F8F54D7964E3E084EBDC3F519B7788",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\.pio\\build\\teensy40\\firmware.elf",
+      "before": "FC213E3FF3F43348C88303A2D4CF9EB5A47A1979424542FE4A15F3232E343182",
+      "after": "FC213E3FF3F43348C88303A2D4CF9EB5A47A1979424542FE4A15F3232E343182",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\.pio\\build\\teensy40_diag\\firmware.hex",
+      "before": "F38E094D43F39ED01AD5C7AED172E22D6947B90226CB9B7A8EF41F810FF9C9CD",
+      "after": "F38E094D43F39ED01AD5C7AED172E22D6947B90226CB9B7A8EF41F810FF9C9CD",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\winer\\.platformio\\packages\\framework-arduinoteensy\\cores\\teensy4\\usb_serial.c",
+      "before": "A675E0479E27CBAD3A8E0FA6B918020AF5B0F8894BE43EBC495832995F5D842C",
+      "after": "A675E0479E27CBAD3A8E0FA6B918020AF5B0F8894BE43EBC495832995F5D842C",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\winer\\.platformio\\packages\\framework-arduinoteensy\\cores\\teensy4\\usb_serial2.c",
+      "before": "575F5852165647E39F059548AE244A4B426A8BE31BFEF57CC4A9044FA8A37A3B",
+      "after": "575F5852165647E39F059548AE244A4B426A8BE31BFEF57CC4A9044FA8A37A3B",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\teensy_coinft_serial_interface.cpp",
+      "before": "29638CF96C9E6AC61459AC7927C5F6D21C63787F38869D0485A672F0DCA870F0",
+      "after": "29638CF96C9E6AC61459AC7927C5F6D21C63787F38869D0485A672F0DCA870F0",
+      "unchanged": true
+    }
+  ]
+}

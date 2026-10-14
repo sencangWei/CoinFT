@@ -1,0 +1,95 @@
+{
+  "scope": "read-only version counterfactuals on saved actual-page inputs, no deployment or fitting; not proof of which window user saw on 2026-10-06",
+  "results": [
+    {
+      "source": ".superpowers/sdd/demo-light-minus-x-diagnosis-20261014.json",
+      "kind": "minus",
+      "profiles": {
+        "retained_1df74": {
+          "stable": 36,
+          "right_active": 2,
+          "left_active": 13,
+          "zero": 21,
+          "median_score": -21.101925901994747,
+          "false_shear_over_005": 15
+        },
+        "predeployment_af137": {
+          "stable": 36,
+          "right_active": 0,
+          "left_active": 22,
+          "zero": 14,
+          "median_score": -80.42033886213952,
+          "false_shear_over_005": 22
+        },
+        "older_original": {
+          "stable": 36,
+          "right_active": 2,
+          "left_active": 3,
+          "zero": 27,
+          "median_score": -29.18604132964854,
+          "false_shear_over_005": 8
+        }
+      }
+    },
+    {
+      "source": ".superpowers/sdd/shear-center-pull-full-diagnostic-20261005.json",
+      "kind": "minus",
+      "profiles": {
+        "retained_1df74": {
+          "stable": 36,
+          "right_active": 36,
+          "left_active": 0,
+          "zero": 0,
+          "median_score": 82.87223142844381,
+          "false_shear_over_005": 36
+        },
+        "predeployment_af137": {
+          "stable": 36,
+          "right_active": 0,
+          "left_active": 0,
+          "zero": 36,
+          "median_score": 36.20973451972779,
+          "false_shear_over_005": 0
+        },
+        "older_original": {
+          "stable": 36,
+          "right_active": 36,
+          "left_active": 0,
+          "zero": 0,
+          "median_score": 265.634389504532,
+          "false_shear_over_005": 36
+        }
+      }
+    },
+    {
+      "source": ".superpowers/sdd/shear-center-pull-controls-press-20261005.json",
+      "kind": "press",
+      "profiles": {
+        "retained_1df74": {
+          "stable": 36,
+          "right_active": 0,
+          "left_active": 0,
+          "zero": 36,
+          "median_score": -2.007070064145335,
+          "false_shear_over_005": 0
+        },
+        "predeployment_af137": {
+          "stable": 36,
+          "right_active": 0,
+          "left_active": 0,
+          "zero": 36,
+          "median_score": -34.96310292501964,
+          "false_shear_over_005": 0
+        },
+        "older_original": {
+          "stable": 36,
+          "right_active": 22,
+          "left_active": 0,
+          "zero": 9,
+          "median_score": 101.10839360725205,
+          "false_shear_over_005": 27
+        }
+      }
+    }
+  ]
+}

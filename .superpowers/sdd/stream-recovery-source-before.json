@@ -1,0 +1,12 @@
+[
+  {
+    "path": "coinft_demo.py",
+    "sha256": "1B0E273E5F34CC1529482DC7B14E75B370FFFF79AED844211C2486404F340B2D",
+    "note": "Snapshot text saved with normalized LF; hash is of original file bytes."
+  },
+  {
+    "path": "tests\\test_serial_diagnostics.py",
+    "sha256": "3CCE721A8851C0F067C1815AC7F8A944457070F111910B7283F6345CF1C4EADF",
+    "note": "Snapshot text saved with normalized LF; hash is of original file bytes."
+  }
+]

@@ -1,0 +1,169 @@
+{
+  "owner": {
+    "pid": 36248,
+    "created": 1791961779.0530124,
+    "cmdline": [
+      "D:\\conda\\python.exe",
+      "-X",
+      "utf8",
+      "coinft_demo.py",
+      "--port",
+      "COM6"
+    ]
+  },
+  "profile_sha256": "1df74f4570f5119f180f9e7830120abe555bd6c37cc33ab3dbc33b8dba5a6020",
+  "saved_tuning": [
+    [
+      12,
+      50,
+      50
+    ],
+    [
+      12,
+      30,
+      72
+    ],
+    [
+      12,
+      30,
+      81
+    ],
+    [
+      12,
+      30,
+      82
+    ],
+    [
+      12,
+      30,
+      83
+    ],
+    [
+      12,
+      30,
+      85
+    ],
+    [
+      12,
+      30,
+      76
+    ],
+    [
+      12,
+      30,
+      75
+    ],
+    [
+      12,
+      100,
+      17
+    ],
+    [
+      12,
+      100,
+      26
+    ],
+    [
+      12,
+      80,
+      58
+    ],
+    [
+      12,
+      80,
+      42
+    ]
+  ],
+  "state": {
+    "mode": "live",
+    "status": "live",
+    "message": "数据流正常",
+    "port": "COM6",
+    "axes": [
+      -0.0588414,
+      0.0781646,
+      0.3855919,
+      -0.0001358,
+      -0.0003816,
+      -0.0006056
+    ],
+    "channels": [
+      -197,
+      -204.5,
+      -201,
+      -280,
+      -226,
+      -218,
+      -207.5,
+      -188,
+      -110,
+      -110,
+      -119,
+      -109
+    ],
+    "raw": [
+      28180,
+      27856,
+      26344,
+      27219,
+      26777,
+      26862,
+      27731,
+      26480,
+      28659,
+      28300,
+      29323,
+      28381
+    ],
+    "rate": 200,
+    "frames": 670152,
+    "resyncs": 0,
+    "saturated": 2,
+    "saturated_recent": 0,
+    "invalid_frames": 0,
+    "invalid_recent": 0,
+    "tare_progress": 100,
+    "updated_at": 1791965132.0968337,
+    "diagnostics": {
+      "serial_reads": 30782,
+      "serial_bytes": 17424004,
+      "parsed_frames": 670152,
+      "last_byte_at": 1791965132.095793,
+      "last_parsed_frame_at": 1791965132.095793,
+      "parser_pending_bytes": 26,
+      "parser_discarded_bytes": 0
+    },
+    "recovery": {
+      "attempts": 1,
+      "successes": 1,
+      "last_fault": {
+        "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+        "observed_at": 1791963434.090364,
+        "frames": 330549,
+        "diagnostics": {
+          "serial_reads": 15201,
+          "serial_bytes": 8594300,
+          "parsed_frames": 330549,
+          "last_byte_at": 1791963432.0181046,
+          "last_parsed_frame_at": 1791963432.0181046,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        }
+      }
+    }
+  },
+  "raw_reference": [
+    28377,
+    28060.5,
+    26545,
+    27499,
+    27003,
+    27080,
+    27938.5,
+    26668,
+    28769,
+    28410,
+    29442,
+    28490
+  ]
+}

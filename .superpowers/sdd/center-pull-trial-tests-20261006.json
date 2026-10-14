@@ -1,0 +1,13 @@
+{
+  "scope": "Automated regressions after user-authorized trial deployment, not physical loaded acceptance",
+  "installed_candidate_sha256": "1df74f4570f5119f180f9e7830120abe555bd6c37cc33ab3dbc33b8dba5a6020",
+  "broad_command": "D:/conda/python.exe -X utf8 -m unittest discover -s tests -v",
+  "broad_exit_code": 0,
+  "broad_test_count": 160,
+  "broad_seconds": 112.123,
+  "candidate_regression_command": "D:/conda/python.exe -X utf8 .superpowers/sdd/test_center_pull_refit_20261006.py -v",
+  "candidate_regression_exit_code": 0,
+  "candidate_regression_test_count": 3,
+  "candidate_regression_seconds": 1.718,
+  "hardware_acceptance": "pending explicit center minus-X pull / pure press / plus-X operator confirmation"
+}

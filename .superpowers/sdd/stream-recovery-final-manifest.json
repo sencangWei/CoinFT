@@ -1,0 +1,78 @@
+{
+  "protected_count": 14,
+  "changed_count": 0,
+  "files": [
+    {
+      "path": "D:\\semg.claude\\coinft\\demo_web\\app.js",
+      "unchanged": true,
+      "sha256": "E83A20CFCF844EF8733927BDD6E0774C93BF2F64B1AA68A075C89E3D416E2D66"
+    },
+    {
+      "path": "D:\\semg.claude\\coinft\\demo_web\\surface.js",
+      "unchanged": true,
+      "sha256": "D7AD21EFD772367E0A63A9B1FCEAC466DA481ECE2ABCC185505E1A63EE1FEDBF"
+    },
+    {
+      "path": "D:\\semg.claude\\coinft\\demo_web\\shear_demo_profile.json",
+      "unchanged": true,
+      "sha256": "FAE3EA39D65D105795B6CEA8E34B999D939A9AB9AFBF0495AB5E15614B728E83"
+    },
+    {
+      "path": "D:\\semg.claude\\coinft\\START_DEMO.bat",
+      "unchanged": true,
+      "sha256": "641016731466A38A1C2E0ACEFEA1BA15FF2361727D6D4F73E1E4AE2BC4C007E8"
+    },
+    {
+      "path": "D:\\semg.claude\\coinft\\calibration\\coinft_calib.json",
+      "unchanged": true,
+      "sha256": "C5847D9A03A16CF3A9FD6A951EC8C1DC7E58516CC071826169E90A8CD496BEB2"
+    },
+    {
+      "path": "D:\\semg.claude\\firmware_imu\\platformio.ini",
+      "unchanged": true,
+      "sha256": "40565C2292CCE7FFD4933D13D0E048F4BCB14DD5ED81520C7BBD5CF20D40F214"
+    },
+    {
+      "path": "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\platformio.ini",
+      "unchanged": true,
+      "sha256": "5EEC927B6834F8FF812C15CB138E99E09D828BA40E836E57619F7C9401704F60"
+    },
+    {
+      "path": "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\scripts\\diag_usb_build.py",
+      "unchanged": true,
+      "sha256": "2C9F4A1FC448DF3211EE781CDAF16CE17479AD172EC97A5A6C55549D231BBB76"
+    },
+    {
+      "path": "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\.pio\\build\\teensy40\\firmware.hex",
+      "unchanged": true,
+      "sha256": "FD53CE8129EEF078C1FB5B9068B41CD7D2F8F54D7964E3E084EBDC3F519B7788"
+    },
+    {
+      "path": "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\.pio\\build\\teensy40\\firmware.elf",
+      "unchanged": true,
+      "sha256": "FC213E3FF3F43348C88303A2D4CF9EB5A47A1979424542FE4A15F3232E343182"
+    },
+    {
+      "path": "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\.pio\\build\\teensy40_diag\\firmware.hex",
+      "unchanged": true,
+      "sha256": "F38E094D43F39ED01AD5C7AED172E22D6947B90226CB9B7A8EF41F810FF9C9CD"
+    },
+    {
+      "path": "C:\\Users\\winer\\.platformio\\packages\\framework-arduinoteensy\\cores\\teensy4\\usb_serial.c",
+      "unchanged": true,
+      "sha256": "A675E0479E27CBAD3A8E0FA6B918020AF5B0F8894BE43EBC495832995F5D842C"
+    },
+    {
+      "path": "C:\\Users\\winer\\.platformio\\packages\\framework-arduinoteensy\\cores\\teensy4\\usb_serial2.c",
+      "unchanged": true,
+      "sha256": "575F5852165647E39F059548AE244A4B426A8BE31BFEF57CC4A9044FA8A37A3B"
+    },
+    {
+      "path": "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\teensy_coinft_serial_interface.cpp",
+      "unchanged": true,
+      "sha256": "29638CF96C9E6AC61459AC7927C5F6D21C63787F38869D0485A672F0DCA870F0"
+    }
+  ],
+  "production_hash": "96EF5BBE88CEB9797686D1E6B1B2473B50360B0A9225E5FAC192CA6DDB913828",
+  "recovery_test_hash": "AECC7D7A1EFB7090F5CC07ABB5372407589956D4B0EE50C8A4E6EF61848B8B76"
+}

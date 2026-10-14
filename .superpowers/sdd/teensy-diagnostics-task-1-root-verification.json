@@ -1,0 +1,30 @@
+{
+  "scope": "Task1 software only; no hardware deployment",
+  "date": "2026-09-28",
+  "operator_confirmed_board": "Teensy4.0",
+  "review": "spec compliant / quality Approved",
+  "native": {
+    "command": "D:/conda/python.exe -m unittest discover -s tests -p test_teensy_diagnostic*.py -v",
+    "tests": 17,
+    "seconds": 5.705,
+    "exit_code": 0
+  },
+  "target_build": {
+    "command": "C:/Users/winer/.platformio/penv/Scripts/pio.exe run --disable-auto-clean -d C:/Users/winer/Desktop/CoinFT_Teensy_Interface -e teensy40_diag",
+    "seconds": 1.11,
+    "exit_code": 0,
+    "warnings": 0
+  },
+  "protected_hashes": "9/9 match teensy-invariants-before-adapter-20260928.json",
+  "archive_cdc2_members": 1,
+  "diagnostic_hex_sha256": "F38E094D43F39ED01AD5C7AED172E22D6947B90226CB9B7A8EF41F810FF9C9CD",
+  "diagnostic_elf_sha256": "87ACCF635C25E8E0AA8932A355EC66B113576A87F9944811068CFE5C5FAC0DA5",
+  "original_hex_sha256": "FD53CE8129EEF078C1FB5B9068B41CD7D2F8F54D7964E3E084EBDC3F519B7788",
+  "original_elf_sha256": "FC213E3FF3F43348C88303A2D4CF9EB5A47A1979424542FE4A15F3232E343182",
+  "disassembly_check": "usb_serial2_write calls memcpy/usb_prepare_transfer/usb_transmit/usb_transfer_status; no yield/printf/clock-poll path. Cache maintenance includes bounded buffer loop; not a hardware execution-time measurement.",
+  "limitations": [
+    "Initial PIO auto-clean removed old generated objects; original HEX/ELF restored from backups with matching hashes, not continuously preserved.",
+    "Snapshot binary is not certified as current flashed image.",
+    "Physical USB enumeration, runtime timing and host delivery not tested."
+  ]
+}

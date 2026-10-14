@@ -1,0 +1,103 @@
+{
+  "status": "FORMAL_DEMO_READY",
+  "recording": {
+    "status": "RECORDING",
+    "output_dir": "D:\\semg.claude\\coinft\\recordings\\demo_20261014_160741",
+    "video": "D:\\semg.claude\\coinft\\recordings\\demo_20261014_160741\\page@c6657d010d50c46d9d4cfbbd91d8befb.webm",
+    "cdp": "http://127.0.0.1:9225",
+    "baseline": [
+      -5,
+      -58.5,
+      -0.5,
+      -48.5,
+      -22,
+      -28.5,
+      -24,
+      -40,
+      -3,
+      -8,
+      -11,
+      -5.5
+    ],
+    "profile_sha256": "1df74f4570f5119f180f9e7830120abe555bd6c37cc33ab3dbc33b8dba5a6020",
+    "exec_session_id": 7943,
+    "service_exec_session_id": 38385
+  },
+  "trim_start_seconds": 1699.12,
+  "marker_wall_time": 1791966964.1201334,
+  "unchanged_baseline": [
+    -9.5,
+    -44,
+    -26,
+    -61,
+    28,
+    -20,
+    17.5,
+    -9.5,
+    -0.5,
+    -4,
+    3.5,
+    6.5
+  ],
+  "profile_sha256": "1df74f4570f5119f180f9e7830120abe555bd6c37cc33ab3dbc33b8dba5a6020",
+  "page": {
+    "baseline": [
+      -9.5,
+      -44,
+      -26,
+      -61,
+      28,
+      -20,
+      17.5,
+      -9.5,
+      -0.5,
+      -4,
+      3.5,
+      6.5
+    ],
+    "profile": {
+      "version": 1,
+      "mode": "qualitative",
+      "assemblyId": "coinft-current-20260925",
+      "normal": {
+        "threshold": 100,
+        "span": 600
+      },
+      "shear": {
+        "enabled": true,
+        "weights": [
+          0.31590282776546447,
+          -0.12205855363676356,
+          -0.3341345639198642,
+          0.1321512275490956,
+          -0.6043682958768727,
+          0.29582120955720936,
+          0.6305046426094868,
+          -0.3138184940477558
+        ],
+        "pressLeak": [
+          -0.02643880353355445,
+          -0.03144711796000465,
+          -0.1214381970191369,
+          0.2357389209364859,
+          0.07993594816592298,
+          0.1752984546744665,
+          0.014867875399405917,
+          -0.24604676712122375
+        ],
+        "threshold": 58.330169520837785,
+        "span": 58.330169520837785
+      },
+      "rightLabel": "−X",
+      "leftLabel": "+X",
+      "evidence": [
+        ".superpowers/sdd/center-pull-refit-20261006-report.json"
+      ]
+    },
+    "paused": false,
+    "frame": 341902,
+    "normal": 0,
+    "shear": 0
+  },
+  "note": "Keep existing page, acquisition and visual baseline. Trim preparation/debugging on export; no retuning/tare/restart."
+}

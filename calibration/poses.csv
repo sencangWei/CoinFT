@@ -1,0 +1,64 @@
+# CoinFT DIY calibration pose table.
+# Sensor frame: origin at center of the TOP sensing surface, +Z up (away from
+# sensor), +X/+Y horizontal (mark them on the housing before calibrating!).
+#
+# type     meaning                        uses columns
+# flat     weight centered on top, level  mass_g
+# tilt_x   sensor pitched about +X        mass_g, angle_deg (+Y箭头指下坡=正角)
+# tilt_y   sensor pitched about +Y        mass_g, angle_deg (+X箭头指下坡=正角)
+# offset   weight placed off-center       mass_g, x_mm, y_mm (weight center vs origin)
+# spool    string on drum radius, hangs   mass_g, radius_mm, pull_dir, wrap
+#          over edge                      pull_dir: +x/-x/+y/-y; wrap: cw/ccw seen from +Z
+#
+# 物理规则(已验证):
+#  - 绕竖直轴转整个装配体 = 白转(重力在板子上不变), 别再试了.
+#  - 绕水平轴把整个装配体翻180 = 压变拉(真翻, 有效).
+#  - 15°楔块+粘法A(+Y指下坡)不用换胶能摆: 平放+15 / 竖立(高端面落地)-75 / 倒挂-165.
+#    30°楔块: 平放+30 竖立-60.  45°楔块: 平放+45 竖立-45.
+#  - 翻面重粘 = 板子撕下, 在自身平面内转180°(板面仍朝上), 箭头变指上坡, 粘回斜面:
+#    平放-15 / 竖立+75 / 倒挂+165. 每个方向只翻这一次.
+# 顺序原则: 一块砝码(100g)粘在板面上, 整个系列一口气做完, 中途不换砝码;
+# 只在提示【翻面】或【换楔块】时才动胶. mass_g只是默认值, 采集时输入实际克数.
+pose_id,type,mass_g,angle_deg,x_mm,y_mm,radius_mm,pull_dir,wrap,note
+# ==== SESSION 1: 平面(已完成) ====
+tare0,flat,0,,,,,,,空载去皮: 板子放平 什么都不放
+f100,flat,100,,,,,,,板子放平 100g砝码放板面正中
+f200,flat,200,,,,,,,板子放平 200g砝码放板面正中
+f400,flat,200,,,,,,,板子放平 能放多重放多重 输入实际克数
+f1000,flat,200,,,,,,,板子放平 能放多重放多重 输入实际克数
+# ==== SESSION 2: X系列(15°楔块 粘法A: +Y箭头指下坡) ====
+x_flat15,tilt_x,100,15,,,,,,【X-1 平放】板子躺在15°斜面 +Y箭头指【下坡】 100g砝码粘在板面正中(整个X系列都用它)。检查: 箭头沿斜面指向低处
+x_stand75,tilt_x,100,-75,,,,,,【X-2 竖立】楔块以高端面(厚那头)立在桌上 板面约75°陡 +Y箭头指【上】 砝码已粘牢。楔块底脚点胶防滑
+x_hang,tilt_x,100,-165,,,,,,【X-3 倒挂】整体翻过来板朝下 砝码吊在板子下面(拉力姿态) 楔块底面用厚书压桌沿固定 别手拿! 等砝码不晃再采
+xf_flat15,tilt_x,100,-15,,,,,,【X-4 翻面重粘】板子撕下 在板面平面内转180°(板面仍朝上 砝码跟着板子转) +Y箭头变指【上坡】 粘回15°斜面平放。检查: 箭头指向楔块高端
+xf_stand75,tilt_x,100,75,,,,,,【X-5 翻面后竖立】楔块立在桌上 这次+Y箭头指【下】(和X-2相反)
+xf_hang,tilt_x,100,165,,,,,,【X-6 翻面后倒挂 可选】板朝下砝码吊下面 书压桌沿。不想做输s跳过
+x_flat30,tilt_x,100,30,,,,,,【X-7 换30°楔块】板子撕下(砝码跟着板子) 粘到30°斜面 +Y指【下坡】 平放
+x_stand60,tilt_x,100,-60,,,,,,【X-8 竖立】30°楔块立在桌上 板面约60°陡 +Y指【上】
+x_flat45,tilt_x,100,45,,,,,,【X-9 换45°楔块】+Y指【下坡】 平放
+x_stand45,tilt_x,100,-45,,,,,,【X-10 竖立】45°楔块立在桌上 +Y指【上】
+# ==== SESSION 3: Y系列(板子转90°重粘: +X箭头指下坡) ====
+y_flat15,tilt_y,100,15,,,,,,【Y-1 转向重粘】板子撕下转90° 让+X箭头指【下坡】(+Y现在沿楔块宽度方向) 平放15° 砝码粘板面正中
+y_stand75,tilt_y,100,-75,,,,,,【Y-2 竖立】15°楔块立在桌上 +X箭头指【上】
+y_hang,tilt_y,100,-165,,,,,,【Y-3 倒挂】板朝下砝码吊下面 书压桌沿 别手拿
+yf_flat15,tilt_y,100,-15,,,,,,【Y-4 翻面重粘】板子面内转180° +X箭头变指【上坡】 平放
+yf_stand75,tilt_y,100,75,,,,,,【Y-5 翻面后竖立】+X箭头指【下】
+yf_hang,tilt_y,100,165,,,,,,【Y-6 翻面后倒挂 可选】不想做输s跳过
+y_flat30,tilt_y,100,30,,,,,,【Y-7 换30°楔块】+X指【下坡】 平放
+y_stand60,tilt_y,100,-60,,,,,,【Y-8 竖立】30°楔块立在桌上 +X指【上】
+y_flat45,tilt_y,100,45,,,,,,【Y-9 换45°楔块】+X指【下坡】 平放
+y_stand45,tilt_y,100,-45,,,,,,【Y-10 竖立】45°楔块立在桌上 +X指【上】
+# ==== SESSION 4: 纯剪切与扭矩 ====
+tx90,tilt_x,100,90,,,,,,【纯剪-可选】板子竖直贴在方盒侧面上 +Y箭头垂直指地 砝码粘牢一圈。没有盒子可输s跳过
+spx_cw,spool,200,,,,9.8,+x,cw,【扭矩1/4】绕线轮粘在板面正中 线沿+x方向切线拉出挂砝码 从上往下看顺时针绕
+spx_ccw,spool,200,,,,9.8,+x,ccw,【扭矩2/4】同一挂点 线改逆时针绕
+spy_cw,spool,200,,,,9.8,+y,cw,【扭矩3/4】线沿+y方向拉出 顺时针绕
+spy_ccw,spool,200,,,,9.8,+y,ccw,【扭矩4/4】线沿+y方向拉出 逆时针绕
+ty90,tilt_y,100,90,,,,,,【纯剪-可选】板子竖贴盒侧 +X箭头垂直指地。可s跳过
+# ==== SESSION 5: 偏置力矩(板子放平) ====
+ox10,offset,200,,10,0,,,,【偏置1/5】板子放平 砝码中心往+x方向偏10mm(尺量个大概)
+oxn10,offset,200,,-10,0,,,,【偏置2/5】砝码中心往-x方向偏10mm
+oy10,offset,200,,0,10,,,,【偏置3/5】砝码中心往+y方向偏10mm
+oyn10,offset,200,,0,-10,,,,【偏置4/5】砝码中心往-y方向偏10mm
+oxy,offset,200,,7,7,,,,【偏置5/5】砝码中心沿(+x,+y)对角线推到最远能放稳(径向约10mm)
+tare1,flat,0,,,,,,,【收尾】全部卸掉 空载采最后一遍零点

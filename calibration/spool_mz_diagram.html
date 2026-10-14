@@ -1,0 +1,229 @@
+<title>绕线轮 Mz 标定装置</title>
+<style>
+  :root {
+    --ground: #F7F5F0;
+    --ink: #26282B;
+    --muted: #6E695F;
+    --accent: #D65A1E;
+    --accent-soft: #F3E2D3;
+    --cool: #33618C;
+    --cool-soft: #DEE7F0;
+    --line: #DDD8CD;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #191B1D;
+      --ink: #E9E6E0;
+      --muted: #9C978B;
+      --accent: #F0803F;
+      --accent-soft: #3B2A1E;
+      --cool: #82A8CD;
+      --cool-soft: #232E3A;
+      --line: #3A3C3E;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #191B1D;
+    --ink: #E9E6E0;
+    --muted: #9C978B;
+    --accent: #F0803F;
+    --accent-soft: #3B2A1E;
+    --cool: #82A8CD;
+    --cool-soft: #232E3A;
+    --line: #3A3C3E;
+  }
+
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
+    line-height: 1.7;
+  }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 40px 20px 64px; }
+
+  .eyebrow {
+    font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--accent); font-weight: 600; margin: 0 0 6px;
+  }
+  h1 {
+    font-size: 30px; line-height: 1.25; margin: 0 0 10px;
+    text-wrap: balance; letter-spacing: .01em;
+  }
+  .lede { color: var(--muted); margin: 0 0 36px; font-size: 15.5px; }
+
+  h2 {
+    font-size: 17px; margin: 40px 0 12px; padding-top: 24px;
+    border-top: 1px solid var(--line); text-wrap: balance;
+  }
+  h2 .no { color: var(--accent); font-family: "IBM Plex Mono", monospace; font-size: 13px; margin-right: 8px; }
+
+  figure { margin: 20px 0 8px; }
+  svg { max-width: 100%; height: auto; display: block; }
+  figcaption { font-size: 13px; color: var(--muted); margin-top: 10px; line-height: 1.6; }
+
+  table {
+    width: 100%; border-collapse: collapse; margin: 14px 0 6px;
+    font-size: 14px; font-variant-numeric: tabular-nums;
+  }
+  th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--line); }
+  th { font-size: 12px; letter-spacing: .08em; color: var(--muted); font-weight: 600; border-bottom-color: var(--ink); }
+  td.v { font-family: "IBM Plex Mono", monospace; font-size: 13px; }
+
+  .example {
+    background: var(--accent-soft); border-radius: 8px;
+    padding: 12px 16px; font-size: 14px; margin: 14px 0 4px;
+  }
+  .example code { font-family: "IBM Plex Mono", monospace; font-size: 13px; }
+
+  ol.steps { padding-left: 0; margin: 14px 0; list-style: none; counter-reset: s; }
+  ol.steps li {
+    counter-increment: s; padding: 10px 0 10px 44px; position: relative;
+    border-bottom: 1px solid var(--line); font-size: 14.5px;
+  }
+  ol.steps li::before {
+    content: counter(s); position: absolute; left: 0; top: 10px;
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--accent); color: var(--ground);
+    font-family: "IBM Plex Mono", monospace; font-size: 13px; font-weight: 600;
+    display: flex; align-items: center; justify-content: center;
+  }
+  ol.steps li:last-child { border-bottom: none; }
+
+  ul.points { padding-left: 0; margin: 14px 0; list-style: none; }
+  ul.points li { padding: 10px 0 10px 18px; border-left: 3px solid var(--accent); margin-bottom: 12px; font-size: 14.5px; }
+  ul.points strong { display: block; margin-bottom: 2px; }
+
+  p { margin: 10px 0; font-size: 14.5px; }
+</style>
+
+<div class="wrap">
+  <p class="eyebrow">CoinFT DIY 标定 · 装置图解</p>
+  <h1>绕线轮 Mz 标定装置</h1>
+  <p class="lede">重力只会竖直向下拉，造不出"绕竖直轴拧"的力矩。绕线轮把竖直拉力拐成绕轴的扭转——就是井边辘轳反过来用：水桶的重力沿切线拉轮子，扭矩出现在轮轴上。</p>
+
+  <figure>
+    <svg viewBox="0 0 660 480" role="img" aria-label="绕线轮总成：传感器竖直贴在盒子侧面，鼓粘在顶面正中，鱼线绕鼓一圈挂砝码，产生扭矩 Mz = 绳张力乘以鼓半径">
+      <defs>
+        <marker id="arA" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 1 L 9 5 L 0 9 z" style="fill:var(--accent)"/>
+        </marker>
+        <marker id="arC" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 1 L 9 5 L 0 9 z" style="fill:var(--cool)"/>
+        </marker>
+      </defs>
+
+      <!-- 竖立的盒子 -->
+      <rect x="70" y="80" width="520" height="340" rx="6"
+            style="fill:none; stroke:var(--muted); stroke-width:1.2; stroke-dasharray:6 5"/>
+      <text x="92" y="106" font-size="13" style="fill:var(--muted)">竖立的盒子（侧面）</text>
+
+      <!-- 传感器顶板 -->
+      <rect x="210" y="150" width="240" height="200" rx="10"
+            style="fill:var(--accent-soft); stroke:var(--accent); stroke-width:1.6"/>
+      <text x="330" y="174" font-size="13" text-anchor="middle" style="fill:var(--accent); font-weight:600">CoinFT 顶板（活动面朝外）</text>
+
+      <!-- 鼓 -->
+      <circle cx="330" cy="250" r="52" style="fill:var(--ground); stroke:var(--ink); stroke-width:2"/>
+      <circle cx="330" cy="250" r="3.5" style="fill:var(--ink)"/>
+      <text x="272" y="254" font-size="13" text-anchor="end" style="fill:var(--ink)">鼓（小圆柱）</text>
+
+      <!-- 半径标注 -->
+      <line x1="330" y1="250" x2="369.9" y2="216.6" style="stroke:var(--cool); stroke-width:1.4" marker-end="url(#arC)"/>
+      <text x="356" y="246" font-size="13" style="fill:var(--cool); font-style:italic">r</text>
+
+      <!-- 鱼线：绕过鼓顶半圈后从右侧切线垂下 -->
+      <path d="M 278 250 A 52 52 0 0 1 382 250 L 382 388"
+            style="fill:none; stroke:var(--cool); stroke-width:2.4"/>
+      <text x="452" y="208" font-size="13" style="fill:var(--cool)">鱼线（绕鼓一圈）</text>
+      <line x1="446" y1="205" x2="398" y2="199" style="stroke:var(--cool); stroke-width:1"/>
+
+      <!-- 张力箭头 -->
+      <line x1="406" y1="290" x2="406" y2="336" style="stroke:var(--cool); stroke-width:1.8" marker-end="url(#arC)"/>
+      <text x="416" y="320" font-size="13" style="fill:var(--cool)">T = m·g</text>
+
+      <!-- 砝码 -->
+      <rect x="352" y="388" width="60" height="42" rx="5"
+            style="fill:var(--cool-soft); stroke:var(--cool); stroke-width:1.6"/>
+      <text x="382" y="413" font-size="13" text-anchor="middle" style="fill:var(--ink)">砝码 m</text>
+
+      <!-- 扭矩箭头（顺时针，过底部） -->
+      <path d="M 270 300 A 78 78 0 0 0 403 277"
+            style="fill:none; stroke:var(--accent); stroke-width:2.2" marker-end="url(#arA)"/>
+      <text x="330" y="372" font-size="14" text-anchor="middle" style="fill:var(--accent); font-weight:600">Mz = T × r</text>
+
+      <!-- 底面固定说明 -->
+      <text x="330" y="452" font-size="12.5" text-anchor="middle" style="fill:var(--muted)">传感器底面（固定侧）用双面胶贴在盒侧，鼓轴保持水平</text>
+    </svg>
+    <figcaption>竖装总成：鼓粘在顶面正中，鱼线绕一圈后挂砝码。线全程悬空不碰任何东西，所以绳的张力严格等于砝码重量。鼓轴方向 = 传感器 Z 轴（穿出纸面）。</figcaption>
+  </figure>
+
+  <h2><span class="no">A</span>这笔账怎么算</h2>
+  <table>
+    <thead><tr><th>量</th><th>值</th><th>来源</th></tr></thead>
+    <tbody>
+      <tr><td>绳张力 T</td><td class="v">m × 9.807 N</td><td>砝码用秤称出</td></tr>
+      <tr><td>力臂 r</td><td class="v">实测（mm）</td><td>卡尺量鼓半径</td></tr>
+      <tr><td>Mz 真值</td><td class="v">T × r（N·m）</td><td>两者相乘</td></tr>
+      <tr><td>剪切力真值</td><td class="v">T（沿切线方向）</td><td>附赠，一并进拟合</td></tr>
+    </tbody>
+  </table>
+  <div class="example">
+    实例：半径 <code>r = 15 mm</code>、砝码 <code>500 g</code> →
+    <code>Mz = 0.5 × 9.807 × 0.015 ≈ 0.0736 N·m</code>
+  </div>
+
+  <h2><span class="no">B</span>绕向决定正负</h2>
+  <figure>
+    <svg viewBox="0 0 660 270" role="img" aria-label="同一装置两种绕向：线挂右侧产生正 Mz，挂左侧产生负 Mz，两组各采一次">
+      <defs>
+        <marker id="arA2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 1 L 9 5 L 0 9 z" style="fill:var(--accent)"/>
+        </marker>
+      </defs>
+
+      <!-- 组 1：右侧挂线，顺时针 -->
+      <circle cx="170" cy="110" r="52" style="fill:none; stroke:var(--ink); stroke-width:2"/>
+      <circle cx="170" cy="110" r="3.5" style="fill:var(--ink)"/>
+      <path d="M 118 110 A 52 52 0 0 1 222 110 L 222 196"
+            style="fill:none; stroke:var(--cool); stroke-width:2.4"/>
+      <rect x="200" y="196" width="44" height="32" rx="4"
+            style="fill:var(--cool-soft); stroke:var(--cool); stroke-width:1.4"/>
+      <path d="M 108 146 A 72 72 0 0 0 232 146"
+            style="fill:none; stroke:var(--accent); stroke-width:2" marker-end="url(#arA2)"/>
+      <text x="170" y="256" font-size="13" text-anchor="middle" style="fill:var(--ink)">挂右侧 → <tspan style="fill:var(--accent); font-weight:600">+Mz</tspan></text>
+
+      <!-- 中间说明 -->
+      <text x="340" y="105" font-size="12.5" text-anchor="middle" style="fill:var(--muted)">同一装置</text>
+      <text x="340" y="124" font-size="12.5" text-anchor="middle" style="fill:var(--muted)">换绕向</text>
+      <text x="340" y="143" font-size="12.5" text-anchor="middle" style="fill:var(--muted)">得反向扭矩</text>
+
+      <!-- 组 2：左侧挂线，逆时针 -->
+      <circle cx="510" cy="110" r="52" style="fill:none; stroke:var(--ink); stroke-width:2"/>
+      <circle cx="510" cy="110" r="3.5" style="fill:var(--ink)"/>
+      <path d="M 562 110 A 52 52 0 0 0 458 110 L 458 196"
+            style="fill:none; stroke:var(--cool); stroke-width:2.4"/>
+      <rect x="436" y="196" width="44" height="32" rx="4"
+            style="fill:var(--cool-soft); stroke:var(--cool); stroke-width:1.4"/>
+      <path d="M 572 146 A 72 72 0 0 1 448 146"
+            style="fill:none; stroke:var(--accent); stroke-width:2" marker-end="url(#arA2)"/>
+      <text x="510" y="256" font-size="13" text-anchor="middle" style="fill:var(--ink)">挂左侧 → <tspan style="fill:var(--accent); font-weight:600">−Mz</tspan></text>
+    </svg>
+    <figcaption>两组各采一次，Mz 轴正负两个方向都有数据；剪切力真值 T 每组都附带一个。</figcaption>
+  </figure>
+
+  <h2><span class="no">C</span>安装与采集步骤</h2>
+  <ol class="steps">
+    <li>传感器底面用双面胶竖直贴到盒子侧面，鼓轴调成水平（手机水平 App 靠一下鼓端面）。</li>
+    <li>小圆柱用热熔胶粘到顶面正中——整个标定过程只粘这一次。</li>
+    <li>卡尺量圆柱半径 r，填进 poses.csv 的 radius_mm（换掉 15 mm 占位值）。</li>
+    <li>鱼线绕鼓一圈，末端挂称重过的砝码；等摆动完全停稳后采 3 秒。</li>
+    <li>换另一侧绕向重复一次，得到 −Mz 组。</li>
+  </ol>
+
+  <h2><span class="no">D</span>三个不能省的点</h2>
+  <ul class="points">
+    <li><strong>必须竖装，线不过桌边</strong>平放时线要绕过桌沿才能挂砝码，桌边摩擦会让绳张力小于砝码重量，Mz 真值直接算大。</li>
+    <li><strong>静止才采</strong>砝码还在晃时张力不等于重量。摆好线、等完全不动，再开始计时采集。</li>
+    <li><strong>r 用卡尺量</strong>力矩 = 力 × 半径，半径错 1 mm（r=15 mm 时）真值就差 6.7%，不能用尺子估。</li>
+  </ul>
+</div>

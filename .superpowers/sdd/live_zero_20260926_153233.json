@@ -1,0 +1,172 @@
+{
+  "outcome": "not_ready",
+  "samples": [
+    {
+      "at": 5353.5,
+      "frame": 21161388,
+      "baseline": null,
+      "target": 0,
+      "shearTarget": 0,
+      "level": 0,
+      "shearLevel": 0,
+      "label": "定性演示 · 非标定力值 · 方向未经过独立验收 · 未归零",
+      "status": "数据正常"
+    },
+    {
+      "at": 5461.5,
+      "frame": 21161410,
+      "baseline": null,
+      "target": 0,
+      "shearTarget": 0,
+      "level": 0,
+      "shearLevel": 0,
+      "label": "定性演示 · 非标定力值 · 方向未经过独立验收 · 未归零",
+      "status": "数据正常"
+    },
+    {
+      "at": 5569,
+      "frame": 21161432,
+      "baseline": null,
+      "target": 0,
+      "shearTarget": 0,
+      "level": 0,
+      "shearLevel": 0,
+      "label": "定性演示 · 非标定力值 · 方向未经过独立验收 · 未归零",
+      "status": "数据正常"
+    },
+    {
+      "at": 5679.100000023842,
+      "frame": 21161453,
+      "baseline": null,
+      "target": 0,
+      "shearTarget": 0,
+      "level": 0,
+      "shearLevel": 0,
+      "label": "定性演示 · 非标定力值 · 方向未经过独立验收 · 未归零",
+      "status": "数据正常"
+    },
+    {
+      "at": 5788,
+      "frame": 21161475,
+      "baseline": null,
+      "target": 0,
+      "shearTarget": 0,
+      "level": 0,
+      "shearLevel": 0,
+      "label": "定性演示 · 非标定力值 · 方向未经过独立验收 · 未归零",
+      "status": "数据正常"
+    },
+    {
+      "at": 5897.4000000059605,
+      "frame": 21161497,
+      "baseline": null,
+      "target": 0,
+      "shearTarget": 0,
+      "level": 0,
+      "shearLevel": 0,
+      "label": "定性演示 · 非标定力值 · 方向未经过独立验收 · 未归零",
+      "status": "数据正常"
+    },
+    {
+      "at": 6005.200000017881,
+      "frame": 21161519,
+      "baseline": null,
+      "target": 0,
+      "shearTarget": 0,
+      "level": 0,
+      "shearLevel": 0,
+      "label": "定性演示 · 非标定力值 · 方向未经过独立验收 · 未归零",
+      "status": "数据正常"
+    },
+    {
+      "at": 6114.800000011921,
+      "frame": 21161541,
+      "baseline": null,
+      "target": 0,
+      "shearTarget": 0,
+      "level": 0,
+      "shearLevel": 0,
+      "label": "定性演示 · 非标定力值 · 方向未经过独立验收 · 未归零",
+      "status": "数据正常"
+    },
+    {
+      "at": 6222.9000000059605,
+      "frame": 21161562,
+      "baseline": null,
+      "target": 0,
+      "shearTarget": 0,
+      "level": 0,
+      "shearLevel": 0,
+      "label": "定性演示 · 非标定力值 · 方向未经过独立验收 · 未归零",
+      "status": "数据正常"
+    },
+    {
+      "at": 6331.200000017881,
+      "frame": 21161584,
+      "baseline": null,
+      "target": 0,
+      "shearTarget": 0,
+      "level": 0,
+      "shearLevel": 0,
+      "label": "定性演示 · 非标定力值 · 方向未经过独立验收 · 未归零",
+      "status": "数据正常"
+    },
+    {
+      "at": 6440.800000011921,
+      "frame": 21161606,
+      "baseline": null,
+      "target": 0,
+      "shearTarget": 0,
+      "level": 0,
+      "shearLevel": 0,
+      "label": "定性演示 · 非标定力值 · 方向未经过独立验收 · 未归零",
+      "status": "数据正常"
+    },
+    {
+      "at": 6548.800000011921,
+      "frame": 21161628,
+      "baseline": null,
+      "target": 0,
+      "shearTarget": 0,
+      "level": 0,
+      "shearLevel": 0,
+      "label": "定性演示 · 非标定力值 · 方向未经过独立验收 · 未归零",
+      "status": "数据正常"
+    },
+    {
+      "at": 6656.600000023842,
+      "frame": 21161649,
+      "baseline": null,
+      "target": 0,
+      "shearTarget": 0,
+      "level": 0,
+      "shearLevel": 0,
+      "label": "定性演示 · 非标定力值 · 方向未经过独立验收 · 未归零",
+      "status": "数据正常"
+    },
+    {
+      "at": 6760.700000017881,
+      "frame": 21161671,
+      "baseline": null,
+      "target": 0,
+      "shearTarget": 0,
+      "level": 0,
+      "shearLevel": 0,
+      "label": "定性演示 · 非标定力值 · 方向未经过独立验收 · 未归零",
+      "status": "数据正常"
+    },
+    {
+      "at": 6872,
+      "frame": 21161692,
+      "baseline": null,
+      "target": 0,
+      "shearTarget": 0,
+      "level": 0,
+      "shearLevel": 0,
+      "label": "定性演示 · 非标定力值 · 方向未经过独立验收 · 未归零",
+      "status": "数据正常"
+    }
+  ],
+  "errors": [],
+  "screenshot": "D:\\semg.claude\\coinft\\.superpowers\\sdd\\live_zero_20260926_153233.png"
+}

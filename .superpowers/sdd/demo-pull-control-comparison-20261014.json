@@ -1,0 +1,45 @@
+{
+  "scope": "read-only diagnostic comparison; different observation epochs preserved, not independent calibration/acceptance",
+  "shear_start_threshold": 58.330169520837785,
+  "same_page_basis": true,
+  "same_raw_reference": true,
+  "press": {
+    "score": {
+      "min": -41.342734385948624,
+      "median": -6.094473325911835,
+      "max": 30.702772743168833
+    },
+    "stable_score": {
+      "min": -41.342734385948624,
+      "median": -8.137773505701356,
+      "max": 29.15533268475103
+    },
+    "false_shear": 0,
+    "press": {
+      "min": 0.8745833333333334,
+      "median": 1,
+      "max": 1
+    },
+    "rate": 196.5379997894858
+  },
+  "empty": {
+    "score": {
+      "min": -22.592906663584674,
+      "median": 1.7095750052553722,
+      "max": 18.501440812356133
+    },
+    "false_shear": 0
+  },
+  "pull": {
+    "stable_score": {
+      "min": -15.00345983959449,
+      "median": 51.0872512798322,
+      "max": 130.75151555809884
+    },
+    "right": 17,
+    "reverse": 0,
+    "zero": 16,
+    "count": 36
+  },
+  "note": "Pure press in this recorded pose is separated from typical positive pull scores; full distributions overlap, so does not prove a safe universal threshold. Fresh push-minus and plus-X have not been captured after saved-tuning restoration."
+}

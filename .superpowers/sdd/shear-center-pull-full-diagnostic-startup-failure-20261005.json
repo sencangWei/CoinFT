@@ -1,0 +1,16 @@
+{
+  "capture_started": false,
+  "sample_count": 0,
+  "error": "Traceback (most recent call last):\r\n  File \"D:\\semg.claude\\coinft\\.superpowers\\sdd\\capture_center_pull_full_diagnostic_20261005.py\", line 6, in <module>\r\n    from calibration.capture_demo_pose import capture\r\nModuleNotFoundError: No module named 'calibration'\r\n",
+  "exit": 1,
+  "cause": "Nested script entrypoint did not add project root to sys.path; helper import failed before any capture.",
+  "red": {
+    "exit": 1,
+    "output": "test_nested_entrypoint_resolves_real_project_capture_module (__main__.BootstrapTests.test_nested_entrypoint_resolves_real_project_capture_module) ... FAIL\r\n\r\n======================================================================\r\nFAIL: test_nested_entrypoint_resolves_real_project_capture_module (__main__.BootstrapTests.test_nested_entrypoint_resolves_real_project_capture_module)\r\n----------------------------------------------------------------------\r\nTraceback (most recent call last):\r\n  File \"D:\\semg.claude\\coinft\\.superpowers\\sdd\\test_center_pull_capture_bootstrap_20261005.py\", line 32, in test_nested_entrypoint_resolves_real_project_capture_module\r\n    self.assertEqual(result.returncode, 0, result.stdout + result.stderr)\r\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nAssertionError: 1 != 0 : Traceback (most recent call last):\r\n  File \"<string>\", line 12, in <module>\r\n    exec(compile(ast.Module(body=prefix,type_ignores=[]),str(script),'exec'),namespace)\r\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"D:\\semg.claude\\coinft\\.superpowers\\sdd\\capture_center_pull_full_diagnostic_20261005.py\", line 6, in <module>\r\n    from calibration.capture_demo_pose import capture\r\nModuleNotFoundError: No module named 'calibration'\r\n\r\n\r\n----------------------------------------------------------------------\r\nRan 1 test in 0.211s\r\n\r\nFAILED (failures=1)\r\n"
+  },
+  "green": {
+    "exit": 0,
+    "output": "test_nested_entrypoint_resolves_real_project_capture_module (__main__.BootstrapTests.test_nested_entrypoint_resolves_real_project_capture_module) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 1 test in 0.241s\r\n\r\nOK\r\n"
+  },
+  "fix": "One project-root sys.path insertion in diagnostic helper only; no production profile, UI, backend, firmware change."
+}

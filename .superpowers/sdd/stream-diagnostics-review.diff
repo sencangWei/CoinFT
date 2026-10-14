@@ -1,0 +1,217 @@
+warning: in the working copy of '.superpowers/sdd/coinft_demo.before-stream-diagnostics.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'coinft_demo.py', LF will be replaced by CRLF the next time Git touches it
+diff --git a/.superpowers/sdd/coinft_demo.before-stream-diagnostics.py b/coinft_demo.py
+index a2ee5e6..e7a03fe 100644
+--- a/.superpowers/sdd/coinft_demo.before-stream-diagnostics.py
++++ b/coinft_demo.py
+@@ -113,6 +113,15 @@ class DemoSource:
+             "invalid_recent": 0,
+             "tare_progress": 0,
+             "updated_at": 0,
++            "diagnostics": {
++                "serial_reads": 0,
++                "serial_bytes": 0,
++                "parsed_frames": 0,
++                "last_byte_at": 0,
++                "last_parsed_frame_at": 0,
++                "parser_pending_bytes": 0,
++                "parser_discarded_bytes": 0,
++            },
+         }
+         self.thread = threading.Thread(target=self._run, daemon=True)
+ 
+@@ -132,7 +141,9 @@ class DemoSource:
+ 
+     def snapshot(self):
+         with self.lock:
+-            return dict(self.state)
++            snapshot = dict(self.state)
++            snapshot["diagnostics"] = dict(self.state["diagnostics"])
++            return snapshot
+ 
+     def _set_status(self, status, message):
+         with self.lock:
+@@ -225,6 +236,7 @@ class DemoSource:
+                     with self.lock:
+                         self.rate_started_at = None
+                         self.state["rate"] = 0.0
++                        self.state["diagnostics"]["parser_pending_bytes"] = 0
+                     ser.write(b"i")
+                     time.sleep(0.2)
+                     ser.reset_input_buffer()
+@@ -233,7 +245,21 @@ class DemoSource:
+                     last_frame = time.monotonic()
+                     while not self.stop_event.is_set():
+                         chunk = ser.read(4096)
+-                        for frame in self.parser.feed(chunk):
++                        read_at = time.time()
++                        previous_resyncs = self.parser.resyncs
++                        frames = self.parser.feed(chunk)
++                        with self.lock:
++                            diagnostics = self.state["diagnostics"]
++                            diagnostics["serial_reads"] += 1
++                            diagnostics["serial_bytes"] += len(chunk)
++                            if chunk:
++                                diagnostics["last_byte_at"] = read_at
++                            diagnostics["parsed_frames"] += len(frames)
++                            if frames:
++                                diagnostics["last_parsed_frame_at"] = read_at
++                            diagnostics["parser_pending_bytes"] = len(self.parser.buffer)
++                            diagnostics["parser_discarded_bytes"] += self.parser.resyncs - previous_resyncs
++                        for frame in frames:
+                             self._consume(frame)
+                             last_frame = time.monotonic()
+                         if time.monotonic() - last_frame > 2:
+
+warning: in the working copy of 'tests/test_serial_diagnostics.py', LF will be replaced by CRLF the next time Git touches it
+diff --git a/tests/test_serial_diagnostics.py b/tests/test_serial_diagnostics.py
+new file mode 100644
+index 0000000..7c31fb8
+--- /dev/null
++++ b/tests/test_serial_diagnostics.py
+@@ -0,0 +1,144 @@
++"""Exercise serial diagnostics through the real parser and consumer, without hardware."""
++
++import struct
++import sys
++import types
++import unittest
++from pathlib import Path
++from unittest.mock import patch
++
++sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
++from coinft_demo import DemoSource
++
++
++ZEROS = dict(serial_reads=0, serial_bytes=0, parsed_frames=0, last_byte_at=0,
++             last_parsed_frame_at=0, parser_pending_bytes=0, parser_discarded_bytes=0)
++
++
++def frame(value):
++    return b"\x00\x00" + struct.pack("<12H", *([value] * 12))
++
++
++class SerialDiagnosticsTests(unittest.TestCase):
++    def run_sessions(self, sessions):
++        source = DemoSource(port="TEST_ONLY")
++        snapshots, openings, commands = [], [], []
++        clock = [100.0]
++        remaining = iter(sessions)
++
++        class FakeSerial:
++            def __init__(self, port, baud, timeout):
++                self.chunks = iter(next(remaining))
++                self.commands = []
++                commands.append(self.commands)
++
++            def __enter__(self):
++                return self
++
++            def __exit__(self, *args):
++                return False
++
++            def write(self, command):
++                self.commands.append(command)
++                if command == b"i" and len(self.commands) == 1:
++                    openings.append(source.snapshot())
++
++            def reset_input_buffer(self):
++                pass
++
++            def read(self, size):
++                snapshots.append(source.snapshot())
++                item = next(self.chunks)
++                if isinstance(item, Exception):
++                    raise item
++                clock[0] += 1
++                chunk, final = item
++                if final:
++                    source.stop_event.set()
++                return chunk
++
++        fake_module = types.SimpleNamespace(Serial=FakeSerial, SerialException=OSError)
++        with patch.dict(sys.modules, serial=fake_module), \
++                patch("coinft_demo.time.sleep"), \
++                patch("coinft_demo.time.monotonic", return_value=1.0), \
++                patch("coinft_demo.time.time", side_effect=lambda: clock[0]) as wall_time, \
++                patch.object(source.stop_event, "wait", return_value=False):
++            source._run_serial()
++        snapshots.append(source.snapshot())
++        return source, snapshots, openings, commands, wall_time.call_count
++
++    def diagnostics(self, snapshot):
++        self.assertIn("diagnostics", snapshot)
++        return snapshot["diagnostics"]
++
++    def test_initial_values_and_snapshot_isolation(self):
++        source = DemoSource(port="TEST_ONLY")
++        first, second = source.snapshot(), source.snapshot()
++        self.assertEqual(self.diagnostics(first), ZEROS)
++        first["diagnostics"]["serial_reads"] = 99
++        self.assertEqual(self.diagnostics(second), ZEROS)
++        self.assertEqual(self.diagnostics(source.snapshot()), ZEROS)
++
++    def test_empty_and_garbage_reads_count_bytes_and_discard_without_frames(self):
++        _, states, _, commands, calls = self.run_sessions([
++            [(b"", False), (b"x" * 30, False), (b"", True)]])
++        self.assertEqual(self.diagnostics(states[1]), dict(ZEROS, serial_reads=1))
++        expected = dict(ZEROS, serial_reads=2, serial_bytes=30, last_byte_at=102,
++                        parser_pending_bytes=1, parser_discarded_bytes=29)
++        self.assertEqual(self.diagnostics(states[2]), expected)
++        self.assertEqual(self.diagnostics(states[3]), dict(expected, serial_reads=3))
++        self.assertEqual(states[3]["frames"], 0)
++        self.assertEqual(states[3]["resyncs"], 0)
++        self.assertEqual(commands, [[b"i", b"s", b"i"]])
++        self.assertEqual(calls, 3)
++
++    def test_split_frame_waits_for_following_header_and_processes_last_read(self):
++        wire = frame(1000)
++        source, states, _, commands, calls = self.run_sessions([
++            [(wire[:10], False), (wire[10:], False), (b"\x00\x00", True)]])
++        for index, pending in ((1, 10), (2, 26)):
++            diag = self.diagnostics(states[index])
++            self.assertEqual(diag["parser_pending_bytes"], pending)
++            self.assertEqual(diag["parsed_frames"], 0)
++        self.assertEqual(self.diagnostics(states[-1]), dict(
++            ZEROS, serial_reads=3, serial_bytes=28, parsed_frames=1,
++            last_byte_at=103, last_parsed_frame_at=103, parser_pending_bytes=2))
++        self.assertEqual(states[-1]["raw"], [1000] * 12)
++        self.assertEqual(states[-1]["updated_at"], 103)
++        self.assertEqual(len(source.tare_frames), 1)
++        self.assertEqual(commands, [[b"i", b"s", b"i"]])
++        self.assertEqual(calls, 4)  # Three reads and the unchanged valid-frame consumer.
++
++    def test_rejected_parsed_frame_advances_diagnostics_but_not_valid_update(self):
++        _, states, _, _, calls = self.run_sessions([
++            [(frame(1000) + b"\x00\x00", False),
++             (frame(65535)[2:] + b"\x00\x00", True)]])
++        before, after = states[1], states[2]
++        self.assertEqual(self.diagnostics(after)["parsed_frames"], 2)
++        self.assertEqual(after["diagnostics"]["last_parsed_frame_at"], 102)
++        self.assertEqual(after["frames"], 2)
++        self.assertEqual(after["invalid_frames"], 1)
++        self.assertEqual(after["updated_at"], before["updated_at"])
++        self.assertEqual(after["raw"], before["raw"])
++        self.assertEqual(calls, 3)
++
++    def test_reopen_preserves_totals_and_times_and_resets_pending(self):
++        _, states, openings, commands, calls = self.run_sessions([
++            [(b"x" * 30, False), (frame(1000) + b"\x00\x00", False),
++             OSError("test disconnect")],
++            [(b"", False), (b"y" * 30, True)]])
++        before = self.diagnostics(states[2])
++        reopened = self.diagnostics(openings[1])
++        self.assertEqual(reopened, dict(before, parser_pending_bytes=0))
++        self.assertEqual(self.diagnostics(states[4]), dict(reopened, serial_reads=3))
++        final = self.diagnostics(states[-1])
++        self.assertEqual(final, dict(reopened, serial_reads=4, serial_bytes=88,
++                                    last_byte_at=104, parser_pending_bytes=1,
++                                    parser_discarded_bytes=59))
++        self.assertEqual(before["last_parsed_frame_at"], 102)
++        self.assertEqual(commands, [[b"i", b"s"], [b"i", b"s", b"i"]])
++        self.assertEqual(calls, 5)
++
++
++if __name__ == "__main__":
++    unittest.main()
+

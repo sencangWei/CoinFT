@@ -1,0 +1,57 @@
+{
+  "deployed_sha256": "af13756949ff0bb047392c183117298ea1b070106e3f2edc0553c075e25be150",
+  "only_production_fields_changed": [
+    "shear",
+    "evidence"
+  ],
+  "shear_exactly_frozen": true,
+  "served_profile_matches": true,
+  "deployed_independent_replay_exactly_matches": true,
+  "accepted": true,
+  "protected_unchanged": {
+    "D:\\semg.claude\\coinft\\demo_web\\app.js": true,
+    "D:\\semg.claude\\coinft\\demo_web\\surface.js": true,
+    "D:\\semg.claude\\coinft\\START_DEMO.bat": true,
+    "D:\\semg.claude\\coinft\\calibration\\coinft_calib.json": true,
+    "D:\\semg.claude\\firmware_imu\\platformio.ini": true,
+    "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\platformio.ini": true,
+    "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\scripts\\diag_usb_build.py": true,
+    "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\.pio\\build\\teensy40\\firmware.hex": true,
+    "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\.pio\\build\\teensy40\\firmware.elf": true,
+    "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\.pio\\build\\teensy40_diag\\firmware.hex": true,
+    "C:\\Users\\winer\\.platformio\\packages\\framework-arduinoteensy\\cores\\teensy4\\usb_serial.c": true,
+    "C:\\Users\\winer\\.platformio\\packages\\framework-arduinoteensy\\cores\\teensy4\\usb_serial2.c": true,
+    "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\teensy_coinft_serial_interface.cpp": true,
+    "coinft_demo.py": true
+  },
+  "current_state": {
+    "status": "live",
+    "port": "COM6",
+    "mode": "live",
+    "frames": 3269016,
+    "rate": 200,
+    "invalid_frames": 4,
+    "invalid_recent": 0,
+    "saturated": 0,
+    "saturated_recent": 0,
+    "resyncs": 0,
+    "recovery": {
+      "attempts": 31,
+      "successes": 3,
+      "last_fault": {
+        "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+        "observed_at": 1791195121.7326481,
+        "frames": 1296085,
+        "diagnostics": {
+          "serial_reads": 59382,
+          "serial_bytes": 33698288,
+          "parsed_frames": 1296085,
+          "last_byte_at": 1791195119.664947,
+          "last_parsed_frame_at": 1791195119.664947,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        }
+      }
+    }
+  }
+}

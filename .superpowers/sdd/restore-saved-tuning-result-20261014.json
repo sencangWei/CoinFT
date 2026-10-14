@@ -1,0 +1,246 @@
+{
+  "scope": "Authorized saved acquisition parameter re-send; visual profile unchanged; physical fix not yet verified",
+  "tuning": [
+    [
+      12,
+      50,
+      50
+    ],
+    [
+      12,
+      30,
+      72
+    ],
+    [
+      12,
+      30,
+      81
+    ],
+    [
+      12,
+      30,
+      82
+    ],
+    [
+      12,
+      30,
+      83
+    ],
+    [
+      12,
+      30,
+      85
+    ],
+    [
+      12,
+      30,
+      76
+    ],
+    [
+      12,
+      30,
+      75
+    ],
+    [
+      12,
+      100,
+      17
+    ],
+    [
+      12,
+      100,
+      26
+    ],
+    [
+      12,
+      80,
+      58
+    ],
+    [
+      12,
+      80,
+      42
+    ]
+  ],
+  "capture": {
+    "chunk_id": "a5481a",
+    "wall_time_seconds": 8.5716208,
+    "exit_code": 0,
+    "original_token_count": 245,
+    "output": "tuning sent (12 ch)\r\nframes=1020  elapsed=5.10s  rate=199.9 Hz  resyncs=0\r\nch   median  p1     p99    min    max    sat_count  distinct\r\nCH1    28235   28165  28299  28151  33781          0       150\r\nCH2    27862   27761  27956  27746  28020          0       204\r\nCH3    26376   26299  26450  26279  33020          0       166\r\nCH4    27243   27136  27338  27111  27531          0       208\r\nCH5    26779   26663  26881  26651  26896          0       217\r\nCH6    26849   26741  26946  26723  26961          0       209\r\nCH7    27751   27644  27839  27619  27862          0       199\r\nCH8    26494   26388  26597  26370  26624          0       218\r\nCH9    28695   28653  28735  28638  28751          0        93\r\nCH10   28327   28288  28363  28276  28387          0        89\r\nCH11   29337   29290  29379  29278  29393          0       103\r\nCH12   28401   28340  28455  28329  28463          0       126\r\nSATURATION: NONE\r\nsaved -> calibration\\restore_saved_tuning_20261014.csv\r\n"
+  },
+  "post_runtime": {
+    "state": {
+      "mode": "live",
+      "status": "live",
+      "message": "数据流正常",
+      "port": "COM6",
+      "axes": [
+        -0.0056727,
+        0.0145577,
+        0.0481207,
+        -0.0000249,
+        -0.0000538,
+        -0.0000871
+      ],
+      "channels": [
+        16,
+        22.5,
+        21,
+        14,
+        14,
+        -110,
+        23,
+        -138,
+        -45,
+        -29,
+        8,
+        14
+      ],
+      "raw": [
+        28281,
+        27927,
+        26434,
+        27307,
+        26835,
+        26785,
+        27815,
+        26401,
+        28658,
+        28308,
+        29353,
+        28427
+      ],
+      "rate": 200.3,
+      "frames": 13298,
+      "resyncs": 0,
+      "saturated": 0,
+      "saturated_recent": 0,
+      "invalid_frames": 0,
+      "invalid_recent": 0,
+      "tare_progress": 100,
+      "updated_at": 1791965317.99585,
+      "diagnostics": {
+        "serial_reads": 611,
+        "serial_bytes": 345774,
+        "parsed_frames": 13298,
+        "last_byte_at": 1791965317.9948387,
+        "last_parsed_frame_at": 1791965317.9948387,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      },
+      "recovery": {
+        "attempts": 0,
+        "successes": 0,
+        "last_fault": null
+      }
+    },
+    "page": {
+      "profile": {
+        "version": 1,
+        "mode": "qualitative",
+        "assemblyId": "coinft-current-20260925",
+        "normal": {
+          "threshold": 100,
+          "span": 600
+        },
+        "shear": {
+          "enabled": true,
+          "weights": [
+            0.31590282776546447,
+            -0.12205855363676356,
+            -0.3341345639198642,
+            0.1321512275490956,
+            -0.6043682958768727,
+            0.29582120955720936,
+            0.6305046426094868,
+            -0.3138184940477558
+          ],
+          "pressLeak": [
+            -0.02643880353355445,
+            -0.03144711796000465,
+            -0.1214381970191369,
+            0.2357389209364859,
+            0.07993594816592298,
+            0.1752984546744665,
+            0.014867875399405917,
+            -0.24604676712122375
+          ],
+          "threshold": 58.330169520837785,
+          "span": 58.330169520837785
+        },
+        "rightLabel": "−X",
+        "leftLabel": "+X",
+        "evidence": [
+          ".superpowers/sdd/center-pull-refit-20261006-report.json"
+        ]
+      },
+      "baseline": [
+        -5,
+        -58.5,
+        -0.5,
+        -48.5,
+        -22,
+        -28.5,
+        -24,
+        -40,
+        -3,
+        -8,
+        -11,
+        -5.5
+      ],
+      "paused": false,
+      "frame": 13363,
+      "normal": 0,
+      "shear": 0
+    },
+    "raw_reference": [
+      28265,
+      27904.5,
+      26413,
+      27293,
+      26821,
+      26895,
+      27792,
+      26539,
+      28703,
+      28337,
+      29345,
+      28413
+    ],
+    "profile_sha256": "1df74f4570f5119f180f9e7830120abe555bd6c37cc33ab3dbc33b8dba5a6020"
+  },
+  "old_recording": {
+    "status": "SAVED",
+    "duration_seconds": 2993.16,
+    "size_bytes": 374581553
+  },
+  "active_recording": {
+    "status": "RECORDING",
+    "output_dir": "D:\\semg.claude\\coinft\\recordings\\demo_20261014_160741",
+    "video": "D:\\semg.claude\\coinft\\recordings\\demo_20261014_160741\\page@c6657d010d50c46d9d4cfbbd91d8befb.webm",
+    "cdp": "http://127.0.0.1:9225",
+    "baseline": [
+      -5,
+      -58.5,
+      -0.5,
+      -48.5,
+      -22,
+      -28.5,
+      -24,
+      -40,
+      -3,
+      -8,
+      -11,
+      -5.5
+    ],
+    "profile_sha256": "1df74f4570f5119f180f9e7830120abe555bd6c37cc33ab3dbc33b8dba5a6020",
+    "exec_session_id": 7943,
+    "service_exec_session_id": 38385
+  },
+  "limits": [
+    "No chip-parameter readback or ACK; successful sends are not independently verified register values",
+    "Steady counts before/after close; missing initialization not proven",
+    "New light minus-X physical comparison pending"
+  ]
+}

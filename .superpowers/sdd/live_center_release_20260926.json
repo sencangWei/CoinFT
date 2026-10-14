@@ -1,0 +1,33 @@
+{
+  "stage": "center_release",
+  "date": "2026-09-26",
+  "source": "visible Edge live page, exec session 83300",
+  "operator_confirmation": "已松开",
+  "summary": {
+    "snapshot_count": 10,
+    "browser_span_ms": 5592.9,
+    "first_frame": 21435750,
+    "last_frame": 21436858,
+    "frame_increment": 1108,
+    "baseline_retained_all": true,
+    "normal_target_all": 0,
+    "normal_level_all": 0,
+    "shear_target_all": 0,
+    "shear_level_all": 0,
+    "status_all": "数据正常",
+    "limitation": "Steady released segment only; operator reply/capture delay means immediate rebound latency was not measured. Both signed shear directions pending."
+  },
+  "raw_probe_terminal_outputs": [
+    "probe\r\n{\"at\": 644757, \"frame\": 21435750, \"baseline\": [12, 18, 11, 38.5, 48, 70.5, 46.5,\r\n\u001b[23;80H, 65.5, -2, -2.5, 15, 12], \"target\": 0, \"shearTarget\": -0.0, \"level\": 0, \"shearLe\r\n\u001b[23;80Hevel\": -0.0, \"label\": \"\\u5b9a\\u6027\\u6f14\\u793a \\u00b7 \\u975e\\u6807\\u5b9a\\u529b\\u\r\n\u001b[23;80Hu503c \\u00b7 \\u65b9\\u5411\\u672a\\u7ecf\\u8fc7\\u72ec\\u7acb\\u9a8c\\u6536 \\u00b7 \\u753b\r\n\u001b[23;80Hb\\u9762\\u5df2\\u5f52\\u96f6\", \"status\": \"\\u6570\\u636e\\u6b63\\u5e38\"}\r\n",
+    "probe\r\n{\"at\": 645382, \"frame\": 21435858, \"baseline\": [12, 18, 11, 38.5, 48, 70.5, 46.5,\r\n\u001b[23;80H, 65.5, -2, -2.5, 15, 12], \"target\": 0, \"shearTarget\": -0.0, \"level\": 0, \"shearLe\r\n\u001b[23;80Hevel\": -0.0, \"label\": \"\\u5b9a\\u6027\\u6f14\\u793a \\u00b7 \\u975e\\u6807\\u5b9a\\u529b\\u\r\n\u001b[23;80Hu503c \\u00b7 \\u65b9\\u5411\\u672a\\u7ecf\\u8fc7\\u72ec\\u7acb\\u9a8c\\u6536 \\u00b7 \\u753b\r\n\u001b[23;80Hb\\u9762\\u5df2\\u5f52\\u96f6\", \"status\": \"\\u6570\\u636e\\u6b63\\u5e38\"}\r\n",
+    "probe\r\n{\"at\": 646005, \"frame\": 21435990, \"baseline\": [12, 18, 11, 38.5, 48, 70.5, 46.5,\r\n\u001b[23;80H, 65.5, -2, -2.5, 15, 12], \"target\": 0, \"shearTarget\": 0, \"level\": 0, \"shearLevel\r\n\u001b[23;80Hl\": 0, \"label\": \"\\u5b9a\\u6027\\u6f14\\u793a \\u00b7 \\u975e\\u6807\\u5b9a\\u529b\\u503c \\\r\n\u001b[23;80H\\u00b7 \\u65b9\\u5411\\u672a\\u7ecf\\u8fc7\\u72ec\\u7acb\\u9a8c\\u6536 \\u00b7 \\u753b\\u9762\r\n\u001b[23;80H2\\u5df2\\u5f52\\u96f6\", \"status\": \"\\u6570\\u636e\\u6b63\\u5e38\"}\r\n",
+    "probe\r\n{\"at\": 646627.900000006, \"frame\": 21436120, \"baseline\": [12, 18, 11, 38.5, 48, 7\r\n\u001b[23;80H70.5, 46.5, 65.5, -2, -2.5, 15, 12], \"target\": 0, \"shearTarget\": -0.0, \"level\": 0\r\n\u001b[23;80H0, \"shearLevel\": -0.0, \"label\": \"\\u5b9a\\u6027\\u6f14\\u793a \\u00b7 \\u975e\\u6807\\u5b\r\n\u001b[23;80Hb9a\\u529b\\u503c \\u00b7 \\u65b9\\u5411\\u672a\\u7ecf\\u8fc7\\u72ec\\u7acb\\u9a8c\\u6536 \\u0\r\n\u001b[23;80H00b7 \\u753b\\u9762\\u5df2\\u5f52\\u96f6\", \"status\": \"\\u6570\\u636e\\u6b63\\u5e38\"}      \r\n",
+    "probe\r\n{\"at\": 647250.3000000119, \"frame\": 21436250, \"baseline\": [12, 18, 11, 38.5, 48, \r\n\u001b[23;80H 70.5, 46.5, 65.5, -2, -2.5, 15, 12], \"target\": 0, \"shearTarget\": -0.0, \"level\": \r\n\u001b[23;80H 0, \"shearLevel\": -0.0, \"label\": \"\\u5b9a\\u6027\\u6f14\\u793a \\u00b7 \\u975e\\u6807\\u5\r\n\u001b[23;80H5b9a\\u529b\\u503c \\u00b7 \\u65b9\\u5411\\u672a\\u7ecf\\u8fc7\\u72ec\\u7acb\\u9a8c\\u6536 \\u\r\n\u001b[23;80Hu00b7 \\u753b\\u9762\\u5df2\\u5f52\\u96f6\", \"status\": \"\\u6570\\u636e\\u6b63\\u5e38\"}     \r\n",
+    "probe\r\n{\"at\": 647869.5, \"frame\": 21436359, \"baseline\": [12, 18, 11, 38.5, 48, 70.5, 46.\r\n\u001b[23;80H.5, 65.5, -2, -2.5, 15, 12], \"target\": 0, \"shearTarget\": 0, \"level\": 0, \"shearLev\r\n\u001b[23;80Hvel\": 0, \"label\": \"\\u5b9a\\u6027\\u6f14\\u793a \\u00b7 \\u975e\\u6807\\u5b9a\\u529b\\u503c\r\n\u001b[23;80Hc \\u00b7 \\u65b9\\u5411\\u672a\\u7ecf\\u8fc7\\u72ec\\u7acb\\u9a8c\\u6536 \\u00b7 \\u753b\\u97\r\n\u001b[23;80H762\\u5df2\\u5f52\\u96f6\", \"status\": \"\\u6570\\u636e\\u6b63\\u5e38\"}\r\n",
+    "probe\r\n{\"at\": 648490.900000006, \"frame\": 21436490, \"baseline\": [12, 18, 11, 38.5, 48, 7\r\n\u001b[23;80H70.5, 46.5, 65.5, -2, -2.5, 15, 12], \"target\": 0, \"shearTarget\": 0, \"level\": 0, \"\r\n\u001b[23;80H\"shearLevel\": 0, \"label\": \"\\u5b9a\\u6027\\u6f14\\u793a \\u00b7 \\u975e\\u6807\\u5b9a\\u52\r\n\u001b[23;80H29b\\u503c \\u00b7 \\u65b9\\u5411\\u672a\\u7ecf\\u8fc7\\u72ec\\u7acb\\u9a8c\\u6536 \\u00b7 \\u\r\n\u001b[23;80Hu753b\\u9762\\u5df2\\u5f52\\u96f6\", \"status\": \"\\u6570\\u636e\\u6b63\\u5e38\"}\r\n",
+    "probe\r\n{\"at\": 649112.900000006, \"frame\": 21436620, \"baseline\": [12, 18, 11, 38.5, 48, 7\r\n\u001b[23;80H70.5, 46.5, 65.5, -2, -2.5, 15, 12], \"target\": 0, \"shearTarget\": 0, \"level\": 0, \"\r\n\u001b[23;80H\"shearLevel\": 0, \"label\": \"\\u5b9a\\u6027\\u6f14\\u793a \\u00b7 \\u975e\\u6807\\u5b9a\\u52\r\n\u001b[23;80H29b\\u503c \\u00b7 \\u65b9\\u5411\\u672a\\u7ecf\\u8fc7\\u72ec\\u7acb\\u9a8c\\u6536 \\u00b7 \\u\r\n\u001b[23;80Hu753b\\u9762\\u5df2\\u5f52\\u96f6\", \"status\": \"\\u6570\\u636e\\u6b63\\u5e38\"}\r\n",
+    "probe\r\n{\"at\": 649728.1000000238, \"frame\": 21436728, \"baseline\": [12, 18, 11, 38.5, 48, \r\n\u001b[23;80H 70.5, 46.5, 65.5, -2, -2.5, 15, 12], \"target\": 0, \"shearTarget\": 0, \"level\": 0, \r\n\u001b[23;80H \"shearLevel\": 0, \"label\": \"\\u5b9a\\u6027\\u6f14\\u793a \\u00b7 \\u975e\\u6807\\u5b9a\\u5\r\n\u001b[23;80H529b\\u503c \\u00b7 \\u65b9\\u5411\\u672a\\u7ecf\\u8fc7\\u72ec\\u7acb\\u9a8c\\u6536 \\u00b7 \\\r\n\u001b[23;80H\\u753b\\u9762\\u5df2\\u5f52\\u96f6\", \"status\": \"\\u6570\\u636e\\u6b63\\u5e38\"}\r\n",
+    "probe\r\n{\"at\": 650349.900000006, \"frame\": 21436858, \"baseline\": [12, 18, 11, 38.5, 48, 7\r\n\u001b[23;80H70.5, 46.5, 65.5, -2, -2.5, 15, 12], \"target\": 0, \"shearTarget\": 0, \"level\": 0, \"\r\n\u001b[23;80H\"shearLevel\": 0, \"label\": \"\\u5b9a\\u6027\\u6f14\\u793a \\u00b7 \\u975e\\u6807\\u5b9a\\u52\r\n\u001b[23;80H29b\\u503c \\u00b7 \\u65b9\\u5411\\u672a\\u7ecf\\u8fc7\\u72ec\\u7acb\\u9a8c\\u6536 \\u00b7 \\u\r\n\u001b[23;80Hu753b\\u9762\\u5df2\\u5f52\\u96f6\", \"status\": \"\\u6570\\u636e\\u6b63\\u5e38\"}\r\n"
+  ],
+  "raw_format_warning": "Raw PTY output contains ANSI/wrapping duplicate characters; summary manually checked."
+}

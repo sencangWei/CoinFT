@@ -1,0 +1,25 @@
+# Joint shear coefficient and normal-leak fitting (renewed user attempt)
+
+User explicitly requests another serious attempt with the EXISTING method before switching to independent left/right recognition. Original profile-only spec remains binding. Hypothesis: previously fixing pressLeak unnecessarily ties the normal-score coefficient to the first-eight-channel coefficients; it does not explore the full capacity of the already-approved profile schema.
+
+## Ownership and boundaries
+
+Own only new offline script `.superpowers/sdd/shear_refit_joint_leak_20261005.py`, report `.superpowers/sdd/shear-refit-joint-leak-20261005.json`, focused test `tests/test_joint_shear_fit.py` if reusable functions require it, and task report `.superpowers/sdd/joint-shear-refit-report-20261005.md`. You are not alone in the workspace; preserve all others' edits. No production edits, devices, tare commands, process termination, Git initialization, or editing old evidence/reports. Use apply_patch for source changes. Python D:/conda/python.exe -X utf8. No Git metadata: no commits/worktrees.
+
+## Sources and validation
+
+Reuse exact eight chronological windows and fixed raw reference/common unloaded baseline documented with source hashes in `shear-refit-coefficient-softmargin-20261005.json`. Actual order left_before,left,press_before,press,press_after,right_before,right,right_after. Corrected `left_repeat.json` is actually unloaded and EXCLUDED. Hash-check every original source; derive channels = raw - one fixed reference, then subtract the SAME common baseline for every window. Preserve frame/host/owner/raw, call existing `_validate` and `ordered`, disclose right_after recovery 31/3 vs earlier30/2. Never imply these are independent acceptance data or one continuous stream.
+
+## Mathematical scope
+
+Existing score = dot(w, contrast(first8)) - dot(w, pressLeak) * normalScore(CH9-12). Fit w and scalar beta independently, with sum(w)=0. No intercept: actual profile formula lacks one. Features are 8 contrasts and normalScore, coefficient for the last feature is -beta. Encode exactly as original profile: normalize w to unit L2, set pressLeak = beta * w / dot(w,w) before normalization (so normalized weights dot leak = beta / norm); threshold and span normalized identically. Verify all sample Python scores match encoded profile score to tolerance. Preserve `normal={threshold:100,span:600}`, labels and other profile fields.
+
+Begin with one joint raw-score LP: threshold1, span1; all idle and press |score|<=.50 (noise margin), all right>=1.1, all left<=-1.1; minimize L1 scaled coefficients, finite 10second solve bound. Strict raw feasibility is only diagnostic, not actual acceptance requirement. If it fails, perform ONE bounded temporal-aware/cardinality attempt under original actual80% gate, not a raw100% condition. You may choose a sound LP/MILP formulation after inspecting surface.js; document exact assumptions, solver runtime bound <=30seconds, and objective. Maintain hard wrong-direction/background protection. A finite predeclared threshold/span choice is permitted as model parameters, but do NOT change actual acceptance gates or fit against test/independent captures. Do not do an unbounded random/grid search. If both fail, retain detailed source scores/timing diagnostics explaining right failure, not a universal impossibility or hardware-fault claim.
+
+Important production filter semantics: raw score is clipped to max(threshold,.6threshold+.85span) BEFORE EMA180ms; state activates at threshold, continues at .6threshold, output uses (magnitude-.6threshold)/(.85span). Actual first sample initializes EMA directly. Inspect current surface.js rather than assuming unclipped EMA is equivalent. Candidate acceptance uses actual unchanged production JS replay ONLY. If temporal constraints assume no clipping, impose raw bound to guarantee it, or label surrogate explicitly and rely on actual JS gate.
+
+## Verification and outputs
+
+Before implementation, add a focused failing behavioral test for encoding free beta into existing profile formula (nonzero weight and positive/negative beta, normal=0/high), then implement and record RED/GREEN; a one-off behavioral script acceptable if no reusable API. Keep narrow: no general fitting library or CLI. Validate zero/nonfinite solver outputs rather than construct unusable profiles. Execute actual Chromium `refit.replay(candidate,old,windows,baseline)` and `passes`. Stable cutoff600ms: all idle/press abs target<=.05; right>=+.20 for>=80% and no <-.05; left<=-.20 for>=80% and no >+.05; normal exactly unchanged. Report transition and stable outputs separately, per-pose min/median/max/active/reverse counts; candidate SHA and source SHA and protection hashes. No sample exclusions/fabrications beyond already documented operator typo.
+
+All replay/solver windows are TRAINING evidence. On success freeze ONE candidate in report for independent future physical acceptance, do not deploy. Report latest right fail segments/timing if unsuccessful. Do not ask user for new poses. Provide short status within ~2minutes while working; return DONE / DONE_WITH_CONCERNS and full task-report path.

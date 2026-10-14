@@ -1,0 +1,1669 @@
+{
+  "outcome": "not_ready",
+  "samples": [
+    {
+      "at": 5370.9000000059605,
+      "frame": 21177634,
+      "baseline": null,
+      "target": 0,
+      "shearTarget": 0,
+      "level": 0,
+      "shearLevel": 0,
+      "label": "定性演示 · 非标定力值 · 方向未经过独立验收 · 未归零",
+      "status": "数据正常"
+    },
+    {
+      "at": 5478.100000023842,
+      "frame": 21177655,
+      "baseline": null,
+      "target": 0,
+      "shearTarget": 0,
+      "level": 0,
+      "shearLevel": 0,
+      "label": "定性演示 · 非标定力值 · 方向未经过独立验收 · 未归零",
+      "status": "数据正常"
+    },
+    {
+      "at": 5586.700000017881,
+      "frame": 21177678,
+      "baseline": null,
+      "target": 0,
+      "shearTarget": 0,
+      "level": 0,
+      "shearLevel": 0,
+      "label": "定性演示 · 非标定力值 · 方向未经过独立验收 · 未归零",
+      "status": "数据正常"
+    },
+    {
+      "at": 5697.600000023842,
+      "frame": 21177699,
+      "baseline": null,
+      "target": 0,
+      "shearTarget": 0,
+      "level": 0,
+      "shearLevel": 0,
+      "label": "定性演示 · 非标定力值 · 方向未经过独立验收 · 未归零",
+      "status": "数据正常"
+    },
+    {
+      "at": 5804.9000000059605,
+      "frame": 21177721,
+      "baseline": null,
+      "target": 0,
+      "shearTarget": 0,
+      "level": 0,
+      "shearLevel": 0,
+      "label": "定性演示 · 非标定力值 · 方向未经过独立验收 · 未归零",
+      "status": "数据正常"
+    },
+    {
+      "at": 5915,
+      "frame": 21177743,
+      "baseline": null,
+      "target": 0,
+      "shearTarget": 0,
+      "level": 0,
+      "shearLevel": 0,
+      "label": "定性演示 · 非标定力值 · 方向未经过独立验收 · 未归零",
+      "status": "数据正常"
+    },
+    {
+      "at": 6024,
+      "frame": 21177765,
+      "baseline": null,
+      "target": 0,
+      "shearTarget": 0,
+      "level": 0,
+      "shearLevel": 0,
+      "label": "定性演示 · 非标定力值 · 方向未经过独立验收 · 未归零",
+      "status": "数据正常"
+    },
+    {
+      "at": 6132.9000000059605,
+      "frame": 21177787,
+      "baseline": null,
+      "target": 0,
+      "shearTarget": 0,
+      "level": 0,
+      "shearLevel": 0,
+      "label": "定性演示 · 非标定力值 · 方向未经过独立验收 · 未归零",
+      "status": "数据正常"
+    },
+    {
+      "at": 6241.4000000059605,
+      "frame": 21177808,
+      "baseline": null,
+      "target": 0,
+      "shearTarget": 0,
+      "level": 0,
+      "shearLevel": 0,
+      "label": "定性演示 · 非标定力值 · 方向未经过独立验收 · 未归零",
+      "status": "数据正常"
+    },
+    {
+      "at": 6344.9000000059605,
+      "frame": 21177830,
+      "baseline": null,
+      "target": 0,
+      "shearTarget": 0,
+      "level": 0,
+      "shearLevel": 0,
+      "label": "定性演示 · 非标定力值 · 方向未经过独立验收 · 未归零",
+      "status": "数据正常"
+    },
+    {
+      "at": 6448.9000000059605,
+      "frame": 21177852,
+      "baseline": null,
+      "target": 0,
+      "shearTarget": 0,
+      "level": 0,
+      "shearLevel": 0,
+      "label": "定性演示 · 非标定力值 · 方向未经过独立验收 · 未归零",
+      "status": "数据正常"
+    },
+    {
+      "at": 6552,
+      "frame": 21177852,
+      "baseline": null,
+      "target": 0,
+      "shearTarget": 0,
+      "level": 0,
+      "shearLevel": 0,
+      "label": "定性演示 · 非标定力值 · 方向未经过独立验收 · 未归零",
+      "status": "数据正常"
+    },
+    {
+      "at": 6658.600000023842,
+      "frame": 21177895,
+      "baseline": null,
+      "target": 0,
+      "shearTarget": 0,
+      "level": 0,
+      "shearLevel": 0,
+      "label": "定性演示 · 非标定力值 · 方向未经过独立验收 · 未归零",
+      "status": "数据正常"
+    },
+    {
+      "at": 6767.5,
+      "frame": 21177916,
+      "baseline": null,
+      "target": 0,
+      "shearTarget": 0,
+      "level": 0,
+      "shearLevel": 0,
+      "label": "定性演示 · 非标定力值 · 方向未经过独立验收 · 未归零",
+      "status": "数据正常"
+    },
+    {
+      "at": 6877.600000023842,
+      "frame": 21177938,
+      "baseline": null,
+      "target": 0,
+      "shearTarget": 0,
+      "level": 0,
+      "shearLevel": 0,
+      "label": "定性演示 · 非标定力值 · 方向未经过独立验收 · 未归零",
+      "status": "数据正常"
+    }
+  ],
+  "errors": [],
+  "screenshot": "D:\\semg.claude\\coinft\\.superpowers\\sdd\\live_zero_20260926_153355.png",
+  "diagnostics": {
+    "states": [
+      {
+        "at": 199.40000000596046,
+        "frame": 21176592,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 246.40000000596046,
+        "frame": 21176613,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 310.40000000596046,
+        "frame": 21176634,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 351.30000001192093,
+        "frame": 21176634,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 396.10000002384186,
+        "frame": 21176634,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 449,
+        "frame": 21176656,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 499.30000001192093,
+        "frame": 21176656,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 549.6000000238419,
+        "frame": 21176678,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 596.1000000238419,
+        "frame": 21176678,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 651,
+        "frame": 21176699,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 696.2000000178814,
+        "frame": 21176699,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 749.2000000178814,
+        "frame": 21176721,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 797.2000000178814,
+        "frame": 21176721,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 845.9000000059605,
+        "frame": 21176721,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 897.2000000178814,
+        "frame": 21176742,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 949.7000000178814,
+        "frame": 21176742,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 998.4000000059605,
+        "frame": 21176764,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 1047.5,
+        "frame": 21176764,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 1095.9000000059605,
+        "frame": 21176786,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 1151.300000011921,
+        "frame": 21176786,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 1199.7000000178814,
+        "frame": 21176808,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 1248.300000011921,
+        "frame": 21176808,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 1297,
+        "frame": 21176829,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 1346.1000000238419,
+        "frame": 21176829,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 1401,
+        "frame": 21176851,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 1450.300000011921,
+        "frame": 21176851,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 1498.5,
+        "frame": 21176851,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 1546.800000011921,
+        "frame": 21176873,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 1595.800000011921,
+        "frame": 21176873,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 1645.4000000059605,
+        "frame": 21176895,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 1700.1000000238419,
+        "frame": 21176895,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 1749,
+        "frame": 21176917,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 1797.1000000238419,
+        "frame": 21176917,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 1846.1000000238419,
+        "frame": 21176939,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 1901.4000000059605,
+        "frame": 21176939,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 1950.4000000059605,
+        "frame": 21176960,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 1998.5,
+        "frame": 21176960,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 2047.5,
+        "frame": 21176960,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 2095.800000011921,
+        "frame": 21176982,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 2151.7000000178814,
+        "frame": 21176982,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 2200.2000000178814,
+        "frame": 21177004,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 2248.7000000178814,
+        "frame": 21177004,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 2298.4000000059605,
+        "frame": 21177026,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 2346,
+        "frame": 21177026,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 2404,
+        "frame": 21177047,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 2450,
+        "frame": 21177047,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 2498.800000011921,
+        "frame": 21177069,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 2546.800000011921,
+        "frame": 21177069,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 2596,
+        "frame": 21177091,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 2652,
+        "frame": 21177091,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 2702.2000000178814,
+        "frame": 21177091,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 2749,
+        "frame": 21177113,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 2795.600000023842,
+        "frame": 21177113,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 2846,
+        "frame": 21177135,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 2901.4000000059605,
+        "frame": 21177135,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 2950.4000000059605,
+        "frame": 21177156,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 2997.100000023842,
+        "frame": 21177156,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 3046.9000000059605,
+        "frame": 21177178,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 3096.100000023842,
+        "frame": 21177178,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 3152.300000011921,
+        "frame": 21177200,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 3199.7000000178814,
+        "frame": 21177200,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 3248.600000023842,
+        "frame": 21177221,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 3297.300000011921,
+        "frame": 21177221,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 3345.7000000178814,
+        "frame": 21177221,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 3397.4000000059605,
+        "frame": 21177243,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 3446,
+        "frame": 21177243,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 3498.5,
+        "frame": 21177265,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 3547.2000000178814,
+        "frame": 21177265,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 3596.100000023842,
+        "frame": 21177286,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 3649,
+        "frame": 21177286,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 3699.9000000059605,
+        "frame": 21177308,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 3748.7000000178814,
+        "frame": 21177308,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 3797.300000011921,
+        "frame": 21177330,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 3846.100000023842,
+        "frame": 21177330,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 3901.600000023842,
+        "frame": 21177351,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 3949.800000011921,
+        "frame": 21177351,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 3998.4000000059605,
+        "frame": 21177351,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 4096.600000023842,
+        "frame": 21177373,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 4151.9000000059605,
+        "frame": 21177395,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 4200.800000011921,
+        "frame": 21177395,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 4248.5,
+        "frame": 21177417,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 4296,
+        "frame": 21177417,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 4346.5,
+        "frame": 21177438,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 4401.600000023842,
+        "frame": 21177438,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 4449.9000000059605,
+        "frame": 21177460,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 4498.600000023842,
+        "frame": 21177460,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 4551.5,
+        "frame": 21177482,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 4595.4000000059605,
+        "frame": 21177482,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 4651.800000011921,
+        "frame": 21177482,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 4700.4000000059605,
+        "frame": 21177503,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 4748.5,
+        "frame": 21177503,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 4797.200000017881,
+        "frame": 21177525,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 4845.700000017881,
+        "frame": 21177525,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 4902.100000023842,
+        "frame": 21177547,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 4950.100000023842,
+        "frame": 21177547,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 4997.800000011921,
+        "frame": 21177568,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 5047.100000023842,
+        "frame": 21177568,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 5096.100000023842,
+        "frame": 21177590,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 5151.600000023842,
+        "frame": 21177590,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 5201,
+        "frame": 21177612,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 5250.100000023842,
+        "frame": 21177612,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 5297.5,
+        "frame": 21177612,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 5345.800000011921,
+        "frame": 21177634,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 5401.200000017881,
+        "frame": 21177634,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 5449.300000011921,
+        "frame": 21177655,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 5496,
+        "frame": 21177655,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 5547.300000011921,
+        "frame": 21177678,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 5595.800000011921,
+        "frame": 21177678,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 5652.200000017881,
+        "frame": 21177699,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 5700.5,
+        "frame": 21177699,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 5748.800000011921,
+        "frame": 21177721,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 5797.4000000059605,
+        "frame": 21177721,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 5846.5,
+        "frame": 21177721,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 5902.200000017881,
+        "frame": 21177743,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 5949.800000011921,
+        "frame": 21177743,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 5998.800000011921,
+        "frame": 21177765,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 6047,
+        "frame": 21177765,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 6096,
+        "frame": 21177787,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 6151.5,
+        "frame": 21177787,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 6197,
+        "frame": 21177808,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 6248.4000000059605,
+        "frame": 21177808,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 6297,
+        "frame": 21177830,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 6345.700000017881,
+        "frame": 21177830,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 6399.800000011921,
+        "frame": 21177852,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 6449.600000023842,
+        "frame": 21177852,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 6498.100000023842,
+        "frame": 21177852,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 6552.600000023842,
+        "frame": 21177873,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 6595.800000011921,
+        "frame": 21177873,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 6651.5,
+        "frame": 21177895,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 6699.9000000059605,
+        "frame": 21177895,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 6748.200000017881,
+        "frame": 21177916,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 6797,
+        "frame": 21177916,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 6846.4000000059605,
+        "frame": 21177938,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 6900.800000011921,
+        "frame": 21177938,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 6950.200000017881,
+        "frame": 21177960,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 7004.100000023842,
+        "frame": 21177960,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 7052.200000017881,
+        "frame": 21177982,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 7096.200000017881,
+        "frame": 21177982,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      },
+      {
+        "at": 7248.800000011921,
+        "frame": 21178004,
+        "status": "live",
+        "invalid": 0,
+        "saturated": 0
+      }
+    ],
+    "invalidations": [
+      {
+        "at": 228.7000000178814,
+        "frame": 21176592,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at UtilityScript.evaluate (<anonymous>:318:18)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+      },
+      {
+        "at": 351.40000000596046,
+        "frame": 21176634,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 396.2000000178814,
+        "frame": 21176634,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 499.40000000596046,
+        "frame": 21176656,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 596.2000000178814,
+        "frame": 21176678,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 696.3000000119209,
+        "frame": 21176699,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 797.3000000119209,
+        "frame": 21176721,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 846.1000000238419,
+        "frame": 21176721,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 949.9000000059605,
+        "frame": 21176742,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 1047.7000000178814,
+        "frame": 21176764,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 1151.5,
+        "frame": 21176786,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 1248.5,
+        "frame": 21176808,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 1346.2000000178814,
+        "frame": 21176829,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 1450.4000000059605,
+        "frame": 21176851,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 1498.6000000238419,
+        "frame": 21176851,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 1595.800000011921,
+        "frame": 21176873,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 1700.2000000178814,
+        "frame": 21176895,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 1797.2000000178814,
+        "frame": 21176917,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 1901.5,
+        "frame": 21176939,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 1998.6000000238419,
+        "frame": 21176960,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 2047.6000000238419,
+        "frame": 21176960,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 2151.800000011921,
+        "frame": 21176982,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 2248.800000011921,
+        "frame": 21177004,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 2346.100000023842,
+        "frame": 21177026,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 2450.100000023842,
+        "frame": 21177047,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 2547,
+        "frame": 21177069,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 2652.100000023842,
+        "frame": 21177091,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 2702.300000011921,
+        "frame": 21177091,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 2795.800000011921,
+        "frame": 21177113,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 2901.5,
+        "frame": 21177135,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 2997.2000000178814,
+        "frame": 21177156,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 3096.2000000178814,
+        "frame": 21177178,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 3199.7000000178814,
+        "frame": 21177200,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 3297.4000000059605,
+        "frame": 21177221,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 3345.9000000059605,
+        "frame": 21177221,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 3446.100000023842,
+        "frame": 21177243,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 3547.300000011921,
+        "frame": 21177265,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 3649.100000023842,
+        "frame": 21177286,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 3748.800000011921,
+        "frame": 21177308,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 3846.2000000178814,
+        "frame": 21177330,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 3949.9000000059605,
+        "frame": 21177351,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 3998.5,
+        "frame": 21177351,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 4200.9000000059605,
+        "frame": 21177395,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 4296.100000023842,
+        "frame": 21177417,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 4401.700000017881,
+        "frame": 21177438,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 4498.700000017881,
+        "frame": 21177460,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 4595.5,
+        "frame": 21177482,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 4651.9000000059605,
+        "frame": 21177482,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 4748.600000023842,
+        "frame": 21177503,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 4845.9000000059605,
+        "frame": 21177525,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 4950.200000017881,
+        "frame": 21177547,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 5047.300000011921,
+        "frame": 21177568,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 5151.700000017881,
+        "frame": 21177590,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 5250.200000017881,
+        "frame": 21177612,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 5297.700000017881,
+        "frame": 21177612,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 5401.300000011921,
+        "frame": 21177634,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 5496.200000017881,
+        "frame": 21177655,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 5595.9000000059605,
+        "frame": 21177678,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 5700.700000017881,
+        "frame": 21177699,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 5797.600000023842,
+        "frame": 21177721,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 5846.600000023842,
+        "frame": 21177721,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 5949.9000000059605,
+        "frame": 21177743,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 6047.100000023842,
+        "frame": 21177765,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 6151.600000023842,
+        "frame": 21177787,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 6248.5,
+        "frame": 21177808,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 6345.800000011921,
+        "frame": 21177830,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 6449.800000011921,
+        "frame": 21177852,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 6498.200000017881,
+        "frame": 21177852,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 6595.9000000059605,
+        "frame": 21177873,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 6700,
+        "frame": 21177895,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 6797.100000023842,
+        "frame": 21177916,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 6900.9000000059605,
+        "frame": 21177938,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 7004.200000017881,
+        "frame": 21177960,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      },
+      {
+        "at": 7096.300000011921,
+        "frame": 21177982,
+        "count": 0,
+        "ready": false,
+        "stack": "Error\n    at invalidateDemoZero (eval at evaluate (:311:30), <anonymous>:6:17)\n    at poll (http://127.0.0.1:8765/app.js:316:7)"
+      }
+    ]
+  }
+}

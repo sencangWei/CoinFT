@@ -1,0 +1,11 @@
+{
+  "status": "rejected_do_not_deploy",
+  "reason": "New explicitly confirmed center-pull capture fails the existing 80 percent stable right-shear gate with frozen 3 percent compensation proposal.",
+  "active": 16,
+  "count": 36,
+  "fraction": 0.4444444444444444,
+  "profile_changed": false,
+  "source": ".superpowers/sdd/shear-center-pull-full-diagnostic-20261005.json",
+  "analysis": ".superpowers/sdd/shear-center-pull-full-analysis-20261005.json",
+  "scope": "one-pose diagnostic falsification, not complete independent acceptance"
+}

@@ -1,0 +1,61 @@
+{
+  "diagnostic_only": true,
+  "rows": [
+    {
+      "status": "live",
+      "frames": 1661323,
+      "rate": 199.2,
+      "reads": 76587,
+      "bytes": 43194476,
+      "parsed": 1661323,
+      "invalid": 62,
+      "recent_invalid": 0,
+      "recovery": [
+        3,
+        2
+      ]
+    },
+    {
+      "status": "live",
+      "frames": 1661367,
+      "rate": 199.2,
+      "reads": 76589,
+      "bytes": 43195620,
+      "parsed": 1661367,
+      "invalid": 62,
+      "recent_invalid": 0,
+      "recovery": [
+        3,
+        2
+      ]
+    },
+    {
+      "status": "live",
+      "frames": 1661432,
+      "rate": 199.2,
+      "reads": 76592,
+      "bytes": 43197310,
+      "parsed": 1661432,
+      "invalid": 62,
+      "recent_invalid": 0,
+      "recovery": [
+        3,
+        2
+      ]
+    },
+    {
+      "status": "live",
+      "frames": 1661475,
+      "rate": 199.2,
+      "reads": 76594,
+      "bytes": 43198428,
+      "parsed": 1661475,
+      "invalid": 62,
+      "recent_invalid": 0,
+      "recovery": [
+        3,
+        2
+      ]
+    }
+  ]
+}

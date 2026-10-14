@@ -1,0 +1,35 @@
+{
+  "stage": "center_press",
+  "date": "2026-09-26",
+  "source": "visible Edge live page, exec session 83300",
+  "operator_confirmation": "中心已按住",
+  "summary": {
+    "snapshot_count": 10,
+    "browser_span_ms": 5601.8,
+    "first_frame": 21406554,
+    "last_frame": 21407664,
+    "frame_increment": 1110,
+    "baseline_retained_all": true,
+    "normal_target_all": 1,
+    "normal_level_all": 1,
+    "shear_target_max": 0.3809172041,
+    "shear_level_max": 0.317009902,
+    "shear_target_last": 0,
+    "shear_level_last": 0,
+    "status_all": "数据正常",
+    "interpretation": "Strong center indentation with transient residual shear; qualitative display only, not force or ADC saturation. Release and both shear directions still pending."
+  },
+  "raw_probe_terminal_outputs": [
+    "probe\r\n{\"at\": 498711, \"frame\": 21406554, \"baseline\": [12, 18, 11, 38.5, 48, 70.5, 46.5, 65.5, -2, -2.5, 15, 12], \"target\": 1, \"shearTarget\": -0.0, \"level\": 1, \"shearLevel\": -0.0, \"label\": \"\\u5b9a\\u6027\\u6f14\\u793a \\u00b7 \\u975e\\u6807\\u5b9a\\u529b\\u503c \\u00b7 \\u65b9\\u5411\\u672a\\u7ecf\\u8fc7\\u72ec\\u7acb\\u9a8c\\u6536 \\u00b7 \\u753b\\u9762\\u5df2\\u5f52\\u96f6\", \"status\": \"\\u6570\\u636e\\u6b63\\u5e38\"}\r\n",
+    "probe\r\n{\"at\": 499345, \"frame\": 21406685, \"baseline\": [12, 18, 11, 38.5, 48, 70.5, 46.5,\r\n\u001b[23;80H, 65.5, -2, -2.5, 15, 12], \"target\": 1, \"shearTarget\": 0.24779339240200052, \"leve\r\n\u001b[23;80Hel\": 1, \"shearLevel\": 0, \"label\": \"\\u5b9a\\u6027\\u6f14\\u793a \\u00b7 \\u975e\\u6807\\u\r\n\u001b[23;80Hu5b9a\\u529b\\u503c \\u00b7 \\u65b9\\u5411\\u672a\\u7ecf\\u8fc7\\u72ec\\u7acb\\u9a8c\\u6536 \\\r\n\u001b[23;80H\\u00b7 \\u753b\\u9762\\u5df2\\u5f52\\u96f6\", \"status\": \"\\u6570\\u636e\\u6b63\\u5e38\"}    \r\n",
+    "probe\r\n{\"at\": 499963.3000000119, \"frame\": 21406794, \"baseline\": [12, 18, 11, 38.5, 48, \r\n\u001b[23;80H 70.5, 46.5, 65.5, -2, -2.5, 15, 12], \"target\": 1, \"shearTarget\": 0.3809172041160\r\n\u001b[23;80H0681, \"level\": 1, \"shearLevel\": 0.3170099020003545, \"label\": \"\\u5b9a\\u6027\\u6f14\\\r\n\u001b[23;80H\\u793a \\u00b7 \\u975e\\u6807\\u5b9a\\u529b\\u503c \\u00b7 \\u65b9\\u5411\\u672a\\u7ecf\\u8fc\r\n\u001b[23;80Hc7\\u72ec\\u7acb\\u9a8c\\u6536 \\u00b7 \\u753b\\u9762\\u5df2\\u5f52\\u96f6\", \"status\": \"\\u6\r\n\u001b[23;80H6570\\u636e\\u6b63\\u5e38\"}\r\n",
+    "probe\r\n{\"at\": 500583.5, \"frame\": 21406924, \"baseline\": [12, 18, 11, 38.5, 48, 70.5, 46.\r\n\u001b[23;80H.5, 65.5, -2, -2.5, 15, 12], \"target\": 1, \"shearTarget\": 0, \"level\": 1, \"shearLev\r\n\u001b[23;80Hvel\": 0.02889622283566734, \"label\": \"\\u5b9a\\u6027\\u6f14\\u793a \\u00b7 \\u975e\\u6807\r\n\u001b[23;80H7\\u5b9a\\u529b\\u503c \\u00b7 \\u65b9\\u5411\\u672a\\u7ecf\\u8fc7\\u72ec\\u7acb\\u9a8c\\u6536\r\n\u001b[23;80H6 \\u00b7 \\u753b\\u9762\\u5df2\\u5f52\\u96f6\", \"status\": \"\\u6570\\u636e\\u6b63\\u5e38\"}  \r\n",
+    "probe\r\n{\"at\": 501200.90000000596, \"frame\": 21407054, \"baseline\": [12, 18, 11, 38.5, 48,\r\n\u001b[23;80H, 70.5, 46.5, 65.5, -2, -2.5, 15, 12], \"target\": 1, \"shearTarget\": 0, \"level\": 1,\r\n\u001b[23;80H, \"shearLevel\": 0, \"label\": \"\\u5b9a\\u6027\\u6f14\\u793a \\u00b7 \\u975e\\u6807\\u5b9a\\u\r\n\u001b[23;80Hu529b\\u503c \\u00b7 \\u65b9\\u5411\\u672a\\u7ecf\\u8fc7\\u72ec\\u7acb\\u9a8c\\u6536 \\u00b7 \r\n\u001b[23;80H \\u753b\\u9762\\u5df2\\u5f52\\u96f6\", \"status\": \"\\u6570\\u636e\\u6b63\\u5e38\"}\r\n",
+    "probe\r\n{\"at\": 501823.40000000596, \"frame\": 21407162, \"baseline\": [12, 18, 11, 38.5, 48,\r\n\u001b[23;80H, 70.5, 46.5, 65.5, -2, -2.5, 15, 12], \"target\": 1, \"shearTarget\": 0, \"level\": 1,\r\n\u001b[23;80H, \"shearLevel\": 0, \"label\": \"\\u5b9a\\u6027\\u6f14\\u793a \\u00b7 \\u975e\\u6807\\u5b9a\\u\r\n\u001b[23;80Hu529b\\u503c \\u00b7 \\u65b9\\u5411\\u672a\\u7ecf\\u8fc7\\u72ec\\u7acb\\u9a8c\\u6536 \\u00b7 \r\n\u001b[23;80H \\u753b\\u9762\\u5df2\\u5f52\\u96f6\", \"status\": \"\\u6570\\u636e\\u6b63\\u5e38\"}\r\n",
+    "probe\r\n{\"at\": 502447.5, \"frame\": 21407294, \"baseline\": [12, 18, 11, 38.5, 48, 70.5, 46.\r\n\u001b[23;80H.5, 65.5, -2, -2.5, 15, 12], \"target\": 1, \"shearTarget\": 0.10575506978011869, \"le\r\n\u001b[23;80Hevel\": 1, \"shearLevel\": 0.08801231329215745, \"label\": \"\\u5b9a\\u6027\\u6f14\\u793a \\\r\n\u001b[23;80H\\u00b7 \\u975e\\u6807\\u5b9a\\u529b\\u503c \\u00b7 \\u65b9\\u5411\\u672a\\u7ecf\\u8fc7\\u72ec\r\n\u001b[23;80Hc\\u7acb\\u9a8c\\u6536 \\u00b7 \\u753b\\u9762\\u5df2\\u5f52\\u96f6\", \"status\": \"\\u6570\\u63\r\n\u001b[23;80H36e\\u6b63\\u5e38\"}\r\n",
+    "probe\r\n{\"at\": 503066.7000000179, \"frame\": 21407424, \"baseline\": [12, 18, 11, 38.5, 48, \r\n\u001b[23;80H 70.5, 46.5, 65.5, -2, -2.5, 15, 12], \"target\": 1, \"shearTarget\": 0.0129633265535\r\n\u001b[23;80H569373, \"level\": 1, \"shearLevel\": 0.14602595928474008, \"label\": \"\\u5b9a\\u6027\\u6f\r\n\u001b[23;80Hf14\\u793a \\u00b7 \\u975e\\u6807\\u5b9a\\u529b\\u503c \\u00b7 \\u65b9\\u5411\\u672a\\u7ecf\\u\r\n\u001b[23;80Hu8fc7\\u72ec\\u7acb\\u9a8c\\u6536 \\u00b7 \\u753b\\u9762\\u5df2\\u5f52\\u96f6\", \"status\": \"\r\n\u001b[23;80H\"\\u6570\\u636e\\u6b63\\u5e38\"}\r\n",
+    "probe\r\n{\"at\": 503691.60000002384, \"frame\": 21407533, \"baseline\": [12, 18, 11, 38.5, 48,\r\n\u001b[23;80H, 70.5, 46.5, 65.5, -2, -2.5, 15, 12], \"target\": 1, \"shearTarget\": 0.000921319143\r\n\u001b[23;80H37181265, \"level\": 1, \"shearLevel\": 0.0009213191437181265, \"label\": \"\\u5b9a\\u6027\r\n\u001b[23;80H7\\u6f14\\u793a \\u00b7 \\u975e\\u6807\\u5b9a\\u529b\\u503c \\u00b7 \\u65b9\\u5411\\u672a\\u7e\r\n\u001b[23;80Hecf\\u8fc7\\u72ec\\u7acb\\u9a8c\\u6536 \\u00b7 \\u753b\\u9762\\u5df2\\u5f52\\u96f6\", \"status\r\n\u001b[23;80Hs\": \"\\u6570\\u636e\\u6b63\\u5e38\"}\r\n",
+    "probe\r\n{\"at\": 504312.8000000119, \"frame\": 21407664, \"baseline\": [12, 18, 11, 38.5, 48, \r\n\u001b[23;80H 70.5, 46.5, 65.5, -2, -2.5, 15, 12], \"target\": 1, \"shearTarget\": 0, \"level\": 1, \r\n\u001b[23;80H \"shearLevel\": 0, \"label\": \"\\u5b9a\\u6027\\u6f14\\u793a \\u00b7 \\u975e\\u6807\\u5b9a\\u5\r\n\u001b[23;80H529b\\u503c \\u00b7 \\u65b9\\u5411\\u672a\\u7ecf\\u8fc7\\u72ec\\u7acb\\u9a8c\\u6536 \\u00b7 \\\r\n\u001b[23;80H\\u753b\\u9762\\u5df2\\u5f52\\u96f6\", \"status\": \"\\u6570\\u636e\\u6b63\\u5e38\"}\r\n"
+  ],
+  "raw_format_warning": "PTY line wrapping includes ANSI and duplicate characters; raw outputs preserved verbatim, summary manually checked."
+}

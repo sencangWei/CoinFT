@@ -1,0 +1,26 @@
+# Center −X pull profile-only refit
+
+The user requested 修复 after a read-only historical comparison. Continue the already approved profile-only design at docs/superpowers/specs/2026-09-28-coinft-left-shear-refit-design.md. Do not redesign UI/classifier/firmware or loosen gates. This task is offline candidate development, NOT live deployment.
+
+## Ownership and files
+
+Own only new files under .superpowers/sdd named center-pull-refit-20261006* plus a new .superpowers/sdd/test_center_pull_refit_20261006.py. Use apply_patch for all text writes, including JSON report persistence. No Git repository: do not initialize/commit/worktree. You are not alone; do not revert others' work. Root owns logs/live checks/deployment.
+
+## Evidence and reusable interfaces
+
+Read compare_historical_pull_profiles_20261005.py: nine saved windows with exact recorded actual-page baseline. Its data extraction and unchanged surface.js Chromium replay are correct; new evaluator can reuse this narrowly, without importing a top-level executing script. Short windows are diagnostic only, not qualified acquisition or independent acceptance. Full pull/control windows differ in recovery epoch; explicitly report this and keep each actual page reference. No request to user, HTTP/COM/CDP live interactions, tare, or production changes.
+
+Historical comparison report: shear-historical-pull-profile-comparison-20261005.json. Installed profile SHA af13756949ff0bb047392c183117298ea1b070106e3f2edc0553c075e25be150. Old full center pull36/36 right/current0/36; old purepress27/36 spurious/current0; old+X0/current6. New scalar lowering already failed. Effective score is w dot (CH1–8 minus their mean) minus c*max(0,median(CH9–12)); sum(w)=0 and c=dot(w,pressLeak).
+
+Historical eight long windows are available in calibration/shear_frozen_validation_20261005. shear-refit-fresh-right-20261005.json feature_basis common_raw_baseline supplies their fixed raw reference, and shear-frozen-independent-validation-20261005.json sources/SHA identifies them. These are historical regression, not independent validation after this new fit. Keep this fixed-reference replay explicitly separate from actual-page replay; no assertion that they share page basis.
+
+## Plan and fixed gates
+
+1. First write an offline regression test that replays the full center pull with installed config through real surface.js and asserts >=80% stable right>=.20, no opposite below−.05, unchanged normal. Run it and record the expected behavioral FAIL (current0/36), not an import or missing file error. Add purepress/empty and current+X/−X/short pull checks using same evaluator; gates remain fixed, no copied/fabricated samples. Candidate injection is an explicit argument/path, default installed, never in-place production writes.
+2. Fit at most two bounded candidates to saved diagnostic data, adjusting the existing eight contrast weights and normal coefficient jointly rather than multiplying old leak. Use scipy.optimize.linprog, w-sum zero. First try hard background margins and signed loaded margins at normalized threshold1, then a single loaded soft-margin/slack attempt if strict infeasible. Objective minimize deviation from installed normalized projection or L1 norm and loaded violations; hard anti-press/idle constraints. Each optimization time limit10s; no threshold sweeps or adaptive gate changes. Encode c into compatible pressLeak (for example minimal correction along w to old leak), preserve normal100/span600/version/mode/assembly/signs. Can retain installed display threshold/span58.330169520837785 with normalized scale conversion. Record all decisions/margins and failed attempts without overwriting earlier evidence. If optimizer can't meet gates, report specific failing poses, don't broaden production scope.
+3. Replay candidate through unmodified actual surface.js on all nine actual-page windows and historical eight raw-reference windows (at least retain existing historical right/left and anti-press/idle behavior). Stable means>=600ms. Idle/purepress all abs(shear)<=.05; each −X push/center-pull/edge-pull >=80% shear>=.2 with no reverse<−.05; each +X >=80%shear<=−.2 with no reverse>.05. Normal exactly equal old per sample. Replay cold start caveat explicit. A result that passes diagnostic set but fails historical regression is not ready to deploy. No action-specific flags or manualdirection controls.
+4. Freeze candidate/report if successful, record sourceSHA/profileSHA, training/regression provenance, and that independent hardware validation is pending. No installation. Run regression tests against injected candidate; preserve RED/GREEN output in report. If only partial/infeasible, stop after bounded work and report it, not global mathematical impossibility.
+
+## Report contract
+
+Write center-pull-refit-20261006-report.md and center-pull-refit-20261006-report.json (candidate and per-window results). Report exact commands/output, TDD RED/GREEN, files created, raw/page reference/epoch caveats, production unchanged hashes, concerns. Return <=15 lines with DONE/DONE_WITH_CONCERNS/BLOCKED, counts, paths. No need full existing suite until independent validation and authorized production deployment; root will run broad tests then. Keep code compact; no unrelated helpers/frameworks.

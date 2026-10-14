@@ -1,0 +1,250 @@
+{
+  "status": "diagnosis_complete_not_fixed",
+  "productionChanges": false,
+  "operatorFinished": true,
+  "releaseCheck": {
+    "samples": 42,
+    "observations": 42,
+    "span": 5.101,
+    "rate": 200.6163388445898,
+    "normal": [
+      0,
+      0
+    ],
+    "shear": [
+      0,
+      0
+    ],
+    "renderedNormal": [
+      0,
+      0
+    ],
+    "renderedShear": [
+      0,
+      0
+    ],
+    "sameBasisAsPull": false,
+    "baselineUnchanged": true,
+    "invalid": [
+      12,
+      12
+    ],
+    "recentInvalid": [
+      0,
+      0
+    ],
+    "recoveryFirst": [
+      43,
+      12
+    ],
+    "recoveryLast": [
+      43,
+      12
+    ]
+  },
+  "referenceTransition": {
+    "releasePageReference": [
+      8,
+      25,
+      14,
+      26,
+      28,
+      14,
+      31,
+      45,
+      20,
+      16,
+      9,
+      6
+    ],
+    "previousPageReference": [
+      -9,
+      45,
+      2.5,
+      29,
+      12,
+      0.5,
+      -1,
+      -2,
+      1.5,
+      -10,
+      -5,
+      0
+    ],
+    "pullPageReference": [
+      -9,
+      45,
+      2.5,
+      29,
+      12,
+      0.5,
+      -1,
+      -2,
+      1.5,
+      -10,
+      -5,
+      0
+    ],
+    "releaseRawOffset": [
+      27861,
+      27313,
+      25781,
+      26583,
+      26253,
+      26318,
+      27195,
+      25932,
+      28509,
+      28111,
+      29090,
+      28166
+    ],
+    "pressRawOffset": [
+      27731,
+      27173,
+      25618.5,
+      26495,
+      26103,
+      26165.5,
+      27043,
+      25799,
+      28420.5,
+      28032,
+      28997,
+      28078
+    ],
+    "pullRawOffset": [
+      27731,
+      27173,
+      25618.5,
+      26495,
+      26103,
+      26165.5,
+      27043,
+      25799,
+      28420.5,
+      28032,
+      28997,
+      28078
+    ],
+    "recoveryRelease": [
+      43,
+      12
+    ],
+    "recoveryPress": [
+      42,
+      11
+    ],
+    "frameMonotonic": true,
+    "ownerSame": true
+  },
+  "confirmed": {
+    "centerPullActualShearZero": true,
+    "purePressureActualShearZero": true,
+    "loadedCapturesHadNoWithinWindowRecoveryOrNewInvalid": true,
+    "centerPullScoreMedian": 36.23843643753963,
+    "purePressureScoreMedian": -33.24532511085959,
+    "installedShearStartThreshold": 58.330169520837785,
+    "frozen3PercentCandidateRejected": {
+      "active": 16,
+      "stable": 36,
+      "requiredFraction": 0.8
+    },
+    "backendTareBetweenPressAndRelease": {
+      "log": ".superpowers/sdd/demo-resume-20261005.stderr.log",
+      "line": 37,
+      "localTime": "2026-10-05 22:40:31 +08:00",
+      "entry": "POST /api/tare HTTP/1.1 204",
+      "actor": "unknown; diagnostic capture performs reads only"
+    }
+  },
+  "limitations": [
+    "No reference force, so no diagnosis of hardware defect or exact force composition.",
+    "Changes of raw channel reference and page reference prevent treating the release as the same unchanged-baseline fitting sequence.",
+    "The loaded center-pull window itself had stable reference and streaming; later tare does not explain away its reproduced missing animation.",
+    "No new classifier or profile has been accepted or installed."
+  ],
+  "sources": {
+    "pull": ".superpowers/sdd/shear-center-pull-full-diagnostic-20261005.json",
+    "empty": ".superpowers/sdd/shear-center-pull-controls-empty-20261005.json",
+    "press": ".superpowers/sdd/shear-center-pull-controls-press-20261005.json",
+    "release": ".superpowers/sdd/shear-center-pull-controls-release-after-press-20261005.json",
+    "comparison": ".superpowers/sdd/shear-center-pull-pressure-control-comparison-20261005.json",
+    "analysis": ".superpowers/sdd/shear-center-pull-full-analysis-20261005.json"
+  },
+  "next": "Keep production unchanged; if repair requested, use explicitly fixed/recorded reference and redesign or refit shear projection under approved profile-only boundary, then independently verify pressure and both shear signs.",
+  "protected": {
+    "profile_sha256": "AF13756949FF0BB047392C183117298EA1B070106E3F2EDC0553C075E25BE150",
+    "protected": [
+      {
+        "path": "D:\\semg.claude\\coinft\\demo_web\\app.js",
+        "sha256": "E83A20CFCF844EF8733927BDD6E0774C93BF2F64B1AA68A075C89E3D416E2D66",
+        "unchanged": true
+      },
+      {
+        "path": "D:\\semg.claude\\coinft\\demo_web\\surface.js",
+        "sha256": "D7AD21EFD772367E0A63A9B1FCEAC466DA481ECE2ABCC185505E1A63EE1FEDBF",
+        "unchanged": true
+      },
+      {
+        "path": "D:\\semg.claude\\coinft\\START_DEMO.bat",
+        "sha256": "641016731466A38A1C2E0ACEFEA1BA15FF2361727D6D4F73E1E4AE2BC4C007E8",
+        "unchanged": true
+      },
+      {
+        "path": "D:\\semg.claude\\coinft\\calibration\\coinft_calib.json",
+        "sha256": "C5847D9A03A16CF3A9FD6A951EC8C1DC7E58516CC071826169E90A8CD496BEB2",
+        "unchanged": true
+      },
+      {
+        "path": "D:\\semg.claude\\firmware_imu\\platformio.ini",
+        "sha256": "40565C2292CCE7FFD4933D13D0E048F4BCB14DD5ED81520C7BBD5CF20D40F214",
+        "unchanged": true
+      },
+      {
+        "path": "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\platformio.ini",
+        "sha256": "5EEC927B6834F8FF812C15CB138E99E09D828BA40E836E57619F7C9401704F60",
+        "unchanged": true
+      },
+      {
+        "path": "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\scripts\\diag_usb_build.py",
+        "sha256": "2C9F4A1FC448DF3211EE781CDAF16CE17479AD172EC97A5A6C55549D231BBB76",
+        "unchanged": true
+      },
+      {
+        "path": "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\.pio\\build\\teensy40\\firmware.hex",
+        "sha256": "FD53CE8129EEF078C1FB5B9068B41CD7D2F8F54D7964E3E084EBDC3F519B7788",
+        "unchanged": true
+      },
+      {
+        "path": "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\.pio\\build\\teensy40\\firmware.elf",
+        "sha256": "FC213E3FF3F43348C88303A2D4CF9EB5A47A1979424542FE4A15F3232E343182",
+        "unchanged": true
+      },
+      {
+        "path": "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\.pio\\build\\teensy40_diag\\firmware.hex",
+        "sha256": "F38E094D43F39ED01AD5C7AED172E22D6947B90226CB9B7A8EF41F810FF9C9CD",
+        "unchanged": true
+      },
+      {
+        "path": "C:\\Users\\winer\\.platformio\\packages\\framework-arduinoteensy\\cores\\teensy4\\usb_serial.c",
+        "sha256": "A675E0479E27CBAD3A8E0FA6B918020AF5B0F8894BE43EBC495832995F5D842C",
+        "unchanged": true
+      },
+      {
+        "path": "C:\\Users\\winer\\.platformio\\packages\\framework-arduinoteensy\\cores\\teensy4\\usb_serial2.c",
+        "sha256": "575F5852165647E39F059548AE244A4B426A8BE31BFEF57CC4A9044FA8A37A3B",
+        "unchanged": true
+      },
+      {
+        "path": "C:\\Users\\winer\\Desktop\\CoinFT_Teensy_Interface\\teensy_coinft_serial_interface.cpp",
+        "sha256": "29638CF96C9E6AC61459AC7927C5F6D21C63787F38869D0485A672F0DCA870F0",
+        "unchanged": true
+      },
+      {
+        "path": "D:\\semg.claude\\coinft\\coinft_demo.py",
+        "unchanged": true
+      }
+    ]
+  }
+}

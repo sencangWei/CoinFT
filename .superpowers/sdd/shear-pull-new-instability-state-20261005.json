@@ -1,0 +1,231 @@
+{
+  "state": {
+    "page": {
+      "baseline": [
+        -9,
+        45,
+        2.5,
+        29,
+        12,
+        0.5,
+        -1,
+        -2,
+        1.5,
+        -10,
+        -5,
+        0
+      ],
+      "profile": {
+        "version": 1,
+        "mode": "qualitative",
+        "assemblyId": "coinft-current-20260925",
+        "normal": {
+          "threshold": 100,
+          "span": 600
+        },
+        "shear": {
+          "enabled": true,
+          "weights": [
+            0.018620295108163612,
+            -0.6612813415534511,
+            -0.017683367757615198,
+            0.7092235968547906,
+            -0.0887673330605397,
+            0.17873647277899962,
+            -0.0002010954492274968,
+            -0.13864722692112055
+          ],
+          "pressLeak": [
+            -0.018262174783188794,
+            -0.03460640426951301,
+            -0.13008672448298866,
+            0.2391594396264176,
+            0.06429286190793862,
+            0.18295530353569045,
+            0.031187458305537024,
+            -0.2541694462975317
+          ],
+          "threshold": 58.330169520837785,
+          "span": 58.330169520837785
+        },
+        "rightLabel": "−X",
+        "leftLabel": "+X",
+        "evidence": [
+          ".superpowers/sdd/shear-refit-coefficient-softmargin-20261005.json",
+          ".superpowers/sdd/shear-refit-fresh-right-20261005.json",
+          ".superpowers/sdd/shear-frozen-independent-validation-20261005.json"
+        ]
+      },
+      "paused": false,
+      "frame": 4321011,
+      "channels": [
+        -3,
+        -57,
+        -16.5,
+        -24,
+        -39,
+        -54.5,
+        -40,
+        -17,
+        -0.5,
+        -3,
+        19,
+        -4
+      ],
+      "normal": 0,
+      "shear": 0,
+      "renderedNormal": 0,
+      "renderedShear": 0,
+      "visible": "visible"
+    },
+    "backend": {
+      "mode": "live",
+      "status": "live",
+      "message": "数据流正常",
+      "port": "COM6",
+      "axes": [
+        0.0160224,
+        -0.0121856,
+        -0.0217845,
+        0.0000217,
+        0.0000056,
+        0.0000479
+      ],
+      "channels": [
+        -3,
+        -57,
+        -16.5,
+        -24,
+        -39,
+        -54.5,
+        -40,
+        -17,
+        -0.5,
+        -3,
+        19,
+        -4
+      ],
+      "raw": [
+        27728,
+        27116,
+        25602,
+        26471,
+        26064,
+        26111,
+        27003,
+        25782,
+        28420,
+        28029,
+        29016,
+        28074
+      ],
+      "rate": 200.2,
+      "frames": 4321011,
+      "resyncs": 0,
+      "saturated": 0,
+      "saturated_recent": 0,
+      "invalid_frames": 12,
+      "invalid_recent": 0,
+      "tare_progress": 100,
+      "updated_at": 1791210263.8970308,
+      "diagnostics": {
+        "serial_reads": 198175,
+        "serial_bytes": 112346572,
+        "parsed_frames": 4321011,
+        "last_byte_at": 1791210263.8960128,
+        "last_parsed_frame_at": 1791210263.8960128,
+        "parser_pending_bytes": 26,
+        "parser_discarded_bytes": 0
+      },
+      "recovery": {
+        "attempts": 38,
+        "successes": 10,
+        "last_fault": {
+          "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+          "observed_at": 1791210169.6780906,
+          "frames": 4302211,
+          "diagnostics": {
+            "serial_reads": 197313,
+            "serial_bytes": 111857746,
+            "parsed_frames": 4302211,
+            "last_byte_at": 1791210167.6072037,
+            "last_parsed_frame_at": 1791210167.6072037,
+            "parser_pending_bytes": 26,
+            "parser_discarded_bytes": 0
+          }
+        }
+      }
+    },
+    "profile_sha256": "af13756949ff0bb047392c183117298ea1b070106e3f2edc0553c075e25be150"
+  },
+  "comparison": {
+    "profileUnchanged": true,
+    "pageBasisUnchanged": true,
+    "rawOffsetBefore": [
+      27731,
+      27173,
+      25618.5,
+      26495,
+      26103,
+      26165.5,
+      27043,
+      25799,
+      28420.5,
+      28032,
+      28997,
+      28078
+    ],
+    "rawOffsetNow": [
+      27731,
+      27173,
+      25618.5,
+      26495,
+      26103,
+      26165.5,
+      27043,
+      25799,
+      28420.5,
+      28032,
+      28997,
+      28078
+    ],
+    "recoveryBefore": {
+      "attempts": 37,
+      "successes": 9,
+      "last_fault": {
+        "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+        "observed_at": 1791208426.7021885,
+        "frames": 3954128,
+        "diagnostics": {
+          "serial_reads": 181348,
+          "serial_bytes": 102807562,
+          "parsed_frames": 3954128,
+          "last_byte_at": 1791208424.6356516,
+          "last_parsed_frame_at": 1791208424.6356516,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        }
+      }
+    },
+    "recoveryNow": {
+      "attempts": 38,
+      "successes": 10,
+      "last_fault": {
+        "reason": "serial silence: no byte or parsed-frame progress for 2.0s",
+        "observed_at": 1791210169.6780906,
+        "frames": 4302211,
+        "diagnostics": {
+          "serial_reads": 197313,
+          "serial_bytes": 111857746,
+          "parsed_frames": 4302211,
+          "last_byte_at": 1791210167.6072037,
+          "last_parsed_frame_at": 1791210167.6072037,
+          "parser_pending_bytes": 26,
+          "parser_discarded_bytes": 0
+        }
+      }
+    }
+  },
+  "operator": "center pull no visible shear; edge pull now unstable; force state not asserted",
+  "candidateInstalled": false
+}

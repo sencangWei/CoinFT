@@ -1,0 +1,105 @@
+{
+  "method": "Exploratory algebra only: per-channel unloaded medians; first retained half of each same-hold group for fit, second half as temporally held-out observations. Fit press leak from center press, then minimum-norm two-centroid contrast. No production changes.",
+  "retained_valid_counts": {
+    "press": 8,
+    "minus_x": 24,
+    "plus_x": 24,
+    "idle": 24
+  },
+  "press_normal_centroid": 670,
+  "centroid_residual_cosine": 0.636921693754203,
+  "centroid_residual_norms": {
+    "minus_x": 282.2077980941256,
+    "plus_x": 219.5406331686856
+  },
+  "gram_determinant": 2281371702.456402,
+  "candidate": {
+    "weights": [
+      0.5991576644141788,
+      -0.5793339755923408,
+      -0.2364846895635165,
+      0.05655377412097283,
+      -0.16232882186481368,
+      0.15687170337756418,
+      0.38410736750017754,
+      -0.21854302239222267
+    ],
+    "pressLeak": [
+      0.03470149253731343,
+      0.0018656716417910447,
+      0.03544776119402985,
+      0.11455223880597015,
+      0.015298507462686567,
+      0.13470149253731342,
+      -0.0832089552238806,
+      -0.2533582089552239
+    ],
+    "expected_centroid_score": 105.04200610859175
+  },
+  "train": {
+    "press": {
+      "count": 4,
+      "median": -2.658301090064645,
+      "min": -12.436043101037987,
+      "max": 17.642559908218104,
+      "sd": 11.216402075267872
+    },
+    "minus_x": {
+      "count": 12,
+      "median": 91.47287728884193,
+      "min": 64.28531867222819,
+      "max": 118.91900565760216,
+      "sd": 18.823583730846853
+    },
+    "plus_x": {
+      "count": 12,
+      "median": -78.78907805744686,
+      "min": -153.95693695323894,
+      "max": 13.16380381569251,
+      "sd": 40.673897186464664
+    },
+    "idle": {
+      "count": 12,
+      "median": -24.093323055994695,
+      "min": -81.08656892760091,
+      "max": 79.05777858598663,
+      "sd": 36.830331775186906
+    }
+  },
+  "within_hold_test": {
+    "press": {
+      "count": 4,
+      "median": -21.632477927630042,
+      "min": -71.00641362719911,
+      "max": 15.40424636678284,
+      "sd": 37.12691590209997
+    },
+    "minus_x": {
+      "count": 12,
+      "median": 84.88693119459248,
+      "min": -3.8199465820135963,
+      "max": 122.58381617818786,
+      "sd": 38.43432521905247
+    },
+    "plus_x": {
+      "count": 12,
+      "median": -67.04040671026162,
+      "min": -137.55192750723327,
+      "max": -29.82070318624748,
+      "sd": 30.81318051652421
+    },
+    "idle": {
+      "count": 12,
+      "median": -3.622408436626052,
+      "min": -28.158840551259516,
+      "max": 40.965114842963295,
+      "sd": 22.835894727261987
+    }
+  },
+  "limitations": [
+    "Only one loading action per direction and a truncated press capture; not independent repetitions or calibration.",
+    "True browser baseline not known; reference is later unloaded segment.",
+    "Different force/time drift can affect template fits; in-window fit separation does not guarantee later physical generalization.",
+    "Thresholds not tuned or written; candidate exists for analysis only."
+  ]
+}

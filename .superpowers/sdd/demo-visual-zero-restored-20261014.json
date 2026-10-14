@@ -1,0 +1,69 @@
+{
+  "page": {
+    "baseline": [
+      -74,
+      -127,
+      -63.5,
+      -147,
+      -66,
+      -145,
+      -64,
+      -116,
+      -57.5,
+      -56.5,
+      -67,
+      -50.5
+    ],
+    "paused": false,
+    "frame": 287501,
+    "normal": 0,
+    "shear": 0,
+    "renderedNormal": 0,
+    "renderedShear": 0,
+    "score": -3.403752864857964,
+    "channels": [
+      -50,
+      -181.5,
+      -41,
+      -191,
+      -112,
+      -39,
+      -129.5,
+      -47,
+      -60,
+      -44,
+      -62,
+      -49
+    ],
+    "label": "定性演示 · 非标定力值 · 方向未经过独立验收 · 画面已归零"
+  },
+  "profile_sha256": "1df74f4570f5119f180f9e7830120abe555bd6c37cc33ab3dbc33b8dba5a6020",
+  "backend_reference_unchanged": true,
+  "backend": {
+    "status": "live",
+    "port": "COM6",
+    "rate": 200,
+    "frames": 287588,
+    "invalid_recent": 0,
+    "saturated_recent": 0,
+    "recovery": {
+      "attempts": 0,
+      "successes": 0,
+      "last_fault": null
+    }
+  },
+  "raw_reference": [
+    28377,
+    28060.5,
+    26545,
+    27499,
+    27003,
+    27080,
+    27938.5,
+    26668,
+    28769,
+    28410,
+    29442,
+    28490
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "method": "Horizontal-installation in-sample exploratory refit; no independent holdout; not deployed.",
+  "baseline": [
+    -84,
+    -69,
+    -160,
+    -86.5,
+    -121.5,
+    -114,
+    -141.5,
+    -35.5,
+    -60,
+    -79,
+    -108.5,
+    -75.5
+  ],
+  "pressLeak": [
+    -0.07379882474939509,
+    -0.04026961631524369,
+    -0.19702730729346699,
+    0.1961631524369167,
+    0.11303145523677843,
+    0.2692706533010715,
+    0.0025924645696508816,
+    -0.29692360871068096
+  ],
+  "weights": [
+    0.6353679457817604,
+    -0.5950279402380602,
+    -0.2705156068407479,
+    0.19919914772019653,
+    -0.1309588474684086,
+    0.0486437580827173,
+    0.27228158415031095,
+    -0.18904135477238818
+  ],
+  "threshold": 68.64710375552043,
+  "stats": [
+    {
+      "pose": "operator-confirmed pure center press with horizontal lower PCB fixed",
+      "n": 45,
+      "median": 9.087769102613102,
+      "p10": -60.353246977388395,
+      "p90": 43.09074905328151,
+      "positive": 2,
+      "negative": 2
+    },
+    {
+      "pose": "operator-confirmed plus-X relative upper-PCB push, horizontal lower PCB fixed",
+      "n": 45,
+      "median": -126.98904871005095,
+      "p10": -168.87212698586146,
+      "p90": -75.11916921042176,
+      "positive": 0,
+      "negative": 41
+    },
+    {
+      "pose": "operator-confirmed minus-X relative upper-PCB push, horizontal lower PCB fixed",
+      "n": 44,
+      "median": -1.0426118007283156,
+      "p10": -30.50611860425278,
+      "p90": 53.17342247516456,
+      "positive": 3,
+      "negative": 0
+    },
+    {
+      "pose": "operator-confirmed unloaded after horizontal fixed center press",
+      "n": 44,
+      "median": 5.405017708947588,
+      "p10": -33.73969460371953,
+      "p90": 32.31474133549909,
+      "positive": 0,
+      "negative": 0
+    }
+  ]
+}
